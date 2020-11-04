@@ -1,3 +1,3 @@
 <?php 
-echo "ok";
+    require_once "./site/index.php";
 ?>
