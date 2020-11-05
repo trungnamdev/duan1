@@ -5,3 +5,5 @@ ghi chú sẽ ghi ở đây
 tạo db với tên duan1 cho khớp với mọi người
 
 không trộn css , js vào file php chia file rõ ràng
+
+test sdfdsf
