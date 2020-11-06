@@ -38,6 +38,8 @@ body {
     margin: 15px 0;
     cursor: pointer;
     transition: .4s;
+    display: flex;
+    justify-content: space-between;
 }
 
 .menu ul li:hover,
