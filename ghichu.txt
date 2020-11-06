@@ -6,5 +6,3 @@ tạo db với tên duan1 cho khớp với mọi người
 
 không trộn css , js vào file php chia file rõ ràng
 
-
-ok 123esadasdasd
