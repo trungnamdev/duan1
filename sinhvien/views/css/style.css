@@ -2,3 +2,82 @@
     margin: 0;
     padding: 0;
 }
+
+
+body {
+    height: 100vh;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100%;
+    float: left;
+    background-color: #0D0E2E;
+}
+
+.sidebar .account {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar .avatar {
+    border-radius: 15px;
+    height: 60px;
+    width: 60px;
+}
+
+.menu ul, .option-box ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.menu ul li {
+    padding: 13px 20px;
+    border-radius: 16px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: .4s;
+}
+
+
+.menu ul li:hover, .menu ul li.active{
+    background-color: #384E85;
+}
+
+.menu ul li a {
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+ul li a:hover {
+    text-decoration: none;
+}
+
+.box-right {
+    width: 80%;
+    float: left;
+    padding: 20px 25px;
+}
+
+.box-right .option-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.box-right .option-box a {
+    border: 2px solid #384E85;
+    padding: 3px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    color: #384E85;
+    font-weight: 500;
+    transition: .2s;
+}
+
+.box-right .option-box a.active, .box-right .option-box a:hover {
+    background-color: #C1C4FF;
+    border: 2px solid #C1C4FF;
+    text-decoration: none;
+}
