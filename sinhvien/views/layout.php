@@ -28,18 +28,12 @@
     </script>
     <!-- end bootstrap -->
     <!-- link swiper -->
-<<<<<<< HEAD
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-=======
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
->>>>>>> 53ee4d7bf63e54294bea78c7ade28aa6aaee2e0e
+
     <!-- end swiper -->
     <title>Sinh Viên</title>
 </head>
