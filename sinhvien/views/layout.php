@@ -29,17 +29,17 @@
     <!-- end bootstrap -->
     <!-- link swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- end swiper -->
     <title>Sinh Viên</title>
 </head>
 
 <body>
     <div class="container-fluid h-100 p-0">
-        <div class="sidebar pt-5">
+        <div class="sidebar">
             <div class="account text-light ml-4 mb-5">
                 <img class="avatar mr-3" src="./views/img/avatar.jpg" alt="">
                 <div class="info">

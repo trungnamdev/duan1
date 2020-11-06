@@ -13,6 +13,10 @@ body {
     height: 100%;
     float: left;
     background-color: #0D0E2E;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 30px;
 }
 
 .sidebar .account {
@@ -61,6 +65,7 @@ ul li a:hover {
 .box-right {
     width: 80%;
     float: left;
+    margin-left: 20%;
     padding: 20px 25px;
 }
 
@@ -93,11 +98,13 @@ ul li a:hover {
 
 /* End sile bar */
 
+/* Tổng  quan */
 .slide .card {
     width: 350px;
     height: 120px;
     border-radius: 15px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .slide .card-img {
@@ -132,6 +139,33 @@ ul li a:hover {
     display: flex !important;
     align-items: center;
 }
+
+.thongbao-box {
+    border-radius: 20px;
+    min-height: 200px;
+    width: 49%;
+    float: left;
+}
+
+.thongbao-box1 {
+    margin-right: 2%;
+}
+
+.thongbao .info {
+    display: flex;
+}
+
+.thongbao a{
+    color: #000;
+}
+
+.thongbao .info>div {
+    display: flex;
+    align-items: center;
+    line-height: 10px;
+}
+
+/* End tổng quan */
  
 .bangdiem {
     width: 100%;
@@ -140,6 +174,7 @@ ul li a:hover {
     border-radius: 8px;
 }
 
+/* Bảng điểm */
 .tdbangdiem {
     width: 100%;
     height: 50px;
