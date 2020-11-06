@@ -28,11 +28,18 @@
     </script>
     <!-- end bootstrap -->
     <!-- link swiper -->
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+=======
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+>>>>>>> 53ee4d7bf63e54294bea78c7ade28aa6aaee2e0e
     <!-- end swiper -->
     <title>Sinh Viên</title>
 </head>
@@ -51,9 +58,9 @@
             </div>
             <div class="menu m-3">
                 <ul>
-                    <li class="active"><a href="#">Tổng quan</a><img src="./views/img/tongquan.svg" alt=""></i></li>
+                    <li class="active"><a href="index.php?act=home">Tổng quan</a><img src="./views/img/tongquan.svg" alt=""></i></li>
                     <li><a href="index.php?act=baitap">Bài Tập</a><img src="./views/img/baitap.svg" alt=""></li>
-                    <li><a href="#">Bảng điểm</a><img src="./views/img/bangdiem.svg" alt=""></li>
+                    <li><a href="index.php?act=bangdiem">Bảng điểm</a><img src="./views/img/bangdiem.svg" alt=""></li>
                     <li><a href="index.php?act=dkkh">Khóa học</a><img src="./views/img/monhoc.svg" alt=""></li>
                     <li><a href="index.php?act=thongbao">Thông báo</a><img src="./views/img/thongbao.svg" alt=""></li>
                 </ul>
@@ -61,15 +68,15 @@
         </div>
         <div class="box-right">
             <!-- tiêu dề đặt trên đầu mỗi trang view cần tiêu đề -->
-            <div class="header-box">
-                <div class="tieude h1">Tổng quan</div>
+            <!-- <div class="header-box">
+                <div class="tieude h1">Tổng quan</div> -->
                 <!-- Tùy trang mới dùng đến option-box -->
                 <!-- <div class="option-box">
                     <a href="#" class="active">Tất cả</a>
                     <a href="#">Đã nộp</a>
                     <a href="#">Chưa nộp</a>
                 </div> -->
-            </div>
+            <!-- </div> -->
 
             <!-- bình chia layout xong khóa lại ai cần thì copy vào page mình nha -->
 

@@ -22,5 +22,9 @@ switch ($act) {
       $view = "../sinhvien/views/thongbao.php";
       require_once "../sinhvien/views/layout.php";
    break;
+   case 'bangdiem':
+      $view = "../sinhvien/views/bangdiem.php";
+      require_once "../sinhvien/views/layout.php";
+   break;
 }
 ?>
