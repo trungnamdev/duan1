@@ -22,9 +22,21 @@
     <title>Sinh Viên</title>
 </head>
 <body>
-<div class="menu"></div>
-<div class="tieude"></div>
-<div class="noidung"></div>
-    <?php require_once $view?>
+<div class="menu">
+    <a href="index.php?act=baitap">Bài Tập</a>
+    <a href="index.php?act=dkkh">đăng ký khóa học</a>
+    <a href="index.php?act=thongbao">thongbao</a>
+</div>
+
+
+<!-- tiêu dề đặt trên đầu mỗi trang view cần tiêu đề -->
+<div class="tieude"></div> 
+<!-- bình chia layout xong khóa lại ai cần thì copy vào page mình nha -->
+
+
+<div class="noidung">
+<?php require_once $view?>
+</div>
+
 </body>
 </html>
