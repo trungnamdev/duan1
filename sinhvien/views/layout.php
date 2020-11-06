@@ -28,9 +28,8 @@
     </script>
     <!-- end bootstrap -->
     <!-- link swiper -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- end swiper -->
@@ -53,7 +52,7 @@
                 <ul>
                     <li class="active"><a href="#">Tổng quan</a><img src="./views/img/tongquan.svg" alt=""></i></li>
                     <li><a href="index.php?act=baitap">Bài Tập</a><img src="./views/img/baitap.svg" alt=""></li>
-                    <li><a href="#">Bảng điểm</a><img src="./views/img/bangdiem.svg" alt=""></li>
+                    <li><a href="index.php?act=bangdiem">Bảng điểm</a><img src="./views/img/bangdiem.svg" alt=""></li>
                     <li><a href="index.php?act=dkkh">Khóa học</a><img src="./views/img/monhoc.svg" alt=""></li>
                     <li><a href="index.php?act=thongbao">Thông báo</a><img src="./views/img/thongbao.svg" alt=""></li>
                 </ul>
