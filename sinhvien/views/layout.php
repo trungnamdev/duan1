@@ -44,11 +44,11 @@
             </div>
             <div class="menu m-3">
                 <ul>
-                    <li class="active"><a href="#">Tổng quan</a><i class="uim uim-adobe"></i></li>
-                    <li><a href="index.php?act=baitap">Bài Tập</a></li>
-                    <li><a href="#">Bảng điểm</a></li>
-                    <li><a href="index.php?act=dkkh">Khóa học</a></li>
-                    <li><a href="index.php?act=thongbao">Thông báo</a></li>
+                    <li class="active"><a href="#">Tổng quan</a><img src="./views/img/tongquan.svg" alt=""></i></li>
+                    <li><a href="index.php?act=baitap">Bài Tập</a><img src="./views/img/baitap.svg" alt=""></li>
+                    <li><a href="#">Bảng điểm</a><img src="./views/img/bangdiem.svg" alt=""></li>
+                    <li><a href="index.php?act=dkkh">Khóa học</a><img src="./views/img/monhoc.svg" alt=""></li>
+                    <li><a href="index.php?act=thongbao">Thông báo</a><img src="./views/img/thongbao.svg" alt=""></li>
                 </ul>
             </div>
         </div>
