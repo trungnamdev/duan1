@@ -22,10 +22,9 @@
     <title>Sinh Viên</title>
 </head>
 <body>
-<!-- chua header -->
-
-<!-- chua header -->
-
+<div class="menu"></div>
+<div class="tieude"></div>
+<div class="noidung"></div>
     <?php require_once $view?>
 </body>
 </html>
