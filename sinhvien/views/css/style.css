@@ -102,7 +102,9 @@ ul li a:hover {
 
 /* End sile bar */
 
+
 /* Tổng  quan */
+
 .slide .card {
     width: 350px;
     height: 120px;
@@ -159,7 +161,7 @@ ul li a:hover {
     display: flex;
 }
 
-.thongbao a{
+.thongbao a {
     color: #000;
 }
 
@@ -169,8 +171,9 @@ ul li a:hover {
     line-height: 10px;
 }
 
+
 /* End tổng quan */
- 
+
 .bangdiem {
     width: 100%;
     /* height: 400px; */
@@ -178,7 +181,9 @@ ul li a:hover {
     border-radius: 8px;
 }
 
+
 /* Bảng điểm */
+
 .tdbangdiem {
     width: 100%;
     height: 50px;
