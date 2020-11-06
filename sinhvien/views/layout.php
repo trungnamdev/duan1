@@ -55,12 +55,13 @@
         <div class="box-right">
             <!-- tiêu dề đặt trên đầu mỗi trang view cần tiêu đề -->
             <div class="header-box">
-                <div class="tieude h1">Bài tập</div>
-                <div class="option-box">
+                <div class="tieude h1">Tổng quan</div>
+                <!-- Tùy trang mới dùng đến option-box -->
+                <!-- <div class="option-box">
                     <a href="#" class="active">Tất cả</a>
                     <a href="#">Đã nộp</a>
                     <a href="#">Chưa nộp</a>
-                </div>
+                </div> -->
             </div>
 
             <!-- bình chia layout xong khóa lại ai cần thì copy vào page mình nha -->
