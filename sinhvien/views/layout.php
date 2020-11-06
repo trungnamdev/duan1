@@ -50,7 +50,7 @@
             </div>
             <div class="menu m-3">
                 <ul>
-                    <li class="active"><a href="#">Tổng quan</a><img src="./views/img/tongquan.svg" alt=""></i></li>
+                    <li class="active"><a href="index.php?act=home">Tổng quan</a><img src="./views/img/tongquan.svg" alt=""></i></li>
                     <li><a href="index.php?act=baitap">Bài Tập</a><img src="./views/img/baitap.svg" alt=""></li>
                     <li><a href="index.php?act=bangdiem">Bảng điểm</a><img src="./views/img/bangdiem.svg" alt=""></li>
                     <li><a href="index.php?act=dkkh">Khóa học</a><img src="./views/img/monhoc.svg" alt=""></li>
@@ -60,14 +60,15 @@
         </div>
         <div class="box-right">
             <!-- tiêu dề đặt trên đầu mỗi trang view cần tiêu đề -->
-            <div class="header-box">
-                <div class="tieude h1">Bài tập</div>
-                <div class="option-box">
+            <!-- <div class="header-box">
+                <div class="tieude h1">Tổng quan</div> -->
+                <!-- Tùy trang mới dùng đến option-box -->
+                <!-- <div class="option-box">
                     <a href="#" class="active">Tất cả</a>
                     <a href="#">Đã nộp</a>
                     <a href="#">Chưa nộp</a>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
 
             <!-- bình chia layout xong khóa lại ai cần thì copy vào page mình nha -->
 

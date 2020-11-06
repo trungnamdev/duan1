@@ -1,3 +1,6 @@
+<div class="header-box">
+                <div class="tieude h1">BẢNG ĐIỂM</div>
+</div>
 <div class="bangdiem">
     <div class="tdbangdiem">
         LẬP TRÌNH PHP <span>Điểm trung bình : <strong>9.9<strong></span>

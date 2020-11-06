@@ -7,6 +7,9 @@ body {
     height: 100vh;
 }
 
+
+/* Start sile bar */
+
 .sidebar {
     width: 20%;
     height: 100%;
@@ -65,12 +68,13 @@ ul li a:hover {
 
 .tieude {
     font-weight: bold !important;
+    margin-bottom: 25px !important;
 }
 
 .box-right .option-box {
     display: flex;
     flex-direction: row;
-    margin: 25px 0;
+    margin-bottom: 25px;
 }
 
 .box-right .option-box a {
@@ -88,6 +92,49 @@ ul li a:hover {
     background-color: #C1C4FF;
     border: 2px solid #C1C4FF;
     text-decoration: none;
+}
+
+
+/* End sile bar */
+
+.slide .card {
+    width: 350px;
+    height: 120px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.slide .card-img {
+    height: 120px !important;
+    width: 120px;
+    object-fit: cover;
+}
+
+.slide .card .card-body.p-0 {
+    margin-left: 15px;
+}
+
+.slide .card .aut img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.slide .card .info {
+    font-size: 11pt;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slide .card .dealine {
+    font-size: 11pt;
+}
+
+.slide .card .col-md-8 {
+    display: flex !important;
+    align-items: center;
 }
 
 .bangdiem {
