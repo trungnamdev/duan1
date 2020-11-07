@@ -1,6 +1,5 @@
 <!-- sschucvu = session[chucvu] sau này  -->
 <?php
-
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
 } else {
