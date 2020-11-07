@@ -17,7 +17,6 @@
     <title>SITE</title>
 </head>
 <body>
-<i class="uim uim-adobe"></i>
     <!-- chua header -->
 <?php 
     require_once $view;
