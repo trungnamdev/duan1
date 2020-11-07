@@ -69,7 +69,9 @@
             <p> <i class='fas fa-chalkboard-teacher' style='font-size:18px;color:gray'></i> Mr.Thanh Độ</p>
             <button type="button" class="btn btn-success px-5">Đăng Ký</button>
             </td>
-        </tr>
+          
+        </tr> 
+
         
         
     </table> 
