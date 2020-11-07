@@ -27,6 +27,10 @@ switch ($act) {
       $view = "../sinhvien/views/bangdiem.php";
       require_once "../sinhvien/views/layout.php";
    break;
+   case 'thongtincn':
+      $view = "../sinhvien/views/ttcn.php";
+      require_once "../sinhvien/views/layout.php";
+   break;
 }
 // }else{
 //       header('Location: ../index.php');
