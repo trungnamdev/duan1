@@ -28,17 +28,19 @@
       
 </style>
 <div class="container-fluid p-0">
-<form class="col-4 shadow pl-5 pr-5 pt-4 pb-5 bg-white rounded">
+<form class="col-4 shadow pl-5 pr-5 pt-4 pb-5 bg-white rounded" method="post">
     <img src="./site/views/img/logo.png" class="mb-3" alt="">
   <div class="form-group">
     <label for="exampleInputEmail1">Tên đăng nhập</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="us">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Mật khẩu</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <input type="password" class="form-control" id="exampleInputPassword1" name="pass">
   </div>
 
-  <button type="submit" class="btn btn-primary">Đăng nhập</button>
+  <button type="submit" class="btn btn-primary" name="dn">Đăng nhập</button>
+  <?= $mess ?>
 </form>
+
 </div>
