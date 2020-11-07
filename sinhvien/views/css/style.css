@@ -383,8 +383,8 @@
         font-size: 14px;
         color: #FFFFFF;
         background-color: #0D0E2E;
-        border-radius: 5px;
-        padding: 5px 10px;
+        border-radius: 8px;
+        padding: 10px 18px;
     }
     
     .d-dn a {
@@ -393,10 +393,10 @@
         font-size: 14px;
         color: #3EC13C;
         border: 2px solid #3EC13C;
-        border-radius: 5px;
-        padding: 5px 10px;
+        border-radius: 8px;
+        padding: 10px 18px;
     }
     
     .mb-18 {
-        margin-bottom: 18px;
+        margin-bottom: 25px;
     }
