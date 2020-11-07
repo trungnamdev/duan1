@@ -13,7 +13,7 @@
         <tr class="boxkhoahoc ">
             <td class="imagekh  p-4"> 
                 <img src="./views/img/html.jpg" alt=""> 
-            </td>
+            </td> 
             <td class="ttkhoahoc py-3 ">
                 <p class="h4 title">Lập Trình PHP Cơ Bản</p>
                 <p class="my-1 h6">GV: Mr.Thanh</p>
