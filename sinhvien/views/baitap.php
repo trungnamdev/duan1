@@ -1,10 +1,11 @@
 <div class="header-box">
-    <div class="tieude h1">BẢNG ĐIỂM</div>
-    <div class="option-box">
-        <a href="#" class="active">Tất cả</a>
-        <a href="#">Đã nộp</a>
-        <a href="#">Chưa nộp</a>
-    </div>
+     
+                <div class="tieude h1">BÀI TẬP</div>
+                <div class="option-box">
+                    <a href="#" class="active">Tất cả</a>
+                    <a href="#">Đã nộp</a>
+                    <a href="#">Chưa nộp</a>
+                </div>
 </div>
 <div class="d-row">
     <div class="d-div3">

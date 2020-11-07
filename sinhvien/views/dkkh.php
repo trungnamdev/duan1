@@ -1,7 +1,5 @@
- 
-
-<div class="header-box">
-    <div class="tieude h1">Đăng Ký Khóa Học</div>
+ <div class="header-box">
+    <div class="tieude h1">ĐĂNG KÝ KHÓA HỌC</div>
         <div class="option-box">
                     <a href="#" class="active">Tất cả</a>
                     <a href="#">Đã đăng ký</a>
@@ -71,8 +69,5 @@
             </td>
           
         </tr> 
-
-        
-        
-    </table> 
+</table> 
 </div>

@@ -2,7 +2,7 @@
                 <div class="tieude h1">TỔNG QUAN</div>
 </div>
 <div class="box-slide mt-4">
-    <p class="h4">Bài tập được giao</p>
+    <p class="h4 mb-3">Bài tập được giao</p>
     <!-- Swiper -->
     <div class="slide swiper-container">
         <div class="swiper-wrapper">

@@ -1,4 +1,5 @@
 <?php 
+// if(isset($_SESSION['iddn']) && $_SESSION['role'] == 0){
 if(isset($_GET['act'])){
    $act = $_GET['act'];
 }else{
@@ -27,4 +28,7 @@ switch ($act) {
       require_once "../sinhvien/views/layout.php";
    break;
 }
+// }else{
+//       header('Location: ../index.php');
+// }
 ?>
