@@ -2,11 +2,11 @@
 
 <div class="header-box">
     <div class="tieude h1">Đăng Ký Khóa Học</div>
-    <div class="khoahoc-loai list-group list-group-horizontal-md  ">
-        <a href="#" class="">Tất Cả</a>
-        <a href="#" class="">Đã Đăng Ký</a>
-        <a href="#" class="">Chưa Đăng Ký</a>
-    </div>
+        <div class="option-box">
+                    <a href="#" class="active">Tất cả</a>
+                    <a href="#">Đã đăng ký</a>
+                    <a href="#">Chưa đăng ký</a>
+                </div>
 </div>
 <div class="khoahoc "> 
     <table >
