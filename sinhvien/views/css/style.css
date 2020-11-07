@@ -272,4 +272,74 @@ ul li a:hover {
 
 .bgtimnhat:nth-child(2) td:nth-child(3) {
     color: #6E6893 !important;
+<<<<<<< HEAD
+=======
+}
+
+
+/* Khóa HỌc */
+
+.khoahoc {
+    margin-top: 20px;
+}
+
+.boxkhoahoc {
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+    /* height: 400px; */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.khoahoc-loai a {
+    padding: 2px 15px;
+    border: 2px solid #2a81cb;
+    border-radius: 15px;
+    margin-right: 15px;
+    font-weight: bold;
+    color: #2a81cb;
+}
+
+.khoahoc-loai a:hover {
+    background-color: #9545ff61;
+    text-decoration: none;
+    border: 0px;
+}
+
+.imagekh {
+    width: 15%;
+    height: 180px;
+}
+
+.imagekh img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.ttkhoahoc img {
+    width: 18px;
+    height: 18px;
+}
+
+.ttkhoahoc {
+    width: 50%;
+}
+
+.trong {
+    width: 15%;
+}
+
+.ttkhoahoc .title {
+    font-weight: bold;
+}
+
+.gia {
+    width: 15%;
+}
+
+.khoahoc .mota {
+    font-size: 11pt;
+>>>>>>> quangdat
 }
