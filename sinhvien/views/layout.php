@@ -59,6 +59,7 @@
                     <li><a href="index.php?act=bangdiem">Bảng điểm</a><img src="./views/img/bangdiem.svg" alt=""></li>
                     <li><a href="index.php?act=dkkh">Khóa học</a><img src="./views/img/monhoc.svg" alt=""></li>
                     <li><a href="index.php?act=thongbao">Thông báo</a><img src="./views/img/thongbao.svg" alt=""></li>
+                    <li><a href="index.php?act=thongtincn">Thông tin cá nhân</a><img src="./views/img/thongbao.svg" alt=""></li>
                 </ul>
             </div>
         </div>
