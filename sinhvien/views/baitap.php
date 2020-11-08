@@ -1,11 +1,10 @@
 <div class="header-box">
-     
-                <div class="tieude h1">BÀI TẬP</div>
-                <div class="option-box">
-                    <a href="#" class="active">Tất cả</a>
-                    <a href="#">Đã nộp</a>
-                    <a href="#">Chưa nộp</a>
-                </div>
+    <div class="tieude h1">BÀI TẬP</div>
+    <div class="option-box">
+        <a href="#" class="active">Tất cả</a>
+        <a href="#">Đã nộp</a>
+        <a href="#">Chưa nộp</a>
+    </div>
 </div>
 <div class="d-row">
     <div class="d-div3">
@@ -43,7 +42,7 @@
                     <a href="">Hạn chót: 10/11/2020 </a>
                 </div>
                 <div class="d-info2 d-nb">
-                    <a href="">Nộp bài</a>
+                    <a href="" class="btn btn-primary">Nộp bài</a>
                 </div>
             </div>
         </div>
@@ -83,7 +82,7 @@
                     <a href="">Hạn chót: 10/11/2020 </a>
                 </div>
                 <div class="d-info2 d-nb">
-                    <a href="">Nộp bài</a>
+                    <a href="" class="btn btn-primary">Nộp bài</a>
                 </div>
             </div>
         </div>
@@ -123,7 +122,7 @@
                     <a href="">Hạn chót: 10/11/2020 </a>
                 </div>
                 <div class="d-info2 d-nb">
-                    <a href="">Nộp bài</a>
+                    <a href="" class="btn btn-primary">Nộp bài</a>
                 </div>
             </div>
         </div>
@@ -164,7 +163,7 @@
                     <a href="">Hạn chót: 10/11/2020 </a>
                 </div>
                 <div class="d-info2 d-dn">
-                    <a href="">Đã nộp</a>
+                    <a href="" class="btn btn-primary">Đã nộp</a>
                 </div>
             </div>
         </div>
@@ -205,7 +204,7 @@
                     <a href="">Hạn chót: 10/11/2020 </a>
                 </div>
                 <div class="d-info2 d-dn">
-                    <a href="">Đã chấm: 9/10</a>
+                    <a href="" class="btn btn-outline-success">Đã chấm: 9/10</a>
                 </div>
             </div>
         </div>
@@ -246,7 +245,7 @@
                     <a href="">Hạn chót: 10/11/2020 </a>
                 </div>
                 <div class="d-info2 d-nb">
-                    <a href="">Nộp bài</a>
+                    <a href="#" class="btn btn-primary">Nộp bài</a>
                 </div>
             </div>
         </div>
