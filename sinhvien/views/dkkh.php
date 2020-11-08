@@ -9,7 +9,7 @@
 <div class="khoahoc "> 
     <table >
         <tr class="boxkhoahoc ">
-            <td class="imagekh  p-4"> 
+            <td class="imagekh  p-3"> 
                 <img src="./views/img/html.jpg" alt=""> 
             </td> 
             <td class="ttkhoahoc py-3 ">
@@ -25,11 +25,11 @@
            
             <p class="my-2 px-1"> <i class='far fa-file-alt' style='font-size:20px; color:gray'></i> 31 Buổi học</p>
             <p> <i class='fas fa-chalkboard-teacher' style='font-size:18px;color:gray'></i> Mr.Thanh Độ</p>
-            <button type="button" class="btn btn-success px-5">Đăng Ký</button>
+            <button type="button" class="btn btn-success">Đăng Ký</button>
             </td>
         </tr>
         <tr class="boxkhoahoc ">
-            <td class="imagekh  p-4"> 
+            <td class="imagekh  p-3"> 
                 <img src="./views/img/html.jpg" alt=""> 
             </td>
             <td class="ttkhoahoc py-3 ">
@@ -45,11 +45,11 @@
            
             <p class="my-2 px-1"> <i class='far fa-file-alt' style='font-size:20px; color:gray'></i> 31 Buổi học</p>
             <p> <i class='fas fa-chalkboard-teacher' style='font-size:18px;color:gray'></i> Mr.Thanh Độ</p>
-            <button type="button" class="btn btn-success px-5">Đăng Ký</button>
+            <button type="button" class="btn btn-success">Đăng Ký</button>
             </td>
         </tr>
         <tr class="boxkhoahoc ">
-            <td class="imagekh  p-4"> 
+            <td class="imagekh  p-3"> 
                 <img src="./views/img/html.jpg" alt=""> 
             </td>
             <td class="ttkhoahoc py-3 ">
@@ -65,7 +65,7 @@
            
             <p class="my-2 px-1"> <i class='far fa-file-alt' style='font-size:20px; color:gray'></i> 31 Buổi học</p>
             <p> <i class='fas fa-chalkboard-teacher' style='font-size:18px;color:gray'></i> Mr.Thanh Độ</p>
-            <button type="button" class="btn btn-success px-5">Đăng Ký</button>
+            <button type="button" class="btn btn-success">Đăng Ký</button>
             </td>
           
         </tr> 
