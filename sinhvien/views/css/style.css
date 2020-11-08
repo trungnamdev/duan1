@@ -410,6 +410,7 @@ ul a:hover {
     /*nhạt hơn text-secondary*/
 }
 
+
 /* End Thông Báo */
 
 .d-row {
@@ -523,6 +524,7 @@ ul a:hover {
     width: 90%;
     margin: 0 auto;
     display: flex;
+    align-items: center;
     height: 100%;
 }
 
@@ -535,14 +537,10 @@ ul a:hover {
 .d-tt-img-text {
     width: 46%;
     margin-left: 4%;
-    padding-top: 5px;
-    display: inline-block;
-    align-self: flex-end;
 }
 
 .d-tt-img-text p {
-    margin-bottom: 0px;
-    margin-top: 5px;
+    margin-bottom: 12px;
     color: #554a5a;
     font-size: 18px;
 }
@@ -550,8 +548,6 @@ ul a:hover {
 .d-tt-img-text span {
     color: #a28cac;
     font-size: 13px;
-    display: table-cell;
-    vertical-align: bottom;
 }
 
 .d-tt-80 {
