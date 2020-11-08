@@ -531,7 +531,6 @@ ul a:hover {
 
 .d-tt-img-text {
     width: 46%;
-    float: left;
     margin-left: 4%;
     padding-top: 5px;
     display: inline-block;
@@ -627,4 +626,9 @@ ul a:hover {
 .d-tt-form label {
     font-size: 15px;
     color: rgb(122, 108, 108);
+}
+
+.btn-primary {
+    background-color: #0D0E2E !important;
+    border-color: #0D0E2E !important;
 }
