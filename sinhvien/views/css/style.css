@@ -7,6 +7,7 @@ body {
     height: 100vh;
 }
 
+
 /* Start sile bar */
 
 .sidebar {
@@ -32,7 +33,8 @@ body {
     width: 60px;
 }
 
-.menu ul, .option-box ul {
+.menu ul,
+.option-box ul {
     padding-left: 0;
     list-style: none;
 }
@@ -47,7 +49,8 @@ body {
     justify-content: space-between;
 }
 
-.menu ul li:hover, .menu ul li.active {
+.menu ul li:hover,
+.menu ul li.active {
     background-color: #384E85;
 }
 
@@ -89,13 +92,16 @@ ul a:hover {
     transition: .2s;
 }
 
-.box-right .option-box a.active, .box-right .option-box a:hover {
+.box-right .option-box a.active,
+.box-right .option-box a:hover {
     background-color: #C1C4FF;
     border: 2px solid #C1C4FF;
     text-decoration: none;
 }
 
+
 /* End sile bar */
+
 
 /* Tổng  Quan */
 
@@ -165,6 +171,7 @@ ul a:hover {
     line-height: 10px;
 }
 
+
 /* End Tổng Quan */
 
 .bangdiem {
@@ -173,6 +180,7 @@ ul a:hover {
     border-radius: 8px;
     margin-bottom: 30px;
 }
+
 
 /* Bảng Điểm */
 
@@ -266,7 +274,9 @@ ul a:hover {
     color: #6E6893 !important;
 }
 
+
 /* End Bảng Điểm */
+
 
 /* Khóa Học */
 
@@ -331,7 +341,7 @@ ul a:hover {
     width: 15%;
 }
 
-.gia .btn-success{
+.gia .btn-success {
     padding: 5px 30px;
 }
 
@@ -356,6 +366,7 @@ ul a:hover {
     font-weight: bold;
 }
 
+
 /* End Khóa Học */
 
 
@@ -374,21 +385,15 @@ ul a:hover {
     height: 700px;
 }
 
-
 .boxthongbao-chitiet {
     color: #A2A1FF;
     text-align: center;
     margin-top: 300px;
 }
 
-
 .boxthongbao-chitiet i {
     font-size: 70px;
 }
-
-.thongbao {}
-
-.boxthongbao {}
 
 .tieude-tb {
     font-size: 20px;
@@ -396,14 +401,11 @@ ul a:hover {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.mg-top70 {
-    margin-top: 70px;
-}
-
 .author-time {
     color: #949494;
     /*nhạt hơn text-secondary*/
 }
+
 
 /* End Thông Báo */
 
@@ -487,8 +489,9 @@ ul a:hover {
     margin-top: 10px;
     font-weight: 700;
     font-size: 20px;
-
 }
+
+
 /* 
 .d-row1>span {
     font-family: Open Sans;

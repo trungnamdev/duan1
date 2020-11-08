@@ -4,7 +4,7 @@
             <div class="tieude h1">THÔNG BÁO</div>
         </div>
 
-        <div class="thongbao mg-top70">
+        <div class="thongbao mt-5">
             <div class="boxthongbao">
                 <div class="item mb-3">
                     <a href="#" class="tieude-tb">Về việc hoàn thành học phí kì Fall 2020</a>
