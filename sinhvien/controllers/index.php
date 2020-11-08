@@ -17,6 +17,11 @@ switch ($act) {
       $view = "../sinhvien/views/baitap.php";
       require_once "../sinhvien/views/layout.php";
    break;
+   case 'nopbaitap':
+      $acbt = "active";
+      $view = "../sinhvien/views/nopbaitap.php";
+      require_once "../sinhvien/views/layout.php";
+   break;
    case 'dkkh':
       $acdkkh = "active";
       $view = "../sinhvien/views/dkkh.php";
