@@ -42,7 +42,7 @@
                     <a href="">Hạn chót: 10/11/2020 </a>
                 </div>
                 <div class="d-info2 d-nb">
-                    <a href="" class="btn btn-primary">Nộp bài</a>
+                    <a href="index.php?act=nopbaitap" class="btn btn-primary">Nộp bài</a>
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
                     <a href="">Hạn chót: 10/11/2020 </a>
                 </div>
                 <div class="d-info2 d-nb">
-                    <a href="" class="btn btn-primary">Nộp bài</a>
+                    <a href="index.php?act=nopbaitap" class="btn btn-primary">Nộp bài</a>
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@
                     <a href="">Hạn chót: 10/11/2020 </a>
                 </div>
                 <div class="d-info2 d-nb">
-                    <a href="" class="btn btn-primary">Nộp bài</a>
+                    <a href="index.php?act=nopbaitap" class="btn btn-primary">Nộp bài</a>
                 </div>
             </div>
         </div>
@@ -245,7 +245,7 @@
                     <a href="">Hạn chót: 10/11/2020 </a>
                 </div>
                 <div class="d-info2 d-nb">
-                    <a href="" class="btn btn-primary">Nộp bài</a>
+                    <a href="#" class="btn btn-primary">Nộp bài</a>
                 </div>
             </div>
         </div>
