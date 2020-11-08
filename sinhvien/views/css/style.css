@@ -684,6 +684,7 @@ input[type=file] {
     float: left;
     cursor: pointer;
     width: 100%;
+    text-align: center;
 }
 
 .nopbaitap button {
