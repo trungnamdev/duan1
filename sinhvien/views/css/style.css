@@ -683,6 +683,7 @@ input[type=file] {
     color: #3f00ff;
     float: left;
     cursor: pointer;
+    width: 100%;
 }
 
 .nopbaitap button {

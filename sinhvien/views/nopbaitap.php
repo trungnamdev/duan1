@@ -35,6 +35,6 @@ You can also follow @getbootstrap on Twitter for the latest gossip and awesome m
         <input type="file" name="baitap" id="baitap">
         
         <label for="baitap"><i class='fas fa-plus-circle'></i> Tải bài tập lên</label>
-        <button type="button" class="btn btn-dark my-1">Nộp bài</button>
+        <button type="button" class="btn btn-dark my-1 w-100">Nộp bài</button>
     </div>
 </div>
