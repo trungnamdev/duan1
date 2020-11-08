@@ -54,11 +54,11 @@
             </div>
             <div class="menu m-3">
                 <ul>
-                    <a href="index.php?act=home"><li class="active">Tổng quan<img src="./views/img/tongquan.svg" alt=""></i></li></a>
-                    <a href="index.php?act=baitap"><li>Bài Tập<img src="./views/img/baitap.svg" alt=""></li></a>
-                    <a href="index.php?act=bangdiem"><li>Bảng điểm<img src="./views/img/bangdiem.svg" alt=""></li></a>
-                    <a href="index.php?act=dkkh"><li>Khóa học<img src="./views/img/monhoc.svg" alt=""></li></a>
-                    <a href="index.php?act=thongbao"><li>Thông báo<img src="./views/img/thongbao.svg" alt=""></li></a>
+                    <a href="index.php?act=home"><li class="<?= $achome ?>">Tổng quan<img src="./views/img/tongquan.svg" alt=""></i></li></a>
+                    <a href="index.php?act=baitap"><li class="<?= $acbt ?>">Bài Tập<img src="./views/img/baitap.svg" alt=""></li></a>
+                    <a href="index.php?act=bangdiem"><li class="<?= $acbd ?>">Bảng điểm<img src="./views/img/bangdiem.svg" alt=""></li></a>
+                    <a href="index.php?act=dkkh"><li class="<?= $acdkkh ?>">Khóa học<img src="./views/img/monhoc.svg" alt=""></li></a>
+                    <a href="index.php?act=thongbao"><li class="<?= $actb ?>">Thông báo<img src="./views/img/thongbao.svg" alt=""></li></a>
                     <a href="index.php?act=thongtincn"><li>Thông tin cá nhân<img src="./views/img/thongbao.svg" alt=""></li></a>
                 </ul>
             </div>
