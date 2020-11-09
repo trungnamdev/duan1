@@ -234,7 +234,6 @@ ul a:hover {
     margin-top: 3px;
 }
 
-
 .doanchat img {
     width: 40px;
     height: 40px;
@@ -247,7 +246,7 @@ ul a:hover {
     border-radius: 10px;
     margin-bottom: 0;
     line-height: 40px;
-    margin-left: 5px;    
+    margin-left: 5px;
 }
 
 .nguoinhan {
@@ -848,6 +847,14 @@ input[type=file] {
     text-align: center;
 }
 
-.nopbaitap button {
-    padding: 7px 37%;
+.diemnb {
+    border: #ff0000 2px solid;
+    padding: 5px 23%;
+    border-radius: 5px;
+    color: #ff0000;
+    float: left;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    background-color: white;
 }

@@ -4,18 +4,18 @@ ob_start();
 require_once "../sinhvien/models/index.php";
 require_once "../system/share.php";
 require_once "../system/conn.php";
-// if(isset($_SESSION['iddn']) && $_SESSION['role'] == 0){
-   if (isset($_SESSION['iddn'])) {
+if (isset($_SESSION['iddn'])) {
+if(isset($_SESSION['iddn']) && $_SESSION['role'] == 0){
 if(isset($_GET['act'])){
    $act = $_GET['act'];
 }else{
    $act = "home";
 }
 $achome="";$acbt="";$acdkkh="";$actb="";$acbd=""; 
-$idsv=$_SESSION['iddn'];
-$ttsv=thongtinsv($idsv);
 switch ($act) {
    case 'home':
+      $idsv=$_SESSION['iddn'];
+      $ttsv=thongtinsv($idsv);
       $tb=thongbao();
       $achome = "active";
       $view = "../sinhvien/views/home.php";
@@ -32,11 +32,13 @@ switch ($act) {
          $idbt = $_GET['idbt'];
          $arrbt=nopbaitap($idbt);
          if(is_array($arrbt)){
+            $nopbai = checknopbai($idbt);
             $view = "../sinhvien/views/nopbaitap.php";
             require_once "../sinhvien/views/layout.php";
          }
+      }else{
+         echo "ok";
       }
-
    break;
    case 'dkkh':
       $acdkkh = "active";
@@ -61,8 +63,30 @@ switch ($act) {
       $view = "../sinhvien/views/nhantin.php";
       require_once "../sinhvien/views/layout.php";
    break;
-}}
-// }else{
-//       header('Location: ../index.php');
-// }
+   case 'noplaibt':
+      if(isset($_GET['idbt'])&&isset($_POST['nop'])){
+         $file = $_FILES['baitap'];
+         $idbt = $_GET['idbt'];
+         upfile($file);
+         noplaibt($file['name'],$idbt);
+         header("Location: index.php?act=nopbaitap&idbt=$idbt");
+      }else{
+         header('Location: index.php');
+      } 
+   break;
+   case 'nopbai':
+      if(isset($_GET['idbt'])&&isset($_POST['nop'])){
+         $file = $_FILES['baitap'];
+         $idbt = $_GET['idbt'];
+         upfile($file);
+         nopbai($file['name'],$idbt);
+         header("Location: index.php?act=nopbaitap&idbt=$idbt");
+      }else{
+         header('Location: index.php');
+      }
+   break;
+}
+}}else{
+      header('Location: ../index.php');
+}
 ?>

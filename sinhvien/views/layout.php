@@ -7,14 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- file riêng moi modun -->
     <link rel="stylesheet" href="views/css/style.css">
-    
-    <script src="views/js/dk1.js"></script>
-
     <!-- file dung chung cho 3 modun -->
     <script src="../system/jquery.js"></script>
     <script src="../system/jquery-ui.js"></script>
     <script src="../system/jsvali.js"></script>
     <script src="../system/icons.js"></script>
+    <script src="views/js/dk1.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
