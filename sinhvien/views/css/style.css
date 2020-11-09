@@ -484,17 +484,29 @@ ul a:hover {
     position: relative;
 }
 
-.boxthongbao-chitiet {
-    /* color: #A2A1FF;
+.boxthongbao-chitiet i {
+    color: #A2A1FF;
+}
+
+.boxthongbao-chitiet,
+.boxthongbao-chitiet2 {
     text-align: center;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    position: absolute; */
+    position: absolute;
+}
+
+.boxthongbao-chitiet2 {
     width: 95%;
-    margin-left: 5%;
-    margin-top: 50px;
-    float: left;
+    margin-left: 5% !important;
+    margin-top: 50px !important;
+    float: left !important;
+    text-align: left;
+    transform: none;
+    top: 0;
+    left: 0;
+    position: absolute;
 }
 
 .boxthongbao-chitiet i {

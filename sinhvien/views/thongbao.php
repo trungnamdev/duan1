@@ -105,10 +105,13 @@
 </div>
 </div>
 <div class="boxthongbao-right">
-    <div class="boxthongbao-chitiet">
-        <!-- <i class="fas fa-stream"></i>
-        <p class="text-secondary">Chọn một thông báo để xem</p> -->
-        <h4>VỀ VIỆC HOÀN THÀNH HỌC PHÍ KÌ FALL 2020</h4>
+    <!-- <div class="boxthongbao-chitiet">
+        <i class="fas fa-stream"></i>
+        <p class="text-secondary">Chọn một thông báo để xem</p>
+    </div> -->
+
+    <div class="boxthongbao-chitiet2">
+    <h4>VỀ VIỆC HOÀN THÀNH HỌC PHÍ KÌ FALL 2020</h4>
         <p class="d-tb-red">THÔNG BÁO NHÓM ĐANG KÍ DỰ ÁN TỐT GHIỆP KÌ SPRING 2021</p>
         <p class="d-tb-ml20">Hạn đăng kí : 03-25/11/2020</p>
         <p class="d-tb-ml20 d-mt3">Yêu cầu đăng kí</p>
@@ -128,5 +131,4 @@
             <p>Ngày đăng: 02/12/2020</p>
         </div>
     </div>
-
 </div>
