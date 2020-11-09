@@ -5,14 +5,18 @@ require_once "../sinhvien/models/index.php";
 require_once "../system/share.php";
 require_once "../system/conn.php";
 // if(isset($_SESSION['iddn']) && $_SESSION['role'] == 0){
+   if (isset($_SESSION['iddn'])) {
 if(isset($_GET['act'])){
    $act = $_GET['act'];
 }else{
    $act = "home";
 }
 $achome="";$acbt="";$acdkkh="";$actb="";$acbd=""; 
+$idsv=$_SESSION['iddn'];
+$ttsv=thongtinsv($idsv);
 switch ($act) {
    case 'home':
+      $tb=thongbao();
       $achome = "active";
       $view = "../sinhvien/views/home.php";
       require_once "../sinhvien/views/layout.php";
@@ -57,7 +61,7 @@ switch ($act) {
       $view = "../sinhvien/views/nhantin.php";
       require_once "../sinhvien/views/layout.php";
    break;
-}
+}}
 // }else{
 //       header('Location: ../index.php');
 // }

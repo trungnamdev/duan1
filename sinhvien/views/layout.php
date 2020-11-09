@@ -49,7 +49,7 @@
                 <img class="avatar mr-3" src="./views/img/avatar.jpg" alt="">
                 <div class="info">
                     <strong>
-                        <p class="mb-1">Bình Phúc</p>
+                        <p class="mb-1"><?=$_SESSION['tdn']?></p>
                     </strong>
                     <span class="idsv">PS15313</span>
                 </div>
