@@ -26,10 +26,13 @@ switch ($act) {
       $acbt = "active";
       if(isset($_GET['idbt'])){
          $idbt = $_GET['idbt'];
-
+         $arrbt=nopbaitap($idbt);
+         if(is_array($arrbt)){
+            $view = "../sinhvien/views/nopbaitap.php";
+            require_once "../sinhvien/views/layout.php";
+         }
       }
-      $view = "../sinhvien/views/nopbaitap.php";
-      require_once "../sinhvien/views/layout.php";
+
    break;
    case 'dkkh':
       $acdkkh = "active";
