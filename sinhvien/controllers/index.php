@@ -1,4 +1,9 @@
 <?php 
+session_start();
+ob_start();
+require_once "../sinhvien/models/index.php";
+require_once "../system/share.php";
+require_once "../system/conn.php";
 // if(isset($_SESSION['iddn']) && $_SESSION['role'] == 0){
 if(isset($_GET['act'])){
    $act = $_GET['act'];
@@ -19,6 +24,10 @@ switch ($act) {
    break;
    case 'nopbaitap':
       $acbt = "active";
+      if(isset($_GET['idbt'])){
+         $idbt = $_GET['idbt'];
+
+      }
       $view = "../sinhvien/views/nopbaitap.php";
       require_once "../sinhvien/views/layout.php";
    break;

@@ -3,7 +3,7 @@
      
     <div class="option-box1">
         <ul>
-            <a href="#" class="text-primary"> <img class="avatagv" src="./views/img/avatar.jpg" alt=""> Mr. Đạt</a>
+            <a class="text-primary"> <img class="avatagv" src="./views/img/avatar.jpg" alt=""> Mr. Đạt</a>
             <a class=""> <i class='fas fa-book-open'></i> PHP Cơ Bản</a>
             <a class=""><i class="far fa-clock"></i> Hạn chót: 07/08/1890</a>
         </ul>

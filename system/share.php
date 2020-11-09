@@ -8,4 +8,10 @@ function setnum($num){
 function hashpass($pass){
     return password_hash($pass,PASSWORD_DEFAULT);
 }
+function upfile($file){
+    if(!is_file($GLOBALS['duongdan'] . $file['name'])){
+        $noiup = $GLOBALS['duongdan'] . basename($file['name']);
+        move_uploaded_file($file["tmp_name"],$noiup);
+    }
+}
 ?>
