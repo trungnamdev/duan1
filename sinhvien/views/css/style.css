@@ -387,12 +387,16 @@ ul a:hover {
 }
 
 .boxthongbao-chitiet {
-    color: #A2A1FF;
+    /* color: #A2A1FF;
     text-align: center;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    position: absolute;
+    position: absolute; */
+    width: 95%;
+    margin-left: 5%;
+    margin-top: 50px;
+    float: left;
 }
 
 .boxthongbao-chitiet i {
@@ -632,64 +636,52 @@ ul a:hover {
     border-color: #0D0E2E !important;
 }
 
-
-/* Nộp Bài tập */
-
-.avatagv {
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-}
-
-.option-box1 ul a {
-    margin-right: 25px;
-    color: gray;
+.boxthongbao-chitiet h4 {
     font-weight: bold;
-    font-size: 11pt;
 }
 
-.ndbaitap {
-    width: 73%;
-    min-height: 500px;
-    float: left;
-    padding: 25px 35px;
-    box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 25px;
-    margin-bottom: 30px;
+.d-tb-red {
+    color: red;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
-.nopbaitap {
-    width: 24%;
-    min-height: 200px;
-    float: right;
-    box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 25px;
-    margin-bottom: 30px;
+.d-tb-ml20 {
+    margin-left: 20px;
 }
 
-.ndbaitap span {
-    font-weight: bold;
-    white-space: pre-wrap;
+.d-tb-text {
+    margin-left: 60px;
 }
 
-input[type=file] {
-    display: none;
+.d-tb-info {
+    margin-top: 55px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15px;
 }
 
-.nopbaitap label {
-    border: #3f00ff 2px solid;
-    padding: 5px 23%;
-    border-radius: 5px;
-    color: #3f00ff;
-    float: left;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
+.d-tb-info p {
+    margin-bottom: 5px;
 }
 
-.nopbaitap button {
-    padding: 7px 37%;
+.d-tb-text {
+    font-size: 14px;
 }
 
+.d-mt2 {
+    margin-top: 30px;
+}
 
-/* End nộp bài tập */
+.d-mb-2 {
+    margin-bottom: 1px;
+}
+
+.d-mt3 {
+    margin-top: 30px;
+}
+
+.d-mt1 {
+    margin-top: 20px;
+}
