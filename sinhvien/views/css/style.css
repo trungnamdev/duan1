@@ -450,6 +450,7 @@ ul a:hover {
     /*nhạt hơn text-secondary*/
 }
 
+
 /* End Thông Báo */
 
 .d-row {
@@ -563,6 +564,7 @@ ul a:hover {
     width: 90%;
     margin: 0 auto;
     display: flex;
+    align-items: center;
     height: 100%;
 }
 
@@ -575,14 +577,10 @@ ul a:hover {
 .d-tt-img-text {
     width: 46%;
     margin-left: 4%;
-    padding-top: 5px;
-    display: inline-block;
-    align-self: flex-end;
 }
 
 .d-tt-img-text p {
-    margin-bottom: 0px;
-    margin-top: 5px;
+    margin-bottom: 12px;
     color: #554a5a;
     font-size: 18px;
 }
@@ -590,8 +588,6 @@ ul a:hover {
 .d-tt-img-text span {
     color: #a28cac;
     font-size: 13px;
-    display: table-cell;
-    vertical-align: bottom;
 }
 
 .d-tt-80 {
@@ -675,3 +671,65 @@ ul a:hover {
     background-color: #0D0E2E !important;
     border-color: #0D0E2E !important;
 }
+
+
+/* Nộp Bài tập */
+
+.avatagv {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.option-box1 ul a {
+    margin-right: 25px;
+    color: gray;
+    font-weight: bold;
+    font-size: 11pt;
+}
+
+.ndbaitap {
+    width: 73%;
+    min-height: 500px;
+    float: left;
+    padding: 25px 35px;
+    box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
+
+.nopbaitap {
+    width: 24%;
+    min-height: 200px;
+    float: right;
+    box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
+
+.ndbaitap span {
+    font-weight: bold;
+    white-space: pre-wrap;
+}
+
+input[type=file] {
+    display: none;
+}
+
+.nopbaitap label {
+    border: #3f00ff 2px solid;
+    padding: 5px 23%;
+    border-radius: 5px;
+    color: #3f00ff;
+    float: left;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.nopbaitap button {
+    padding: 7px 37%;
+}
+
+
+/* End nộp bài tập */

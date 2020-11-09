@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- file riêng moi modun -->
     <link rel="stylesheet" href="views/css/style.css">
+    
     <script src="views/js/dk1.js"></script>
 
     <!-- file dung chung cho 3 modun -->
@@ -21,6 +22,7 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script>
     <!-- font awersome w3school -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
@@ -54,11 +56,11 @@
             </div>
             <div class="menu m-3">
                 <ul>
-                    <a href="index.php?act=home"><li class="active">Tổng quan<img src="./views/img/tongquan.svg" alt=""></i></li></a>
-                    <a href="index.php?act=baitap"><li>Bài Tập<img src="./views/img/baitap.svg" alt=""></li></a>
-                    <a href="index.php?act=bangdiem"><li>Bảng điểm<img src="./views/img/bangdiem.svg" alt=""></li></a>
-                    <a href="index.php?act=dkkh"><li>Khóa học<img src="./views/img/monhoc.svg" alt=""></li></a>
-                    <a href="index.php?act=thongbao"><li>Thông báo<img src="./views/img/thongbao.svg" alt=""></li></a>
+                    <a href="index.php?act=home"><li class="<?= $achome ?>">Tổng quan<img src="./views/img/tongquan.svg" alt=""></i></li></a>
+                    <a href="index.php?act=baitap"><li class="<?= $acbt ?>">Bài Tập<img src="./views/img/baitap.svg" alt=""></li></a>
+                    <a href="index.php?act=bangdiem"><li class="<?= $acbd ?>">Bảng điểm<img src="./views/img/bangdiem.svg" alt=""></li></a>
+                    <a href="index.php?act=dkkh"><li class="<?= $acdkkh ?>">Khóa học<img src="./views/img/monhoc.svg" alt=""></li></a>
+                    <a href="index.php?act=thongbao"><li class="<?= $actb ?>">Thông báo<img src="./views/img/thongbao.svg" alt=""></li></a>
                     <a href="index.php?act=thongtincn"><li>Thông tin cá nhân<img src="./views/img/thongbao.svg" alt=""></li></a>
                 </ul>
             </div>
