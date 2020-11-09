@@ -42,7 +42,7 @@
                     <a href="">Hạn chót: 10/11/2020 </a>
                 </div>
                 <div class="d-info2 d-nb">
-                    <a href="index.php?act=nopbaitap" class="btn btn-primary">Nộp bài</a>
+                    <a href="index.php?act=nopbaitap&idbt=1" class="btn btn-primary">Nộp bài</a>
                 </div>
             </div>
         </div>

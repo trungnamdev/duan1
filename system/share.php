@@ -1,4 +1,5 @@
 <?php 
+$duongdan = "../uploads/";
 function xoatag($text){
     return trim(strip_tags($text));
 }

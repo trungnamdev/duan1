@@ -28,6 +28,7 @@ switch ($act) {
          $idbt = $_GET['idbt'];
          $arrbt=nopbaitap($idbt);
          if(is_array($arrbt)){
+            $nopbai = checknopbai($idbt);
             $view = "../sinhvien/views/nopbaitap.php";
             require_once "../sinhvien/views/layout.php";
          }
@@ -56,6 +57,28 @@ switch ($act) {
    case 'nhantin':
       $view = "../sinhvien/views/nhantin.php";
       require_once "../sinhvien/views/layout.php";
+   break;
+   case 'noplaibt':
+      if(isset($_GET['idbt'])&&isset($_POST['nop'])){
+         $file = $_FILES['baitap'];
+         $idbt = $_GET['idbt'];
+         upfile($file);
+         noplaibt($file['name'],$idbt);
+         header("Location: index.php?act=nopbaitap&idbt=$idbt");
+      }else{
+         header('Location: index.php');
+      } 
+   break;
+   case 'nopbai':
+      if(isset($_GET['idbt'])&&isset($_POST['nop'])){
+         $file = $_FILES['baitap'];
+         $idbt = $_GET['idbt'];
+         upfile($file);
+         nopbai($file['name'],$idbt);
+         header("Location: index.php?act=nopbaitap&idbt=$idbt");
+      }else{
+         header('Location: index.php');
+      }
    break;
 }
 // }else{
