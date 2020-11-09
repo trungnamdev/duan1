@@ -56,6 +56,7 @@ switch ($act) {
       require_once "../sinhvien/views/layout.php";
    break;
    case 'thongtincn':
+      $thongtin = thongtinsvtomtat($_SESSION['iddn']);
       $view = "../sinhvien/views/ttcn.php";
       require_once "../sinhvien/views/layout.php";
    break;
