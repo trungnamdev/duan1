@@ -41,6 +41,10 @@ switch ($act) {
       $view = "../sinhvien/views/ttcn.php";
       require_once "../sinhvien/views/layout.php";
    break;
+   case 'nhantin':
+      $view = "../sinhvien/views/nhantin.php";
+      require_once "../sinhvien/views/layout.php";
+   break;
 }
 // }else{
 //       header('Location: ../index.php');

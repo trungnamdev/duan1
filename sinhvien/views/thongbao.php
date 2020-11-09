@@ -8,7 +8,7 @@
     <div class="tieude h1">THÔNG BÁO</div>
 </div>
 <div class="thongbao mt-5">
-    <div class="item mb-4">
+    <div class="item mb-2">
         <a href="#" class="tieude-tb">Về việc hoàn thành học phí kì Fall 2020</a>
         <div class="text-secondary info mt-2 pb-3">
             <div class="mr-5">
@@ -20,9 +20,8 @@
                 <span class="ml-1">20/10/2020</span>
             </div>
         </div>
-        <hr>
     </div>
-    <div class="item mb-4">
+    <div class="item mb-2">
         <a href="#" class="tieude-tb">Về việc hoàn thành học phí kì Fall 2020</a>
         <div class="text-secondary info mt-2 pb-3">
             <div class="mr-5">
@@ -34,9 +33,8 @@
                 <span class="ml-1">20/10/2020</span>
             </div>
         </div>
-        <hr>
     </div>
-    <div class="item mb-4">
+    <div class="item mb-2">
         <a href="#" class="tieude-tb">Về việc hoàn thành học phí kì Fall 2020</a>
         <div class="text-secondary info mt-2 pb-3">
             <div class="mr-5">
@@ -48,9 +46,8 @@
                 <span class="ml-1">20/10/2020</span>
             </div>
         </div>
-        <hr>
     </div>
-    <div class="item mb-4">
+    <div class="item mb-2">
         <a href="#" class="tieude-tb">Về việc hoàn thành học phí kì Fall 2020</a>
         <div class="text-secondary info mt-2 pb-3">
             <div class="mr-5">
@@ -62,9 +59,8 @@
                 <span class="ml-1">20/10/2020</span>
             </div>
         </div>
-        <hr>
     </div>
-    <div class="item mb-4">
+    <div class="item mb-2">
         <a href="#" class="tieude-tb">Về việc hoàn thành học phí kì Fall 2020</a>
         <div class="text-secondary info mt-2 pb-3">
             <div class="mr-5">
@@ -76,10 +72,9 @@
                 <span class="ml-1">20/10/2020</span>
             </div>
         </div>
-        <hr>
     </div>
 
-    <div class="item mb-4">
+    <div class="item mb-2">
         <a href="#" class="tieude-tb">Về việc hoàn thành học phí kì Fall 2020</a>
         <div class="text-secondary info mt-2 pb-3">
             <div class="mr-5">
@@ -91,10 +86,9 @@
                 <span class="ml-1">20/10/2020</span>
             </div>
         </div>
-        <hr>
     </div>
 
-    <div class="item mb-4">
+    <div class="item mb-2">
         <a href="#" class="tieude-tb">Về việc hoàn thành học phí kì Fall 2020</a>
         <div class="text-secondary info mt-2 pb-3">
             <div class="mr-5">

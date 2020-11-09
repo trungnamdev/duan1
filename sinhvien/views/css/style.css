@@ -161,6 +161,10 @@ ul a:hover {
     display: flex;
 }
 
+.thongbao .item {
+    border-bottom: 1px solid #efefef;
+}
+
 .thongbao a {
     color: #000;
 }
@@ -169,6 +173,42 @@ ul a:hover {
     display: flex;
     align-items: center;
     line-height: 10px;
+}
+
+/* Tin nhan */
+.thongbao img {
+    width: 100%;
+}
+
+.tinnhan .info {
+    justify-content: space-between;
+}
+
+.boxtinnhan_right {
+    position: relative;
+}
+
+.chat_buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 0;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.chat_buttons input {
+    border-radius: 20px;
+    border: 1px solid #efefef;
+    padding-left: 20px;
+    width: 96%
+}
+
+.chat_buttons input:focus {
+    outline: none;
 }
 
 
