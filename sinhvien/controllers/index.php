@@ -4,7 +4,7 @@ ob_start();
 require_once "../sinhvien/models/index.php";
 require_once "../system/share.php";
 require_once "../system/conn.php";
-// if(isset($_SESSION['iddn']) && $_SESSION['role'] == 0){
+if(isset($_SESSION['iddn']) && $_SESSION['role'] == 0){
 if(isset($_GET['act'])){
    $act = $_GET['act'];
 }else{
@@ -81,7 +81,7 @@ switch ($act) {
       }
    break;
 }
-// }else{
-//       header('Location: ../index.php');
-// }
+}else{
+      header('Location: ../index.php');
+}
 ?>
