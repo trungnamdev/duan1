@@ -10,7 +10,7 @@
 //     return laymot("SELECT * FROM `khoahoc` WHERE id=$id");
 // }
 function nopbaitap($idbt){
-    laymot("SELECT * FROM baitap bt inner JOIN lop on bt.idlop = lop.id inner join khoahoc kh on lop.idkhoa = kh.id inner JOIN gvlop gvl ON lop.id like gvl.idgv inner join taikhoan tk ON gvl.idgv = tk.id WHERE idbaitap =$idbt");
+ return laymot("SELECT * FROM baitap bt inner JOIN lop on bt.idlop = lop.id inner join khoahoc kh on lop.idkhoa = kh.id inner JOIN sv_lop svl ON lop.id like svl.idlop inner join taikhoan tk ON svl.idsv = tk.id WHERE idbaitap = $idbt AND tk.id = $_SESSION[iddn]"); 
 }
 function thongbao(){
    return laydulieu("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang ORDER BY ngaydang"); 
@@ -20,7 +20,6 @@ function thongtinsv($id){
 }
 function thongtingv($idgv){
     return laymot("SELECT * FROM gvlop INNER JOIN taikhoan ON taikhoan.id=gvlop.idgv WHERE idlop like '%$idgv%' ");
-    // return laymot("SELECT * FROM baitap bt inner JOIN lop on bt.idlop = lop.id inner join khoahoc kh on lop.idkhoa = kh.id inner JOIN gvlop gvl ON lop.id like gvl.idgv inner join taikhoan tk ON gvl.idgv = tk.id WHERE idbaitap= $idbt"); 
 }
 function checknopbai($idbt){
     return laymot("SELECT * FROM `upfile` WHERE idsv = $_SESSION[iddn] and idbaitap = $idbt");

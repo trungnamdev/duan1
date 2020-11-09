@@ -35,9 +35,11 @@ switch ($act) {
             $nopbai = checknopbai($idbt);
             $view = "../sinhvien/views/nopbaitap.php";
             require_once "../sinhvien/views/layout.php";
+         }else{
+            header('Location: index.php');
          }
       }else{
-         echo "ok";
+         header('Location: index.php');
       }
    break;
    case 'dkkh':
