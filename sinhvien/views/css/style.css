@@ -188,6 +188,7 @@ ul a:hover {
 
 .boxtinnhan_right {
     position: relative;
+    padding-top: 10px;
 }
 
 .chat_buttons {
@@ -211,6 +212,61 @@ ul a:hover {
 
 .chat_buttons input:focus {
     outline: none;
+}
+
+.doanchat {
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.doanchat .info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    line-height: 100%;
+    color: #999;
+}
+
+.doanchat2 p {
+    margin-right: 45px;
+    margin-top: 3px;
+}
+
+
+.doanchat img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.doanchat p {
+    background-color: #fff;
+    padding: 5px 20px;
+    border-radius: 10px;
+    margin-bottom: 0;
+    line-height: 40px;
+    margin-left: 5px;    
+}
+
+.nguoinhan {
+    float: right;
+    flex-direction: row-reverse;
+}
+
+.nguoinhan p {
+    background-color: #384E85;
+    color: #fff;
+}
+
+.nguoinhan img {
+    margin-left: 5px;
+}
+
+.nguoinhan span {
+    color: #fff;
+    margin-bottom: 5px;
 }
 
 
