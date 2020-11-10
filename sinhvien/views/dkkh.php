@@ -1,9 +1,9 @@
  <div class="header-box">
     <div class="tieude h1">ĐĂNG KÝ KHÓA HỌC</div>
         <div class="option-box">
-                    <a href="#" class="active">Tất cả</a>
-                    <a href="#">Đã đăng ký</a>
-                    <a href="#">Chưa đăng ký</a>
+                    <a href="index.php?act=dkkh" class="<?=$all?>" >Tất cả</a>
+                    <a href="index.php?act=dkkh&ht=dadk" class="<?=$dadk?>">Đã đăng ký</a>
+                    <a href="index.php?act=dkkh&ht=nodk" class="<?=$nodk?>">Chưa đăng ký</a>
                 </div>
 </div>
 <div class="khoahoc "> 
@@ -15,8 +15,10 @@
         $idsv=$_SESSION['iddn'];
         $checksv=xetkhoahoc($idkhoa,$idsv);
         $lophoc=lophoc($idkhoa);
+        var_dump($idkhoa);
         $demlh=demlophoc($idkhoa);
-        if (is_array($checksv)) { ?>
+        if (is_array($checksv)) { 
+            ?>
               <tr class="boxkhoahoc ">
             <td class="imagekh  p-3"> 
                 <img src="./views/img/html.jpg" alt=""> 

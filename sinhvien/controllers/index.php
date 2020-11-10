@@ -44,8 +44,35 @@ switch ($act) {
       }
    break;
    case 'dkkh':
+      $all="";
+      $dadk="";
+      $nodk="";
+      if (isset($_GET['ht'])) {
+         $ht=$_GET['ht'];
+      } else {
+         $ht="all";
+      }
+      switch ($ht) {
+         case 'all':
+            $all="active";
+            $khoahoc=khoahoc();
+            break;
+         case 'dadk':
+            $dadk="active";
+            $id=$_SESSION['iddn'];
+            $khoahoc=khoahocdadk($id);
+            break;
+         case 'nodk':
+            $nodk="active";
+            $id=$_SESSION['iddn'];
+            $khoahoc=khoahocchuadk($id);
+            break;
+         default:
+            # code...
+            break;
+      }
       $acdkkh = "active";
-      $khoahoc=khoahoc();
+      
       $view = "../sinhvien/views/dkkh.php";
       require_once "../sinhvien/views/layout.php";
    break;
