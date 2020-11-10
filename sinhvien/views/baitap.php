@@ -7,17 +7,7 @@
     foreach ($allbaitap as $allbt) {  
         // Đếm bài tập đã nộp
         $checkbt = checknopbai($allbt['idbaitap']); 
-        if(count($checkbt['idsv']) >0 ) $btdanop +=1; 
-
-        // if(isset($_GET['sx'] ) && $_GET['sx'] == 'all' ){ 
-        //     $baitap= getBaiTapByID();
-        // }else if(isset($_GET['sx']) && $_GET['sx'] == 'done' && count($checkbt['idsv']) >0 ){ 
-        //     array_push($baitap, 'dfgdf');
-        //     echo 'lon trau';
-
-
-        // }else if(isset($_GET['sx']) == 'not') $baitap = '';
-        
+        if(is_array($checkbt) > 0 ) $btdanop +=1;      
     }
     // Đếm bài tập chưa nộp
     $btchuanop = count($slbt) - $btdanop;
