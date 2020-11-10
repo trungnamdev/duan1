@@ -34,4 +34,7 @@ function nopbai($file,$idbt){
 function noplaibt($file,$idbt){
     return postdulieu("UPDATE `upfile` SET `file` = '$file', `ngaynop` = NOW() WHERE idbaitap = $idbt AND idsv = $_SESSION[iddn]");
 }
+function ttgvlop($idlop){
+    return laymot("SELECT tk.* FROM taikhoan tk WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%')");
+}
 ?>

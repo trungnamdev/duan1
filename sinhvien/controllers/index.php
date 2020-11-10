@@ -32,6 +32,7 @@ switch ($act) {
          $idbt = $_GET['idbt'];
          $arrbt=nopbaitap($idbt);
          if(is_array($arrbt)){
+            $gv = ttgvlop($arrbt['idlop']);
             $nopbai = checknopbai($idbt);
             $view = "../sinhvien/views/nopbaitap.php";
             require_once "../sinhvien/views/layout.php";

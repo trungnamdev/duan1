@@ -15,4 +15,7 @@ function upfile($file){
         move_uploaded_file($file["tmp_name"],$noiup);
     }
 }
+function showfile($text){
+    return $GLOBALS['duongdan'].$text;
+}
 ?>
