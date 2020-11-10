@@ -31,4 +31,16 @@ function nopbai($file,$idbt){
 function noplaibt($file,$idbt){
     return postdulieu("UPDATE `upfile` SET `file` = '$file', `ngaynop` = NOW() WHERE idbaitap = $idbt AND idsv = $_SESSION[iddn]");
 }
+function khoahoc(){
+    return laydulieu("SELECT * FROM khoahoc ");
+}
+function lophoc($idkhoa){
+    return laydulieu("SELECT * FROM lop WHERE idkhoa=$idkhoa");
+}
+function gvkhoahoc($idlop){
+    return laymot("SELECT * FROM taikhoan INNER JOIN gvlop ON gvlop.idgv=taikhoan.id  INNER JOIN lop ON lop.id=gvlop.idlop WHERE gvlop.idlop LIKE '%$idlop%'");
+}
+function dkkh($idsv,$idlop){
+    return postdulieu("INSERT INTO `sv_lop` (`idsv`, `idlop`) VALUES ('$idsv', '$idlop')");
+}
 ?>
