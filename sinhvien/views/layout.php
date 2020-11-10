@@ -44,7 +44,7 @@
     <div class="container-fluid h-100 p-0">
         <div class="sidebar">
             <div class="account text-light ml-4 mb-5">
-                <img class="avatar mr-3" src="./views/img/avatar.jpg" alt="">
+                <img class="avatar mr-3" src="<?= showfile($_SESSION['hinhdn']) ?>">
                 <div class="info">
                     <strong>
                         <p class="mb-1"><?=$_SESSION['tdn']?></p>
