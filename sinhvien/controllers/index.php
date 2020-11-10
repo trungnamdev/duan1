@@ -35,9 +35,11 @@ switch ($act) {
             $nopbai = checknopbai($idbt);
             $view = "../sinhvien/views/nopbaitap.php";
             require_once "../sinhvien/views/layout.php";
+         }else{
+            header('Location: index.php');
          }
       }else{
-         echo "ok";
+         header('Location: index.php');
       }
    break;
    case 'dkkh':
@@ -62,8 +64,7 @@ switch ($act) {
       require_once "../sinhvien/views/layout.php";
    break;
    case 'thongtincn':
-      $idsv=$_SESSION['iddn'];
-      $ttsv=thongtinsv($idsv);
+      $thongtin = thongtinsvtomtat($_SESSION['iddn']);
       $view = "../sinhvien/views/ttcn.php";
       require_once "../sinhvien/views/layout.php";
    break;
