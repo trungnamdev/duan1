@@ -9,9 +9,40 @@
 // function getkhoahocid($id){
 //     return laymot("SELECT * FROM `khoahoc` WHERE id=$id");
 // }
+
+
+// BÀI TẬP
+// Lấy id lop theo id sinh viên đang đăng nhập
+function getIDSV(){
+    return laymot("SELECT * FROM sv_lop WHERE idsv = ".$_SESSION['iddn']);
+}
+// Check bài Tập đã nộp
+function getBTByIDBaiTap($idbt){
+    return laydulieu("SELECT * FROM baitap WHERE idbaitap = $idbt ORDER BY idbaitap DESC");
+}
+// lấy bài tập từ id lớp
+function getBaiTapByID(){
+    $idlop = getIDSV()['idlop'];
+    return laydulieu("SELECT * FROM baitap WHERE idlop = $idlop ORDER BY idbaitap DESC");
+}
+
 function nopbaitap($idbt){
  return laymot("SELECT * FROM baitap bt inner JOIN lop on bt.idlop = lop.id inner join khoahoc kh on lop.idkhoa = kh.id inner JOIN sv_lop svl ON lop.id like svl.idlop inner join taikhoan tk ON svl.idsv = tk.id WHERE idbaitap = $idbt AND tk.id = $_SESSION[iddn]"); 
 }
+
+function checknopbai($idbt){
+    return laymot("SELECT * FROM `upfile` WHERE idsv = $_SESSION[iddn] and idbaitap = $idbt");
+}
+
+function nopbai($file,$idbt){
+    return postdulieu("INSERT INTO `upfile` (`idfile`, `file`, `idbaitap`, `idsv`, `ngaynop`, `diem`) VALUES (NULL, '$file', '$idbt', $_SESSION[iddn], NOW(),null)");
+}
+
+function noplaibt($file,$idbt){
+    return postdulieu("UPDATE `upfile` SET `file` = '$file', `ngaynop` = NOW() WHERE idbaitap = $idbt AND idsv = $_SESSION[iddn]");
+}
+//end BÀI TẬP
+
 function thongbao(){
    return laydulieu("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang ORDER BY ngaydang"); 
 }
@@ -25,15 +56,7 @@ function thongtinsvtomtat($id)
 function thongtingv($idgv){
     return laymot("SELECT * FROM gvlop INNER JOIN taikhoan ON taikhoan.id=gvlop.idgv WHERE idlop like '%$idgv%' ");
 }
-function checknopbai($idbt){
-    return laymot("SELECT * FROM `upfile` WHERE idsv = $_SESSION[iddn] and idbaitap = $idbt");
-}
-function nopbai($file,$idbt){
-    return postdulieu("INSERT INTO `upfile` (`idfile`, `file`, `idbaitap`, `idsv`, `ngaynop`, `diem`) VALUES (NULL, '$file', '$idbt', $_SESSION[iddn], NOW(),null)");
-}
-function noplaibt($file,$idbt){
-    return postdulieu("UPDATE `upfile` SET `file` = '$file', `ngaynop` = NOW() WHERE idbaitap = $idbt AND idsv = $_SESSION[iddn]");
-}
+
 function khoahoc(){
     return laydulieu("SELECT * FROM khoahoc ");
 }

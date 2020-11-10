@@ -22,13 +22,16 @@
             Bài tập của bạn
         </p>
         <?php if(is_array($nopbai)){ ?>
-            <label><?= $nopbai['file'] ?></label>
-        <?php if($nopbai['diem'] != ""){?>
+            <label class="fileup"><?=$nopbai['file']?></label>
+            
+        <?php
+            if($nopbai['diem'] != ""){?>
             <button type="button" class="diemnb mb-2">Đã chấm: <?=$nopbai['diem'] ?>/10</button>
-            <?php }else{?>
+        <?php }else{?>
         <form action="index.php?act=noplaibt&idbt=<?= $idbt ?>" enctype="multipart/form-data" method="post">        
         <input type="file" name="baitap" id="baitap">
         <label for="baitap" id="btshow"><i class='fas fa-plus-circle mr-2'></i>Tải bài tập thay thế</label>
+        
         <button type="submit" class="btn btn-dark my-1 w-100" name="nop">Nộp lại</button>
         </form>    
         <?php }?>
@@ -37,7 +40,7 @@
         <form action="index.php?act=nopbai&idbt=<?= $idbt ?>" enctype="multipart/form-data" method="post">            
         <input type="file" name="baitap" id="baitap">
         
-        <label for="baitap" id="btshow"><i class='fas fa-plus-circle mr-2'></i> Tải bài tập lên</label>
+        <label for="baitap"  id="btshow"><i class='fas fa-plus-circle mr-2'></i> Tải bài tập lên</label>
         <button type="submit" class="btn btn-dark my-1 w-100" name="nop">Nộp bài</button>
             </form>    
         <?php }?>
