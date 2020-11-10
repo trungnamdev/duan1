@@ -4,12 +4,7 @@
 <div class="d-ttcn">
     <div class="d-tt-left p-3">
         <div class="d-tt-img">
-            <?php 
-                $img = "./views/img/".$thongtin['hinh'];
-                if(!is_file($img))
-                    $img =  "./views/img/avatar_exemple.jpg";
-            ?>
-            <img src="<?= $img?>" align="bottom">
+            <img src="<?= showfile($thongtin['hinh'])?>" align="bottom" onerror="erroimg(this)">
             <div class="d-tt-img-text">
                 <p><?= $thongtin['hoten'] ?> <i class="fas fa-user-graduate" style="color:pink"></i></p>
                 <span><?php 

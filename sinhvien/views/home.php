@@ -61,7 +61,7 @@
         foreach ($tb as $thongbao) {
             $nd=date("d-m-Y",strtotime($thongbao['ngaydang']));
             ?>
-          <div class="item mb-3">
+          <div class="item mb-3 pb-3">
                 <a href="index.php?act=thongbaoct&idtb=<?=$thongbao['idtb']?>" class="h5"><?=$thongbao['tdtb']?></a>
                 <div class="info mt-1">
                     <div class="mr-3">

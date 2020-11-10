@@ -56,6 +56,7 @@ switch ($act) {
    break;
    case 'thongbao':
       $actb = "active";
+      $tb=thongbao();
       $view = "../sinhvien/views/thongbao.php";
       require_once "../sinhvien/views/layout.php";
    break;
