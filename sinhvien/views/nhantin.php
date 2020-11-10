@@ -81,21 +81,77 @@
         </div>
     </div>
 
-</div>
-</div>
-</div>
-<div class="boxthongbao-right boxtinnhan_right">
-    <div class="doan_chat">
-        <div class="nguoigui doanchat">
-            <img src="../sinhvien/views/img/avatar.jpg" alt="">
-            <div class="noidung">
-                <p>
-                    <span class="info"><span>Binh</span><span>9:20</span></span>
-                    Đây là đoạn chat 1
-                </p>
+    <div class="item mb-2 float-left">
+        <div class="col-2 float-left p-0">
+            <img class="rounded-circle" src="../sinhvien/views/img/avatar.jpg" alt="">
+        </div>
+        <div class="col-10 float-left pr-0">
+            <a href="#" class="tieude-tb">Trung Nam</a>
+            <div class="text-secondary info mt-2 pb-3">
+                <span class=" mr-5">Tao code cái active đã</span>
+                <span>17:35</span>
             </div>
         </div>
-        <div class="nguoinhan doanchat">
+    </div>
+
+    <div class="item mb-2 float-left">
+        <div class="col-2 float-left p-0">
+            <img class="rounded-circle" src="../sinhvien/views/img/avatar.jpg" alt="">
+        </div>
+        <div class="col-10 float-left pr-0">
+            <a href="#" class="tieude-tb">Trung Nam</a>
+            <div class="text-secondary info mt-2 pb-3">
+                <span class=" mr-5">Tao code cái active đã</span>
+                <span>17:35</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+<div class="boxthongbao-right boxtinnhan_right p-0">
+    <div class="doan_chat khungchat pt-1">
+        <div class="nguoigui doanchat">
+            <img src="../sinhvien/views/img/avatar.jpg" alt="">
+            <p>Đây là đoạn chat 2</p>
+        </div>
+        <div class="nguoinhan doanchat doanchat2">
+            <p>Đây là đoạn chat 2</p>
+        </div>
+        <div class="nguoinhan doanchat doanchat2">
+
+            <p>Đây là đoạn chat 2
+                <span class="info"><span>9:20</span></span>
+            </p>
+        </div>
+        <div class="nguoigui doanchat">
+            <img src="../sinhvien/views/img/avatar.jpg" alt="">
+            <p>Đây là đoạn chat 2</p>
+        </div>
+        <div class="nguoinhan doanchat doanchat2">
+            <p>Đây là đoạn chat 2</p>
+        </div>
+        <div class="nguoinhan doanchat doanchat2">
+
+            <p>Đây là đoạn chat 2
+                <span class="info"><span>9:20</span></span>
+            </p>
+        </div>
+        <div class="nguoigui doanchat">
+            <img src="../sinhvien/views/img/avatar.jpg" alt="">
+            <p>Đây là đoạn chat 2</p>
+        </div>
+        <div class="nguoinhan doanchat doanchat2">
+            <p>Đây là đoạn chat 2</p>
+        </div>
+        <div class="nguoinhan doanchat doanchat2">
+
+            <p>Đây là đoạn chat 2
+                <span class="info"><span>9:20</span></span>
+            </p>
+        </div>
+        <div class="nguoigui doanchat">
             <img src="../sinhvien/views/img/avatar.jpg" alt="">
             <p>Đây là đoạn chat 2</p>
         </div>
