@@ -10,6 +10,7 @@
             <?php
             foreach ($ttsv as $sv) {
                 $ttgv=thongtingv($sv['idlop']);
+                if(strtotime(date("Y-m-d")) < strtotime($sv['ngayhethan'])){
                 $nhh=date("d-m-Y",strtotime($sv['ngayhethan']));
                 // var_dump($ttgv);
                 ?>
@@ -34,9 +35,7 @@
                 </div>
             </div>
 
-<?php               
-            }
-            ?>
+<?php } } ?>
         </div>
     </div>
 

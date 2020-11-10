@@ -16,14 +16,18 @@
 <?= $arrbt['motabt'] ?>
     </span>
     </div>
-
+    <?php 
+    $han = true;
+    if(strtotime(date("Y-m-d")) > strtotime($arrbt['ngayhethan'])){
+        $han = false;
+    }
+    ?>
     <div class="nopbaitap px-4 py-5 ">
         <p class="h4 font-weight-bold m-0 mb-4" >
             Bài tập của bạn
         </p>
         <?php if(is_array($nopbai)){ ?>
             <label class="fileup"><?=$nopbai['file']?></label>
-            
         <?php
             if($nopbai['diem'] != ""){?>
             <button type="button" class="diemnb mb-2">Đã chấm: <?=$nopbai['diem'] ?>/10</button>
@@ -31,18 +35,18 @@
         <form action="index.php?act=noplaibt&idbt=<?= $idbt ?>" enctype="multipart/form-data" method="post">        
         <input type="file" name="baitap" id="baitap">
         <label for="baitap" id="btshow"><i class='fas fa-plus-circle mr-2'></i>Tải bài tập thay thế</label>
-        
-        <button type="submit" class="btn btn-dark my-1 w-100" name="nop">Nộp lại</button>
         </form>    
         <?php }?>
-        
         <?php }else{ ?>    
         <form action="index.php?act=nopbai&idbt=<?= $idbt ?>" enctype="multipart/form-data" method="post">            
         <input type="file" name="baitap" id="baitap">
-        
         <label for="baitap"  id="btshow"><i class='fas fa-plus-circle mr-2'></i> Tải bài tập lên</label>
-        <button type="submit" class="btn btn-dark my-1 w-100" name="nop">Nộp bài</button>
             </form>    
+        <?php }?>
+        <?php if($han){ ?>
+            <button type="submit" class="btn btn-dark my-1 w-100" name="nop">Nộp bài</button>
+        <?php }else{ ?>
+            <button type="button" class="btn btn-outline-danger w-100">ĐÃ HẾT HẠN</button>
         <?php }?>
     </div>
 </div>
