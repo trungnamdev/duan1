@@ -16,7 +16,7 @@
 <div class="card mb-3 swiper-slide">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img src="./views/img/html.jpg" class="card-img" alt="...">
+                        <img src="<?= showfile($sv['hinhbt']) ?>" onerror="erroimg(this)" class="card-img" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body p-0">
@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="mon mr-2 text-secondary"><?=$sv['tenkhoa']?></div>
                             </div>
-                            <h5 class="card-title mb-1 mt-1"><?=$sv['tenbaitap']?></h5>
+                            <h5 class="card-title mb-1 mt-1"><a href="index.php?act=nopbaitap&idbt=<?=$sv['idbaitap']?>"><?=$sv['tenbaitap']?></a></h5>
                             <p class="text-secondary dealine m-0">Hạn chót: <?=$nhh?></p>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
         foreach ($tb as $thongbao) {
             $nd=date("d-m-Y",strtotime($thongbao['ngaydang']));
             ?>
-          <div class="item mb-3">
+          <div class="item mb-3 pb-3">
                 <a href="index.php?act=thongbaoct&idtb=<?=$thongbao['idtb']?>" class="h5"><?=$thongbao['tdtb']?></a>
                 <div class="info mt-1">
                     <div class="mr-3">

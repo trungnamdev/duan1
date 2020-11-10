@@ -150,8 +150,31 @@ ul a:hover {
     border-radius: 20px;
     min-height: 200px;
     width: 49%;
+    height: 300px;
+    overflow-y: scroll;
     float: left;
 }
+
+/* width */
+.thongbao-box::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  .thongbao-box::-webkit-scrollbar-track {
+    background: transparent; 
+    overflow: hidden;
+  }
+   
+  /* Handle */
+  .thongbao-box::-webkit-scrollbar-thumb {
+    background: #efefef; 
+  }
+  
+  /* Handle on hover */
+  .thongbao-box::-webkit-scrollbar-thumb:hover {
+    background: #999; 
+  }
 
 .thongbao-box1 {
     margin-right: 2%;
@@ -208,6 +231,10 @@ ul a:hover {
     border: 1px solid #efefef;
     padding-left: 20px;
     width: 96%
+}
+
+.chat_buttons svg {
+    cursor: pointer;
 }
 
 .chat_buttons input:focus {
@@ -481,6 +508,7 @@ ul a:hover {
     background: #f5f5f5;
     height: 100%;
     position: relative;
+    overflow-y: scroll;
 }
 
 .boxthongbao-chitiet i {

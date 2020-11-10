@@ -2,6 +2,27 @@
 .box-right {
     width: 30%;
     height: 100%;
+    overflow-y: scroll;
+}
+
+/* width */
+.box-right::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.box-right::-webkit-scrollbar-track {
+  background: #fff; 
+}
+ 
+/* Handle */
+.box-right::-webkit-scrollbar-thumb {
+  background: #efefef; 
+}
+
+/* Handle on hover */
+.box-right::-webkit-scrollbar-thumb:hover {
+  background: #999; 
 }
 </style>
 <div class="header-box">
@@ -68,10 +89,10 @@
         <div class="nguoigui doanchat">
             <img src="../sinhvien/views/img/avatar.jpg" alt="">
             <div class="noidung">
-            <p>
-                <span class="info"><span>Binh</span><span>9:20</span></span>
-                Đây là đoạn chat 1
-            </p>
+                <p>
+                    <span class="info"><span>Binh</span><span>9:20</span></span>
+                    Đây là đoạn chat 1
+                </p>
             </div>
         </div>
         <div class="nguoinhan doanchat">
@@ -79,17 +100,25 @@
             <p>Đây là đoạn chat 2</p>
         </div>
         <div class="nguoinhan doanchat doanchat2">
-            <p >Đây là đoạn chat 2</p>
+            <p>Đây là đoạn chat 2</p>
         </div>
         <div class="nguoinhan doanchat doanchat2">
-            
+
             <p>Đây là đoạn chat 2
-            <span class="info"><span>9:20</span></span>
+                <span class="info"><span>9:20</span></span>
             </p>
         </div>
     </div>
-    <div class="chat_buttons">
 
+    <div class="chat_buttons">
+        <input type="file" name="file" id="file">
+        <label for="file" class="mb-0"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2.5em">
+                <path class="uim-tertiary" d="M12,22A10,10,0,1,1,22,12,10.01146,10.01146,0,0,1,12,22Z"></path>
+                <path class="uim-primary" d="M16,13H8a1,1,0,0,1,0-2h8a1,1,0,0,1,0,2Z"></path>
+                <path class="uim-primary" d="M12,17a.99974.99974,0,0,1-1-1V8a1,1,0,0,1,2,0v8A.99974.99974,0,0,1,12,17Z">
+                </path>
+            </svg>
+        </label>
         <input type="text" class="" placeholder="Aa">
 
         <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2.5em">
