@@ -37,10 +37,10 @@ switch ($act) {
             $view = "../sinhvien/views/nopbaitap.php";
             require_once "../sinhvien/views/layout.php";
          }else{
-            header('Location: index.php');
+            header('Location:index.php');
          }
       }else{
-         header('Location: index.php');
+         header('Location:index.php');
       }
    break;
    case 'dkkh':
