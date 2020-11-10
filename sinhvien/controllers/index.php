@@ -45,8 +45,14 @@ switch ($act) {
    break;
    case 'dkkh':
       $acdkkh = "active";
+      $khoahoc=khoahoc();
       $view = "../sinhvien/views/dkkh.php";
       require_once "../sinhvien/views/layout.php";
+   break;
+   case 'dkkh1':
+      $idlop = $_POST['id'];
+      $idsv=$_SESSION['iddn'];
+      dkkh($idsv,$idlop);
    break;
    case 'thongbao':
       $actb = "active";
