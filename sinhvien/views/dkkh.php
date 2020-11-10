@@ -32,7 +32,7 @@
             <p class="my-2 px-1"> <i class='far fa-file-alt' style='font-size:20px; color:gray'></i> 31 Buổi học</p>
             <p> <i class='fas fa-chalkboard-teacher' style='font-size:18px;color:gray'></i>
          
-            <select id="lophoc">
+            <select id="lophoc" class="form-control col-9">
                     <?php
                 foreach ($lophoc as $lophoc) {
                     $idgv=$lophoc['id'];
