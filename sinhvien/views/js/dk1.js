@@ -3,7 +3,7 @@ $(document).ready(function() {
         $('#btshow').html($(this).val().split('\\').pop());
     });
     $(".dkkh").click(function() {
-        var a = $(this).parent().children()[1].childNodes[3].value;
+        var a = $(this).parent().children()[1].childNodes[3];
         console.log(a);
         $.ajax({
             method: "POST", // phương thức dữ liệu được truyền đi
