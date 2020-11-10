@@ -40,6 +40,9 @@ function khoahoc(){
 function lophoc($idkhoa){
     return laydulieu("SELECT * FROM lop WHERE idkhoa=$idkhoa");
 }
+function demlophoc($idkhoa){
+    return laymot("SELECT count(*) as 'tong' FROM lop WHERE idkhoa=$idkhoa");
+}
 function gvkhoahoc($idlop){
     return laymot("SELECT * FROM taikhoan INNER JOIN gvlop ON gvlop.idgv=taikhoan.id  INNER JOIN lop ON lop.id=gvlop.idlop WHERE gvlop.idlop LIKE '%$idlop%'");
 }
@@ -47,5 +50,8 @@ function dkkh($idsv,$idlop){
     return postdulieu("INSERT INTO `sv_lop` (`idsv`, `idlop`) VALUES ('$idsv', '$idlop')");}
 function ttgvlop($idlop){
     return laymot("SELECT tk.* FROM taikhoan tk WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%')");
+}
+function xetkhoahoc($id,$idsv){
+    return laymot("SELECT * FROM khoahoc INNER JOIN lop ON khoahoc.id=lop.idkhoa INNER JOIN sv_lop ON sv_lop.idlop=lop.id WHERE khoahoc.id=$id AND sv_lop.idsv=$idsv GROUP BY sv_lop.idsv");
 }
 ?>
