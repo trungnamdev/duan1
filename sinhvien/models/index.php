@@ -59,4 +59,7 @@ function dkkh($idsv,$idlop){
 function ttgvlop($idlop){
     return laymot("SELECT tk.* FROM taikhoan tk WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%')");
 }
+function laybaitapbyidsv(){
+   return laydulieu("SELECT idbaitap FROM upfile WHERE idsv = $_SESSION[iddn]");
+}
 ?>
