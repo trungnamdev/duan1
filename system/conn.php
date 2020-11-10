@@ -19,13 +19,13 @@ function laydulieu($sql)   {
     $row = $result->fetchAll(PDO::FETCH_ASSOC);
     return $row;
     }
-    function laymot($sql) {
+function laymot($sql) {
         $conn = ketnoidb();
         $result = $conn->query($sql);
         $row = $result->fetch(PDO::FETCH_ASSOC);
         return $row;
     }
-    function postdulieu($sql) {
+function postdulieu($sql) {
         $conn = ketnoidb();
         $result = $conn ->exec($sql);
         return $result;

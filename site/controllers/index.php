@@ -20,6 +20,7 @@ switch ($act) {
             $check = checkdangnhap($us);
             if(is_array($check)){
                 $verify=password_verify($pass,$check['pass']);
+                 
                 if($verify){
                  $_SESSION['iddn'] = $check['id'];
                  $_SESSION['tdn'] = $check['hoten'];
@@ -28,6 +29,7 @@ switch ($act) {
                  switch ($_SESSION['role']) {
                     case '0':
                         header('Location: ./sinhvien/index.php');
+                        echo "vai lon.";
                         break;
                     case '1':
                         header('Location: ./giaovien/index.php');
@@ -36,7 +38,7 @@ switch ($act) {
                         header('Location: ./superus/index.php');
                     break;
                 }
-                }else $mess= "<p class='text-danger mt-2'>Đăng nhập không thành công</p>";
+                }else $mess= "<p class='text-danger mt-2'>Đăng nhập không thành công</p>"; 
             }else $mess= "<p class='text-danger mt-2'>Đăng nhập không thành công</p>";
         }
         $view = "./site/views/home.php";

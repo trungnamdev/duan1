@@ -37,10 +37,10 @@ switch ($act) {
             $view = "../sinhvien/views/nopbaitap.php";
             require_once "../sinhvien/views/layout.php";
          }else{
-            header('Location: index.php');
+            header('Location:index.php');
          }
       }else{
-         header('Location: index.php');
+         header('Location:index.php');
       }
    break;
    case 'dkkh':
@@ -83,7 +83,12 @@ switch ($act) {
    break;
    case 'thongbao':
       $actb = "active";
-      $tb=thongbao();
+     $tb=thongbao();
+      $arrtbjs = [];
+      foreach($tb as $tb1){
+         $arrtam = [$tb1['tdtb'],$tb1['noidung'],$tb1['hoten'],$tb1['ngaydang']];
+         array_push($arrtbjs,$arrtam);
+      }
       $view = "../sinhvien/views/thongbao.php";
       require_once "../sinhvien/views/layout.php";
    break;
