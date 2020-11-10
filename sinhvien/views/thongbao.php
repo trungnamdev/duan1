@@ -2,6 +2,27 @@
 .box-right {
     width: 30%;
     height: 100%;
+    overflow-y: scroll;
+}
+
+/* width */
+.box-right::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.box-right::-webkit-scrollbar-track {
+  background: #fff; 
+}
+ 
+/* Handle */
+.box-right::-webkit-scrollbar-thumb {
+  background: #efefef; 
+}
+
+/* Handle on hover */
+.box-right::-webkit-scrollbar-thumb:hover {
+  background: #999; 
 }
 </style>
 <div class="header-box">
@@ -11,8 +32,8 @@
     <?php
         foreach ($tb as $thongbao) {
             $nd=date("d-m-Y",strtotime($thongbao['ngaydang']));
-            if(strlen($thongbao['tdtb'])>=38)
-                $thongbao['tdtb'] = substr($thongbao['tdtb'], 0, 35)."...";
+            if(strlen($thongbao['tdtb'])>=60)
+                $thongbao['tdtb'] = substr($thongbao['tdtb'], 0, 60)."...";
     ?>
     <div class="item mb-2">
         <a href="index.php?act=thongbaoct&idtb=<?=$thongbao['idtb']?>" class="tieude-tb"><?= $thongbao['tdtb'] ?></a>
