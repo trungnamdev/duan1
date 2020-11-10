@@ -57,6 +57,12 @@ switch ($act) {
    case 'thongbao':
       $actb = "active";
       $tb=thongbao();
+      $arrtbjs = [];
+      foreach($tb as $tb){
+         $arrtam = [$tb['tdtb'],$tb['noidung'],$tb['hoten'],$tb['ngaydang']];
+         array_push($arrtbjs,$arrtam);
+      }
+      print_r($arrtbjs);
       $view = "../sinhvien/views/thongbao.php";
       require_once "../sinhvien/views/layout.php";
    break;
