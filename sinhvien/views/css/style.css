@@ -968,12 +968,12 @@ input[type=file] {
 
 @media only screen and (min-width: 1500px){
     .sidebar {
-        width: 15%;
+        width: 300px;
     }
 
     .box-right {
-        width: 85%;
-        margin-left: 15%;
+        width: calc(100% - 300px);
+        margin-left: 300px;
     }
 
     .d-div3 {
@@ -1011,10 +1011,14 @@ input[type=file] {
     }
 
     .boxthongbao-right {
-        width: 55%;
+        width: calc(70% - 300px);
     }
 
     .thongbao .item {
         padding-top: 15px;
+    }
+
+    .thongbao-box {
+        height: 500px;
     }
 }
