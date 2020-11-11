@@ -325,6 +325,10 @@ ul a:hover {
     background: #999;
 }
 
+.khungchat {
+    padding: 0 20px;
+}
+
 .nguoinhan {
     float: right;
     flex-direction: row-reverse;
@@ -333,6 +337,7 @@ ul a:hover {
 .nguoinhan p {
     background-color: #384E85;
     color: #fff;
+    margin-right: 0;
 }
 
 .nguoinhan img {
@@ -1015,6 +1020,7 @@ input[type=file] {
     }
 
     .thongbao .item {
+        width: 100%;
         padding-top: 15px;
     }
 
