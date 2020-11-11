@@ -1,5 +1,5 @@
 <?php
-// if(isset($_SESSION['iddn']) && $_SESSION['role'] == 1){
+if(isset($_SESSION['iddn']) && $_SESSION['role'] == 1){
 if(isset($_GET['act'])){
    $act = $_GET['act'];
 }else{
@@ -12,7 +12,7 @@ switch ($act) {
       require_once "../giaovien/views/layout.php";
    break;
 }
-// }else{
-//       header('Location: ../index.php');
-// }
+}else{
+      header('Location: ../index.php');
+}
 ?> 
