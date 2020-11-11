@@ -954,10 +954,6 @@ input[type=file] {
     text-align: center;
 }
 
-.nopbaitap .fileup {
-    display: none;
-}
-
 .diemnb {
     border: #ff0000 2px solid;
     padding: 5px 23%;
