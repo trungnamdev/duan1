@@ -42,6 +42,7 @@
 
 <body>
     <div class="container-fluid h-100 p-0">
+        <a href="index.php?act=thongtincn">
         <div class="sidebar">
             <div class="account text-light ml-4 mb-5">
                 <img class="avatar mr-3" src="<?= showfile($_SESSION['hinhdn']) ?>" onerror="erroimg(this)">
@@ -60,10 +61,10 @@
                     <a href="index.php?act=dkkh"><li class="<?= $acdkkh ?>">Khóa học<img src="./views/img/monhoc.svg" alt=""></li></a>
                     <a href="index.php?act=thongbao"><li class="<?= $actb ?>">Thông báo<img src="./views/img/thongbao.svg" alt=""></li></a>
                     <a href="index.php?act=chat"><li class="<?= $chat ?>">Nhắn tin<img src="./views/img/thongbao.svg" alt=""></li></a>
-                    <a href="index.php?act=thongtincn"><li>Thông tin cá nhân<img src="./views/img/thongbao.svg" alt=""></li></a>
                 </ul>
             </div>
         </div>
+        </a>
         <div class="box-right">
             <!-- tiêu dề đặt trên đầu mỗi trang view cần tiêu đề -->
             <!-- <div class="header-box">

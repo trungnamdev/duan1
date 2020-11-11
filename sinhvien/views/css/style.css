@@ -7,7 +7,9 @@ body {
     height: 100vh;
 }
 
-
+a:hover {
+    text-decoration: none !important;
+}
 /* Start sile bar */
 
 .sidebar {
