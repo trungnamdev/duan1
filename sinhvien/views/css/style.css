@@ -155,26 +155,34 @@ ul a:hover {
     float: left;
 }
 
+
 /* width */
+
 .thongbao-box::-webkit-scrollbar {
     width: 5px;
-  }
-  
-  /* Track */
-  .thongbao-box::-webkit-scrollbar-track {
-    background: transparent; 
+}
+
+
+/* Track */
+
+.thongbao-box::-webkit-scrollbar-track {
+    background: transparent;
     overflow: hidden;
-  }
-   
-  /* Handle */
-  .thongbao-box::-webkit-scrollbar-thumb {
-    background: #efefef; 
-  }
-  
-  /* Handle on hover */
-  .thongbao-box::-webkit-scrollbar-thumb:hover {
-    background: #999; 
-  }
+}
+
+
+/* Handle */
+
+.thongbao-box::-webkit-scrollbar-thumb {
+    background: #efefef;
+}
+
+
+/* Handle on hover */
+
+.thongbao-box::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
 
 .thongbao-box1 {
     margin-right: 2%;
@@ -274,6 +282,39 @@ ul a:hover {
     margin-bottom: 0;
     line-height: 40px;
     margin-left: 5px;
+}
+
+.khungchat {
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+}
+
+
+/* width */
+
+.khungchat::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+/* Track */
+
+.khungchat::-webkit-scrollbar-track {
+    background: #efefef;
+}
+
+
+/* Handle */
+
+.khungchat::-webkit-scrollbar-thumb {
+    background: #fff;
+}
+
+
+/* Handle on hover */
+
+.khungchat::-webkit-scrollbar-thumb:hover {
+    background: #999;
 }
 
 .nguoinhan {
@@ -581,12 +622,12 @@ ul a:hover {
     float: left;
     background-color: #BCD1FF;
     text-align: center;
-    padding: 10px 0px;
     border-radius: 16px 16px 0px 0px;
+    overflow: hidden;
 }
 
 .d-div3-img img {
-    width: 40%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }

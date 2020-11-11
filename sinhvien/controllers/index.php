@@ -22,6 +22,32 @@ switch ($act) {
       require_once "../sinhvien/views/layout.php";
    break;
    case 'baitap':
+      $all="";
+      $danop="";
+      $nonop="";
+      if (isset($_GET['sx'])) {
+         $sx=$_GET['sx'];
+      } else {
+         $sx="all";
+      }
+      $checkbaitap = thongtinsv($_SESSION['iddn']); 
+      
+      switch ($sx) {
+         case 'all':
+            $all="active";
+            $allbaitap = thongtinsv($_SESSION['iddn']); 
+
+            break;
+         case 'done':
+            $danop="active";
+            $allbaitap = btdanop();
+            break;
+         case 'not':
+            $nonop="active";
+            $allbaitap = btchuanop(); 
+            break;
+      }
+      
       $acbt = "active";
       $view = "../sinhvien/views/baitap.php";
       require_once "../sinhvien/views/layout.php";
@@ -44,8 +70,31 @@ switch ($act) {
       }
    break;
    case 'dkkh':
+      $id=$_SESSION['iddn'];
+      $all="";
+      $dadk="";
+      $nodk="";
+      if (isset($_GET['ht'])) {
+         $ht=$_GET['ht'];
+      } else {
+         $ht="all";
+      }
+      switch ($ht) {
+         case 'all':
+            $all="active";
+            $khoahoc=khoahoc();
+            break;
+         case 'dadk':
+            $dadk="active";
+            $khoahoc=khoahocdadk($id);
+            break;
+         case 'nodk':
+            $nodk="active";
+            $khoahoc=khoahocchuadk($id);
+            break;
+      }
       $acdkkh = "active";
-      $khoahoc=khoahoc();
+      
       $view = "../sinhvien/views/dkkh.php";
       require_once "../sinhvien/views/layout.php";
    break;
