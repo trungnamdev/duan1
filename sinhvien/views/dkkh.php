@@ -57,6 +57,5 @@
                  </tr>
            
          <?php }?>
-         <script src="./views/js/dkkh.js"></script>
      </table>
  </div>

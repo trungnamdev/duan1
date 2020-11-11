@@ -44,6 +44,7 @@ switch ($act) {
       }
    break;
    case 'dkkh':
+      $id=$_SESSION['iddn'];
       $all="";
       $dadk="";
       $nodk="";
@@ -59,16 +60,11 @@ switch ($act) {
             break;
          case 'dadk':
             $dadk="active";
-            $id=$_SESSION['iddn'];
             $khoahoc=khoahocdadk($id);
             break;
          case 'nodk':
             $nodk="active";
-            $id=$_SESSION['iddn'];
             $khoahoc=khoahocchuadk($id);
-            break;
-         default:
-            # code...
             break;
       }
       $acdkkh = "active";
