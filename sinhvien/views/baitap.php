@@ -1,6 +1,6 @@
 <?php
     // Lấy all bài tập theo ID lớp 
-    $allbaitap = getBaiTapByID(); 
+    $allbaitap = thongtinsv($_SESSION['iddn']); 
     $slbt = $allbaitap;
     $btdanop = 0;
     
