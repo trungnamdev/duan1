@@ -31,7 +31,7 @@
         foreach ($allbaitap as $allbt) {
           
                 $tenbt = $allbt['tenbaitap'];
-                $hinh = "./views/img/".$allbt['hinh'];
+                $hinh = $allbt['hinh'];
                 
                 $idbt = $allbt['idbaitap'];
                 $mota = $allbt['motabt'] ;
@@ -55,7 +55,7 @@
 
     <div class="d-div3">
         <div class="d-div3-img">
-            <img src="<?=$hinh?>" alt="" onerror="erroimg(this)">
+            <img src="<?=showfile($hinh)?>" alt="" onerror="erroimg(this)">
         </div>
         <br>
         <div class="d-info">
@@ -88,14 +88,16 @@
                 <div class="d-info2 d-nb w-75">
                 <?php 
                 $filenop = checknopbai($idbt);
-                    if(is_array($filenop)){
+                if (strtotime(date("Y-m-d")) > strtotime($ngayhethan)) {?>
+                <button type="button" class="btn btn-outline-danger">HẾT HẠN</button>
+                <?php }else{if(is_array($filenop)){
                         if($filenop['diem'] != ''){ ?>
-                        <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn nutnopbai">Đã chấm <?= $filenop['diem'] ?>/ 10</a>
+                        <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-outline-info">Đã chấm <?= $filenop['diem'] ?>/ 10</a>
                     <?php }else{?>
                         <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-primary">Đã Nộp </a>
                     <?php }}else{?>
                         <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-primary">Nộp Bài </a>
-                    <?php }?> 
+                    <?php }}?> 
                 </div>
             </div>
         </div>
