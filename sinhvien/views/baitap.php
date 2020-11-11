@@ -87,16 +87,15 @@
                 </div>
                 <div class="d-info2 d-nb w-75">
                 <?php 
-                    
-                    if(is_array(checknopbai($idbt)) > 0 && checknopbai($idbt)['diem'] == '') echo '<a href="index.php?act=nopbaitap&idbt='.$idbt.'" class="btn btn-primary">Đã Nộp </a>';
-                    if(is_array(checknopbai($idbt)) > 0 && checknopbai($idbt)['diem'] != '') {  
-
-
-                        echo'<a href="index.php?act=nopbaitap&idbt='.$idbt.'" class="btn nutnopbai">Đã chấm '.checknopbai($idbt)['diem'].'/ 10</a>'; 
-                    }
-                    else echo '<a href="index.php?act=nopbaitap&idbt='.$idbt.'" class="btn btn-primary">Nộp Bài </a>';
-                ?>
-                
+                $filenop = checknopbai($idbt);
+                    if(is_array($filenop)){
+                        if($filenop['diem'] != ''){ ?>
+                        <a href="index.php?act=nopbaitap&idbt='.$idbt.'" class="btn nutnopbai">Đã chấm <?= $filenop['diem'] ?>/ 10</a>
+                    <?php }else{?>
+                        <a href="index.php?act=nopbaitap&idbt='.$idbt.'" class="btn btn-primary">Đã Nộp </a>
+                    <?php }}else{?>
+                        <a href="index.php?act=nopbaitap&idbt='.$idbt.'" class="btn btn-primary">Nộp Bài </a>
+                    <?php }?> 
                 </div>
             </div>
         </div>
