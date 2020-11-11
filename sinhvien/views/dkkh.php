@@ -10,7 +10,7 @@
      <table>
          <?php
             foreach ($khoahoc as $kh) {
-                $idkhoa = $kh['idkhoa'];
+                $idkhoa = $kh['id'];
                 $idsv = $_SESSION['iddn'];
                 $checksv = xetkhoahoc($idkhoa, $idsv);
                 $lophoc = lophoc($idkhoa);
