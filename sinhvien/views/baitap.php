@@ -89,7 +89,7 @@
                 <?php 
                 $filenop = checknopbai($idbt);
                 if (strtotime(date("Y-m-d")) > strtotime($ngayhethan)) {?>
-                <button type="button" class="btn btn-outline-danger">HẾT HẠN</button>
+                 <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-outline-danger">HẾT HẠN</a>
                 <?php }else{if(is_array($filenop)){
                         if($filenop['diem'] != ''){ ?>
                         <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-outline-info">Đã chấm <?= $filenop['diem'] ?>/ 10</a>

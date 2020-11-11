@@ -11,7 +11,7 @@ if(isset($_GET['act'])){
 }else{
    $act = "home";
 }
-$achome="";$acbt="";$acdkkh="";$actb="";$acbd=""; 
+$achome="";$acbt="";$acdkkh="";$actb="";$acbd="";$chat="";
 switch ($act) {
    case 'home':
       $idsv=$_SESSION['iddn'];
@@ -150,6 +150,11 @@ switch ($act) {
       }else{
          header('Location: index.php');
       }
+   break;
+   case 'chat':
+      $chat = "active";
+      $view = "../sinhvien/views/nhantin.php";
+      require_once "../sinhvien/views/layout.php";
    break;
 }
 }}else{
