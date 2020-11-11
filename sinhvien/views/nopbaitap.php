@@ -26,7 +26,16 @@
         <p class="h4 font-weight-bold m-0 mb-4" >
             Bài tập của bạn
         </p>
-        <?php if(is_array($nopbai)){ ?>
+        <?php 
+        if(is_array($nopbai)){
+            if($nopbai['diem'] != ""){
+
+            }else{
+                
+            }
+        }
+        ?>
+        <!-- <?php if(is_array($nopbai)){ ?>
             <label class="fileup"><?=$nopbai['file']?></label>
         <?php
             if($nopbai['diem'] != ""){?>
@@ -34,19 +43,18 @@
         <?php }else{?>
         <form action="index.php?act=noplaibt&idbt=<?= $idbt ?>" enctype="multipart/form-data" method="post">        
         <input type="file" name="baitap" id="baitap">
-        <label for="baitap" id="btshow"><i class='fas fa-plus-circle mr-2'></i>Tải bài tập thay thế</label>
-        </form>    
+        <label for="baitap" id="btshow"><i class='fas fa-plus-circle mr-2'></i>Tải bài tập thay thế</label>    
         <?php }?>
         <?php }else{ ?>    
         <form action="index.php?act=nopbai&idbt=<?= $idbt ?>" enctype="multipart/form-data" method="post">            
         <input type="file" name="baitap" id="baitap">
         <label for="baitap"  id="btshow"><i class='fas fa-plus-circle mr-2'></i> Tải bài tập lên</label>
-            </form>    
-        <?php }?>
+               <?php }?>
         <?php if($han){ ?>
             <button type="submit" class="btn btn-dark my-1 w-100" name="nop">Nộp bài</button>
         <?php }else{ ?>
             <button type="button" class="btn btn-outline-danger w-100">ĐÃ HẾT HẠN</button>
         <?php }?>
-    </div>
+    </div> -->
+    </form> 
 </div>
