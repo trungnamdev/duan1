@@ -10,7 +10,7 @@
      <table>
          <?php
             foreach ($khoahoc as $kh) {
-                $idkhoa = $kh['idkhoa'];
+                $idkhoa = $kh['id'];
                 $idsv = $_SESSION['iddn'];
                 $checksv = xetkhoahoc($idkhoa, $idsv);
                 $lophoc = lophoc($idkhoa);
@@ -19,15 +19,14 @@
             ?>
                  <tr class="boxkhoahoc ">
                      <td class="imagekh  p-3">
-                         <img src="./views/img/html.jpg" alt="">
+                         <img src="<?= showfile($kh['hinh']) ?>" onerror="erroimg(this)">
                      </td>
                      <td class="ttkhoahoc py-3 pr-5">
                          <p class="h4 title"><?= $kh['tenkhoa'] ?></p>
                          <p class="my-1 h6">
-                             GV: Mr.Thanh</p>
+                             chỗ này để chủ đề</p>
                          <p class="mota">
-                             Bạn sẽ được đào tạo bài bản từ chuyên gia giỏi và tham gia dự án thực tế. Giúp tích lũy kinh nghiệm, có sản phẩm và đi làm ngay sau khóa học. Thực hành nhiều. Giới thiệu việc làm. Học kinh nghiệm. Khóa học: Thực chiến trên dự án, Tích luỹ kinh nghiệm.
-
+                             <?= $kh['mota'] ?>
                          </p>
                      </td>
                      <td class="gia">

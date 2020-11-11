@@ -30,6 +30,7 @@ switch ($act) {
       } else {
          $sx="all";
       }
+      
       $checkbaitap = thongtinsv($_SESSION['iddn']); 
       
       switch ($sx) {
@@ -86,11 +87,11 @@ switch ($act) {
             break;
          case 'dadk':
             $dadk="active";
-            $khoahoc=khoahocdadk($id);
+            $khoahoc=khoahocdadk();
             break;
          case 'nodk':
             $nodk="active";
-            $khoahoc=khoahocchuadk($id);
+            $khoahoc=khoahocchuadk();
             break;
       }
       $acdkkh = "active";

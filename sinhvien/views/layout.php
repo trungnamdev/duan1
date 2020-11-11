@@ -49,7 +49,7 @@
                     <strong>
                         <p class="mb-1"><?=$_SESSION['tdn']?></p>
                     </strong>
-                    <span class="idsv">PS15313</span>
+                    <span class="idsv">HS<?= $_SESSION['iddn'] ?></span>
                 </div>
             </div>
             <div class="menu m-3">

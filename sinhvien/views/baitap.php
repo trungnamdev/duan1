@@ -31,7 +31,7 @@
         foreach ($allbaitap as $allbt) {
           
                 $tenbt = $allbt['tenbaitap'];
-                $hinh = "./views/img/".$allbt['hinh'];
+                $hinh = $allbt['hinh'];
                 
                 $idbt = $allbt['idbaitap'];
                 $mota = $allbt['motabt'] ;
@@ -41,9 +41,7 @@
                 $mota = substr($strCut, 0, strrpos($strCut, ' ')).'...'; //Tránh trường hợp cắt dang dở như "nội d... Read More"
                 } 
                 $ngayhethan = $allbt['ngayhethan'] ;
-                $idlop = $allbt['idlop'];
-                
-            
+                $idlop = $allbt['idlop']; 
                 //Lấy id gv Từ tb lop
                 $idgv = thongtingv($idlop)['idgv'];
                 // Lấy thông tin giáo viên từ tb taikhoan
@@ -57,7 +55,7 @@
 
     <div class="d-div3">
         <div class="d-div3-img">
-            <img src="<?=$hinh?>" alt="" onerror="erroimg(this)">
+            <img src="<?=showfile($hinh)?>" alt="" onerror="erroimg(this)">
         </div>
         <br>
         <div class="d-info">
@@ -69,7 +67,7 @@
                     <a href=""><?=$tengv?></a>
                 </div>
                 <div class="d-info2">
-                    PHP CƠ BẢN  
+                    <?=$allbt['tenkhoa']?> 
                 </div>
             </div>
         </div>
@@ -85,14 +83,27 @@
 
 
                 <div class="d-info1 d-hc">
-                    <a href="">Hạn chót: <?=$ngayhethan?> </a>
+                    <a>Hạn chót: <?=$ngayhethan?> </a>
                 </div>
-                <div class="d-info2 d-nb">
-                    <a href="index.php?act=nopbaitap&idbt=<?=$idbt?>" class="btn btn-primary">Nộp bài</a>
+                <div class="d-info2 d-nb w-75">
+                <?php 
+                $filenop = checknopbai($idbt);
+                if (strtotime(date("Y-m-d")) > strtotime($ngayhethan)) {?>
+                <button type="button" class="btn btn-outline-danger">HẾT HẠN</button>
+                <?php }else{if(is_array($filenop)){
+                        if($filenop['diem'] != ''){ ?>
+                        <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-outline-info">Đã chấm <?= $filenop['diem'] ?>/ 10</a>
+                    <?php }else{?>
+                        <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-primary">Đã Nộp </a>
+                    <?php }}else{?>
+                        <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-primary">Nộp Bài </a>
+                    <?php }}?> 
                 </div>
             </div>
         </div>
     </div>
-    <?php }?>
+    
+    <?php 
+ }?>
 
 </div>
