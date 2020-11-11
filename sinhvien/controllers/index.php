@@ -30,6 +30,7 @@ switch ($act) {
       } else {
          $sx="all";
       }
+      
       $checkbaitap = thongtinsv($_SESSION['iddn']); 
       
       switch ($sx) {
