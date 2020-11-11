@@ -681,12 +681,27 @@ ul a:hover {
 }
 
 .d-info2 {
-    width: 50%;
+    width: 60%;
     float: right;
     text-align: right;
     color: #6E798C;
     font-size: 11pt;
     font-weight: 700;
+}
+
+.d-info2 .nutnopbai:hover {
+    color: #ff0000;
+}
+
+.d-info2 .nutnopbai {
+    border: #ff0000 2px solid;
+    border-radius: 5px;
+    color: #ff0000;
+    float: left;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    background-color: white;
 }
 
 .d-row1 {

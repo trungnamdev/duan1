@@ -21,7 +21,9 @@ function nopbaitap($idbt){
 function checknopbai($idbt){
     return laymot("SELECT * FROM `upfile` WHERE idsv = $_SESSION[iddn] and idbaitap = $idbt");
 }
-
+function checkdiem($idbt){
+    return laymot("SELECT * FROM `upfile` WHERE idbaitap = $idbt");
+}
 function nopbai($file,$idbt){
     return postdulieu("INSERT INTO `upfile` (`idfile`, `file`, `idbaitap`, `idsv`, `ngaynop`, `diem`) VALUES (NULL, '$file', '$idbt', $_SESSION[iddn], NOW(),null)");
 }
