@@ -90,11 +90,11 @@
                 $filenop = checknopbai($idbt);
                     if(is_array($filenop)){
                         if($filenop['diem'] != ''){ ?>
-                        <a href="index.php?act=nopbaitap&idbt='.$idbt.'" class="btn nutnopbai">Đã chấm <?= $filenop['diem'] ?>/ 10</a>
+                        <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn nutnopbai">Đã chấm <?= $filenop['diem'] ?>/ 10</a>
                     <?php }else{?>
-                        <a href="index.php?act=nopbaitap&idbt='.$idbt.'" class="btn btn-primary">Đã Nộp </a>
+                        <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-primary">Đã Nộp </a>
                     <?php }}else{?>
-                        <a href="index.php?act=nopbaitap&idbt='.$idbt.'" class="btn btn-primary">Nộp Bài </a>
+                        <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-primary">Nộp Bài </a>
                     <?php }?> 
                 </div>
             </div>
