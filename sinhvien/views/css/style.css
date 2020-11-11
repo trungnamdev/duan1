@@ -281,6 +281,31 @@ ul a:hover {
     margin-left: 5px;
 }
 
+.khungchat {
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+}
+
+/* width */
+.khungchat::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.khungchat::-webkit-scrollbar-track {
+  background: #efefef; 
+}
+ 
+/* Handle */
+.khungchat::-webkit-scrollbar-thumb {
+  background: #fff; 
+}
+
+/* Handle on hover */
+.khungchat::-webkit-scrollbar-thumb:hover {
+  background: #999; 
+}
+
 .nguoinhan {
     float: right;
     flex-direction: row-reverse;
