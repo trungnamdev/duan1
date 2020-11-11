@@ -73,23 +73,6 @@
                     </div>
                 </div>
             </div>
-            <span>CMND/Căn cước/Hộ chiếu :</span>
-            <div class="d-tt-form">
-                <div class="d-tt-100">
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-3 col-form-label">Số</label>
-                        <div class="col-sm-9">
-                            <input disabled type="text" class="form-control" id="inputPassword" value="331906720'">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-3 col-form-label">Ngày cấp</label>
-                        <div class="col-sm-9">
-                            <input disabled type="date" class="form-control" id="inputPassword" value="2017-11-03">
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
