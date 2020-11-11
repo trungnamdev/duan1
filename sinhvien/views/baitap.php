@@ -41,9 +41,7 @@
                 $mota = substr($strCut, 0, strrpos($strCut, ' ')).'...'; //Tránh trường hợp cắt dang dở như "nội d... Read More"
                 } 
                 $ngayhethan = $allbt['ngayhethan'] ;
-                $idlop = $allbt['idlop'];
-                
-            
+                $idlop = $allbt['idlop']; 
                 //Lấy id gv Từ tb lop
                 $idgv = thongtingv($idlop)['idgv'];
                 // Lấy thông tin giáo viên từ tb taikhoan
@@ -69,7 +67,7 @@
                     <a href=""><?=$tengv?></a>
                 </div>
                 <div class="d-info2">
-                    PHP CƠ BẢN  
+                    <?=$allbt['tenkhoa']?> 
                 </div>
             </div>
         </div>
@@ -85,7 +83,7 @@
 
 
                 <div class="d-info1 d-hc">
-                    <a href="">Hạn chót: <?=$ngayhethan?> </a>
+                    <a>Hạn chót: <?=$ngayhethan?> </a>
                 </div>
                 <div class="d-info2 d-nb">
                     <a href="index.php?act=nopbaitap&idbt=<?=$idbt?>" class="btn btn-primary">Nộp bài</a>
