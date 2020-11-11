@@ -59,6 +59,7 @@
                     <a href="index.php?act=bangdiem"><li class="<?= $acbd ?>">Bảng điểm<img src="./views/img/bangdiem.svg" alt=""></li></a>
                     <a href="index.php?act=dkkh"><li class="<?= $acdkkh ?>">Khóa học<img src="./views/img/monhoc.svg" alt=""></li></a>
                     <a href="index.php?act=thongbao"><li class="<?= $actb ?>">Thông báo<img src="./views/img/thongbao.svg" alt=""></li></a>
+                    <a href="index.php?act=chat"><li class="<?= $chat ?>">Nhắn tin<img src="./views/img/thongbao.svg" alt=""></li></a>
                     <a href="index.php?act=thongtincn"><li>Thông tin cá nhân<img src="./views/img/thongbao.svg" alt=""></li></a>
                 </ul>
             </div>
