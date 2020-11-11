@@ -9,9 +9,8 @@
  <div class="khoahoc ">
      <table>
          <?php
-
             foreach ($khoahoc as $kh) {
-                $idkhoa = $kh['id'];
+                $idkhoa = $kh['idkhoa'];
                 $idsv = $_SESSION['iddn'];
                 $checksv = xetkhoahoc($idkhoa, $idsv);
                 $lophoc = lophoc($idkhoa);
@@ -34,7 +33,9 @@
                      <td class="gia">
                         <p class="my-2 px-1"> <i class='far fa-file-alt' style='font-size:20px; color:gray'></i> <?= $demlh['tong'] ?> Lớp học</p>
                          <p>
-                         <?php if (is_array($checksv)) { 
+                         <?php
+                         if (is_array($checksv)) { 
+                            
                                 $gv = gvkhoahoc($checksv['idlop']); ?>    
                                 <select id="lophoc" class="form-control col-10" disabled>     
                                 <option><?= $checksv['tenlop'] ?> - <?= $gv['hoten'] ?></option>
