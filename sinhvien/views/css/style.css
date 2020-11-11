@@ -11,7 +11,7 @@ body {
 /* Start sile bar */
 
 .sidebar {
-    width: 20%;
+    width: 340px;
     height: 100%;
     float: left;
     background-color: #0D0E2E;
@@ -65,9 +65,9 @@ ul a:hover {
 }
 
 .box-right {
-    width: 80%;
+    width: calc(100% - 340px);
     float: left;
-    margin-left: 20%;
+    margin-left: 340px;
     padding: 20px 25px;
 }
 
@@ -99,14 +99,13 @@ ul a:hover {
     text-decoration: none;
 }
 
-
 /* End sile bar */
 
 
 /* Tổng  Quan */
 
 .slide .card {
-    width: 350px;
+    width: 380px !important;
     height: 120px;
     border-radius: 15px;
     overflow: hidden;
@@ -114,8 +113,8 @@ ul a:hover {
 }
 
 .slide .card-img {
-    height: 120px !important;
     width: 120px;
+    height: 120px;
     object-fit: cover;
 }
 
@@ -193,6 +192,7 @@ ul a:hover {
 }
 
 .thongbao .item {
+    padding-bottom: 15px;
     border-bottom: 1px solid #efefef;
 }
 
@@ -204,6 +204,11 @@ ul a:hover {
     display: flex;
     align-items: center;
     line-height: 10px;
+}
+
+/*box-shadow*/
+.thongbao-shadow {
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.09);
 }
 
 
@@ -599,17 +604,21 @@ ul a:hover {
     width: 100%;
     float: left;
     margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .d-div3 {
-    width: 29%;
+    width: 24%; /*29% - 318px*/    
     float: left;
     margin-bottom: 30px;
-    margin-right: 6.5%;
+    /* margin-right: 6.5%; */
     background: #FFFFFF;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.08);
     border-radius: 16px;
-    height: 425px;
+    height: 400px;
 }
 
 .d-div3:nth-child(3n) {
@@ -636,11 +645,13 @@ ul a:hover {
     margin-top: 15px !important;
     width: 90%;
     margin: 0 auto;
+   
 }
 
 .d-info1 {
     width: 50%;
     float: left;
+    font-size: 12pt;
 }
 
 .d-row100 {
@@ -667,6 +678,8 @@ ul a:hover {
     float: right;
     text-align: right;
     color: #6E798C;
+    font-size: 11pt;
+    font-weight: 700;
 }
 
 .d-row1 {

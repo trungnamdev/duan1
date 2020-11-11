@@ -81,7 +81,7 @@
             </div>
         </div>
         <div class="d-info">
-            <div class="d-row100  mb-18">
+            <div class="d-row100  mb-18 pt-5">
 
 
                 <div class="d-info1 d-hc">
