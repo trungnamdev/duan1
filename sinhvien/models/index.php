@@ -68,10 +68,10 @@ function khoahoc(){
     return laydulieu("SELECT * FROM khoahoc");
 }
 function khoahocdadk(){
-    return laydulieu("SELECT *,khoahoc.id AS 'idkh' FROM khoahoc INNER JOIN chude ON chude.id=khoahoc.chude WHERE khoahoc.id in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
+    return laydulieu("SELECT * FROM khoahoc WHERE id in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
 }
 function khoahocchuadk(){
-    return laydulieu("SELECT * FROM khoahoc INNER JOIN chude ON chude.id=khoahoc.chude WHERE khoahoc.id not in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
+    return laydulieu("SELECT * FROM khoahoc WHERE id not in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
 }
 function lophoc($idkhoa){
     return laydulieu("SELECT * FROM lop WHERE idkhoa=$idkhoa");
@@ -122,6 +122,7 @@ function gv_getidlop(){
 function GV_getBaiTapByID($idlop){
     return laydulieu("SELECT * FROM baitap WHERE idlop = $idlop ORDER BY idbaitap DESC");
 }
+<<<<<<< HEAD
 
 //Lấy các lớp đang dạy
 function GV_getlopdangday()
@@ -132,5 +133,7 @@ function GV_getlopdangday()
     // exit();
     return laydulieu("SELECT * FROM lop INNER JOIN khoahoc kh ON kh.id=lop.idkhoa WHERE lop.id = ".$dieukien." ORDER BY lop.id DESC");
 }
+=======
+>>>>>>> 3f4e654da83cda9914208176474ac7afa991b653
 ?>
 

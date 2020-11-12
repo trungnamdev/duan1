@@ -7,7 +7,7 @@
     
     foreach ($allkh as $kh) {
         $tenkh = $kh['tenkhoa'];
-        $baitapkh = layBaiTapByKH($kh['idkh']); 
+        $baitapkh = layBaiTapByKH($kh['id']); 
         $slbt = 0;
         $tongdiem = 0;
         $dtb = 0;
