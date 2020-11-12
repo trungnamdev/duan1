@@ -105,7 +105,6 @@ function gettenchude($cd){
     return laymot("SELECT * FROM chude WHERE id = $cd");
 }
 
-
 // Phần này của giáo viên mà có gì paste qua bên đó nha
 // Bài tập
 function getIDGV(){
