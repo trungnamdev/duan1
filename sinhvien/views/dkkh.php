@@ -10,7 +10,7 @@
      <table>
          <?php
             foreach ($khoahoc as $kh) {
-                $idkhoa = $kh['id'];
+                $idkhoa =$kh['id'];
                 $idsv = $_SESSION['iddn'];
                 $checksv = xetkhoahoc($idkhoa, $idsv);
                 $lophoc = lophoc($idkhoa);
@@ -34,8 +34,7 @@
                          <p>
                          <?php
                          if (is_array($checksv)) { 
-                            
-                                $gv = gvkhoahoc($checksv['idlop']); ?>    
+                            $gv = gvkhoahoc($checksv['idlop']); ?>    
                                 <select id="lophoc" class="form-control col-10" disabled>     
                                 <option><?= $checksv['tenlop'] ?> - <?= $gv['hoten'] ?></option>
                                  <?php }else{ ?>
