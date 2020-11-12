@@ -16,8 +16,27 @@ switch ($act) {
       $view = "../giaovien/views/home.php";
       require_once "../giaovien/views/layout.php";
    break;
-}
+
+   case 'baitap':
+      $view = "../giaovien/views/baitap.php";
+      require_once "../giaovien/views/layout.php";
+      break;
+
+   case 'thongbao':
+      $view = "../giaovien/views/thongbao.php";
+      require_once "../giaovien/views/layout.php";
+      break;
+   case 'chat':
+      $view = "../giaovien/views/nhantin.php";
+      require_once "../giaovien/views/layout.php";
+   break;
+   
+   case 'lop':
+      $view = "../giaovien/views/lophoc.php";
+      require_once "../giaovien/views/layout.php";
+      break;
+   }
 }else{
       header('Location: ../index.php');
 }
-?> 
+?>

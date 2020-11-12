@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- file riêng moi modun -->
-    <link rel="stylesheet" href="views/css/style.css">
     <!-- file dung chung cho 3 modun -->
     <link rel="stylesheet" href="../system/css/stylelayout.css">
+    <!-- file riêng moi modun -->
+    <link rel="stylesheet" href="views/css/style.css">
     <script src="../system/js/jquery.js"></script>
     <script src="../system/js/jquery-ui.js"></script>
     <script src="../system/js/jsvali.js"></script>
@@ -57,8 +57,7 @@
                 <ul>
                 <a href="index.php?act=home"><li class="<?= $achome ?>">Tổng quan<img src="../system/img/tongquan.svg" alt=""></i></li></a>
                     <a href="index.php?act=baitap&sx=all"><li class="<?= $acbt ?>">Bài Tập<img src="../system/img/baitap.svg" alt=""></li></a>
-                    <a href="index.php?act=bangdiem"><li class="<?= $acbd ?>">Bảng điểm<img src="../system/img/bangdiem.svg" alt=""></li></a>
-                    <a href="index.php?act=dkkh"><li class="<?= $acdkkh ?>">Khóa học<img src="../system/img/monhoc.svg" alt=""></li></a>
+                    <a href="index.php?act=lop"><li class="<?= $acdkkh ?>">Lớp học<img src="../system/img/monhoc.svg" alt=""></li></a>
                     <a href="index.php?act=thongbao"><li class="<?= $actb ?>">Thông báo<img src="../system/img/thongbao.svg" alt=""></li></a>
                     <a href="index.php?act=chat"><li class="<?= $chat ?>">Nhắn tin<img src="../system/img/thongbao.svg" alt=""></li></a>
                 </ul>
