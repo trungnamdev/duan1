@@ -64,6 +64,10 @@ a:hover {
     font-size: 20px;
 }
 
+.menuul a li img {
+    width: 30px;
+}
+
 ul a:hover {
     text-decoration: none;
 }

@@ -69,7 +69,7 @@
                 </a>
             </div>
             <div class="menu m-3">
-                <ul>
+                <ul class="menuul">
                     <a href="index.php?act=home">
                         <li class="<?= $achome ?>">Tổng quan<img src="../system/img/tongquan.svg" alt=""></i></li>
                     </a>
@@ -82,8 +82,8 @@
                     <a href="index.php?act=dkkh">
                         <li class="<?= $acdkkh ?>">Khóa học<img src="../system/img/monhoc.svg" alt=""></li>
                     </a>
-                    <a href="index.php?act=thongbao">
-                        <li class="<?= $actb ?>">Thông báo<img src="../system/img/thongbao.svg" alt=""></li>
+                    <a class="iconchat" href="index.php?act=thongbao">
+                        <li class="<?= $actb ?> ">Thông báo<img class="imgchat" src="../system/img/thongbao.svg" alt=""></li>
                     </a>
                     <a href="index.php?act=chat">
                         <li class="<?= $chat ?>">Nhắn tin<img src="../system/img/thongbao.svg" alt=""></li>
