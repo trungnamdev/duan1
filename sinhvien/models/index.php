@@ -61,13 +61,13 @@ function thongtingv($idgv){
 }
 
 function khoahoc(){
-    return laydulieu("SELECT * FROM khoahoc INNER JOIN chude ON chude.id = khoahoc.chude");
+    return laydulieu("SELECT * FROM khoahoc");
 }
 function khoahocdadk(){
-    return laydulieu("SELECT * FROM khoahoc INNER JOIN chude ON chude.id = khoahoc.chude WHERE id in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
+    return laydulieu("SELECT * FROM khoahoc WHERE id in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
 }
 function khoahocchuadk(){
-    return laydulieu("SELECT * FROM khoahoc INNER JOIN chude ON chude.id = khoahoc.chude WHERE id not in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
+    return laydulieu("SELECT * FROM khoahoc WHERE id not in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
 }
 function lophoc($idkhoa){
     return laydulieu("SELECT * FROM lop WHERE idkhoa=$idkhoa");
