@@ -35,7 +35,16 @@ switch ($act) {
       $view = "../giaovien/views/lophoc.php";
       require_once "../giaovien/views/layout.php";
       break;
+
+   case 'dangxuat':
+      unset($_SESSION['role']);
+      unset($_SESSION['iddn']);
+      unset($_SESSION['tdn']);
+      unset($_SESSION['hinhdn']);
+      header('location: index.php');
+      break;
    }
+
 }else{
       header('Location: ../index.php');
 }
