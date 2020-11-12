@@ -10,6 +10,8 @@ body {
 a:hover {
     text-decoration: none !important;
 }
+
+
 /* Start sile bar */
 
 .sidebar {
@@ -27,6 +29,16 @@ a:hover {
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+.account a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.account a:hover {
+    color: #fff;
 }
 
 .sidebar .avatar {
@@ -264,6 +276,7 @@ ul a:hover {
     padding: 0 10px;
     display: flex;
     align-items: center;
+    margin-top: 10px;
 }
 
 .doanchat .info {
@@ -295,7 +308,7 @@ ul a:hover {
 }
 
 .khungchat {
-    height: calc(100vh - 160px) !important;
+    height: calc(100vh - 160px);
     overflow-y: scroll;
 }
 
@@ -329,27 +342,6 @@ ul a:hover {
 
 .khungchat {
     padding: 0 20px;
-}
-
-.chat-title {
-    background-color: #fff;
-    border-bottom: 1px solid #efefef;
-    display: flex;
-    padding: 10px;
-}
-
-.chat-title img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
-
-.chat-title .box-info {
-    height: 80px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
 }
 
 .nguoinhan {
@@ -423,22 +415,21 @@ ul a:hover {
     font-size: 15px;
 }
 
-/* .tbbangdiem tr td:nth-child(1) {
+.tbbangdiem tr td:nth-child(1) {
     padding-left: 37px;
-    width: 180px;
+    /* width: 0; */
     color: #8B83BA;
     font-size: 20px;
     line-height: 35px;
-} */
+}
 
-.tbbangdiem tr td:nth-child(1) {
+.tbbangdiem tr td:nth-child(2) {
     width: 670px;
     color: #25213B;
     font-weight: 500;
-    padding-left: 60px;
 }
 
-.tbbangdiem tr td:nth-child(2) span,  .tbbangdiem tr td:nth-child(1) span{
+.tbbangdiem tr td:nth-child(2) span {
     color: #6E6893 !important;
 }
 
@@ -995,59 +986,48 @@ input[type=file] {
     background-color: white;
 }
 
-@media only screen and (min-width: 1500px){
+@media only screen and (min-width: 1500px) {
     .sidebar {
         width: 300px;
     }
-
     .box-right {
         width: calc(100% - 300px);
         margin-left: 300px;
     }
-
     .d-div3 {
         width: 23%;
         margin-right: calc(8%/3);
         position: relative;
         height: 420px;
     }
-
     .d-row {
         justify-content: unset;
     }
-
     .d-div3:nth-child(3n) {
         margin-right: calc(8%/3) !important;
     }
-
     .d-div3:nth-child(4n) {
         margin-right: 0;
     }
-
     .d-div3-img {
         height: 200px;
     }
-
     .d-info1 {
-        width: 51%;
+        width: 73%;
     }
-
     .box-bot {
         position: absolute;
         bottom: 15px;
         left: 0;
         padding: 0 15px;
     }
-
     .boxthongbao-right {
         width: calc(70% - 300px);
     }
-
     .thongbao .item {
         width: 100%;
         padding-top: 15px;
     }
-
     .thongbao-box {
         height: 500px;
     }
