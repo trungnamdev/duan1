@@ -118,22 +118,5 @@ function gv_getidlop(){
     return $mangidlop;
 }
 
-// lấy bài tập từ id lớp
-function GV_getBaiTapByID($idlop){
-    return laydulieu("SELECT * FROM baitap WHERE idlop = $idlop ORDER BY idbaitap DESC");
-}
-<<<<<<< HEAD
-
-//Lấy các lớp đang dạy
-function GV_getlopdangday()
-{
-    $mangidlop = gv_getidlop();
-    $dieukien = implode(" or lop.id = ", $mangidlop);
-    // var_dump("SELECT * FROM lop INNER JOIN khoahoc kh ON kh.id=lop.idkhoa WHERE lop.id = ".$dieukien." ORDER BY id DESC");
-    // exit();
-    return laydulieu("SELECT * FROM lop INNER JOIN khoahoc kh ON kh.id=lop.idkhoa WHERE lop.id = ".$dieukien." ORDER BY lop.id DESC");
-}
-=======
->>>>>>> 3f4e654da83cda9914208176474ac7afa991b653
 ?>
 
