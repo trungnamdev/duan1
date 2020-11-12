@@ -157,6 +157,7 @@ switch ($act) {
    break;
    case 'chat':
       $chat = "active";
+      $alllop = getlopsvdanghoc();
       $view = "../sinhvien/views/nhantin.php";
       require_once "../sinhvien/views/layout.php";
    break;
