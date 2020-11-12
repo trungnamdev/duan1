@@ -19,7 +19,7 @@
 .box-right::-webkit-scrollbar-thumb {
   background: #efefef; 
 }
-zz
+
 /* Handle on hover */
 .box-right::-webkit-scrollbar-thumb:hover {
   background: #999; 
