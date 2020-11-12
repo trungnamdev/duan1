@@ -416,7 +416,7 @@ ul a:hover {
 
 .tbbangdiem tr td:nth-child(1) {
     padding-left: 37px;
-    width: 180px;
+    width: 0;
     color: #8B83BA;
     font-size: 20px;
     line-height: 35px;

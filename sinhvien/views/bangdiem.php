@@ -13,32 +13,32 @@
             <td></td>
         </tr>
         <tr>
-            <td><input type="checkbox" name="" id=""></td>
+            <td></td>
             <td>Lab 1<br><span>Lập trình PHP<span></td>
             <td><span>10</span><br>Chấm ngày: 15/6/2020</td>
             <td><a href="#"><i class="uim uim-arrow-circle-down"></i></a></td>
         </tr>
 
         <tr>
-            <td><input type="checkbox" name="" id=""></td>
+            <td></td>
             <td>Lab 2<br><span>Lập trình PHP<span></td>
             <td><span>10</span><br>Chấm ngày: 15/6/2020</td>
             <td><a href="#"><i class="uim uim-arrow-circle-down"></i></a></td>
         </tr>
         <tr>
-            <td><input type="checkbox" name="" id=""></td>
+            <td></td>
             <td>Lab 3<br><span>Lập trình PHP<span></td>
             <td><span>10</span><br>Chấm ngày: 15/6/2020</td>
             <td><a href="#"><i class="uim uim-arrow-circle-down"></i></a></td>
         </tr>
         <tr>
-            <td><input type="checkbox" name="" id=""></td>
+            <td></td>
             <td>Lab 4<br><span>Lập trình PHP<span></td>
             <td><span>10</span><br>Chấm ngày: 15/6/2020</td>
             <td><a href="#"><i class="uim uim-arrow-circle-down"></i></a></td>
         </tr>
         <tr>
-            <td><input type="checkbox" name="" id=""></td>
+            <td></td>
             <td>Lab 5<br><span>Lập trình PHP<span></td>
             <td><span>10</span><br>Chấm ngày: 15/6/2020</td>
             <td><a href="#"><i class="uim uim-arrow-circle-down"></i></a></td>
@@ -63,31 +63,31 @@
             <td></td>
         </tr>
         <tr>
-            <td><input type="checkbox" name="" id=""></td>
+            <td></td>
             <td>Lab 1<br><span>Lập trình PHP<span></td>
             <td><span>10</span><br>Chấm ngày: 15/6/2020</td>
             <td><a href="#"><i class="uim uim-arrow-circle-down"></i></a></td>
         </tr>
         <tr>
-            <td><input type="checkbox" name="" id=""></td>
+            <td></td>
             <td>Lab 2<br><span>Lập trình PHP<span></td>
             <td><span>10</span><br>Chấm ngày: 15/6/2020</td>
             <td><a href="#"><i class="uim uim-arrow-circle-down"></i></a></td>
         </tr>
         <tr>
-            <td><input type="checkbox" name="" id=""></td>
+            <td></td>
             <td>Lab 3<br><span>Lập trình PHP<span></td>
             <td><span>10</span><br>Chấm ngày: 15/6/2020</td>
             <td><a href="#"><i class="uim uim-arrow-circle-down"></i></a></td>
         </tr>
         <tr>
-            <td><input type="checkbox" name="" id=""></td>
+            <td></td>
             <td>Lab 4<br><span>Lập trình PHP<span></td>
             <td><span>10</span><br>Chấm ngày: 15/6/2020</td>
             <td><a href="#"><i class="uim uim-arrow-circle-down"></i></a></td>
         </tr>
         <tr>
-            <td><input type="checkbox" name="" id=""></td>
+            <td></td>
             <td>Lab 5<br><span>Lập trình PHP<span></td>
             <td><span>10</span><br>Chấm ngày: 15/6/2020</td>
             <td><a href="#"><i class="uim uim-arrow-circle-down"></i></a></td>
