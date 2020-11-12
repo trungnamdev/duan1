@@ -297,7 +297,7 @@ ul a:hover {
 }
 
 .khungchat {
-    height: calc(100vh - 160px) !important;
+    height: calc(100vh - 170px);
     overflow-y: scroll;
 }
 

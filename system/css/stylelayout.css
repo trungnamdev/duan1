@@ -230,13 +230,29 @@ ul a:hover {
 
 
 /* Tin nhan */
+.hinhchat {
+    width: 60px;
+    height: 60px;
+}
 
 .thongbao img {
-    width: 100%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
 }
 
 .tinnhan .info {
     justify-content: space-between;
+}
+
+.tinnhan .item {
+    width: 100%;
+    display: flex;
+    padding-bottom: 0 !important;
+}
+
+.tinnhan .item a {
+    cursor: pointer;
 }
 
 .boxtinnhan_right {
@@ -308,7 +324,7 @@ ul a:hover {
 }
 
 .khungchat {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 170px) !important;
     overflow-y: scroll;
 }
 
@@ -341,7 +357,7 @@ ul a:hover {
 }
 
 .khungchat {
-    padding: 0 20px;
+    padding: 10px 20px;
 }
 
 .nguoinhan {

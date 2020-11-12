@@ -104,5 +104,26 @@ function gethinhlopchat($idlop){
 function gettenchude($cd){
     return laymot("SELECT * FROM chude WHERE id = $cd");
 }
+
+// Phần này của giáo viên mà có gì paste qua bên đó nha
+// Bài tập
+function getIDGV(){
+    return laymot("SELECT * FROM gvlop WHERE idgv = ".$_SESSION['iddn']);
+}
+
+// lấy từng id lớp của gv
+function gv_getidlop(){
+    $idlop = getIDGV()['idlop'];
+    $mangidlop = explode(",", $idlop);
+    return $mangidlop;
+}
+
+// lấy bài tập từ id lớp
+function GV_getBaiTapByID($idlop){
+    $dem = count($idlop);
+    var_dump($dem);
+    exit();
+    return laydulieu("SELECT * FROM baitap WHERE idlop = $idlop ORDER BY idbaitap DESC");
+
 ?>
 
