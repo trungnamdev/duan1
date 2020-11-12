@@ -11,13 +11,12 @@
                 foreach ($idlop as $id) {
                     $baitap = GV_getBaiTapByID($id);
                     foreach ($baitap as $bt) {
-
                     $nhh = date("d-m-Y", strtotime($bt['ngayhethan']));
             ?>
             <div class="card mb-3 swiper-slide thongbao-shadow">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img class="card-img" alt="..." src="<?= showfile($bt['hinhbt']) ?>" onerror="erroimg(this)">
+                        <img class="card-img" alt="..." src="<?= showfile($bt['hinh']) ?>" onerror="erroimg(this)">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body p-0">
@@ -32,85 +31,9 @@
                     </div>
                 </div>
             </div>
-            <?php                         # code...
+            <?php                         
                     }
                 }?>
-            <div class="card mb-3 swiper-slide thongbao-shadow">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img class="card-img" alt="..." src="../uploads/js.png">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body p-0">
-                            <div class="info">
-                                <div class="aut">
-                                    <div class="mon mr-2 text-secondary">PHP cơ bản</div>
-                                </div>
-                            </div>
-                            <h5 class="card-title mb-1 mt-1"><a href="#">Lab 2: Hack nasa căn bản bằng HTML</a></h5>
-                            <p class="text-secondary dealine m-0">Hạn chót: 20/11/2020</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-3 swiper-slide thongbao-shadow">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img class="card-img" alt="..." src="../uploads/js.png">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body p-0">
-                            <div class="info">
-                                <div class="aut">
-                                    <div class="mon mr-2 text-secondary">PHP cơ bản</div>
-                                </div>
-                            </div>
-                            <h5 class="card-title mb-1 mt-1"><a href="#">Lab 2: Hack nasa căn bản bằng HTML</a></h5>
-                            <p class="text-secondary dealine m-0">Hạn chót: 20/11/2020</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-3 swiper-slide thongbao-shadow">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img class="card-img" alt="..." src="../uploads/js.png">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body p-0">
-                            <div class="info">
-                                <div class="aut">
-                                    <div class="mon mr-2 text-secondary">PHP cơ bản</div>
-                                </div>
-                            </div>
-                            <h5 class="card-title mb-1 mt-1"><a href="#">Lab 2: Hack nasa căn bản bằng HTML</a></h5>
-                            <p class="text-secondary dealine m-0">Hạn chót: 20/11/2020</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-3 swiper-slide thongbao-shadow">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img class="card-img" alt="..." src="../uploads/js.png">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body p-0">
-                            <div class="info">
-                                <div class="aut">
-                                    <div class="mon mr-2 text-secondary">PHP cơ bản</div>
-                                </div>
-                            </div>
-                            <h5 class="card-title mb-1 mt-1"><a href="#">Lab 2: Hack nasa căn bản bằng HTML</a></h5>
-                            <p class="text-secondary dealine m-0">Hạn chót: 20/11/2020</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
@@ -128,16 +51,19 @@
     </script>
 
     <div class="lop-box mt-4">
-        <p class="h4 mb-3">Các lớp đang dạy (2)</p>
+        <p class="h4 mb-3">Các lớp đang dạy <span class="badge badge-pill badge-light"><?= count($lopdangday) ?></span></p>
         <div class="box-content">
+            <?php 
+                foreach ($lopdangday as $lop) {
+            ?>
             <div class="d-div3">
                 <div class="d-div3-img">
-                    <img src="../uploads/mysql.png" alt="" onerror="erroimg(this)">
+                    <img src="<?= showfile($lop['hinh']) ?>" alt="" onerror="erroimg(this)">
                 </div>
                 <br>
                 <div class="d-info">
                     <div class="d-row1">
-                        <p>WD15306 <br> Lập trình java</p>
+                        <p><?= $lop['tenlop'] ?> <br> <?= $lop['tenkhoa'] ?></p>
                     </div>
                 </div>
                 <div class="d-info">
@@ -151,50 +77,8 @@
                     </div>
                 </div>
             </div>
+            <?php }?>
 
-            <div class="d-div3">
-                <div class="d-div3-img">
-                    <img src="../uploads/mysql.png" alt="" onerror="erroimg(this)">
-                </div>
-                <br>
-                <div class="d-info">
-                    <div class="d-row1">
-                        <p>WD15306 <br> Lập trình java</p>
-                    </div>
-                </div>
-                <div class="d-info">
-                    <div class="d-row100 box-bot">
-                        <div class="d-info1 d-hc">
-                            <a>36 thành viên </a>
-                        </div>
-                        <div class="d-info2 d-nb w-75">
-                            <a href="index.php?act=nopbaitap&amp;idbt=16" class="btn btn-primary">Xem </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="d-div3">
-                <div class="d-div3-img">
-                    <img src="../uploads/mysql.png" alt="" onerror="erroimg(this)">
-                </div>
-                <br>
-                <div class="d-info">
-                    <div class="d-row1">
-                        <p>WD15306 <br> Lập trình java</p>
-                    </div>
-                </div>
-                <div class="d-info">
-                    <div class="d-row100 box-bot">
-                        <div class="d-info1 d-hc">
-                            <a>36 thành viên </a>
-                        </div>
-                        <div class="d-info2 d-nb w-75">
-                            <a href="index.php?act=nopbaitap&amp;idbt=16" class="btn btn-primary">Xem </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
