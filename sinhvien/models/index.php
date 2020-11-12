@@ -38,8 +38,12 @@ function btdanop(){
 function btchuanop(){
     return laydulieu("SELECT *,baitap.hinh AS 'hinhbt' FROM taikhoan INNER JOIN sv_lop ON sv_lop.idsv=taikhoan.id INNER JOIN lop ON lop.id=sv_lop.idlop INNER JOIN khoahoc ON khoahoc.id=lop.idkhoa INNER JOIN chude ON chude.id=khoahoc.chude INNER JOIN baitap ON lop.id=baitap.idlop WHERE taikhoan.id= $_SESSION[iddn] AND baitap.idbaitap not in (SELECT idbaitap FROM upfile WHERE idsv = $_SESSION[iddn])");
 }
-function laybaitapbyidsv(){
-   return laydulieu("SELECT idbaitap FROM upfile WHERE idsv = $_SESSION[iddn]");
+// function laybaitapbyidsv(){
+//    return laydulieu("SELECT idbaitap FROM upfile WHERE idsv = $_SESSION[iddn]");
+// }
+// lấy bài tập By id sinh viên và id  khóa học
+function layBaiTapByKH($idkh){
+    return laydulieu("SELECT * FROM baitap WHERE idlop IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]) AND idlop IN (SELECT id FROM lop WHERE idkhoa = $idkh)");
 }
 //end BÀI TẬP
 
@@ -50,7 +54,7 @@ function thongbaoct($id){
     return laymot("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang WHERE idtb=$id");
 }
 function thongtinsv($id){
-    return laydulieu("SELECT *,baitap.hinh AS 'hinhbt' FROM taikhoan INNER JOIN sv_lop ON sv_lop.idsv=taikhoan.id INNER JOIN lop ON lop.id=sv_lop.idlop INNER JOIN khoahoc ON khoahoc.id=lop.idkhoa INNER JOIN chude ON chude.id=khoahoc.chude INNER JOIN baitap ON lop.id=baitap.idlop  WHERE taikhoan.id= $id  ORDER BY ngayhethan ");
+    return laydulieu("SELECT *,baitap.hinh AS 'hinhbt' FROM taikhoan INNER JOIN sv_lop ON sv_lop.idsv=taikhoan.id INNER JOIN lop ON lop.id=sv_lop.idlop INNER JOIN khoahoc ON khoahoc.id=lop.idkhoa INNER JOIN chude ON chude.id=khoahoc.chude INNER JOIN baitap ON lop.id=baitap.idlop  WHERE taikhoan.id= $id   ORDER BY ngayhethan ");
 }
 function thongtinsvtomtat($id)
 {
@@ -67,13 +71,13 @@ function khoahoc(){
 //     return laydulieu("SELECT * FROM khoahoc INNER JOIN lop ON lop.idkhoa=khoahoc.id INNER JOIN sv_lop ON sv_lop.idlop=lop.id WHERE sv_lop.idsv=$id  GROUP BY khoahoc.id");
 // }
 function khoahocdadk(){
-    return laydulieu("SELECT * FROM khoahoc INNER JOIN chude ON chude.id=khoahoc.chude WHERE id in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
+    return laydulieu("SELECT *,khoahoc.id AS 'idkh' FROM khoahoc INNER JOIN chude ON chude.id=khoahoc.chude WHERE khoahoc.id in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
 }
 // function khoahocchuadk($id){
 //     return laydulieu("SELECT * FROM khoahoc INNER JOIN lop ON lop.idkhoa=khoahoc.id INNER JOIN sv_lop ON sv_lop.idlop=lop.id WHERE lop.idkhoa NOT IN(SELECT lop.idkhoa FROM khoahoc INNER JOIN lop ON khoahoc.id=lop.idkhoa INNER JOIN sv_lop ON sv_lop.idlop=lop.id WHERE sv_lop.idsv=$id) GROUP BY khoahoc.id");
 // }
 function khoahocchuadk(){
-    return laydulieu("SELECT * FROM khoahoc INNER JOIN chude ON chude.id=khoahoc.chude WHERE id not in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
+    return laydulieu("SELECT * FROM khoahoc INNER JOIN chude ON chude.id=khoahoc.chude WHERE khoahoc.id not in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
 }
 function lophoc($idkhoa){
     return laydulieu("SELECT * FROM lop WHERE idkhoa=$idkhoa");
