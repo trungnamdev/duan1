@@ -47,6 +47,13 @@
 </div>
 </div>
 <div class="boxthongbao-right boxtinnhan_right p-0">
+    <div class="chat-title">
+        <img src="../sinhvien/views/img/avatar.jpg" alt="">
+        <div class="box-info ml-3">
+            <h1 class="h3 text-truncate d-inline-block" style="max-width: 550px;">WD15306 - Lập trình java</h1>
+            <p class="mb-0">36 thành viên</p>
+        </div>
+    </div>
     <div class="doan_chat khungchat pt-1">
         <div class="nguoigui doanchat">
             <img src="../sinhvien/views/img/avatar.jpg" alt="">

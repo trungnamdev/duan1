@@ -295,7 +295,7 @@ ul a:hover {
 }
 
 .khungchat {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 160px);
     overflow-y: scroll;
 }
 
@@ -329,6 +329,27 @@ ul a:hover {
 
 .khungchat {
     padding: 0 20px;
+}
+
+.chat-title {
+    background-color: #fff;
+    border-bottom: 1px solid #efefef;
+    display: flex;
+    padding: 10px;
+}
+
+.chat-title img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.chat-title .box-info {
+    height: 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .nguoinhan {
