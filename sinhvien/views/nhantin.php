@@ -39,7 +39,7 @@
         array_push($arrchat,$arrtam); 
     ?>
         <div class="item mb-2 float-left">
-        <div class="col-2 float-left p-0 hinhchat">
+        <div class="float-left p-0 hinhchat">
             <img class="rounded-circle" src="<?= showfile($img) ?>" alt="">
         </div>
         <div class="col-10 float-left pr-0">
