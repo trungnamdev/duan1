@@ -1,0 +1,79 @@
+.lop-box {
+    width: 49%;
+    float: left;
+    margin-right: 2%;
+}
+
+.lop-box .d-div3 {
+    width: 48%;
+    margin-right: 4%;
+    height: 360px;
+}
+
+.lop-box .d-div3:nth-child(2n) {
+    margin-right: 0;
+}
+
+.lop-box .d-row1>p {
+    font-size: 30px;
+}
+
+.thongbao-box {
+    overflow: unset;
+}
+
+.thongbao-shadow {
+
+    height: 600px;
+    overflow-y: scroll;
+}
+
+/* width */
+.thongbao-shadow::-webkit-scrollbar {
+    width: 5px;
+}
+  
+/* Track */
+.thongbao-shadow::-webkit-scrollbar-track {
+    background: #fff; 
+}
+
+/* Handle */
+.thongbao-shadow::-webkit-scrollbar-thumb {
+    background: #efefef; 
+}
+
+/* Handle on hover */
+.thongbao-shadow::-webkit-scrollbar-thumb:hover {
+    background: #999; 
+}
+
+/* Box bài tập */
+.text-span {
+    color: #6E798C;
+    font-size: 11pt;
+    font-weight: 700;
+}
+
+.addnew {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    z-index: 999;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30pt;
+    transition: .4s;
+}
+
+.addnew:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.075)!important;
+}
+
+.addnew a {
+    display: block;
+}
+

@@ -31,6 +31,16 @@ a:hover {
     cursor: pointer;
 }
 
+.account a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.account a:hover {
+    color: #fff;
+}
+
 .sidebar .avatar {
     border-radius: 15px;
     height: 60px;
@@ -298,7 +308,7 @@ ul a:hover {
 }
 
 .khungchat {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 160px);
     overflow-y: scroll;
 }
 
