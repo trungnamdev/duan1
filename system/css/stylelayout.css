@@ -266,6 +266,7 @@ ul a:hover {
     padding: 0 10px;
     display: flex;
     align-items: center;
+    margin-top: 10px;
 }
 
 .doanchat .info {
@@ -1002,7 +1003,7 @@ input[type=file] {
         height: 200px;
     }
     .d-info1 {
-        width: 51%;
+        width: 73%;
     }
     .box-bot {
         position: absolute;

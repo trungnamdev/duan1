@@ -97,5 +97,11 @@ function xetkhoahoc($id,$idsv){
 function getlopsvdanghoc(){
     return laydulieu("SELECT lop.* , kh.tenkhoa FROM lop inner join khoahoc kh on kh.id = lop.idkhoa WHERE lop.id in (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn])");
 }
+function demsvlop($idlop){
+    return laymot("SELECT COUNT(*) as 'sl' FROM sv_lop WHERE idlop = $idlop");
+}
+function gethinhlopchat($idlop){
+    return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%')")['hinh'];
+}
 ?>
 
