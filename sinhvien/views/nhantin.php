@@ -91,6 +91,11 @@
 </div>
 </div>
 <script>
+$(document).on('keypress',function(e) {
+    if(e.which == 13) {
+        $("#guichat").click();
+    }
+});
     $(".chat-title").hide();
     $(".chat_buttons").hide();
  var firebaseConfig = {
@@ -179,11 +184,12 @@
                 });
                 tinnhan+='<span class="info"><span>'+timecu+'</span></p></div>';
                 $("#chuachat").append(tinnhan);
+                truotdiv();
             });
         }
         $("#guichat").click(function() {
-            // alert(ref);
-            if (ref != "") {
+            var nd = $("#ndchat").val();
+            if (ref != "" && nd != "") {
                 var nd = $("#ndchat").val();
                 var d = new Date("2012-01-18T16:03");
                 var time = d.getHours() + ":" + d.getMinutes(); 
@@ -199,4 +205,9 @@
             }
             var nd = $("#ndchat").val("");
         });
+        function truotdiv(){
+        $('#chuachat').stop ().animate ({
+        scrollTop: $('#chuachat')[0].scrollHeight
+        });
+        }
         </script>

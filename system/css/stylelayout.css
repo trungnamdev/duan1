@@ -230,6 +230,7 @@ ul a:hover {
 
 
 /* Tin nhan */
+
 .hinhchat {
     width: 60px;
     height: 60px;
@@ -1047,4 +1048,8 @@ input[type=file] {
     .thongbao-box {
         height: 500px;
     }
+}
+
+img {
+    object-fit: cover !important;
 }
