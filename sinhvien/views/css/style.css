@@ -423,15 +423,15 @@ ul a:hover {
     font-size: 15px;
 }
 
-.tbbangdiem tr td:nth-child(1) {
+/* .tbbangdiem tr td:nth-child(1) {
     padding-left: 37px;
     width: 180px;
     color: #8B83BA;
     font-size: 20px;
     line-height: 35px;
-}
+} */
 
-.tbbangdiem tr td:nth-child(2) {
+.tbbangdiem tr td:nth-child(2), .tbbangdiem tr td:nth-child(1) {
     width: 670px;
     color: #25213B;
     font-weight: 500;

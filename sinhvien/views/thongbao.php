@@ -32,8 +32,8 @@
     <?php
         foreach ($tb as $thongbao) {
             $nd=date("d-m-Y",strtotime($thongbao['ngaydang']));
-            if(strlen($thongbao['tdtb'])>=60)
-                $thongbao['tdtb'] = substr($thongbao['tdtb'], 0, 60)."...";
+            if(strlen($thongbao['tdtb'])>=70)
+                $thongbao['tdtb'] = substr($thongbao['tdtb'], 0, 70)."...";
     ?>
     <div class="item mb-2">
         <a href="index.php?act=thongbao&idtb=<?=$thongbao['idtb']?>" class="tieude-tb"><?= $thongbao['tdtb'] ?></a>
