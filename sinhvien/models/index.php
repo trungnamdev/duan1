@@ -124,6 +124,6 @@ function GV_getBaiTapByID($idlop){
     var_dump($dem);
     exit();
     return laydulieu("SELECT * FROM baitap WHERE idlop = $idlop ORDER BY idbaitap DESC");
-
+}
 ?>
 
