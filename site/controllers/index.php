@@ -29,7 +29,6 @@ switch ($act) {
                  switch ($_SESSION['role']) {
                     case '0':
                         header('Location: ./sinhvien/index.php');
-                        echo "vai lon.";
                         break;
                     case '1':
                         header('Location: ./giaovien/index.php');

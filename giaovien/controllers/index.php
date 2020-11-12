@@ -1,4 +1,9 @@
 <?php
+session_start();
+ob_start();
+require_once "../sinhvien/models/index.php";
+require_once "../system/share.php";
+require_once "../system/conn.php";
 if(isset($_SESSION['iddn']) && $_SESSION['role'] == 1){
 if(isset($_GET['act'])){
    $act = $_GET['act'];

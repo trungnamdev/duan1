@@ -8,10 +8,11 @@
     <!-- file riêng moi modun -->
     <link rel="stylesheet" href="views/css/style.css">
     <!-- file dung chung cho 3 modun -->
-    <script src="../system/jquery.js"></script>
-    <script src="../system/jquery-ui.js"></script>
-    <script src="../system/jsvali.js"></script>
-    <script src="../system/icons.js"></script>
+    <link rel="stylesheet" href="../system/css/stylelayout.css">
+    <script src="../system/js/jquery.js"></script>
+    <script src="../system/js/jquery-ui.js"></script>
+    <script src="../system/js/jsvali.js"></script>
+    <script src="../system/js/icons.js"></script>
     <script src="views/js/dk1.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -55,12 +56,12 @@
             </div>
             <div class="menu m-3">
                 <ul>
-                    <a href="index.php?act=home"><li class="<?= $achome ?>">Tổng quan<img src="./views/img/tongquan.svg" alt=""></i></li></a>
-                    <a href="index.php?act=baitap&sx=all"><li class="<?= $acbt ?>">Bài Tập<img src="./views/img/baitap.svg" alt=""></li></a>
-                    <a href="index.php?act=bangdiem"><li class="<?= $acbd ?>">Bảng điểm<img src="./views/img/bangdiem.svg" alt=""></li></a>
-                    <a href="index.php?act=dkkh"><li class="<?= $acdkkh ?>">Khóa học<img src="./views/img/monhoc.svg" alt=""></li></a>
-                    <a href="index.php?act=thongbao"><li class="<?= $actb ?>">Thông báo<img src="./views/img/thongbao.svg" alt=""></li></a>
-                    <a href="index.php?act=chat"><li class="<?= $chat ?>">Nhắn tin<img src="./views/img/thongbao.svg" alt=""></li></a>
+                    <a href="index.php?act=home"><li class="<?= $achome ?>">Tổng quan<img src="../system/img/tongquan.svg" alt=""></i></li></a>
+                    <a href="index.php?act=baitap&sx=all"><li class="<?= $acbt ?>">Bài Tập<img src="../system/img/baitap.svg" alt=""></li></a>
+                    <a href="index.php?act=bangdiem"><li class="<?= $acbd ?>">Bảng điểm<img src="../system/img/bangdiem.svg" alt=""></li></a>
+                    <a href="index.php?act=dkkh"><li class="<?= $acdkkh ?>">Khóa học<img src="../system/img/monhoc.svg" alt=""></li></a>
+                    <a href="index.php?act=thongbao"><li class="<?= $actb ?>">Thông báo<img src="../system/img/thongbao.svg" alt=""></li></a>
+                    <a href="index.php?act=chat"><li class="<?= $chat ?>">Nhắn tin<img src="../system/img/thongbao.svg" alt=""></li></a>
                 </ul>
             </div>
         </div>
