@@ -10,6 +10,8 @@ body {
 a:hover {
     text-decoration: none !important;
 }
+
+
 /* Start sile bar */
 
 .sidebar {
@@ -606,6 +608,7 @@ ul a:hover {
     margin-left: 5% !important;
     margin-top: 50px !important;
     float: left !important;
+    padding-right: 30px !important;
     text-align: left;
     transform: none;
     top: 0;
@@ -994,59 +997,48 @@ input[type=file] {
     background-color: white;
 }
 
-@media only screen and (min-width: 1500px){
+@media only screen and (min-width: 1500px) {
     .sidebar {
         width: 300px;
     }
-
     .box-right {
         width: calc(100% - 300px);
         margin-left: 300px;
     }
-
     .d-div3 {
         width: 23%;
         margin-right: calc(8%/3);
         position: relative;
         height: 420px;
     }
-
     .d-row {
         justify-content: unset;
     }
-
     .d-div3:nth-child(3n) {
         margin-right: calc(8%/3) !important;
     }
-
     .d-div3:nth-child(4n) {
         margin-right: 0;
     }
-
     .d-div3-img {
         height: 200px;
     }
-
     .d-info1 {
         width: 51%;
     }
-
     .box-bot {
         position: absolute;
         bottom: 15px;
         left: 0;
         padding: 0 15px;
     }
-
     .boxthongbao-right {
         width: calc(70% - 300px);
     }
-
     .thongbao .item {
         width: 100%;
         padding-top: 15px;
     }
-
     .thongbao-box {
         height: 500px;
     }
