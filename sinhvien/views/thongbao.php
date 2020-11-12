@@ -36,7 +36,7 @@ zz
                 $thongbao['tdtb'] = substr($thongbao['tdtb'], 0, 60)."...";
     ?>
     <div class="item mb-2">
-        <a href="index.php?act=thongbaoct&idtb=<?=$thongbao['idtb']?>" class="tieude-tb"><?= $thongbao['tdtb'] ?></a>
+        <a href="index.php?act=thongbao&idtb=<?=$thongbao['idtb']?>" class="tieude-tb"><?= $thongbao['tdtb'] ?></a>
         <div class="text-secondary info mt-2 pb-3">
             <div class="mr-5">
                 <i class="uim uim-user-nurse "></i>
@@ -59,10 +59,11 @@ zz
         <i class="fas fa-stream"></i>
         <p class="text-secondary">Chọn một thông báo để xem</p>
     </div> -->
-
-    <div class="boxthongbao-chitiet2">
-        <h4>VỀ VIỆC HOÀN THÀNH HỌC PHÍ KÌ FALL 2020</h4>
-        <p class="d-tb-red">THÔNG BÁO NHÓM ĐANG KÍ DỰ ÁN TỐT GHIỆP KÌ SPRING 2021</p>
+<?php
+if (isset($_GET['idtb'])) {?>
+ <div class="boxthongbao-chitiet2">
+        <h4><?=$tbct['tdtb']?></h4>
+        <!-- <p class="d-tb-red">THÔNG BÁO NHÓM ĐANG KÍ DỰ ÁN TỐT GHIỆP KÌ SPRING 2021</p>
         <p class="d-tb-ml20">Hạn đăng kí : 03-25/11/2020</p>
         <p class="d-tb-ml20 d-mt3">Yêu cầu đăng kí</p>
         <div class="d-tb-text">
@@ -81,10 +82,21 @@ zz
             </p>
         </div>
         <p class="d-tb-ml20 d-mt2">Lưu ý: Sau khi kiểm tra điều kiện tiên quyết, các bạn nếu không pass các môn tiên
-            quyết sẽ bị loại ra khỏi nhóm</p>
+            quyết sẽ bị loại ra khỏi nhóm</p> -->
+            <p style="margin-top: 50px;"><?=$tbct['noidung']?></p>
         <div class="d-tb-info">
-            <p>Người đăng: Quang Đạt</p>
-            <p>Ngày đăng: 02/12/2020</p>
+            <p>Người đăng: <?=$tbct['hoten']?></p>
+            <p>Ngày đăng: <?=$tbct['ngaydang']?></p>
         </div>
     </div>
+    <?php
+} else {
+   echo ' <div class="boxthongbao-chitiet">
+   <i class="fas fa-stream"></i>
+   <p class="text-secondary">Chọn một thông báo để xem</p>
+</div>';
+}
+
+?>
+   
 </div>
