@@ -24,7 +24,7 @@
                      <td class="ttkhoahoc py-3 pr-5">
                          <p class="h4 title"><?= $kh['tenkhoa'] ?></p>
                          <p class="my-1 h6">
-                             chỗ này để chủ đề</p>
+                             <?=$kh['tenchude']?></p>
                          <p class="mota">
                              <?= $kh['mota'] ?>
                          </p>
