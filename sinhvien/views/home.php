@@ -23,7 +23,7 @@
                                 <div class="card-body p-0">
                                     <div class="info">
                                         <div class="aut">
-                                            <img src="./views/img/avatar.jpg" alt="">
+                                            <img src="<?= showfile($ttgv['hinh']) ?>" alt="">
                                             <a href="#"><?= $ttgv['hoten'] ?></a>
                                         </div>
                                         <div class="mon mr-2 text-secondary"><?= $sv['tenkhoa'] ?></div>

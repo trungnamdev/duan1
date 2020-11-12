@@ -597,6 +597,11 @@ ul a:hover {
     /* overflow-y: scroll; */
 }
 
+.chat_buttons button {
+    border: 0px !important;
+    background-color: white !important;
+}
+
 .boxthongbao-chitiet i {
     color: #A2A1FF;
 }
@@ -615,6 +620,7 @@ ul a:hover {
     margin-left: 5% !important;
     margin-top: 50px !important;
     float: left !important;
+    padding-right: 30px !important;
     text-align: left;
     transform: none;
     top: 0;
