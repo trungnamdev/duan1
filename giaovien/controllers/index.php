@@ -14,7 +14,7 @@ if(isset($_GET['act'])){
 switch ($act) {
    case 'home':
       $idlop = gv_getidlop();
-      $lopdangday = GV_getlopdangday();
+      // $lopdangday = GV_getlopdangday(); 
       $view = "../giaovien/views/home.php";
       require_once "../giaovien/views/layout.php";
    break;
