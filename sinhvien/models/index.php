@@ -97,5 +97,8 @@ function demsvlop($idlop){
 function gethinhlopchat($idlop){
     return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%')")['hinh'];
 }
+function gettenchude($idkh){
+    return laymot("SELECT * FROM chude WHERE id = (SELECT chude FROM khoahoc WHERE chude = $idkh)");
+}
 ?>
 
