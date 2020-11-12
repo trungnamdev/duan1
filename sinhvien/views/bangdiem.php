@@ -13,7 +13,10 @@
         $dtb = 0;
         foreach ($baitapkh as $btap) {
             $slbt++;
+            $bt = checknopbai($btap['idbaitap']);
+            if(isset($bt['diem'])){
             $tongdiem += checknopbai($btap['idbaitap'])['diem'];
+            }
         }
         $dtb = $tongdiem/$slbt;
         if($dtb >= 0) $tb = $dtb;
@@ -38,10 +41,9 @@
             
             foreach ($baitapkh as $bt) {
                 $diem = checknopbai($bt['idbaitap']);
-                if($diem['diem'] != ''){
+                if(isset($bt['diem'])){
                     $diembt = $diem['diem']; 
-                }
-                else{ 
+                }else{ 
                     if(!is_array($diem)) $diembt = 'Chưa nộp';
                     else $diembt = 'Chưa chấm';
                 }
