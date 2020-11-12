@@ -1049,3 +1049,7 @@ input[type=file] {
         height: 500px;
     }
 }
+
+img {
+    object-fit: cover !important;
+}
