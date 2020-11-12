@@ -55,7 +55,7 @@ function thongbaoct($id){
 }
 function thongtinsv($id){
     return laydulieu("SELECT *,baitap.hinh AS 'hinhbt' FROM taikhoan INNER JOIN sv_lop ON sv_lop.idsv=taikhoan.id INNER JOIN lop ON lop.id=sv_lop.idlop INNER JOIN khoahoc ON khoahoc.id=lop.idkhoa INNER JOIN chude ON chude.id=khoahoc.chude INNER JOIN baitap ON lop.id=baitap.idlop  WHERE taikhoan.id= $id   ORDER BY ngayhethan ");
-}
+}   
 function thongtinsvtomtat($id)
 {
     return laymot("SELECT * FROM taikhoan WHERE taikhoan.id= $id ");

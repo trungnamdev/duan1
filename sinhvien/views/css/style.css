@@ -593,6 +593,11 @@ ul a:hover {
     /* overflow-y: scroll; */
 }
 
+.chat_buttons button {
+    border: 0px !important;
+    background-color: white !important;
+}
+
 .boxthongbao-chitiet i {
     color: #A2A1FF;
 }
