@@ -104,21 +104,4 @@ function gethinhlopchat($idlop){
 function gettenchude($cd){
     return laymot("SELECT * FROM chude WHERE id = $cd");
 }
-<<<<<<< HEAD
-
-// Phần này của giáo viên mà có gì paste qua bên đó nha
-// Bài tập
-function getIDGV(){
-    return laymot("SELECT * FROM gvlop WHERE idgv = ".$_SESSION['iddn']);
-}
-
-// lấy từng id lớp của gv
-function gv_getidlop(){
-    $idlop = getIDGV()['idlop'];
-    $mangidlop = explode(",", $idlop);
-    return $mangidlop;
-}
-
-=======
->>>>>>> a2699d91cd69ec21f78972328f0157dd2e9ed71b
 ?>
