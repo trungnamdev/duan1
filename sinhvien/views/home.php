@@ -62,7 +62,7 @@
                 $nd = date("d-m-Y", strtotime($thongbao['ngaydang']));
             ?>
                 <div class="item mb-3">
-                    <a href="index.php?act=thongbaoct&idtb=<?= $thongbao['idtb'] ?>" class="h5"><?= $thongbao['tdtb'] ?></a>
+                    <a href="index.php?act=thongbao&idtb=<?= $thongbao['idtb'] ?>" class="h5"><?= $thongbao['tdtb'] ?></a>
                     <div class="info mt-2 text-secondary">
                         <div class="mr-3">
                             <i class="uim uim-user-nurse "></i>
