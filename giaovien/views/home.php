@@ -7,25 +7,34 @@
     <div class="slide swiper-container">
         <div class="swiper-wrapper">
             <!-- Start box -->
+            <?php 
+                foreach ($idlop as $id) {
+                    $baitap = GV_getBaiTapByID($id);
+                    foreach ($baitap as $bt) {
+
+                    $nhh = date("d-m-Y", strtotime($bt['ngayhethan']));
+            ?>
             <div class="card mb-3 swiper-slide thongbao-shadow">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img class="card-img" alt="..." src="../uploads/js.png" src="../uploads/js.png">
+                        <img class="card-img" alt="..." src="<?= showfile($bt['hinhbt']) ?>" onerror="erroimg(this)">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body p-0">
                             <div class="info">
                                 <div class="aut">
-                                    <div class="mon mr-2 text-secondary">PHP cơ bản</div>
+                                    <div class="mon mr-2 text-secondary">môn</div>
                                 </div>
                             </div>
-                            <h5 class="card-title mb-1 mt-1"><a href="#">Lab 2: Hack nasa căn bản bằng HTML</a></h5>
-                            <p class="text-secondary dealine m-0">Hạn chót: 20/11/2020</p>
+                            <h5 class="card-title mb-1 mt-1"><a href="#"><?= $bt['tenbaitap'] ?></a></h5>
+                            <p class="text-secondary dealine m-0">Hạn chót: <?= $nhh ?></p>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <?php                         # code...
+                    }
+                }?>
             <div class="card mb-3 swiper-slide thongbao-shadow">
                 <div class="row no-gutters">
                     <div class="col-md-4">

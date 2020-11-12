@@ -48,7 +48,19 @@ switch ($act) {
             $allbaitap = btchuanop(); 
             break;
       }
-      
+      // Lấy all bài tập theo ID lớp 
+
+   
+      $btdanop = 0;
+      $btchuanop = 0;
+      foreach ($checkbaitap as $allbt) {  
+         // Đếm bài tập đã nộp
+         $checkbt = checknopbai($allbt['idbaitap']); 
+         if(is_array($checkbt) > 0 ) $btdanop +=1 ;
+         if(is_array($checkbt) == 0)   $btchuanop +=1;
+            
+      }
+    // Đếm bài tập chưa nộp
       $acbt = "active";
       $view = "../sinhvien/views/baitap.php";
       require_once "../sinhvien/views/layout.php";

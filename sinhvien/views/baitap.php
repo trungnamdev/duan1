@@ -1,18 +1,4 @@
-<?php
-    // Lấy all bài tập theo ID lớp 
-
-   
-    $btdanop = 0;
-    $btchuanop = 0;
-    foreach ($checkbaitap as $allbt) {  
-        // Đếm bài tập đã nộp
-        $checkbt = checknopbai($allbt['idbaitap']); 
-        if(is_array($checkbt) > 0 ) $btdanop +=1 ;
-        if(is_array($checkbt) == 0)   $btchuanop +=1;
-         
-    }
-    // Đếm bài tập chưa nộp
-  
+<?php 
    
 ?>
 
@@ -92,7 +78,7 @@
                  <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-outline-danger">HẾT HẠN</a>
                 <?php }else{if(is_array($filenop)){
                         if($filenop['diem'] != ''){ ?>
-                        <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-outline-info">Đã chấm <?= $filenop['diem'] ?>/ 10</a>
+                        <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-outline-info">Đã chấm <?= $filenop['diem'] ?>/10</a>
                     <?php }else{?>
                         <a href="index.php?act=nopbaitap&idbt=<?= $idbt ?>" class="btn btn-primary">Đã Nộp </a>
                     <?php }}else{?>

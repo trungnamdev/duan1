@@ -297,7 +297,7 @@ ul a:hover {
 }
 
 .khungchat {
-    height: calc(100vh - 160px) !important;
+    height: calc(100vh - 170px);
     overflow-y: scroll;
 }
 
@@ -425,15 +425,17 @@ ul a:hover {
     font-size: 15px;
 }
 
-.tbbangdiem tr td:nth-child(1) {
+
+/* .tbbangdiem tr td:nth-child(1) {
     padding-left: 37px;
     width: 180px;
     color: #8B83BA;
     font-size: 20px;
     line-height: 35px;
-}
+} */
 
-.tbbangdiem tr td:nth-child(2) {
+.tbbangdiem tr td:nth-child(2),
+.tbbangdiem tr td:nth-child(1) {
     width: 670px;
     color: #25213B;
     font-weight: 500;
@@ -457,6 +459,7 @@ ul a:hover {
 
 .tbbangdiem tr td:nth-child(4) {
     line-height: 40px;
+    width: 20%;
     text-align: center !important;
 }
 
@@ -468,8 +471,8 @@ ul a:hover {
     padding: 0 !important;
 }
 
-.bgtimnhat td:nth-child(4) .uim-svg {
-    margin: 0 30px !important;
+.tbbangdiem .bgtimnhat td:nth-child(4) .uim-svg {
+    margin: 0 0px !important;
     font-size: 35px;
 }
 

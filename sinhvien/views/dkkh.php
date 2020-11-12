@@ -11,6 +11,7 @@
          <?php
             foreach ($khoahoc as $kh) {
                 $idkhoa =$kh['id'];
+                $tenchude = gettenchude($kh['chude']);
                 $idsv = $_SESSION['iddn'];
                 $checksv = xetkhoahoc($idkhoa, $idsv);
                 $lophoc = lophoc($idkhoa);
@@ -24,7 +25,7 @@
                      <td class="ttkhoahoc py-3 pr-5">
                          <p class="h4 title"><?= $kh['tenkhoa'] ?></p>
                          <p class="my-1 h6">
-                             <?=$kh['tenchude']?></p>
+                             <?= $tenchude['tenchude'] ?></p>
                          <p class="mota">
                              <?= $kh['mota'] ?>
                          </p>
