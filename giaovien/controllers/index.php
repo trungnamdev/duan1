@@ -10,7 +10,6 @@ if(isset($_GET['act'])){
 }else{
    $act = "home";
 }
-
 switch ($act) {
    case 'home':
       $idlop = gv_getidlop();
