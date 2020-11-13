@@ -10,6 +10,8 @@
             <?php 
                 foreach ($idlop as $id) {
                     $baitap = GV_getBaiTapByID($id);
+                 
+                    $tenlop=tenlop($id);
                     foreach ($baitap as $bt) {
                     $nhh = date("d-m-Y", strtotime($bt['ngayhethan']));
             ?>
@@ -22,7 +24,7 @@
                         <div class="card-body p-0">
                             <div class="info">
                                 <div class="aut">
-                                    <div class="mon mr-2 text-secondary">môn</div>
+                                    <div class="mon mr-2 text-secondary"><?=$tenlop['tenlop']?></div>
                                 </div>
                             </div>
                             <h5 class="card-title mb-1 mt-1"><a href="#"><?= $bt['tenbaitap'] ?></a></h5>
@@ -55,6 +57,8 @@
         <div class="box-content">
             <?php 
                 foreach ($lopdangday as $lop) {
+                    $id=$lop['idlopd'];
+                    $countlop=countlop($id);
             ?>
             <div class="d-div3">
                 <div class="d-div3-img">
@@ -69,7 +73,7 @@
                 <div class="d-info">
                     <div class="d-row100 box-bot">
                         <div class="d-info1 d-hc">
-                            <a>36 thành viên </a>
+                            <a><?=$countlop['tong']?> thành viên </a>
                         </div>
                         <div class="d-info2 d-nb w-75">
                             <a href="index.php?act=nopbaitap&amp;idbt=16" class="btn btn-primary">Xem </a>

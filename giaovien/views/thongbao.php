@@ -29,7 +29,7 @@
     <div class="tieude h1">THÔNG BÁO</div>
 </div>
 <div class="thongbao mt-5">
-        <div class="item mb-2">
+        <!-- <div class="item mb-2">
         <a href="index.php?act=thongbaoct&amp;idtb=1" class="tieude-tb">THÔNG BÁO VỀ VIỆC HỌC PHÍ NĂM 2024</a>
         <div class="text-secondary info mt-2 pb-3">
             <div class="mr-5">
@@ -67,8 +67,27 @@
                 <span class="ml-1">10-11-2020</span>
             </div>
         </div>
+    </div> -->
+    <?php
+        foreach ($tb as $thongbao) {
+            $nd=date("d-m-Y",strtotime($thongbao['ngaydang']));
+            if(strlen($thongbao['tdtb'])>=70)
+                $thongbao['tdtb'] = substr($thongbao['tdtb'], 0, 70)."...";
+    ?>
+    <div class="item mb-2">
+        <a href="index.php?act=thongbao&idtb=<?=$thongbao['idtb']?>" class="tieude-tb"><?= $thongbao['tdtb'] ?></a>
+        <div class="text-secondary info mt-2 pb-3">
+            <div class="mr-5">
+                <i class="uim uim-user-nurse "></i>
+                <span class="ml-1"><?=$thongbao['hoten']?></span>
+            </div>
+            <div>
+                <i class="uim uim-clock"></i>
+                <span class="ml-1"><?= $nd ?></span>
+            </div>
+        </div>
     </div>
-    
+    <?php }?>
 
 </div>
 </div>
@@ -79,7 +98,7 @@
         <p class="text-secondary">Chọn một thông báo để xem</p>
     </div> -->
 
-    <div class="boxthongbao-chitiet2">
+    <!-- <div class="boxthongbao-chitiet2">
         <h4>VỀ VIỆC HOÀN THÀNH HỌC PHÍ KÌ FALL 2020</h4>
         <p class="d-tb-red">THÔNG BÁO NHÓM ĐANG KÍ DỰ ÁN TỐT GHIỆP KÌ SPRING 2021</p>
         <p class="d-tb-ml20">Hạn đăng kí : 03-25/11/2020</p>
@@ -105,5 +124,24 @@
             <p>Người đăng: Quang Đạt</p>
             <p>Ngày đăng: 02/12/2020</p>
         </div>
+    </div> -->
+    <?php
+if (isset($_GET['idtb'])) {?>
+ <div class="boxthongbao-chitiet2">
+        <h4><?=$tbct['tdtb']?></h4>
+            <p style="margin-top: 50px;"><?=$tbct['noidung']?></p>
+        <div class="d-tb-info">
+            <p>Người đăng: <?=$tbct['hoten']?></p>
+            <p>Ngày đăng: <?=$tbct['ngaydang']?></p>
+        </div>
     </div>
+    <?php
+} else {
+   echo ' <div class="boxthongbao-chitiet">
+   <i class="fas fa-stream"></i>
+   <p class="text-secondary">Chọn một thông báo để xem</p>
+</div>';
+}
+
+?>
 </div>
