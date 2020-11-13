@@ -51,7 +51,7 @@
                         <strong>
                             <p class="mb-1"><?=$_SESSION['tdn']?></p>
                         </strong>
-                        <span class="idsv">HS<?= $_SESSION['iddn'] ?></span>
+                        <span class="idsv">GV<?= $_SESSION['iddn'] ?></span>
                     </div>
                 </a>
                 <a href="index.php?act=dangxuat" data-toggle="tooltip"  data-placement="bottom" title="Đăng xuất">
