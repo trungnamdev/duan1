@@ -191,7 +191,7 @@ $(document).on('keypress',function(e) {
             var nd = $("#ndchat").val();
             if (ref != "" && nd != "") {
                 var nd = $("#ndchat").val();
-                var d = new Date("2012-01-18T16:03");
+                var d = new Date();
                 var time = d.getHours() + ":" + d.getMinutes(); 
                 var fbref = firebase.database().ref(ref);
                 fbref.push({
