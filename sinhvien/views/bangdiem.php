@@ -58,7 +58,7 @@
             </td>
             <td>
             <a href="index.php?act=nopbaitap&idbt=<?=$bt['idbaitap']?>">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2em">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#384E85" viewBox="0 0 24 24" width="2em">
                     <path class="uim-primary"
                         d="M7.293,12.707l3.99969,3.9997a1.00354,1.00354,0,0,0,1.41468,0L16.707,12.707A.99989.99989,0,0,0,15.293,11.293L13,13.58594V8a1,1,0,0,0-2,0v5.58594L8.707,11.293A.99989.99989,0,0,0,7.293,12.707Z">
                     </path>

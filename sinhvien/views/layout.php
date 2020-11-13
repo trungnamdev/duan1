@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- file riêng moi modun -->
-    <link rel="stylesheet" href="views/css/style.css">
     <!-- file dung chung cho 3 modun -->
     <link rel="stylesheet" href="../system/css/stylelayout.css">
+    <!-- file riêng moi modun -->
+    <link rel="stylesheet" href="views/css/style.css">
     <script src="../system/js/jquery.js"></script>
     <script src="../system/js/jquery-ui.js"></script>
     <script src="../system/js/jsvali.js"></script>

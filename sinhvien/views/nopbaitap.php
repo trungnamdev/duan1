@@ -28,9 +28,9 @@
         </p>
         <?php
         if (is_array($nopbai)) { ?>
-            <label class="fileup"><?= $nopbai['file'] ?></label>
+            <label class="fileup btn btn-outline-primary"><?= $nopbai['file'] ?></label>
             <?php if ($nopbai['diem'] != "") { ?>
-                <button type="button" class="diemnb mb-2">Đã chấm: <?= $nopbai['diem'] ?>/10</button>
+                <button type="button" class="diemnb mb-2 btn btn-success">Đã chấm: <?= $nopbai['diem'] ?>/10</button>
                 <?php } else {
                 if ($han) { ?>
                     <form action="index.php?act=noplaibt&idbt=<?= $idbt ?>" enctype="multipart/form-data" method="post">

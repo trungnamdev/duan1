@@ -981,11 +981,11 @@ input[type=file] {
 }
 
 .nopbaitap label {
-    border: #3f00ff 2px solid;
+    /* border: #3f00ff 2px solid; */
     border-radius: 5px;
-    padding: 3px 0px;
-    color: #3f00ff;
-    float: left;
+    padding: 6px 0px;
+    color: #007bff;
+    /* float: left; */
     cursor: pointer;
     width: 100%;
     text-align: center;
