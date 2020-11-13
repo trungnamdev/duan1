@@ -36,4 +36,13 @@ function thongbao(){
  function thongbaoct($id){
      return laymot("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang WHERE idtb=$id");
  }
+
+//  nhan tin
+function demsvlop($idlop){
+    return laymot("SELECT COUNT(*) as 'sl' FROM sv_lop WHERE idlop = $idlop");
+}
+function gethinhlopchat($idlop){
+    return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%')");
+}
+// 
 ?>

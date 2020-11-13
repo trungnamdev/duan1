@@ -41,11 +41,12 @@ switch ($act) {
       $view = "../giaovien/views/thongbao.php";
       require_once "../giaovien/views/layout.php";
       break;
-   case 'chat':
-      $achome="active";
-      $view = "../giaovien/views/nhantin.php";
-      require_once "../giaovien/views/layout.php";
-   break;
+      case 'chat':
+         $chat = "active";
+         $alllop =  GV_getlopdangday();
+         $view = "../giaovien/views/nhantin.php";
+         require_once "../giaovien/views/layout.php";
+      break;
    
    case 'lop':
       $achome="active";
