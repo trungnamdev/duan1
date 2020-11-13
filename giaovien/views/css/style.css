@@ -23,32 +23,41 @@
 }
 
 .thongbao-shadow {
-
     height: 600px;
     overflow-y: scroll;
 }
 
+
 /* width */
+
 .thongbao-shadow::-webkit-scrollbar {
     width: 5px;
 }
-  
+
+
 /* Track */
+
 .thongbao-shadow::-webkit-scrollbar-track {
-    background: #fff; 
+    background: #fff;
 }
+
 
 /* Handle */
+
 .thongbao-shadow::-webkit-scrollbar-thumb {
-    background: #efefef; 
+    background: #efefef;
 }
+
 
 /* Handle on hover */
+
 .thongbao-shadow::-webkit-scrollbar-thumb:hover {
-    background: #999; 
+    background: #999;
 }
 
+
 /* Box bài tập */
+
 .text-span {
     color: #6E798C;
     font-size: 11pt;
@@ -77,3 +86,6 @@
     display: block;
 }
 
+.menu ul a li img {
+    width: 30px;
+}

@@ -168,13 +168,13 @@ $(document).on('keypress',function(e) {
                         if(value['id'] == iddn){
                             tinnhan+= '<div class="nguoinhan doanchat doanchat2"><p>'+value['noidung'];
                         }else{
-                            tinnhan+= '<div class="nguoigui doanchat"><img src="../uploads/'+value['img']+'"><p>'+value['noidung'];
+                            tinnhan+= '<div class="nguoigui doanchat"><img src="../uploads/'+value['img']+'"><p><span class="hotenchat">'+value['ten']+'</span><br>'+value['noidung'];
                         }
                         }else{
                         if(value['id'] == iddn){
                             tinnhan+= '<span class="info"><span>'+timecu+'</span></p></div><div class="nguoinhan doanchat doanchat2"><p>'+value['noidung'];
                         }else{
-                            tinnhan+= '<span class="info"><span>'+timecu+'</span></p></div><div class="nguoigui doanchat"><img src="../uploads/'+value['img']+'"><p>'+value['noidung'];
+                            tinnhan+= '<span class="info"><span>'+timecu+'</span></p></div><div class="nguoigui doanchat"><img src="../uploads/'+value['img']+'"><p><span class="hotenchat">'+value['ten']+'</span><br>'+value['noidung'];
                         }
                         }
                     }
@@ -191,7 +191,7 @@ $(document).on('keypress',function(e) {
             var nd = $("#ndchat").val();
             if (ref != "" && nd != "") {
                 var nd = $("#ndchat").val();
-                var d = new Date("2012-01-18T16:03");
+                var d = new Date();
                 var time = d.getHours() + ":" + d.getMinutes(); 
                 var fbref = firebase.database().ref(ref);
                 fbref.push({

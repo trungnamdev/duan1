@@ -10,29 +10,46 @@ if(isset($_GET['act'])){
 }else{
    $act = "home";
 }
+$achome="";$acbt="";$acdkkh="";$actb="";$chat="";
 switch ($act) {
    case 'home':
+      $achome="active";
       $idlop = gv_getidlop();
-      // $lopdangday = GV_getlopdangday(); 
+      $lopdangday = GV_getlopdangday(); 
       $view = "../giaovien/views/home.php";
       require_once "../giaovien/views/layout.php";
    break;
 
    case 'baitap':
+      $acbt="active";
       $view = "../giaovien/views/baitap.php";
       require_once "../giaovien/views/layout.php";
       break;
 
    case 'thongbao':
+      $actb="active";
+      $tb=thongbao();
+      $arrtbjs = [];
+      foreach($tb as $tb1){
+         $arrtam = [$tb1['tdtb'],$tb1['noidung'],$tb1['hoten'],$tb1['ngaydang']];
+         array_push($arrtbjs,$arrtam);
+      }
+      if (isset($_GET['idtb'])) {
+         $idtb=$_GET['idtb'];
+         $tbct=thongbaoct($idtb);
+      }
       $view = "../giaovien/views/thongbao.php";
       require_once "../giaovien/views/layout.php";
       break;
-   case 'chat':
-      $view = "../giaovien/views/nhantin.php";
-      require_once "../giaovien/views/layout.php";
-   break;
+      case 'chat':
+         $chat = "active";
+         $alllop =  GV_getlopdangday();
+         $view = "../giaovien/views/nhantin.php";
+         require_once "../giaovien/views/layout.php";
+      break;
    
    case 'lop':
+      $achome="active";
       $view = "../giaovien/views/lophoc.php";
       require_once "../giaovien/views/layout.php";
       break;

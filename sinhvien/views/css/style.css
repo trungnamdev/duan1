@@ -296,7 +296,7 @@ ul a:hover {
     padding: 5px 20px;
     border-radius: 10px;
     margin-bottom: 0;
-    line-height: 40px;
+    line-height: 30px;
     margin-left: 5px;
 }
 
@@ -458,7 +458,9 @@ ul a:hover {
 
 .tbbangdiem tr td:nth-child(3) span {
     font-weight: 700 !important;
-    font-size: 18px;
+    font-size: 15px;
+    /*18px*/
+    line-height: 40px
 }
 
 .tbbangdiem tr td:nth-child(4) {
@@ -472,7 +474,8 @@ ul a:hover {
 }
 
 .bgtimnhat td:nth-child(4) {
-    padding: 0 !important;
+    /* padding: 0px !important; cái cũ*/
+    padding: 2px !important;
 }
 
 .tbbangdiem .bgtimnhat td:nth-child(4) .uim-svg {
@@ -589,7 +592,7 @@ ul a:hover {
 }
 
 .boxthongbao-right {
-    width: 50%;
+    width: calc(100% - 670px);
     float: left;
     background: #f5f5f5;
     height: 100%;
@@ -670,6 +673,7 @@ ul a:hover {
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     height: 400px;
+    position: relative;
 }
 
 .d-div3:nth-child(3n) {
@@ -690,6 +694,13 @@ ul a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.d-row1 .d-mota {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    color: #6c757d;
 }
 
 .d-info {
@@ -715,6 +726,12 @@ ul a:hover {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.d-row100.box-bot {
+    position: absolute;
+    bottom: 5px;
+    width: 90%;
+}
+
 .d-info1>img {
     border: 1px solid #efefef;
     width: 30px;
@@ -724,7 +741,7 @@ ul a:hover {
 }
 
 .d-info2 {
-    width: 60%;
+    width: 50%;
     float: right;
     text-align: right;
     color: #6E798C;
@@ -986,7 +1003,8 @@ input[type=file] {
     display: none;
 }
 
-.nopbaitap label {
+
+/* .nopbaitap label {
     border: #3f00ff 2px solid;
     border-radius: 5px;
     padding: 3px 0px;
@@ -995,7 +1013,7 @@ input[type=file] {
     cursor: pointer;
     width: 100%;
     text-align: center;
-}
+} */
 
 .diemnb {
     border: #ff0000 2px solid;
