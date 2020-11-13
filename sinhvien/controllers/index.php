@@ -157,11 +157,14 @@ switch ($act) {
       } 
    break;
    case 'nopbai':
-      if(isset($_GET['idbt'])&&isset($_POST['nop'])){
-         $file = $_FILES['baitap'];
-         $idbt = $_GET['idbt'];
-         upfile($file);
-         nopbai($file['name'],$idbt);
+      if(isset($_GET['idbt'])&& isset($_POST['nop'])){
+         $file = $_FILES['baitap']; 
+         $idbt = $_GET['idbt']; 
+         
+         if ($file['name'] != ''){
+            upfile($file);
+            nopbai($file['name'],$idbt); 
+         } else echo "NO";
          header("Location: index.php?act=nopbaitap&idbt=$idbt");
       }else{
          header('Location: index.php');

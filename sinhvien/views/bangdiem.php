@@ -3,8 +3,7 @@
 </div>
 
 <?php 
-    $allkh = khoahocdadk();
-    
+    $allkh = khoahocdadk(); 
     foreach ($allkh as $kh) {
         $tenkh = $kh['tenkhoa'];
         $baitapkh = layBaiTapByKH($kh['id']); 
