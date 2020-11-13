@@ -1053,3 +1053,9 @@ input[type=file] {
 img {
     object-fit: cover !important;
 }
+
+.hotenchat {
+    color: rgba(0, 0, 0, .5);
+    font-size: 14px;
+    line-height: 0px !important;
+}

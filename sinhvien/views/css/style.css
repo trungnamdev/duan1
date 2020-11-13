@@ -11,6 +11,7 @@ a:hover {
     text-decoration: none !important;
 }
 
+
 /* Start sile bar */
 
 .sidebar {
@@ -36,7 +37,8 @@ a:hover {
     width: 60px;
 }
 
-.menu ul, .option-box ul {
+.menu ul,
+.option-box ul {
     padding-left: 0;
     list-style: none;
 }
@@ -51,7 +53,8 @@ a:hover {
     justify-content: space-between;
 }
 
-.menu ul li:hover, .menu ul li.active {
+.menu ul li:hover,
+.menu ul li.active {
     background-color: #384E85;
 }
 
@@ -97,13 +100,16 @@ ul a:hover {
     transition: .2s;
 }
 
-.box-right .option-box a.active, .box-right .option-box a:hover {
+.box-right .option-box a.active,
+.box-right .option-box a:hover {
     background-color: #C1C4FF;
     border: 2px solid #C1C4FF;
     text-decoration: none;
 }
 
+
 /* End sile bar */
+
 
 /* Tổng  Quan */
 
@@ -157,11 +163,13 @@ ul a:hover {
     float: left;
 }
 
+
 /* width */
 
 .thongbao-box::-webkit-scrollbar {
     width: 5px;
 }
+
 
 /* Track */
 
@@ -170,11 +178,13 @@ ul a:hover {
     overflow: hidden;
 }
 
+
 /* Handle */
 
 .thongbao-box::-webkit-scrollbar-thumb {
     background: #efefef;
 }
+
 
 /* Handle on hover */
 
@@ -205,11 +215,13 @@ ul a:hover {
     line-height: 10px;
 }
 
+
 /*box-shadow*/
 
 .thongbao-shadow {
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.09);
 }
+
 
 /* Tin nhan */
 
@@ -284,7 +296,7 @@ ul a:hover {
     padding: 5px 20px;
     border-radius: 10px;
     margin-bottom: 0;
-    line-height: 40px;
+    line-height: 30px;
     margin-left: 5px;
 }
 
@@ -293,11 +305,13 @@ ul a:hover {
     overflow-y: scroll;
 }
 
+
 /* width */
 
 .khungchat::-webkit-scrollbar {
     width: 5px;
 }
+
 
 /* Track */
 
@@ -305,11 +319,13 @@ ul a:hover {
     background: #efefef;
 }
 
+
 /* Handle */
 
 .khungchat::-webkit-scrollbar-thumb {
     background: #fff;
 }
+
 
 /* Handle on hover */
 
@@ -362,6 +378,7 @@ ul a:hover {
     margin-bottom: 5px;
 }
 
+
 /* End Tổng Quan */
 
 .bangdiem {
@@ -370,6 +387,7 @@ ul a:hover {
     border-radius: 8px;
     margin-bottom: 30px;
 }
+
 
 /* Bảng Điểm */
 
@@ -411,6 +429,7 @@ ul a:hover {
     font-size: 15px;
 }
 
+
 /* .tbbangdiem tr td:nth-child(1) {
     padding-left: 37px;
     width: 180px;
@@ -419,7 +438,8 @@ ul a:hover {
     line-height: 35px;
 } */
 
-.tbbangdiem tr td:nth-child(2), .tbbangdiem tr td:nth-child(1) {
+.tbbangdiem tr td:nth-child(2),
+.tbbangdiem tr td:nth-child(1) {
     width: 670px;
     color: #25213B;
     font-weight: 500;
@@ -437,8 +457,9 @@ ul a:hover {
 }
 
 .tbbangdiem tr td:nth-child(3) span {
-    font-weight: 700 !important; 
-    font-size: 15px; /*18px*/
+    font-weight: 700 !important;
+    font-size: 15px;
+    /*18px*/
     line-height: 40px
 }
 
@@ -448,7 +469,7 @@ ul a:hover {
     text-align: center !important;
 }
 
-.tbbangdiem tr td:nth-child(4) a {  
+.tbbangdiem tr td:nth-child(4) a {
     color: #6E6893 !important;
 }
 
@@ -456,7 +477,6 @@ ul a:hover {
     /* padding: 0px !important; cái cũ*/
     padding: 2px !important;
 }
-
 
 .tbbangdiem .bgtimnhat td:nth-child(4) .uim-svg {
     margin: 0 0px !important;
@@ -467,7 +487,9 @@ ul a:hover {
     color: #6E6893 !important;
 }
 
+
 /* End Bảng Điểm */
+
 
 /* Khóa Học */
 
@@ -557,7 +579,9 @@ ul a:hover {
     font-weight: bold;
 }
 
+
 /* End Khóa Học */
+
 
 /* Thông Báo */
 
@@ -585,7 +609,8 @@ ul a:hover {
     color: #A2A1FF;
 }
 
-.boxthongbao-chitiet, .boxthongbao-chitiet2 {
+.boxthongbao-chitiet,
+.boxthongbao-chitiet2 {
     text-align: center;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -624,6 +649,7 @@ ul a:hover {
 .thongbao-shadow a:hover {
     text-decoration: none;
 }
+
 
 /* End Thông Báo */
 
@@ -669,7 +695,6 @@ ul a:hover {
     height: 100%;
     object-fit: cover;
 }
-
 
 .d-row1 .d-mota {
     width: 100%;
@@ -749,6 +774,7 @@ ul a:hover {
     font-weight: 700;
     font-size: 20px;
 }
+
 
 /* 
 .d-row1>span {
@@ -976,6 +1002,7 @@ ul a:hover {
 input[type=file] {
     display: none;
 }
+
 
 /* .nopbaitap label {
     border: #3f00ff 2px solid;
