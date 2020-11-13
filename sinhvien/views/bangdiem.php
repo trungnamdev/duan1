@@ -40,7 +40,7 @@
             
             foreach ($baitapkh as $bt) {
                 $diem = checknopbai($bt['idbaitap']);
-                if(isset($bt['diem'])){
+                if(isset($diem['diem'])){
                     $diembt = $diem['diem']; 
                 }else{ 
                     if(!is_array($diem)) $diembt = 'Chưa nộp';
