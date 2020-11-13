@@ -11,7 +11,6 @@ a:hover {
     text-decoration: none !important;
 }
 
-
 /* Start sile bar */
 
 .sidebar {
@@ -37,8 +36,7 @@ a:hover {
     width: 60px;
 }
 
-.menu ul,
-.option-box ul {
+.menu ul, .option-box ul {
     padding-left: 0;
     list-style: none;
 }
@@ -53,8 +51,7 @@ a:hover {
     justify-content: space-between;
 }
 
-.menu ul li:hover,
-.menu ul li.active {
+.menu ul li:hover, .menu ul li.active {
     background-color: #384E85;
 }
 
@@ -100,16 +97,13 @@ ul a:hover {
     transition: .2s;
 }
 
-.box-right .option-box a.active,
-.box-right .option-box a:hover {
+.box-right .option-box a.active, .box-right .option-box a:hover {
     background-color: #C1C4FF;
     border: 2px solid #C1C4FF;
     text-decoration: none;
 }
 
-
 /* End sile bar */
-
 
 /* Tổng  Quan */
 
@@ -163,13 +157,11 @@ ul a:hover {
     float: left;
 }
 
-
 /* width */
 
 .thongbao-box::-webkit-scrollbar {
     width: 5px;
 }
-
 
 /* Track */
 
@@ -178,13 +170,11 @@ ul a:hover {
     overflow: hidden;
 }
 
-
 /* Handle */
 
 .thongbao-box::-webkit-scrollbar-thumb {
     background: #efefef;
 }
-
 
 /* Handle on hover */
 
@@ -215,13 +205,11 @@ ul a:hover {
     line-height: 10px;
 }
 
-
 /*box-shadow*/
 
 .thongbao-shadow {
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.09);
 }
-
 
 /* Tin nhan */
 
@@ -305,13 +293,11 @@ ul a:hover {
     overflow-y: scroll;
 }
 
-
 /* width */
 
 .khungchat::-webkit-scrollbar {
     width: 5px;
 }
-
 
 /* Track */
 
@@ -319,13 +305,11 @@ ul a:hover {
     background: #efefef;
 }
 
-
 /* Handle */
 
 .khungchat::-webkit-scrollbar-thumb {
     background: #fff;
 }
-
 
 /* Handle on hover */
 
@@ -378,7 +362,6 @@ ul a:hover {
     margin-bottom: 5px;
 }
 
-
 /* End Tổng Quan */
 
 .bangdiem {
@@ -387,7 +370,6 @@ ul a:hover {
     border-radius: 8px;
     margin-bottom: 30px;
 }
-
 
 /* Bảng Điểm */
 
@@ -429,7 +411,6 @@ ul a:hover {
     font-size: 15px;
 }
 
-
 /* .tbbangdiem tr td:nth-child(1) {
     padding-left: 37px;
     width: 180px;
@@ -438,8 +419,7 @@ ul a:hover {
     line-height: 35px;
 } */
 
-.tbbangdiem tr td:nth-child(2),
-.tbbangdiem tr td:nth-child(1) {
+.tbbangdiem tr td:nth-child(2), .tbbangdiem tr td:nth-child(1) {
     width: 670px;
     color: #25213B;
     font-weight: 500;
@@ -457,8 +437,9 @@ ul a:hover {
 }
 
 .tbbangdiem tr td:nth-child(3) span {
-    font-weight: 700 !important;
-    font-size: 18px;
+    font-weight: 700 !important; 
+    font-size: 15px; /*18px*/
+    line-height: 40px
 }
 
 .tbbangdiem tr td:nth-child(4) {
@@ -467,13 +448,15 @@ ul a:hover {
     text-align: center !important;
 }
 
-.tbbangdiem tr td:nth-child(4) a {
+.tbbangdiem tr td:nth-child(4) a {  
     color: #6E6893 !important;
 }
 
 .bgtimnhat td:nth-child(4) {
-    padding: 0 !important;
+    /* padding: 0px !important; cái cũ*/
+    padding: 2px !important;
 }
+
 
 .tbbangdiem .bgtimnhat td:nth-child(4) .uim-svg {
     margin: 0 0px !important;
@@ -484,9 +467,7 @@ ul a:hover {
     color: #6E6893 !important;
 }
 
-
 /* End Bảng Điểm */
-
 
 /* Khóa Học */
 
@@ -576,9 +557,7 @@ ul a:hover {
     font-weight: bold;
 }
 
-
 /* End Khóa Học */
-
 
 /* Thông Báo */
 
@@ -589,7 +568,7 @@ ul a:hover {
 }
 
 .boxthongbao-right {
-    width: 50%;
+    width: calc(100% - 670px);
     float: left;
     background: #f5f5f5;
     height: 100%;
@@ -606,8 +585,7 @@ ul a:hover {
     color: #A2A1FF;
 }
 
-.boxthongbao-chitiet,
-.boxthongbao-chitiet2 {
+.boxthongbao-chitiet, .boxthongbao-chitiet2 {
     text-align: center;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -647,7 +625,6 @@ ul a:hover {
     text-decoration: none;
 }
 
-
 /* End Thông Báo */
 
 .d-row {
@@ -670,6 +647,7 @@ ul a:hover {
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     height: 400px;
+    position: relative;
 }
 
 .d-div3:nth-child(3n) {
@@ -690,6 +668,14 @@ ul a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+.d-row1 .d-mota {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    color: #6c757d;
 }
 
 .d-info {
@@ -715,6 +701,12 @@ ul a:hover {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.d-row100.box-bot {
+    position: absolute;
+    bottom: 5px;
+    width: 90%;
+}
+
 .d-info1>img {
     border: 1px solid #efefef;
     width: 30px;
@@ -724,7 +716,7 @@ ul a:hover {
 }
 
 .d-info2 {
-    width: 60%;
+    width: 50%;
     float: right;
     text-align: right;
     color: #6E798C;
@@ -757,7 +749,6 @@ ul a:hover {
     font-weight: 700;
     font-size: 20px;
 }
-
 
 /* 
 .d-row1>span {
@@ -986,7 +977,7 @@ input[type=file] {
     display: none;
 }
 
-.nopbaitap label {
+/* .nopbaitap label {
     border: #3f00ff 2px solid;
     border-radius: 5px;
     padding: 3px 0px;
@@ -995,7 +986,7 @@ input[type=file] {
     cursor: pointer;
     width: 100%;
     text-align: center;
-}
+} */
 
 .diemnb {
     border: #ff0000 2px solid;
