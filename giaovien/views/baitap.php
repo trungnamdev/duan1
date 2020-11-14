@@ -1,16 +1,4 @@
-    <!-- tiêu dề đặt trên đầu mỗi trang view cần tiêu đề -->
-    <!-- <div class="header-box">
-                <div class="tieude h1">Tổng quan</div> -->
-    <!-- Tùy trang mới dùng đến option-box -->
-    <!-- <div class="option-box">
-                    <a href="#" class="active">Tất cả</a>
-                    <a href="#">Đã nộp</a>
-                    <a href="#">Chưa nộp</a>
-                </div> -->
-    <!-- </div> -->
-
-    <!-- bình chia layout xong khóa lại ai cần thì copy vào page mình nha -->
-    <a href="#">
+  <a href="#">
         <div class="addnew rounded-circle Regular shadow">
 
             <i class="fas fa-plus"></i>
@@ -21,12 +9,6 @@
 
         <div class="header-box">
             <div class="tieude h1">BÀI TẬP</div>
-            <!-- <div class="option-box">
-                <a href="index.php?act=baitap&sx=all" class="active">Tất cả (4)</a>
-                <a href="index.php?act=baitap&sx=done" class="">Đã chấm (2)</a>
-                <a href="index.php?act=baitap&sx=not" class="">Chưa chấm (2)</a>
-
-            </div> -->
         </div>
         <div class="d-row">
             <?php
@@ -69,7 +51,7 @@
                             <a>Hạn chót: <br> <?=$bt['ngayhethan']?> </a>
                         </div>
                         <div class="d-info2 d-nb w-75">
-                            <a href="index.php?act=nopbaitap&amp;idbt=<?=$bt['idbaitap']?>" class="btn btn-outline-success">Đã nộp: <?=$btdn?>/<?=$slbt['tong'] ?></a>
+                            <a href="index.php?act=chambai&id=<?=$bt['idbaitap']?>" class="btn btn-outline-success">Đã nộp: <?=$btdn?>/<?=$slbt['tong'] ?></a>
 
                         </div>
                     </div>
