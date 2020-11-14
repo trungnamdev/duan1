@@ -61,5 +61,11 @@ function demsvlop($idlop){
 function gethinhlopchat($idlop){
     return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%')");
 }
-// 
+//
+// thong tin chi tiet giao vien
+function thongtinsvtomtat($id)
+{
+    return laymot("SELECT * FROM taikhoan WHERE taikhoan.id= $id ");
+}
+//  
 ?>

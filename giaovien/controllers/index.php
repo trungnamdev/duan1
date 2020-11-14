@@ -74,6 +74,11 @@ switch ($act) {
       unset($_SESSION['hinhdn']);
       header('location: index.php');
       break;
+      case 'thongtincn':
+         $thongtin = thongtinsvtomtat($_SESSION['iddn']);
+         $view = "../giaovien/views/ttcn.php";
+         require_once "../giaovien/views/layout.php";
+      break;
    }
 
 }else{

@@ -24,7 +24,7 @@
         </tr>
 
         <tbody>
-            <?php 
+            <?php
                 foreach ($danhsach as $ds) {
                     # code...
             ?>
