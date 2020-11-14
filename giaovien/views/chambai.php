@@ -1,11 +1,12 @@
+<?php if (is_array($danhsach)) { ?>
 <div class="header-box">
-    <div class="tieude h1"><?= $baitap_list[0]['tenbaitap'] ?></div>
+    <div class="tieude h1"><?= $baitap_info['tenbaitap'] ?></div>
 
     <div class="option-box1">
         <ul>
-            <a class="text-primary"> <img class="avatagv mr-2" src="<?= showfile($baitap_list[0]['hinh']) ?>" alt=""><?= $baitap_list[0]['tenkhoa'] ?></a>
-            <a class=""> <i class='fas fa-book-open mr-2'></i> <?= $baitap_list[0]['tenlop'] ?></a>
-            <a class=""><i class="far fa-clock mr-2"></i> Hạn chót: <?= $baitap_list[0]['ngayhethan'] ?></a>
+            <a class="text-primary"> <img class="avatagv mr-2" src="<?= showfile($baitap_info['hinh']) ?>" alt=""><?= $baitap_info['tenkhoa'] ?></a>
+            <a class=""> <i class='fas fa-book-open mr-2'></i> <?= $baitap_info['tenlop'] ?></a>
+            <a class=""><i class="far fa-clock mr-2"></i> Hạn chót: <?= $baitap_info['ngayhethan'] ?></a>
         </ul>
     </div>
 </div>
@@ -26,7 +27,17 @@
         <tbody>
             <?php
                 foreach ($danhsach as $ds) {
-                    # code...
+                $link = "";
+                $trangthai = "";
+                    foreach ($baitap_list as $bt) {
+                        if ($bt['idsv']!=$ds['idsv'] || ($bt['idsv']=="")) {
+                            $trangthai = '<p class="text-danger">Chưa nộp</p>';
+                            $link = $bt['file'];
+                        break;
+                        }else
+                            
+                            $trangthai = '<p class="text-success">Đã nộp</p>';
+                    }
             ?>
             <tr>
                 <th scope="row"><input type="checkbox" name="chonbt" id=""></th>
@@ -34,17 +45,19 @@
                 <td>
                     <div class="input-group w-fitcontent">
                         <select class="custom-select" id="inputGroupSelect02">
-                            <option selected>...</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
+                        <option selected>...</option>
+                        <?php
+                            for ($i=0; $i <= 10; $i++) { 
+                                $selected = "";
+                                if(isset($bt['diem'])) {
+                                    if($bt['diem'] == $i) 
+                                        $selected = "selected";
+                                }
+                                
+                        ?>
+                            
+                            <option value="<?=$i?>" <?=$selected?> ><?=$i?></option>
+                        <?php }?>
                         </select>
                         <div class="input-group-append">
                             <label class="input-group-text" for="inputGroupSelect02">/ 10</label>
@@ -52,19 +65,7 @@
                     </div>
                 </td>
                 <td>
-                <?php 
-                $link = "";
-                foreach ($baitap_list as $bt) {
-                    $deadline = $bt['ngayhethan'];
-                    $img = $bt['hinh'];
-                    if ($bt['idsv']==$ds['idsv']) {
-                        echo '<p class="text-success">Đã nộp</p>';
-                        $link = $bt['idfile'];
-                    break;
-                    }else
-                        echo '<p class="text-danger">Chưa nộp</p>';
-                }
-                ?>
+                <?= $trangthai ?>
                 </td>
                 
                 <td>
@@ -90,3 +91,5 @@
     </table>
 
 </div>
+<?php } else header("location: index.php?act=baitap&sx=all")
+    ?>

@@ -33,7 +33,8 @@ switch ($act) {
       if(isset($_GET['id'])) {
          $idbt = $_GET['id'];
          $danhsach = getDsLopByBt($idbt);
-         $baitap_list = gv_getBaitapByIDBT($idbt);
+         $baitap_info = gv_getBaitapByIDBT($idbt);
+         $baitap_list = getAllBaiTapSv($idbt);
       }
       $acbt="active";
       $view = "../giaovien/views/chambai.php";
