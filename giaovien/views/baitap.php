@@ -1,4 +1,3 @@
-<<<<<<< HEAD
     <!-- tiêu dề đặt trên đầu mỗi trang view cần tiêu đề -->
     <!-- <div class="header-box">
                 <div class="tieude h1">Tổng quan</div> -->
@@ -17,24 +16,19 @@
        <a href="index.php?act=giaobt"> <i class="fas fa-plus"></i></a>
         
     </div>
-=======
   <a href="#">
         <div class="addnew rounded-circle Regular shadow">
 
             <i class="fas fa-plus"></i>
 
         </div>
->>>>>>> 91fdf060f00db8e400dded7ee96c46e33933117c
     </a>
     <div class="noidung">
 
         <div class="header-box">
-<<<<<<< HEAD
             <div class="tieude h1">BÀI TẬP </div>
            
-=======
-            <div class="tieude h1">BÀI TẬP</div>
->>>>>>> 91fdf060f00db8e400dded7ee96c46e33933117c
+           
         </div>
         <div class="d-row">
             <?php
