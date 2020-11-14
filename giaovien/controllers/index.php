@@ -26,6 +26,17 @@ switch ($act) {
       require_once "../giaovien/views/layout.php";
       break;
 
+   case 'chambai':
+      if(isset($_GET['id'])) {
+         $idbt = $_GET['id'];
+         $danhsach = getDsLopByBt($idbt);
+         $baitap_list = gv_getBaitapByIDBT($idbt);
+      }
+      $acbt="active";
+      $view = "../giaovien/views/chambai.php";
+      require_once "../giaovien/views/layout.php";
+      break;
+
    case 'thongbao':
       $actb="active";
       $tb=thongbao();
