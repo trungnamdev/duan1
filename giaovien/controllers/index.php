@@ -98,7 +98,13 @@ switch ($act) {
       
       require_once "../giaovien/views/layout.php";
       break;
-   
+   case 'hscttheolop':
+      $aclop="active";
+      $lopdangday = GV_getlopdangday();
+      $view = "../giaovien/views/hscttheolop.php";
+      require_once "../giaovien/views/layout.php";
+      break;
+   break;
    
    }
 

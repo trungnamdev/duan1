@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="d-info">
-                    <div class="d-row1">
+                    <div class="d-row1 text-truncate">
                         <p><?= $bt['tenbaitap'] ?></p>
                         <span><?= $bt['motabt'] ?></span>
 
