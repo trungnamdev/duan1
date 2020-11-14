@@ -18,6 +18,9 @@ function GV_getBaiTapByID($idlop){
 function tenlop($idlop){
     return laymot("SELECT * FROM lop WHERE id = $idlop");
 }
+function thembt($tenbt,$imgbt,$mota,$idlop,$ngaygiao,$hanchot){
+ return postdulieu("INSERT INTO `baitap` ( `tenbaitap`, `hinh`, `motabt`, `idlop`, `ngaygiao`, `ngayhethan`) VALUES ( '$tenbt', '$imgbt', '$mota', '$idlop', '$ngaygiao', '$hanchot');");   
+}
 function countlop($idlop){
     return laymot("SELECT COUNT(*) AS tong FROM sv_lop WHERE idlop=$idlop");
 }

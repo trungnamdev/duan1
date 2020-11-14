@@ -25,7 +25,24 @@ switch ($act) {
       $view = "../giaovien/views/baitap.php";
       require_once "../giaovien/views/layout.php";
       break;
-
+   case 'giaobt':
+      $idlop = gv_getidlop();
+      $lopdangday = GV_getlopdangday(); 
+      $view = "../giaovien/views/giaobt.php";
+      require_once "../giaovien/views/layout.php";
+      break;
+   case 'giaobtd':
+     $tenbt=$_POST['tenbt'];
+     $ngaygiao=$_POST['ngaygiao'];
+     $hanchot=$_POST['hanchot'];
+     $mota=$_POST['mota'];
+     $lophoc=$_POST['lophoc'];
+     $imgbt=$_FILES['imgbt'];
+     $tenhinh=$imgbt['name'];
+     upfile($imgbt);
+     thembt($tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot);
+     header('Location: index.php');
+   break;
    case 'thongbao':
       $actb="active";
       $tb=thongbao();

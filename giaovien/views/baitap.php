@@ -12,21 +12,16 @@
     <!-- bình chia layout xong khóa lại ai cần thì copy vào page mình nha -->
 <a href="#">
     <div class="addnew rounded-circle Regular shadow">
-        
-        <i class="fas fa-plus"></i>
+    
+       <a href="index.php?act=giaobt"> <i class="fas fa-plus"></i></a>
         
     </div>
     </a>
     <div class="noidung">
 
         <div class="header-box">
-            <div class="tieude h1">BÀI TẬP <a href="#" class="btn btn-primary">Thêm bài tập</a></div>
-            <div class="option-box">
-                <a href="index.php?act=baitap&amp;sx=all" class="active">Tất cả (4)</a>
-                <a href="index.php?act=baitap&amp;sx=done" class="">Đã chấm (2)</a>
-                <a href="index.php?act=baitap&amp;sx=not" class="">Chưa chấm (2)</a>
-
-            </div>
+            <div class="tieude h1">BÀI TẬP </div>
+           
         </div>
         <div class="d-row">
 
