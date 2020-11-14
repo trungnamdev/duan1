@@ -79,7 +79,7 @@
 				
 					},
           "hanchot": {
-					required: "Xin vui lòng nhập email xác nhận",
+					required: "Xin vui lòng nhập ngày hết hạn",
           date:"Vui lòng nhập đúng định dạng ngày"
 				
 					},

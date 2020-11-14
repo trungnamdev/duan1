@@ -10,7 +10,7 @@ if(isset($_GET['act'])){
 }else{
    $act = "home";
 }
-$achome="";$acbt="";$aclop="";
+$achome="";$acbt="";$aclop="";$chat="";$actb="";
 switch ($act) {
    case 'home':
       $achome="active";
