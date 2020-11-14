@@ -90,6 +90,74 @@
     width: 30px;
 }
 
+.d-giaobt-row100 {
+    width: 100%;
+    float: left;
+    margin-top: 50px;
+}
+
+.giaobt-left {
+    width: 57%;
+    margin-right: 3%;
+    float: left;
+    box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.giaobt-right-1 {
+    width: 48%;
+    margin-right: 2%;
+    float: left;
+}
+
+.giaobt-right-2 {
+    width: 50%;
+    float: left;
+}
+
+.nonone label {
+    border: #3f00ff 2px solid;
+    border-radius: 5px;
+    padding: 6px 0px;
+    color: #007bff;
+    float: left;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.giaobt-right {
+    width: 30%;
+    float: left;
+    box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.giaobt-right .d-align {
+    display: flex;
+    align-items: center;
+}
+
+.bt-d-mb2 {
+    margin-bottom: 5px !important;
+}
+
+.d-lavel {
+    font-size: 20px;
+    font-weight: 588;
+}
+
+.giaobt-right-1 span {
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.d-giaobt-row100 .error {
+    color: red;
+}
+
 
 /* Bảng chấm điểm */
 

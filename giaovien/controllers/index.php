@@ -10,7 +10,7 @@ if(isset($_GET['act'])){
 }else{
    $act = "home";
 }
-$achome="";$acbt="";$aclop="";
+$achome="";$acbt="";$aclop="";$chat="";$actb="";
 switch ($act) {
    case 'home':
       $achome="active";
@@ -28,6 +28,24 @@ switch ($act) {
       $view = "../giaovien/views/baitap.php";
       require_once "../giaovien/views/layout.php";
       break;
+   case 'giaobt':
+      $idlop = gv_getidlop();
+      $lopdangday = GV_getlopdangday(); 
+      $view = "../giaovien/views/giaobt.php";
+      require_once "../giaovien/views/layout.php";
+      break;
+   case 'giaobtd':
+     $tenbt=$_POST['tenbt'];
+     $ngaygiao=$_POST['ngaygiao'];
+     $hanchot=$_POST['hanchot'];
+     $mota=$_POST['mota'];
+     $lophoc=$_POST['lophoc'];
+     $imgbt=$_FILES['imgbt'];
+     $tenhinh=$imgbt['name'];
+     upfile($imgbt);
+     thembt($tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot);
+     header('Location: index.php');
+   break;
 
    case 'chambai':
       if(isset($_GET['id'])) {
@@ -99,7 +117,14 @@ switch ($act) {
       
       require_once "../giaovien/views/layout.php";
       break;
-   
+   case 'lopct':
+      $aclop="active";
+      $idlop = gv_getidlop();
+      $lopdangday = GV_getlopdangday();
+      $view = "../giaovien/views/lopct.php";
+      require_once "../giaovien/views/layout.php";
+      break;
+   break;
    
    }
 
