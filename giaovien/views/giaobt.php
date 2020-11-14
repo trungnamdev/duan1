@@ -79,12 +79,12 @@
 				
 					},
           "hanchot": {
-					required: "Xin vui lòng nhập email xác nhận",
+					required: "Xin vui lòng nhập ngày hết hạn",
           date:"Vui lòng nhập đúng định dạng ngày"
 				
 					},
           "mota": {
-					required: "Xin vui lòng nhập số điện thoại",
+					required: "Xin vui lòng nhập mô tả",
 			
 					}
 			}
