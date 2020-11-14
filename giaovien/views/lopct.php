@@ -1,22 +1,22 @@
 <div class="header-box">
     <?php
-    // foreach ($lopdangday as $lop) {
-    //     $id = $lop['idlopd'];
-    //     $countlop = countlop($id);
-    // ?>
-        <div class="tieude h1">MYSQL-2</div>
-    <?php  ?>
-    <div class="option-box1">
-        <ul>
-            <a class="text-primary"> <img class="avatagv mr-2" src="" alt=""></a>
-            <a class=""> <i class='fas fa-book-open mr-2'></i>PHP căn bản</a>
+    foreach ($lopdangday as $lop) {
+        $id = $lop['idlopd'];
+        $countlop = countlop($id);
+    ?>
+    <?php } ?>
 
-        </ul>
+    <div class="tieude h1">
+        <p><?= $lop['tenlop'] ?></p>
+    </div>
+    <div class="option-box1">
+        <a class=""> <img class="avatagv mr-0" src="<?= showfile($lop['hinh']) ?>" alt="" onerror="erroimg(this)"></a>
+        <a class="text-secondary font-weight-bolder"><?= $lop['tenkhoa'] ?></a>
     </div>
 </div>
 
 
-<div class="chambai">
+<div class="chambai mt-4">
     <table class="table">
 
 
@@ -30,12 +30,11 @@
 
         <tbody>
             <?php
-            // foreach ($danhsach as $ds) {
-
-            // ?>
+            
+                ?>
                 <tr>
                     <th scope="row"><input type="checkbox" name="chonbt" id=""></th>
-                    <td>Phúc Bình</td>
+                    <td><?= $ds['hoten']?></td>
                     <td>
                         <div class="input-group w-fitcontent">
                             <img scr="duan1/uploads/khaihoang.jpg">
@@ -46,7 +45,7 @@
                     </td>
 
                     <td>
-                        phucbinh@gmail.com
+                        12312123@gmail.com
                     </td>
                 </tr>
         </tbody>
