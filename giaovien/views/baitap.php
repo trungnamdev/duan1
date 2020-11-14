@@ -20,22 +20,27 @@
     <div class="noidung">
 
         <div class="header-box">
-            <div class="tieude h1">BÀI TẬP  </div>
-            <div class="option-box">
+            <div class="tieude h1">BÀI TẬP</div>
+            <!-- <div class="option-box">
                 <a href="index.php?act=baitap&sx=all" class="active">Tất cả (4)</a>
                 <a href="index.php?act=baitap&sx=done" class="">Đã chấm (2)</a>
                 <a href="index.php?act=baitap&sx=not" class="">Chưa chấm (2)</a>
 
-            </div>
+            </div> -->
         </div>
         <div class="d-row">
             <?php
             foreach ($idlop as $id) {
-                $baitap = GV_getBaiTapByID($id); 
-                $kh = getKHByIDLop($id); 
+                $baitap = GV_getBaiTapByID($id);
+                $tenlop = tenlop($id);
+                $kh = getKHByIDLop($id);
+                
+                $slbt = countlop($id);        // tổng số thành viên
                 foreach ($baitap as $bt) {
-                    $nhh = date("d-m-Y", strtotime($bt['ngayhethan']));           // bài tập đã nộp
-  
+                    $nhh = date("d-m-Y", strtotime($bt['ngayhethan']));
+                   
+                    $btdn = getBTDaNop($bt['idbaitap'])['slbt'];             // bài tập đã nộp
+
             ?>
             
             <div class="d-div3">
@@ -61,12 +66,12 @@
                 <div class="d-info">
                     <div class="d-row100 box-bot">
                         <div class="d-info1 d-hc">
-                            <a>Hạn chót:   <?=$bt['ngayhethan']?> </a>
+                            <a>Hạn chót: <br> <?=$bt['ngayhethan']?> </a>
                         </div>
-                        <!-- <div class="d-info2 d-nb w-75">
-                            <a href="index.php?act=nopbaitap&amp;idbt= " class="btn btn-outline-success">Đã nộp:  </a>
+                        <div class="d-info2 d-nb w-75">
+                            <a href="index.php?act=nopbaitap&amp;idbt=<?=$bt['idbaitap']?>" class="btn btn-outline-success">Đã nộp: <?=$btdn?>/<?=$slbt['tong'] ?></a>
 
-                        </div> -->
+                        </div>
                     </div>
                 </div>
 

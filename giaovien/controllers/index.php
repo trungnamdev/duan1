@@ -78,6 +78,9 @@ switch ($act) {
       break;
       case 'thongtincn':
          $thongtin = thongtinsvtomtat($_SESSION['iddn']);
+         if(isset($_GET['idtk']) && $_GET['idtk'] >=0){
+            $thongtin = thongtinsvtomtat($_GET['idtk']);
+         }else $thongtin = thongtinsvtomtat($_SESSION['iddn']);
          $view = "../giaovien/views/ttcn.php";
          require_once "../giaovien/views/layout.php";
       break;

@@ -8,11 +8,12 @@
             <div class="d-tt-img-text">
                 <p><?= $thongtin['hoten'] ?> <i class="fas fa-user-graduate" style="color:pink"></i></p>
                 <span><?php 
+                $cv ='';
                     if ($thongtin['chucvu']==0) 
                         $cv = "Sinh viên";
                     else if($thongtin['chucvu']==1) $cv = "Giáo viên";
-                    else $sv = "SU";
-                    echo $cv
+                    else $cv = "SU";
+                    echo $cv;
                 ?></span>
             </div>
         </div>
