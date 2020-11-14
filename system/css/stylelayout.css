@@ -1059,3 +1059,26 @@ img {
     font-size: 14px;
     line-height: 0px !important;
 }
+
+.chat-title {
+    background-color: #fff;
+    border-bottom: 1px solid #efefef;
+    display: flex;
+    padding: 10px;
+}
+
+.chat-title img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.chat_buttons button {
+    border: 0px !important;
+    background-color: white !important;
+    outline: none;
+}
+
+.menu ul a li img {
+    width: 30px;
+}

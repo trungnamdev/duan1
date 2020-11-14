@@ -1,24 +1,28 @@
 <div class="header-box">
-    <div class="tieude h1">BẢNG ĐIỂM</div>
+    <div class="tieude h1">BẢNG ĐIỂM <P class="bdtensv"><a href="index.php?act=thongtincn&idtk=<?=$_GET['idsv']?>" class="linkttcn"><?=$ttsv?> <i class='fas fa-user-graduate ml-1' style='color: #a2a1ff;font-size:24px'></i></a></P></div>
+     
 </div>
 
-<?php 
-    $allkh = khoahocdadk(); 
+
+<?php  
+if(isset($_GET['idsv']) && $_GET['idsv'] > 0){
+    $allkh = khoahocdadk($_GET['idsv']); 
     foreach ($allkh as $kh) {
+        
         $tenkh = $kh['tenkhoa'];
-        $baitapkh = layBaiTapByKH($kh['id']); 
+        $baitapkh = layBaiTapByKH($kh['id'],$_GET['idsv']);  
         $slbt = 0;
         $tongdiem = 0;
         $dtb = 0;
         foreach ($baitapkh as $btap) {
             $slbt++;
-            $bt = checknopbai($btap['idbaitap']);
+            $bt = checknopbai($btap['idbaitap'],$_GET['idsv']);
             if(isset($bt['diem'])){
-                $tongdiem += checknopbai($btap['idbaitap'])['diem'];
+            $tongdiem += checknopbai($btap['idbaitap'],$_GET['idsv'])['diem'];
             }
         }
         if($slbt != 0){
-        $dtb = $tongdiem/$slbt;
+            $dtb = $tongdiem/$slbt;
         }
         if($dtb >= 0) $tb = $dtb;
         else $tb = 0;
@@ -26,6 +30,7 @@
 ?>
  
 <div class="bangdiem">
+    
     <div class="tdbangdiem">
         <?=$tenkh?> <span>Điểm trung bình : <strong><?=$tb?><strong></span>
     </div>
@@ -41,7 +46,7 @@
             
             
             foreach ($baitapkh as $bt) {
-                $diem = checknopbai($bt['idbaitap']);
+                $diem = checknopbai($bt['idbaitap'],$_GET['idsv']);
                 if(isset($diem['diem'])){
                     $diembt = $diem['diem']; 
                 }else{ 
@@ -80,4 +85,4 @@
         </tr>
     </table>
 </div>
-<?php }?>
+<?php } }else echo "Đường Dẫn Không Hợp Lệ";?>

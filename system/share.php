@@ -17,5 +17,6 @@ function upfile($file){
 }
 function showfile($text){
     return $GLOBALS['duongdan'].$text;
-}
+}  
+
 ?>
