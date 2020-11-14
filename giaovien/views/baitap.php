@@ -35,7 +35,7 @@
                 $kh = getKHByIDLop($id); 
                 foreach ($baitap as $bt) {
                     $nhh = date("d-m-Y", strtotime($bt['ngayhethan']));           // bài tập đã nộp
-
+  
             ?>
             
             <div class="d-div3">
