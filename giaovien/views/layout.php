@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- file dung chung cho 3 modun -->
-    <link rel="stylesheet" href="../system/css/stylelayout.css">
-    <!-- file riêng moi modun -->
-    <link rel="stylesheet" href="views/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+    </script>
+    <!-- end bootstrap -->
     <script src="../system/js/jquery.js"></script>
     <script src="../system/js/jquery-ui.js"></script>
     <script src="../system/js/jsvali.js"></script>
@@ -25,10 +25,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
-    </script>
-    <!-- end bootstrap -->
+    
     <!-- link swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -37,6 +34,10 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- end swiper -->
+     <!-- file dung chung cho 3 modun -->
+     <link rel="stylesheet" href="../system/css/stylelayout.css">
+    <!-- file riêng moi modun -->
+    <link rel="stylesheet" href="views/css/style.css">
     <title>GIÁO VIÊN</title>
 </head>
 
@@ -72,7 +73,7 @@
                 <ul>
                 <a href="index.php?act=home"><li class="<?= $achome ?>">Tổng quan<img src="../system/img/tongquan.svg" alt=""></i></li></a>
                     <a href="index.php?act=baitap&sx=all"><li class="<?= $acbt ?>">Bài Tập<img src="../system/img/baitap.svg" alt=""></li></a>
-                    <a href="index.php?act=lop"><li class="<?= $acdkkh ?>">Lớp học<img src="../system/img/monhoc.svg" alt=""></li></a>
+                    <a href="index.php?act=lop"><li class="<?= $aclop ?>">Lớp học<img src="../system/img/monhoc.svg" alt=""></li></a>
                     <a href="index.php?act=thongbao"><li class="<?= $actb ?>">Thông báo<img src="../system/img/thongbao.svg" alt=""></li></a>
                     <a href="index.php?act=chat"><li class="<?= $chat ?>">Nhắn tin<img src="../system/img/thongbao.svg" alt=""></li></a>
                 </ul>

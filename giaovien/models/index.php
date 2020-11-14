@@ -11,6 +11,24 @@ function getBTDaNop($idbt){
 function BTDaCham($idlop){
     return laymot("SELECT * FROM baitap WHERE idlop = $idlop AND diem IN ( ) ");
 }
+
+//Lấy bài tập theo bài tập đã giao
+function gv_getBaitapByIDBT($idbt) {
+    return laydulieu("SELECT idfile, idsv, bt.hinh, bt.ngayhethan, tenlop, tenbaitap, tenkhoa FROM baitap bt INNER JOIN upfile on bt.idbaitap = upfile.idbaitap INNER JOIN taikhoan ON upfile.idsv = taikhoan.id INNER JOIN lop ON bt.idlop=lop.id INNER JOIN khoahoc on khoahoc.id = lop.idkhoa WHERE bt.idbaitap = $idbt");
+}
+
+//Lấy danh sách sinh viên của lớp theo id bài tập
+function getIdLopTheoBT($idbt)
+{
+    return laymot("SELECT idlop FROM `baitap` WHERE idbaitap = $idbt");
+}
+
+function getDsLopByBt($idbt)
+{
+    $idlop = getIdLopTheoBT($idbt)['idlop'];
+    return laydulieu("SELECT * FROM sv_lop INNER JOIN taikhoan ON sv_lop.idsv = taikhoan.id WHERE sv_lop.idlop = $idlop");
+}
+
 // lấy từng id lớp của gv
 function gv_getidlop(){
     $idlop = getIDGV()['idlop'];
@@ -57,4 +75,11 @@ function gethinhlopchat($idlop){
 function getKHByIDLop($idlop){
     return laymot("SELECT * FROM khoahoc WHERE id IN (SELECT idkhoa FROM lop WHERE id = $idlop) ");
 }
+//
+// thong tin chi tiet giao vien
+function thongtinsvtomtat($id)
+{
+    return laymot("SELECT * FROM taikhoan WHERE taikhoan.id= $id ");
+}
+//  
 ?>

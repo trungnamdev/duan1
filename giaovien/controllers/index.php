@@ -10,12 +10,13 @@ if(isset($_GET['act'])){
 }else{
    $act = "home";
 }
-$achome="";$acbt="";$acdkkh="";$actb="";$chat="";
+$achome="";$acbt="";$aclop="";
 switch ($act) {
    case 'home':
       $achome="active";
       $idlop = gv_getidlop();
       $lopdangday = GV_getlopdangday(); 
+      $tb=thongbao();
       $view = "../giaovien/views/home.php";
       require_once "../giaovien/views/layout.php";
    break;
@@ -25,6 +26,17 @@ switch ($act) {
       $idlop = gv_getidlop();
       $lopdangday = GV_getlopdangday(); 
       $view = "../giaovien/views/baitap.php";
+      require_once "../giaovien/views/layout.php";
+      break;
+
+   case 'chambai':
+      if(isset($_GET['id'])) {
+         $idbt = $_GET['id'];
+         $danhsach = getDsLopByBt($idbt);
+         $baitap_list = gv_getBaitapByIDBT($idbt);
+      }
+      $acbt="active";
+      $view = "../giaovien/views/chambai.php";
       require_once "../giaovien/views/layout.php";
       break;
 
@@ -51,7 +63,8 @@ switch ($act) {
       break;
    
    case 'lop':
-      $achome="active";
+      $aclop="active";
+      $lopdangday = GV_getlopdangday(); 
       $view = "../giaovien/views/lophoc.php";
       require_once "../giaovien/views/layout.php";
       break;
@@ -62,6 +75,11 @@ switch ($act) {
       unset($_SESSION['tdn']);
       unset($_SESSION['hinhdn']);
       header('location: index.php');
+      break;
+      case 'thongtincn':
+         $thongtin = thongtinsvtomtat($_SESSION['iddn']);
+         $view = "../giaovien/views/ttcn.php";
+         require_once "../giaovien/views/layout.php";
       break;
    }
 
