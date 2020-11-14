@@ -7,10 +7,9 @@
     <div class="slide swiper-container">
         <div class="swiper-wrapper">
             <!-- Start box -->
-            <?php 
+            <?php
                 foreach ($idlop as $id) {
                     $baitap = GV_getBaiTapByID($id);
-                 
                     $tenlop=tenlop($id);
                     foreach ($baitap as $bt) {
                     $nhh = date("d-m-Y", strtotime($bt['ngayhethan']));

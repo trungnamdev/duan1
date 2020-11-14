@@ -22,6 +22,8 @@ switch ($act) {
 
    case 'baitap':
       $acbt="active";
+      $idlop = gv_getidlop();
+      $lopdangday = GV_getlopdangday(); 
       $view = "../giaovien/views/baitap.php";
       require_once "../giaovien/views/layout.php";
       break;

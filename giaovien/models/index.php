@@ -3,7 +3,14 @@
 function getIDGV(){
     return laymot("SELECT * FROM gvlop WHERE idgv = ".$_SESSION['iddn']);
 }
-
+// đếm bt đã nộp
+function getBTDaNop($idbt){
+    return laymot("SELECT count(*) AS 'slbt' FROM upfile WHERE idbaitap = $idbt");
+}
+// đếm bt đã chấm
+function BTDaCham($idlop){
+    return laymot("SELECT * FROM baitap WHERE idlop = $idlop AND diem IN ( ) ");
+}
 // lấy từng id lớp của gv
 function gv_getidlop(){
     $idlop = getIDGV()['idlop'];
@@ -18,6 +25,7 @@ function GV_getBaiTapByID($idlop){
 function tenlop($idlop){
     return laymot("SELECT * FROM lop WHERE id = $idlop");
 }
+// đếm số sv trong lớp.
 function countlop($idlop){
     return laymot("SELECT COUNT(*) AS tong FROM sv_lop WHERE idlop=$idlop");
 }
@@ -36,6 +44,7 @@ function thongbao(){
  function thongbaoct($id){
      return laymot("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang WHERE idtb=$id");
  }
+ 
 
 //  nhan tin
 function demsvlop($idlop){
@@ -44,5 +53,8 @@ function demsvlop($idlop){
 function gethinhlopchat($idlop){
     return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%')");
 }
-// 
+// tên khóa học
+function getKHByIDLop($idlop){
+    return laymot("SELECT * FROM khoahoc WHERE id IN (SELECT idkhoa FROM lop WHERE id = $idlop) ");
+}
 ?>
