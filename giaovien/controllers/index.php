@@ -76,7 +76,7 @@ switch ($act) {
       unset($_SESSION['hinhdn']);
       header('location: index.php');
       break;
-      case 'thongtincn':
+   case 'thongtincn':
          $thongtin = thongtinsvtomtat($_SESSION['iddn']);
          if(isset($_GET['idtk']) && $_GET['idtk'] >=0){
             $thongtin = thongtinsvtomtat($_GET['idtk']);
@@ -84,9 +84,24 @@ switch ($act) {
          $view = "../giaovien/views/ttcn.php";
          require_once "../giaovien/views/layout.php";
       break;
+   case 'diemsvct':
+      if(isset($_GET['idsv']) && $_GET['idsv'] > 0){
+         $allkh = khoahocdadk($_GET['idsv']);
+         $ttsv = thongtinsvtomtat($_GET['idsv']);
+         if(is_array($ttsv)) $ttsv = $ttsv['hoten'];
+         else $ttsv = ''; 
+        
+      }else { 
+         $ttsv = '';
+      }
+      $view = "../giaovien/views/bangdiem.php";
+      
+      require_once "../giaovien/views/layout.php";
+      break;
+   
+   
    }
 
 }else{
       header('Location: ../index.php');
 }
-?>

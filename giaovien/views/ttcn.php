@@ -9,8 +9,13 @@
                 <p><?= $thongtin['hoten'] ?> <i class="fas fa-user-graduate" style="color:pink"></i></p>
                 <span><?php 
                 $cv ='';
-                    if ($thongtin['chucvu']==0) 
+                $btn = '';
+                    if ($thongtin['chucvu']==0){
                         $cv = "Sinh viên";
+                        $btn = '<div class="d-info2 d-nb mt-2 w-100">
+                                    <a href="index.php?act=diemsvct&idsv='.$thongtin['id'].'" class="btn btn-outline-success w-100">Bảng điểm</a>
+                                </div>';
+                    }
                     else if($thongtin['chucvu']==1) $cv = "Giáo viên";
                     else $cv = "SU";
                     echo $cv;
@@ -19,7 +24,7 @@
         </div>
         <div class="d-tt-80">
             <div class="d-tt-100 mt-30">
-                <div class="d-tt-text-100">
+                <div class="d-tt-text-100 ">
                     <span class="d-tt-text-theme">Email</span>
                     <span class="d-tt-text-title"><?= $thongtin['email'] ?></span>
                 </div>
@@ -31,6 +36,7 @@
                     <span class="d-tt-text-theme">Trạng thái học</span>
                     <span class="d-tt-text-title">HDI(Học đi)</span>
                 </div> -->
+                <?=$btn?>
             </div>
         </div>
     </div>
@@ -72,6 +78,7 @@
                                 value="<?= $thongtin['diachi'] ?>">
                         </div>
                     </div>
+                  
                 </div>
             </div>
         </div>

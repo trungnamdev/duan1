@@ -81,5 +81,13 @@ function thongtinsvtomtat($id)
 {
     return laymot("SELECT * FROM taikhoan WHERE taikhoan.id= $id ");
 }
-//  
+function khoahocdadk($idsv){
+    return laydulieu("SELECT * FROM khoahoc WHERE id in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv =$idsv))");
+} 
+function layBaiTapByKH($idkh,$idsv){
+    return laydulieu("SELECT * FROM baitap WHERE idlop IN (SELECT idlop FROM sv_lop WHERE idsv = $idsv) AND idlop IN (SELECT id FROM lop WHERE idkhoa = $idkh)");
+} 
+function checknopbai($idbt,$idsv){
+    return laymot("SELECT * FROM `upfile` WHERE idsv = $idsv and idbaitap = $idbt");
+}
 ?>
