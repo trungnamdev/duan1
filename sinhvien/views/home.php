@@ -28,7 +28,7 @@
                                         </div>
                                         <div class="mon mr-2 text-secondary"><?= $sv['tenkhoa'] ?></div>
                                     </div>
-                                    <h5 class="card-title mb-1 mt-1"><a href="index.php?act=nopbaitap&idbt=<?= $sv['idbaitap'] ?>"><?= $sv['tenbaitap'] ?></a></h5>
+                                    <h5 class="card-titl mb-1 mt-1"><a href="index.php?act=nopbaitap&idbt=<?= $sv['idbaitap'] ?>"><?= $sv['tenbaitap'] ?></a></h5>
                                     <p class="text-secondary dealine m-0">Hạn chót: <?= $nhh ?></p>
                                 </div>
                             </div>
