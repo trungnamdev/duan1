@@ -73,7 +73,7 @@
                 <ul>
                 <a href="index.php?act=home"><li class="<?= $achome ?>">Tổng quan<img src="../system/img/tongquan.svg" alt=""></i></li></a>
                     <a href="index.php?act=baitap&sx=all"><li class="<?= $acbt ?>">Bài Tập<img src="../system/img/baitap.svg" alt=""></li></a>
-                    <a href="index.php?act=lop"><li class="<?= $acdkkh ?>">Lớp học<img src="../system/img/monhoc.svg" alt=""></li></a>
+                    <a href="index.php?act=lop"><li class="<?= $aclop ?>">Lớp học<img src="../system/img/monhoc.svg" alt=""></li></a>
                     <a href="index.php?act=thongbao"><li class="<?= $actb ?>">Thông báo<img src="../system/img/thongbao.svg" alt=""></li></a>
                     <a href="index.php?act=chat"><li class="<?= $chat ?>">Nhắn tin<img src="../system/img/thongbao.svg" alt=""></li></a>
                 </ul>

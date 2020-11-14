@@ -10,12 +10,13 @@ if(isset($_GET['act'])){
 }else{
    $act = "home";
 }
-$achome="";$acbt="";$acdkkh="";$actb="";$chat="";
+$achome="";$acbt="";$aclop="";
 switch ($act) {
    case 'home':
       $achome="active";
       $idlop = gv_getidlop();
       $lopdangday = GV_getlopdangday(); 
+      $tb=thongbao();
       $view = "../giaovien/views/home.php";
       require_once "../giaovien/views/layout.php";
    break;
@@ -60,7 +61,8 @@ switch ($act) {
       break;
    
    case 'lop':
-      $achome="active";
+      $aclop="active";
+      $lopdangday = GV_getlopdangday(); 
       $view = "../giaovien/views/lophoc.php";
       require_once "../giaovien/views/layout.php";
       break;

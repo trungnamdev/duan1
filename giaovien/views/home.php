@@ -10,7 +10,6 @@
             <?php 
                 foreach ($idlop as $id) {
                     $baitap = GV_getBaiTapByID($id);
-                 
                     $tenlop=tenlop($id);
                     foreach ($baitap as $bt) {
                     $nhh = date("d-m-Y", strtotime($bt['ngayhethan']));
@@ -18,7 +17,7 @@
             <div class="card mb-3 swiper-slide thongbao-shadow">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img class="card-img" alt="..." src="<?= showfile($bt['hinh']) ?>" onerror="erroimg(this)">
+                        <img class="card-img" src="<?= showfile($bt['hinh']) ?>" onerror="erroimg(this)">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body p-0">
@@ -27,7 +26,7 @@
                                     <div class="mon mr-2 text-secondary"><?=$tenlop['tenlop']?></div>
                                 </div>
                             </div>
-                            <h5 class="card-title mb-1 mt-1"><a href="#"><?= $bt['tenbaitap'] ?></a></h5>
+                            <h5 class="card-title mb-1 mt-1"><a href="index.php?act=chambai&id=<?= $bt['idbaitap'] ?>"><?= $bt['tenbaitap'] ?></a></h5>
                             <p class="text-secondary dealine m-0">Hạn chót: <?= $nhh ?></p>
                         </div>
                     </div>
@@ -76,7 +75,7 @@
                             <a><?=$countlop['tong']?> thành viên </a>
                         </div>
                         <div class="d-info2 d-nb w-75">
-                            <a href="index.php?act=nopbaitap&amp;idbt=16" class="btn btn-primary">Xem </a>
+                            <a href="index.php?act=lopct&idlop=<?= $lop['id'] ?>" class="btn btn-primary">Xem </a>
                         </div>
                     </div>
                 </div>
@@ -89,60 +88,25 @@
     <div class=" thongbao-box p-4 ">
         <p class="h4 mb-3">Thông báo</p>
         <div class="thongbao border thongbao-shadow p-4 rounded">
-            <div class="item mb-3">
-                <a href="#" class="h5">Về việc hoàn thành học phí kì Fall 2020</a>
-                <div class="info mt-2 text-secondary">
-                    <div class="mr-3">
-                        <i class="uim uim-user-nurse "></i>
-                        <span class="ml-1">Hoàng Khải</span>
-                    </div>
-                    <div>
-                        <i class="uim uim-clock"></i>
-                        <span class="ml-1">06/11/2020</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item mb-3">
-                <a href="#" class="h5">Về việc hoàn thành học phí kì Fall 2020</a>
-                <div class="info mt-2 text-secondary">
-                    <div class="mr-3">
-                        <i class="uim uim-user-nurse "></i>
-                        <span class="ml-1">Hoàng Khải</span>
-                    </div>
-                    <div>
-                        <i class="uim uim-clock"></i>
-                        <span class="ml-1">06/11/2020</span>
+           
+        <?php
+            foreach ($tb as $thongbao) {
+                $nd = date("d-m-Y", strtotime($thongbao['ngaydang']));
+            ?>
+                <div class="item mb-3">
+                    <a href="index.php?act=thongbao&idtb=<?= $thongbao['idtb'] ?>" class="h5"><?= $thongbao['tdtb'] ?></a>
+                    <div class="info mt-2 text-secondary">
+                        <div class="mr-3">
+                            <i class="uim uim-user-nurse "></i>
+                            <span class="ml-1"><?= $thongbao['hoten'] ?></span>
+                        </div>
+                        <div>
+                            <i class="uim uim-clock"></i>
+                            <span class="ml-1"><?= $nd ?></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="item mb-3">
-                <a href="#" class="h5">Về việc hoàn thành học phí kì Fall 2020</a>
-                <div class="info mt-2 text-secondary">
-                    <div class="mr-3">
-                        <i class="uim uim-user-nurse "></i>
-                        <span class="ml-1">Hoàng Khải</span>
-                    </div>
-                    <div>
-                        <i class="uim uim-clock"></i>
-                        <span class="ml-1">06/11/2020</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item mb-3">
-                <a href="#" class="h5">Về việc hoàn thành học phí kì Fall 2020</a>
-                <div class="info mt-2 text-secondary">
-                    <div class="mr-3">
-                        <i class="uim uim-user-nurse "></i>
-                        <span class="ml-1">Hoàng Khải</span>
-                    </div>
-                    <div>
-                        <i class="uim uim-clock"></i>
-                        <span class="ml-1">06/11/2020</span>
-                    </div>
-                </div>
-            </div>
+            <?php }
+            ?>
         </div>
     </div>
