@@ -48,7 +48,18 @@ switch ($act) {
      thembt($tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot);
      header('Location: index.php');
    break;
-
+   case 'xoabt':
+   if ($_GET['id']) {
+     $id=$_GET['id'];
+     xoabt($id);
+     
+   }else{
+      echo ' <script>
+      alert("địa chỉ đã bị sai") ;
+   </script>';
+   }
+   header('Location: index.php?act=baitap');
+   break;
    case 'chambai':
       if(isset($_GET['id'])) {
          $idbt = $_GET['id'];

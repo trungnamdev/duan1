@@ -82,6 +82,7 @@
             </div>
         </div>
         </a>
+       
         <div class="box-right">
             <!-- tiêu dề đặt trên đầu mỗi trang view cần tiêu đề -->
             <!-- <div class="header-box">
