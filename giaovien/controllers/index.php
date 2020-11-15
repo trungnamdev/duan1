@@ -98,9 +98,12 @@ switch ($act) {
       
       require_once "../giaovien/views/layout.php";
       break;
-   
+      case 'lophoc': 
+         
+      break;
    
    }
+   
 
 }else{
       header('Location: ../index.php');
