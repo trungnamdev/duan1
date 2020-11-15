@@ -125,7 +125,16 @@ switch ($act) {
       require_once "../giaovien/views/layout.php";
       break;
    break;
-   
+   case 'chamdiemajax':
+   if(isset($_POST['diem']) && isset($_POST['typeid'])){
+      $diem = $_POST['diem'];
+      $file = $_POST['typeid'];
+      $arrdiem = [0,1,2,3,4,5,6,7,8,9,10];
+      if(in_array($diem,$arrdiem)){
+         chamdiem($diem,$file);
+      }
+   }
+   break;
    }
 
 }else{
