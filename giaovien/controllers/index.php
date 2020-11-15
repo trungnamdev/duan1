@@ -112,8 +112,10 @@ switch ($act) {
 	header('Content-Transfer-Encoding: binary');  
 	header('Cache-Control: must-revalidate');  
 	header('Pragma: no-cache');  
-	readfile($filename);  
-	return;
+   readfile($filename);  
+   unlink($filename);
+   return;
+ 
 }
       }
       $acbt="active";
