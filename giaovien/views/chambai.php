@@ -26,7 +26,6 @@
 
         <tbody>
             <?php
-                
                 foreach ($danhsach as $ds) {
                 $arrtrangthai = checknopbai($_GET['id'],$ds['idsv']);
                 $link = "";
@@ -44,7 +43,7 @@
                 <td><a href="index.php?act=thongtincn&idtk=<?= $ds['idsv'] ?>"><?= $ds['hoten'] ?></a></td>
                 <td>
                     <div class="input-group w-fitcontent">
-                        <select class="custom-select" id="inputGroupSelect02">
+                        <select class="custom-select chamdiemop" typeid=<?= $arrtrangthai['idfile'] ?>>
                         <option selected>...</option>
                         <?php
                             for ($i=0; $i <= 10; $i++) { 
