@@ -16,13 +16,6 @@
        <a href="index.php?act=giaobt"> <i class="fas fa-plus"></i></a>
         
     </div>
-  <a href="#">
-        <div class="addnew rounded-circle Regular shadow">
-
-            <i class="fas fa-plus"></i>
-
-        </div>
-    </a>
     <div class="noidung">
 
         <div class="header-box">
@@ -68,6 +61,10 @@
                     <div class="d-row100 box-bot">
                         <div class="d-info1 d-hc">
                             <a>Hạn chót: <br> <?=$bt['ngayhethan']?> </a>
+                        </div>
+                        <div class="d-info2 d-nb w-75 d-mr-3">
+                            <a href="index.php?act=xoabt&id=<?=$bt['idbaitap']?>" class="btn btn-outline-success">Xóa</a>
+
                         </div>
                         <div class="d-info2 d-nb w-75">
                             <a href="index.php?act=chambai&id=<?=$bt['idbaitap']?>" class="btn btn-outline-success">Đã nộp: <?=$btdn?>/<?=$slbt['tong'] ?></a>

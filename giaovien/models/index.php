@@ -3,6 +3,9 @@
 function getIDGV(){
     return laymot("SELECT * FROM gvlop WHERE idgv = ".$_SESSION['iddn']);
 }
+function xoabt($id){
+    return postdulieu("DELETE FROM `baitap` WHERE `baitap`.`idbaitap` = $id");
+}
 // đếm bt đã nộp
 function getBTDaNop($idbt){
     return laymot("SELECT count(*) AS 'slbt' FROM upfile WHERE idbaitap = $idbt");

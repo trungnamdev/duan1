@@ -46,7 +46,14 @@ switch ($act) {
      thembt($tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot);
      header('Location: index.php');
    break;
-
+   case 'xoabt':
+   if ($_GET['id']) {
+     $id=$_GET['id'];
+     xoabt($id);
+     header('Location: index.php');
+   } 
+   
+   break;
    case 'chambai':
       if(isset($_GET['id'])) {
          $idbt = $_GET['id'];
