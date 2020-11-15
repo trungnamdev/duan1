@@ -1,17 +1,14 @@
-<div class="header-box">
-    <?php
-    foreach ($lopdangday as $lop) {
-        $id = $lop['idlopd'];
-        $countlop = countlop($id);
-    ?>
-    <?php } ?>
-
+<?php 
+    // check mấy thằng mât dạy nhập idlop bừa bãi. 
+    if(isset($_GET['idlop']) && $_GET['idlop'] > 0 && countLopGV($_GET['idlop'])['tong']> 0){  
+?>
+<div class="header-box"> 
     <div class="tieude h1">
-        <p><?= $lop['tenlop'] ?></p>
+        <p><?=$tenlop['tenlop']?></p>
     </div>
     <div class="option-box1">
-        <a class=""> <img class="avatagv mr-0" src="<?= showfile($lop['hinh']) ?>" alt="" onerror="erroimg(this)"></a>
-        <a class="text-secondary font-weight-bolder"><?= $lop['tenkhoa'] ?></a>
+        <a class=""> <img class="avatagv mr-0" src="<?=showfile($khoahoc['hinh'])?>" alt="" onerror="erroimg(this)"></a>
+        <a class="text-secondary font-weight-bolder"><?=$khoahoc['tenkhoa']?> </a>
     </div>
 </div>
 
@@ -29,26 +26,33 @@
         </tr>
 
         <tbody>
-            <?php
+        <?php
             
-                ?>
+             
+            foreach ($dssvtheolop as $ds) { 
+            ?>
                 <tr>
                     <th scope="row"><input type="checkbox" name="chonbt" id=""></th>
-                    <td><?= $ds['hoten']?></td>
+                    <td><?=$ds['hoten']?></td>
                     <td>
-                        <div class="input-group w-fitcontent">
-                            <img scr="duan1/uploads/khaihoang.jpg">
+                        <div class="input-group w-fitcontent avtimage"> 
+                             
+                                <img src="<?=showfile($ds['hinh'])?>"  alt="" onerror="erroimg(this)" > 
+                             
                         </div>
+                         
                     </td>
                     <td>
-                        <span>2020-11-04</span>
+                        <span><?=$ds['ngaysinh']?></span>
                     </td>
 
                     <td>
-                        12312123@gmail.com
+                        <?=$ds['email']?>
                     </td>
                 </tr>
+                <?php } ?>
         </tbody>
     </table>
 
 </div>
+            <?php }else echo "URL SAI!"?>

@@ -6,9 +6,11 @@
         <div class="d-row">
 
         <?php 
+        
                 foreach ($lopdangday as $lop) {
                     $id=$lop['idlopd'];
                     $countlop=countlop($id);
+                    
             ?>
          <div class="d-div3">
                 <div class="d-div3-img">
@@ -26,7 +28,7 @@
                             <a><?=$countlop['tong']?> thành viên </a>
                         </div>
                         <div class="d-info2 d-nb w-75">
-                            <a href="index.php?act=lopct&idlop=<?= $lop['id'] ?>" class="btn btn-primary">Xem </a>
+                            <a href="index.php?act=lopct&idlop=<?= $lop['idlopd'] ?>" class="btn btn-primary">Xem </a>
                         </div>
                     </div>
                 </div>
