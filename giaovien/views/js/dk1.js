@@ -79,4 +79,26 @@ $(document).ready(function() {
             data: { diem: diem, typeid: typeid }
         });
     });
+
+    // check loi ngaythang
+    $(".from").datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        minDate: 0,
+        dateFormat: 'yy-mm-dd',
+        onClose: function(selectedDate) {
+            $(".to").datepicker("option", "minDate", selectedDate);
+        }
+    });
+    $(".to").datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        minDate: 0,
+        dateFormat: 'yy-mm-dd',
+        onClose: function(selectedDate) {
+            $(".from").datepicker("option", "maxDate", selectedDate);
+        }
+    });
 });

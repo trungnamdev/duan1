@@ -37,11 +37,12 @@
     <!-- end swiper -->
      <!-- file dung chung cho 3 modun -->
      <link rel="stylesheet" href="../system/css/stylelayout.css">
+     <link rel="stylesheet" href="../system/css/jquery-ui.css">
     <!-- file riêng moi modun -->
     <link rel="stylesheet" href="views/css/style.css">
     <title>GIÁO VIÊN</title>
 </head>
-
+<!-- oncontextmenu="return false" ondragstart="return false" onselectstart="return false" -->
 <body>
     <div class="container-fluid h-100 p-0">
         <a href="index.php?act=thongtincn">
