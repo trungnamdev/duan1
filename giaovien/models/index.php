@@ -14,19 +14,29 @@ function BTDaCham($idlop){
 
 //Lấy bài tập theo bài tập đã giao
 function gv_getBaitapByIDBT($idbt) {
-    return laydulieu("SELECT idfile, idsv, bt.hinh, bt.ngayhethan, tenlop, tenbaitap, tenkhoa FROM baitap bt INNER JOIN upfile on bt.idbaitap = upfile.idbaitap INNER JOIN taikhoan ON upfile.idsv = taikhoan.id INNER JOIN lop ON bt.idlop=lop.id INNER JOIN khoahoc on khoahoc.id = lop.idkhoa WHERE bt.idbaitap = $idbt");
+    return laymot("SELECT bt.idbaitap, bt.hinh, bt.ngayhethan, tenlop, tenbaitap, tenkhoa FROM baitap bt INNER JOIN lop ON bt.idlop=lop.id INNER JOIN khoahoc on khoahoc.id = lop.idkhoa WHERE bt.idbaitap = $idbt");
 }
 
-//Lấy danh sách sinh viên của lớp theo id bài tập
+//Lấy ID lớp theo id bài tập
 function getIdLopTheoBT($idbt)
 {
     return laymot("SELECT idlop FROM `baitap` WHERE idbaitap = $idbt");
 }
 
+//Lấy danh sách sinh viên của lớp theo id bài tập
 function getDsLopByBt($idbt)
 {
     $idlop = getIdLopTheoBT($idbt)['idlop'];
-    return laydulieu("SELECT * FROM sv_lop INNER JOIN taikhoan ON sv_lop.idsv = taikhoan.id WHERE sv_lop.idlop = $idlop");
+    if(is_null($idlop)) 
+        end();
+    else
+        return laydulieu("SELECT * FROM sv_lop INNER JOIN taikhoan ON sv_lop.idsv = taikhoan.id WHERE sv_lop.idlop = $idlop");
+}
+
+//Xem tiến độ nộp bài của sinh viên
+function getAllBaiTapSv($idbt)
+{
+    return laydulieu("SELECT file, idsv, diem FROM baitap bt INNER JOIN upfile on bt.idbaitap = upfile.idbaitap INNER JOIN taikhoan ON upfile.idsv = taikhoan.id WHERE bt.idbaitap = $idbt");
 }
 
 // lấy từng id lớp của gv

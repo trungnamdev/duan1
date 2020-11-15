@@ -51,7 +51,8 @@ switch ($act) {
       if(isset($_GET['id'])) {
          $idbt = $_GET['id'];
          $danhsach = getDsLopByBt($idbt);
-         $baitap_list = gv_getBaitapByIDBT($idbt);
+         $baitap_info = gv_getBaitapByIDBT($idbt);
+         $baitap_list = getAllBaiTapSv($idbt);
       }
       $acbt="active";
       $view = "../giaovien/views/chambai.php";
@@ -116,10 +117,11 @@ switch ($act) {
       
       require_once "../giaovien/views/layout.php";
       break;
-   case 'hscttheolop':
+   case 'lopct':
       $aclop="active";
+      $idlop = gv_getidlop();
       $lopdangday = GV_getlopdangday();
-      $view = "../giaovien/views/hscttheolop.php";
+      $view = "../giaovien/views/lopct.php";
       require_once "../giaovien/views/layout.php";
       break;
    break;
