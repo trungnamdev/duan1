@@ -70,8 +70,8 @@ switch ($act) {
                $objExcel = new PHPExcel;
                $objExcel->setActiveSheetIndex(0);
                $sheet = $objExcel->getActiveSheet()->setTitle($baitap_info['tenlop'] . "_" . $baitap_info['tenbaitap']);
-               $objExcel->getActiveSheet()->getColumnDimension('A')->setWidth(35);
-               $objExcel->getActiveSheet()->getColumnDimension('B')->setWidth(25);
+               $objExcel->getActiveSheet()->getColumnDimension('A')->setWidth(25);
+               $objExcel->getActiveSheet()->getColumnDimension('B')->setWidth(35);
                $objExcel->getActiveSheet()->getRowDimension('1')->setRowHeight(40);
                $sheet->getStyle("A1:C1")->getFill()->setFilltype(\PHPExcel_Style_Fill::FILL_SOLID)->getStartColor()->setARGB('0D0E2E');
                $objExcel->getActiveSheet()->getStyle("A1:C1")->getFont()->setBold(true)
@@ -82,7 +82,7 @@ switch ($act) {
                $sheet->getStyle("A1:C1")->getAlignment()->setVertical(\PHPExcel_Style_Alignment::VERTICAL_CENTER);
                $sheet->getStyle("A")->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
                $rowCount = 1;
-               $sheet->setCellValue('A' . $rowCount, '');
+               $sheet->setCellValue('A' . $rowCount, 'STT');
                $sheet->setCellValue('B' . $rowCount, 'HỌ VÀ TÊN');
                $sheet->setCellValue('C' . $rowCount, 'ĐIỂM');
                foreach ($danhsach as $ds) {
@@ -184,18 +184,71 @@ switch ($act) {
 
       case 'lopct':
          $aclop = "active"; 
-        
          if(isset($_GET['idlop']) && $_GET['idlop'] > 0  ){   
             $idlop = $_GET['idlop']; 
             if(countLopGV($idlop)['tong']> 0){
                $dssvtheolop = getSVByLop($idlop); 
                $tenlop = tenlop($idlop);
                $khoahoc =getTTKhoaByIDLop($idlop);
+               if(isset($_GET['excel'])){
+                  $objExcel = new PHPExcel;
+                  $objExcel->setActiveSheetIndex(0);
+                  $sheet = $objExcel->getActiveSheet()->setTitle($tenlop['tenlop']);
+                  $objExcel->getActiveSheet()->getColumnDimension('A')->setWidth(25);
+                  $objExcel->getActiveSheet()->getColumnDimension('B')->setWidth(40);
+                  $objExcel->getActiveSheet()->getColumnDimension('C')->setWidth(30);
+                  $objExcel->getActiveSheet()->getColumnDimension('D')->setWidth(35);
+                  $objExcel->getActiveSheet()->getColumnDimension('E')->setWidth(45);
+                  $objExcel->getActiveSheet()->getRowDimension('1')->setRowHeight(40);
+                  $sheet->getStyle("A1:E1")->getFill()->setFilltype(\PHPExcel_Style_Fill::FILL_SOLID)->getStartColor()->setARGB('0D0E2E');
+                  $objExcel->getActiveSheet()->getStyle("A1:E1")->getFont()->setBold(true)
+                     ->setName('Verdana')
+                     ->setSize(10)
+                     ->getColor()->setRGB('FFFFF');
+                  $sheet->getStyle("A1:E1")->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+                  $sheet->getStyle("A1:E1")->getAlignment()->setVertical(\PHPExcel_Style_Alignment::VERTICAL_CENTER);
+                  $sheet->getStyle("A")->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+                  $rowCount = 1;
+                  $sheet->setCellValue('A' . $rowCount, 'STT');
+                  $sheet->setCellValue('B' . $rowCount, 'HỌ VÀ TÊN');
+                  $sheet->setCellValue('C' . $rowCount, 'NGÀY SINH');
+                  $sheet->setCellValue('D' . $rowCount, 'EMAIL');
+                  $sheet->setCellValue('E' . $rowCount, 'ĐỊA CHỈ');
+                  foreach ($dssvtheolop as $ds) { 
+                     $rowCount++;
+                     $sheet->setCellValue('A' . $rowCount, $rowCount - 1);
+                     $sheet->setCellValue('B' . $rowCount, $ds['hoten']);
+                     $sheet->setCellValue('C' . $rowCount, $ds['ngaysinh']);
+                     $sheet->setCellValue('D' . $rowCount, $ds['email']);
+                     $sheet->setCellValue('E' . $rowCount, $ds['diachi']);
+                     $objExcel->getActiveSheet()->getRowDimension($rowCount)->setRowHeight(20);
+                  }
+                  $stylearr = array(
+                     'borders' => array(
+                        'allborders' => array(
+                           'style' => PHPExcel_Style_Border::BORDER_THIN
+                        ),
+                     )
+                  );
+                  $sheet->getStyle('A1:' . 'E' . ($rowCount))->applyFromArray($stylearr);
+                  $objWriter = new PHPExcel_Writer_Excel2007($objExcel);
+                  $filename = $tenlop['tenlop'] . "_" .  $khoahoc['tenkhoa'] . ".xlsx";
+                  $objWriter->save($filename);
+                  ob_end_clean();
+                  header('Content-Disposition: attachment; filename="' . $filename . '"');
+                  header('Content-Type: application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet');
+                  header('Content-Length: ' . filesize($filename));
+                  header('Content-Transfer-Encoding: binary');
+                  header('Cache-Control: must-revalidate');
+                  header('Pragma: no-cache');
+                  readfile($filename);
+                  unlink($filename);
+                  return;
+               }
             } 
          }
          $view = "../giaovien/views/lopct.php";
          require_once "../giaovien/views/layout.php";
-         break;
          break;
       case 'chamdiemajax':
          if (isset($_POST['diem']) && isset($_POST['typeid'])) {

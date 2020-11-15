@@ -75,7 +75,7 @@
                             <a><?=$countlop['tong']?> thành viên </a>
                         </div>
                         <div class="d-info2 d-nb w-75">
-                            <a href="index.php?act=lopct&idlop=<?= $lop['id'] ?>" class="btn btn-primary">Xem </a>
+                            <a href="index.php?act=lopct&idlop=<?= $lop['idlopd'] ?>" class="btn btn-primary">Xem </a>
                         </div>
                     </div>
                 </div>
