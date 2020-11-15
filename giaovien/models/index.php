@@ -14,7 +14,7 @@ function BTDaCham($idlop){
 
 //Lấy bài tập theo bài tập đã giao
 function gv_getBaitapByIDBT($idbt) {
-    return laymot("SELECT bt.hinh, bt.ngayhethan, tenlop, tenbaitap, tenkhoa FROM baitap bt INNER JOIN lop ON bt.idlop=lop.id INNER JOIN khoahoc on khoahoc.id = lop.idkhoa WHERE bt.idbaitap = $idbt");
+    return laymot("SELECT bt.idbaitap, bt.hinh, bt.ngayhethan, tenlop, tenbaitap, tenkhoa FROM baitap bt INNER JOIN lop ON bt.idlop=lop.id INNER JOIN khoahoc on khoahoc.id = lop.idkhoa WHERE bt.idbaitap = $idbt");
 }
 
 //Lấy ID lớp theo id bài tập
