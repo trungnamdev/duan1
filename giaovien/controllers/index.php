@@ -45,7 +45,7 @@ switch ($act) {
      $imgbt=$_FILES['imgbt'];
      $tenhinh=$imgbt['name'];
      upfile($imgbt);
-     thembt($tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot);
+     thembt($tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot); 
      header('Location: index.php');
    break;
    case 'xoabt':
