@@ -6,6 +6,7 @@ require_once "../system/share.php";
 require_once "../system/conn.php";
 require_once "../system/PHPMailer-master/src/PHPMailer.php";
 require_once "../system/PHPMailer-master/src/SMTP.php";
+require_once "../system/phpexcel/Classes/PHPExcel.php";
 if(isset($_SESSION['iddn']) && $_SESSION['role'] == 1){
 if(isset($_GET['act'])){
    $act = $_GET['act'];
@@ -61,11 +62,59 @@ switch ($act) {
    header('Location: index.php?act=baitap');
    break;
    case 'chambai':
-      if(isset($_GET['id'])) {
+         if(isset($_GET['id'])) {
          $idbt = $_GET['id'];
          $danhsach = getDsLopByBt($idbt);
          $baitap_info = gv_getBaitapByIDBT($idbt);
          $baitap_list = getAllBaiTapSv($idbt);
+         if(isset($_GET['excel'])){
+            $objExcel = new PHPExcel;
+            $objExcel->setActiveSheetIndex(0);
+            $sheet = $objExcel->getActiveSheet()->setTitle($baitap_info['tenlop']."_".$baitap_info['tenbaitap']);         
+	$objExcel->getActiveSheet()->getColumnDimension('A')->setWidth(35);
+   $objExcel->getActiveSheet()->getColumnDimension('B')->setWidth(25);
+   $objExcel->getActiveSheet()->getRowDimension('1')->setRowHeight(40);
+   $sheet->getStyle("A1:C1")->getFill()->setFilltype(\PHPExcel_Style_Fill::FILL_SOLID)->getStartColor()->setARGB('0D0E2E');
+	$objExcel->getActiveSheet()->getStyle("A1:C1")->getFont()->setBold(true)
+                                ->setName('Verdana')
+                                ->setSize(10)
+                                ->getColor()->setRGB('FFFFF');
+	$sheet->getStyle("A1:C1")->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+	$sheet->getStyle("A1:C1")->getAlignment()->setVertical(\PHPExcel_Style_Alignment::VERTICAL_CENTER);
+	$sheet->getStyle("A")->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+	$rowCount = 1;
+	$sheet->setCellValue('A'.$rowCount,'');
+	$sheet->setCellValue('B'.$rowCount,'HỌ VÀ TÊN');
+   $sheet->setCellValue('C'.$rowCount,'ĐIỂM');     
+   foreach ($danhsach as $ds) {
+      $rowCount++;
+      $xuatexcell = checknopbai($_GET['id'],$ds['idsv']);
+      $sheet->setCellValue('A'.$rowCount,$rowCount-1);
+		$sheet->setCellValue('B'.$rowCount,$ds['hoten']);
+      $sheet->setCellValue('C'.$rowCount,$xuatexcell['diem']);
+      $objExcel->getActiveSheet()->getRowDimension($rowCount)->setRowHeight(20);
+   }
+   $stylearr = array(
+		'borders' => array(
+			'allborders' => array(
+			'style' => PHPExcel_Style_Border::BORDER_THIN
+			),
+		)
+		);
+   $sheet->getStyle('A1:'.'C'.($rowCount))->applyFromArray($stylearr);
+   $objWriter = new PHPExcel_Writer_Excel2007($objExcel);
+	$filename = $baitap_info['tenlop']."_".$baitap_info['tenbaitap'].".xlsx";
+	$objWriter->save($filename);
+	ob_end_clean();
+	header('Content-Disposition: attachment; filename="' . $filename . '"');  
+	header('Content-Type: application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet');  
+	header('Content-Length: ' . filesize($filename));  
+	header('Content-Transfer-Encoding: binary');  
+	header('Cache-Control: must-revalidate');  
+	header('Pragma: no-cache');  
+	readfile($filename);  
+	return;
+}
       }
       $acbt="active";
       $view = "../giaovien/views/chambai.php";
