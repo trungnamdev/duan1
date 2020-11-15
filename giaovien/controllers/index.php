@@ -50,9 +50,13 @@ switch ($act) {
    if ($_GET['id']) {
      $id=$_GET['id'];
      xoabt($id);
-     header('Location: index.php');
-   } 
-   
+     
+   }else{
+      echo ' <script>
+      alert("địa chỉ đã bị sai") ;
+   </script>';
+   }
+   header('Location: index.php?act=baitap');
    break;
    case 'chambai':
       if(isset($_GET['id'])) {
