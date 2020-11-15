@@ -12,11 +12,11 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1" class="d-lavel">Ngày giao</label>
-    <input type="date" class="form-control" name="ngaygiao" id="a" >
+    <input type="text" class="form-control from" placeholder="ngày giao" name="ngaygiao">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1" class="d-lavel">Hạn chốt</label>
-    <input type="date" class="form-control" name="hanchot" id="b">
+    <input type="text" class="form-control to" placeholder="ngày hết hạn" name="hanchot">
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1" class="d-lavel">Mô tả</label>
