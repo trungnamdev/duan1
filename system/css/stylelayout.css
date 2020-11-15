@@ -3,6 +3,16 @@
     padding: 0;
 }
 
+.btn-outline-primary {
+    color: #25213B;
+    border-color: #25213B;
+}
+
+.btn-outline-primary:hover {
+    background-color: #111347;
+    border-color: #111347;
+}
+
 body {
     height: 100vh;
 }

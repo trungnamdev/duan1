@@ -5,6 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
     <!-- file dung chung cho 3 modun -->
     <link rel="stylesheet" href="../system/css/stylelayout.css">
     <!-- file riêng moi modun -->
@@ -14,12 +21,7 @@
     <script src="../system/js/jsvali.js"></script>
     <script src="../system/js/icons.js"></script>
     <script src="views/js/dk1.js"></script>
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-    </script>
+
     <!-- font awersome w3school -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -54,7 +56,7 @@
                         <span class="idsv">HS<?= $_SESSION['iddn'] ?></span>
                     </div>
                 </a>
-                <a href="index.php?act=dangxuat" data-toggle="tooltip"  data-placement="bottom" title="Đăng xuất">
+                <a href="index.php?act=dangxuat" data-toggle="tooltip" data-placement="bottom" title="Đăng xuất">
                     <div class="ml-5 logout">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -83,7 +85,8 @@
                         <li class="<?= $acdkkh ?>">Khóa học<img src="../system/img/monhoc.svg" alt=""></li>
                     </a>
                     <a class="iconchat" href="index.php?act=thongbao">
-                        <li class="<?= $actb ?> ">Thông báo<img class="imgchat" src="../system/img/thongbao.svg" alt=""></li>
+                        <li class="<?= $actb ?> ">Thông báo<img class="imgchat" src="../system/img/thongbao.svg" alt="">
+                        </li>
                     </a>
                     <a href="index.php?act=chat">
                         <li class="<?= $chat ?>">Nhắn tin<img src="../system/img/thongbao.svg" alt=""></li>
@@ -117,8 +120,9 @@
     </div>
 </body>
 <script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip(); 
+$(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
 });
 </script>
+
 </html>
