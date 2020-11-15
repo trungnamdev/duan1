@@ -27,11 +27,10 @@ function getIdLopTheoBT($idbt)
 function getDsLopByBt($idbt)
 {
     $idlop = getIdLopTheoBT($idbt)['idlop'];
-    if(is_null($idlop)) 
-        end();
-    else
+    if(!is_null($idlop)){
         return laydulieu("SELECT * FROM sv_lop INNER JOIN taikhoan ON sv_lop.idsv = taikhoan.id WHERE sv_lop.idlop = $idlop");
-}
+    }
+    }
 
 //Xem tiến độ nộp bài của sinh viên
 function getAllBaiTapSv($idbt)
@@ -102,5 +101,9 @@ function layBaiTapByKH($idkh,$idsv){
 } 
 function checknopbai($idbt,$idsv){
     return laymot("SELECT * FROM `upfile` WHERE idsv = $idsv and idbaitap = $idbt");
+}
+// cham diem 
+function chamdiem($diem,$file){
+    postdulieu("UPDATE `upfile` SET `diem` = '$diem' WHERE `upfile`.`idfile` = '$file'");
 }
 ?>

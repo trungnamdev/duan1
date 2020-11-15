@@ -1,28 +1,23 @@
 $(document).ready(function() {
     //chọn tất cả
-    $('#selectAll').click(function(event) {        
+    $('#selectAll').click(function(event) {
         $(':checkbox').each(function() {
-            this.checked = true;                        
+            this.checked = true;
         });
-        
-        // $btn = document.getElementById('selectAll').innerHTML = '<svg fill="#384E85" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em"><path class="uim-primary" d="M21,22H3a.99974.99974,0,0,1-1-1V3A.99974.99974,0,0,1,3,2H21a.99974.99974,0,0,1,1,1V21A.99974.99974,0,0,1,21,22ZM4,20H20V4H4Z"></path></svg>  Bỏ chọn tất cả';
-        // $('#selectAll').prop('selectAll','selectAllgdg');
     });
 
     //Hủy chọn
-    $('#unselectAll').click(function(event) {        
+    $('#unselectAll').click(function(event) {
         $(':checkbox').each(function() {
-            this.checked = false;                        
+            this.checked = false;
         });
-        
-        // $btn = document.getElementById('selectAll').innerHTML = '<svg fill="#384E85" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em"><path class="uim-primary" d="M21,22H3a.99974.99974,0,0,1-1-1V3A.99974.99974,0,0,1,3,2H21a.99974.99974,0,0,1,1,1V21A.99974.99974,0,0,1,21,22ZM4,20H20V4H4Z"></path></svg>  Bỏ chọn tất cả';
-        // $('#selectAll').prop('selectAll','selectAllgdg');
     });
 
     //Ajax chấm bài
-    $("#baitap").change(function() {
-        $('#btshow').html($(this).val().split('\\').pop());
-    });
+    // $("#baitap").change(function() {
+    //     $('#btshow').html($(this).val().split('\\').pop());
+    // });
+    //  k hieu cho này dung vào gì
     $(".dkkh").click(function() {
         var a = $(this).parent().children()[1].childNodes[1].value;
         console.log(a);
@@ -36,6 +31,52 @@ $(document).ready(function() {
             }
         });
     });
+    $("#checkform").validate({
+        rules: {
+            "tenbt": {
+                required: true,
+            },
+            "ngaygiao": {
+                required: true,
+                date: true
+            },
+            "hanchot": {
+                required: true,
+                date: true
+            },
+            "mota": {
+                required: true
+            }
+        },
+        messages: {
+            "tenbt": {
+                required: "Xin vui lòng nhập tên bài tập"
+            },
+            "ngaygiao": {
+                required: "Xin vui lòng nhập ngày giao",
+                date: "Vui lòng nhập đúng định dạng ngày"
+
+            },
+            "hanchot": {
+                required: "Xin vui lòng nhập ngày hết hạn",
+                date: "Vui lòng nhập đúng định dạng ngày"
+
+            },
+            "mota": {
+                required: "Xin vui lòng nhập mô tả",
+
+            }
+        }
+    });
+
+    // ajax cham bai
+    $('.chamdiemop').change(function() {
+        diem = $(this).val();
+        typeid = $(this).attr('typeid');
+        $.ajax({
+            type: "post",
+            url: "index.php?act=chamdiemajax",
+            data: { diem: diem, typeid: typeid }
+        });
+    });
 });
-
-
