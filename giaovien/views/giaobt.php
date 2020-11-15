@@ -90,26 +90,6 @@
 			}
 	});
 });
-function checkngay() {  
-  // $(document).ready(function () {
-  //   if ($("#b").change()) {
-  //     var a = $("#a").val();
-  //     var b = $("#b").val();
-  //     if (a<b) {
-  //       console.log("flase");
-  //     } else {
-  //       console.log("true");
-  //     }
-  //   }
-  //   $("#a").change(function (e) { 
-  //     var a = $("#a").val()
-  // console.log(a);
-  //   });
-  
-    
-  // });
 
-
-}
 
 </script>
