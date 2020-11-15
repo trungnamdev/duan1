@@ -6,27 +6,23 @@ require_once "../system/share.php";
 require_once "../system/conn.php";
 require_once "../system/PHPMailer-master/src/PHPMailer.php";
 require_once "../system/PHPMailer-master/src/SMTP.php";
-require_once "../system/phpexcel/Classes/PHPExcel.php";
-if (isset($_SESSION['iddn']) && $_SESSION['role'] == 1) {
-   if (isset($_GET['act'])) {
-      $act = $_GET['act'];
-   } else {
-      $act = "home";
-   }
-   $achome = "";
-   $acbt = "";
-   $aclop = "";
-   $chat = "";
-   $actb = "";
-   switch ($act) {
-      case 'home':
-         $achome = "active";
-         $idlop = gv_getidlop();
-         $lopdangday = GV_getlopdangday();
-         $tb = thongbao();
-         $view = "../giaovien/views/home.php";
-         require_once "../giaovien/views/layout.php";
-         break;
+require_once "../system/Classes/PHPExcel.php";
+if(isset($_SESSION['iddn']) && $_SESSION['role'] == 1){
+if(isset($_GET['act'])){
+   $act = $_GET['act'];
+}else{
+   $act = "home";
+}
+$achome="";$acbt="";$aclop="";$chat="";$actb="";
+switch ($act) {
+   case 'home':
+      $achome="active";
+      $idlop = gv_getidlop();
+      $lopdangday = GV_getlopdangday(); 
+      $tb=thongbao();
+      $view = "../giaovien/views/home.php";
+      require_once "../giaovien/views/layout.php";
+   break;
 
       case 'baitap':
          $acbt = "active";
@@ -187,9 +183,16 @@ if (isset($_SESSION['iddn']) && $_SESSION['role'] == 1) {
          break;
 
       case 'lopct':
-         $aclop = "active";
-         $idlop = gv_getidlop();
-         $lopdangday = GV_getlopdangday();
+         $aclop = "active"; 
+        
+         if(isset($_GET['idlop']) && $_GET['idlop'] > 0  ){   
+            $idlop = $_GET['idlop']; 
+            if(countLopGV($idlop)['tong']> 0){
+               $dssvtheolop = getSVByLop($idlop); 
+               $tenlop = tenlop($idlop);
+               $khoahoc =getTTKhoaByIDLop($idlop);
+            } 
+         }
          $view = "../giaovien/views/lopct.php";
          require_once "../giaovien/views/layout.php";
          break;

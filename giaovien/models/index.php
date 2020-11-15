@@ -62,6 +62,9 @@ function thembt($tenbt,$imgbt,$mota,$idlop,$ngaygiao,$hanchot){
 function countlop($idlop){
     return laymot("SELECT COUNT(*) AS tong FROM sv_lop WHERE idlop=$idlop");
 }
+function countLopGV($idlop){
+    return laymot("SELECT COUNT(*) AS tong FROM gvlop WHERE idlop LIKE '%$idlop%' AND idgv = $_SESSION[iddn]");
+}
 //Lấy các lớp đang dạy
 function GV_getlopdangday()
 {
@@ -108,5 +111,14 @@ function checknopbai($idbt,$idsv){
 // cham diem 
 function chamdiem($diem,$file){
     postdulieu("UPDATE `upfile` SET `diem` = '$diem' WHERE `upfile`.`idfile` = '$file'");
+}
+// lay tt sinh vien theo lop
+function getSVByLop($idlop){
+    return laydulieu("SELECT * FROM taikhoan WHERE id IN (SELECT idsv FROM sv_lop WHERE idlop = $idlop )");
+
+}
+// lay ten khoa hoc by id lop
+function getTTKhoaByIDLop($idlop){
+    return laymot("SELECT * FROM khoahoc WHERE id IN (SELECT idkhoa FROM lop WHERE id = $idlop)   ");
 }
 ?>
