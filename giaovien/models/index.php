@@ -3,6 +3,9 @@
 function getIDGV(){
     return laymot("SELECT * FROM gvlop WHERE idgv = ".$_SESSION['iddn']);
 }
+function xoabt($id){
+    return postdulieu("DELETE FROM `baitap` WHERE `baitap`.`idbaitap` = $id");
+}
 // đếm bt đã nộp
 function getBTDaNop($idbt){
     return laymot("SELECT count(*) AS 'slbt' FROM upfile WHERE idbaitap = $idbt");
@@ -14,19 +17,28 @@ function BTDaCham($idlop){
 
 //Lấy bài tập theo bài tập đã giao
 function gv_getBaitapByIDBT($idbt) {
-    return laydulieu("SELECT idfile, idsv, bt.hinh, bt.ngayhethan, tenlop, tenbaitap, tenkhoa FROM baitap bt INNER JOIN upfile on bt.idbaitap = upfile.idbaitap INNER JOIN taikhoan ON upfile.idsv = taikhoan.id INNER JOIN lop ON bt.idlop=lop.id INNER JOIN khoahoc on khoahoc.id = lop.idkhoa WHERE bt.idbaitap = $idbt");
+    return laymot("SELECT bt.idbaitap, bt.hinh, bt.ngayhethan, tenlop, tenbaitap, tenkhoa FROM baitap bt INNER JOIN lop ON bt.idlop=lop.id INNER JOIN khoahoc on khoahoc.id = lop.idkhoa WHERE bt.idbaitap = $idbt");
 }
 
-//Lấy danh sách sinh viên của lớp theo id bài tập
+//Lấy ID lớp theo id bài tập
 function getIdLopTheoBT($idbt)
 {
     return laymot("SELECT idlop FROM `baitap` WHERE idbaitap = $idbt");
 }
 
+//Lấy danh sách sinh viên của lớp theo id bài tập
 function getDsLopByBt($idbt)
 {
     $idlop = getIdLopTheoBT($idbt)['idlop'];
-    return laydulieu("SELECT * FROM sv_lop INNER JOIN taikhoan ON sv_lop.idsv = taikhoan.id WHERE sv_lop.idlop = $idlop");
+    if(!is_null($idlop)){
+        return laydulieu("SELECT * FROM sv_lop INNER JOIN taikhoan ON sv_lop.idsv = taikhoan.id WHERE sv_lop.idlop = $idlop");
+    }
+    }
+
+//Xem tiến độ nộp bài của sinh viên
+function getAllBaiTapSv($idbt)
+{
+    return laydulieu("SELECT file, idsv, diem FROM baitap bt INNER JOIN upfile on bt.idbaitap = upfile.idbaitap INNER JOIN taikhoan ON upfile.idsv = taikhoan.id WHERE bt.idbaitap = $idbt");
 }
 
 // lấy từng id lớp của gv
@@ -42,6 +54,9 @@ function GV_getBaiTapByID($idlop){
 }
 function tenlop($idlop){
     return laymot("SELECT * FROM lop WHERE id = $idlop");
+}
+function thembt($tenbt,$imgbt,$mota,$idlop,$ngaygiao,$hanchot){
+ return postdulieu("INSERT INTO `baitap` ( `tenbaitap`, `hinh`, `motabt`, `idlop`, `ngaygiao`, `ngayhethan`) VALUES ( '$tenbt', '$imgbt', '$mota', '$idlop', '$ngaygiao', '$hanchot');");   
 }
 // đếm số sv trong lớp.
 function countlop($idlop){
@@ -89,5 +104,9 @@ function layBaiTapByKH($idkh,$idsv){
 } 
 function checknopbai($idbt,$idsv){
     return laymot("SELECT * FROM `upfile` WHERE idsv = $idsv and idbaitap = $idbt");
+}
+// cham diem 
+function chamdiem($diem,$file){
+    postdulieu("UPDATE `upfile` SET `diem` = '$diem' WHERE `upfile`.`idfile` = '$file'");
 }
 ?>

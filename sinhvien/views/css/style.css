@@ -734,8 +734,8 @@ ul a:hover {
 
 .d-info1>img {
     border: 1px solid #efefef;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     margin-right: 5px;
     border-radius: 50%;
 }
@@ -1072,4 +1072,9 @@ input[type=file] {
     .thongbao-box {
         height: 500px;
     }
+}
+
+/* Sua Layout 100%*/
+.box-bot {
+
 }

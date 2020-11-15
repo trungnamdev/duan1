@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
-    </script>
+
     <!-- end bootstrap -->
     <script src="../system/js/jquery.js"></script>
     <script src="../system/js/jquery-ui.js"></script>
@@ -14,6 +12,9 @@
     <script src="../system/js/icons.js"></script>
     <script src="views/js/dk1.js"></script>
     <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
@@ -36,11 +37,12 @@
     <!-- end swiper -->
      <!-- file dung chung cho 3 modun -->
      <link rel="stylesheet" href="../system/css/stylelayout.css">
+     <link rel="stylesheet" href="../system/css/jquery-ui.css">
     <!-- file riêng moi modun -->
     <link rel="stylesheet" href="views/css/style.css">
     <title>GIÁO VIÊN</title>
 </head>
-
+<!-- oncontextmenu="return false" ondragstart="return false" onselectstart="return false" -->
 <body>
     <div class="container-fluid h-100 p-0">
         <a href="index.php?act=thongtincn">
@@ -80,6 +82,7 @@
             </div>
         </div>
         </a>
+       
         <div class="box-right">
             <!-- tiêu dề đặt trên đầu mỗi trang view cần tiêu đề -->
             <!-- <div class="header-box">
