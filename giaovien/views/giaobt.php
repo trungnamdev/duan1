@@ -12,11 +12,11 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1" class="d-lavel">Ngày giao</label>
-    <input type="date" class="form-control" name="ngaygiao" id="a" >
+    <input type="text" class="form-control from" placeholder="ngày giao" name="ngaygiao">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1" class="d-lavel">Hạn chốt</label>
-    <input type="date" class="form-control" name="hanchot" id="b">
+    <input type="text" class="form-control to" placeholder="ngày hết hạn" name="hanchot">
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1" class="d-lavel">Mô tả</label>
@@ -50,46 +50,3 @@
 </form>
 </div>
 </div>
-<script>
- $().ready(function() {
-	$("#checkform").validate({
-		rules: {
-			"tenbt": {
-				required: true,
-			},
-			"ngaygiao": {
-				required: true,
-        date:true
-			},
-			"hanchot": {
-				required: true,
-        date:true
-			},
-      "mota": {
-				required: true
-			}
-		},
-    messages: {
-          "tenbt": {
-					required: "Xin vui lòng nhập tên bài tập"
-					},
-          "ngaygiao": {
-					required: "Xin vui lòng nhập ngày giao",
-          date:"Vui lòng nhập đúng định dạng ngày"
-				
-					},
-          "hanchot": {
-					required: "Xin vui lòng nhập ngày hết hạn",
-          date:"Vui lòng nhập đúng định dạng ngày"
-				
-					},
-          "mota": {
-					required: "Xin vui lòng nhập mô tả",
-			
-					}
-			}
-	});
-});
-
-
-</script>

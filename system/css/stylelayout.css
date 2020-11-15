@@ -1047,6 +1047,7 @@ input[type=file] {
         bottom: 15px;
         left: 0;
         padding: 0 15px;
+        width: unset;
     }
     .boxthongbao-right {
         width: calc(70% - 300px);

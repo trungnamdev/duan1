@@ -149,6 +149,10 @@
     font-weight: 588;
 }
 
+.d-mr-3 {
+    text-align: center;
+}
+
 .giaobt-right-1 span {
     font-size: 19px;
     font-weight: 500;
@@ -306,3 +310,16 @@
 
 
 /* End Bảng Điểm */
+
+
+/* lop chi tiet */
+
+.avtimage {
+    width: 40px;
+    height: 40px;
+}
+
+.avtimage img {
+    width: 100%;
+    height: 100%;
+}

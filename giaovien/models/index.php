@@ -3,6 +3,9 @@
 function getIDGV(){
     return laymot("SELECT * FROM gvlop WHERE idgv = ".$_SESSION['iddn']);
 }
+function xoabt($id){
+    return postdulieu("DELETE FROM `baitap` WHERE `baitap`.`idbaitap` = $id");
+}
 // đếm bt đã nộp
 function getBTDaNop($idbt){
     return laymot("SELECT count(*) AS 'slbt' FROM upfile WHERE idbaitap = $idbt");
@@ -27,11 +30,10 @@ function getIdLopTheoBT($idbt)
 function getDsLopByBt($idbt)
 {
     $idlop = getIdLopTheoBT($idbt)['idlop'];
-    if(is_null($idlop)) 
-        end();
-    else
+    if(!is_null($idlop)){
         return laydulieu("SELECT * FROM sv_lop INNER JOIN taikhoan ON sv_lop.idsv = taikhoan.id WHERE sv_lop.idlop = $idlop");
-}
+    }
+    }
 
 //Xem tiến độ nộp bài của sinh viên
 function getAllBaiTapSv($idbt)
@@ -59,6 +61,9 @@ function thembt($tenbt,$imgbt,$mota,$idlop,$ngaygiao,$hanchot){
 // đếm số sv trong lớp.
 function countlop($idlop){
     return laymot("SELECT COUNT(*) AS tong FROM sv_lop WHERE idlop=$idlop");
+}
+function countLopGV($idlop){
+    return laymot("SELECT COUNT(*) AS tong FROM gvlop WHERE idlop LIKE '%$idlop%' AND idgv = $_SESSION[iddn]");
 }
 //Lấy các lớp đang dạy
 function GV_getlopdangday()
@@ -102,5 +107,18 @@ function layBaiTapByKH($idkh,$idsv){
 } 
 function checknopbai($idbt,$idsv){
     return laymot("SELECT * FROM `upfile` WHERE idsv = $idsv and idbaitap = $idbt");
+}
+// cham diem 
+function chamdiem($diem,$file){
+    postdulieu("UPDATE `upfile` SET `diem` = '$diem' WHERE `upfile`.`idfile` = '$file'");
+}
+// lay tt sinh vien theo lop
+function getSVByLop($idlop){
+    return laydulieu("SELECT * FROM taikhoan WHERE id IN (SELECT idsv FROM sv_lop WHERE idlop = $idlop )");
+
+}
+// lay ten khoa hoc by id lop
+function getTTKhoaByIDLop($idlop){
+    return laymot("SELECT * FROM khoahoc WHERE id IN (SELECT idkhoa FROM lop WHERE id = $idlop)   ");
 }
 ?>
