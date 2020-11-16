@@ -68,7 +68,6 @@ switch ($act) {
       // $body='Lớp học bạn đăng kí vừa có bài tập mới vào '.$today.'.Xin bạn kiểm tra và làm bài đầy đủ';
       guimail($email,$hoten,$tieude,$body);
       }
-      
      header('Location: index.php');
    break;
    case 'xoabt':
