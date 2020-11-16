@@ -16,6 +16,12 @@ switch ($act) {
       $view = "../superus/views/home.php";
       require_once "../superus/views/layout.php";
    break;
+
+   case 'khoahoc':
+      $view = "../superus/views/khoahoc.php";
+      require_once "../superus/views/layout.php";
+      break;
+
    case 'dangxuat':
       unset($_SESSION['role']);
       unset($_SESSION['iddn']);

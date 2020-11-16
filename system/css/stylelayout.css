@@ -3,6 +3,21 @@
     padding: 0;
 }
 
+.addnew {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    z-index: 999;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30pt;
+    transition: .4s;
+    background-color: #fff;
+}
+
 .btn-outline-primary {
     color: #25213B;
     border-color: #25213B;
