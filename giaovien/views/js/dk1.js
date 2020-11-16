@@ -102,4 +102,11 @@ $(document).ready(function() {
             $(".from").datepicker("option", "maxDate", selectedDate);
         }
     });
+    $("#ttipanh").change(function() {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#showanh').attr("src", e.target.result);
+        }
+        reader.readAsDataURL(this.files[0]);
+    });
 });

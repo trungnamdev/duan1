@@ -54,6 +54,7 @@ switch ($act) {
      $ttgv=thongtinsvtomtat($idgv);
       $hslop=hslophoc($lophoc);
       foreach ($hslop as $hs) {
+      $sdt = $hs['sdt'];
       $email=$hs['email'];
       $hoten=$hs['hoten'];
       $today=date("d-m-Y");
@@ -67,9 +68,12 @@ switch ($act) {
       </div>
   </div>';
       // $body='Lớp học bạn đăng kí vừa có bài tập mới vào '.$today.'.Xin bạn kiểm tra và làm bài đầy đủ';
+      // dung mo de danh demo
+      // send_twilio_sms($sdt, "Bạn có bài tập mới từ giáo viên:".$ttgv['hoten']); 
+      // 
       guimail($email,$hoten,$tieude,$body);
       }
-     header('Location: index.php');
+   //   header('Location: index.php');
    break;
    case 'xoabt':
    if ($_GET['id']) {

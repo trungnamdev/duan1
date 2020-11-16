@@ -41,15 +41,15 @@
   <div class="form-group giaobt-right-2 d-mt2">
     
   <div class="nonone">
-    <label for="exampleFormControlFile1" id="btshow">Tệp tin</label>
+    <label for="ttipanh" id="btshow">Tệp tin</label>
 
-    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imgbt" accept="image/*">
+    <input type="file" class="form-control-file" name="imgbt" accept="image/*" id="ttipanh">
     </div>
     </div>
     
     </div>
     <div class="d-bt-showimg">
-      <img src="../system/dfimage.jpg" alt="">
+      <img src="../system/dfimage.jpg" id="showanh">
     </div>
 </div>
 </form>

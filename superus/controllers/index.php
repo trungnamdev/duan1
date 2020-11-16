@@ -13,7 +13,7 @@ if(isset($_GET['act'])){
 
 switch ($act) {
    case 'home':
-      $view = "../superus/views/home.php";
+      $view = "../superus/views/khoahoc.php";
       require_once "../superus/views/layout.php";
    break;
 
