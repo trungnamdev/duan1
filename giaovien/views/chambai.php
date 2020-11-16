@@ -11,7 +11,7 @@
     </div>
 </div>
 
-
+<form action="index.php?act=chambai&id=<?= $idbt ?>" method="post">
 <div class="chambai">
     <table class="table">
 
@@ -23,12 +23,14 @@
             <th scope="col">Trạng thái</th>
             <th scope="col">Tải xuống</th>
         </tr>
-
+      
         <tbody>
+
             <?php
                 foreach ($danhsach as $ds) {
                 $arrtrangthai = checknopbai($_GET['id'],$ds['idsv']);
                 $link = "";
+                $file = "";
                 if(is_array($arrtrangthai)) {
                     $link = $arrtrangthai['file'];
                     $trangthai = '<p class="text-success">Đã nộp</p>';
@@ -38,8 +40,9 @@
                 
         
             ?>
+           
             <tr>
-                <th scope="row"><input type="checkbox" name="chonbt"></th>
+                <th scope="row"><input type="checkbox" name="chonbt[]" value="<?= $link ?>"></th>
                 <td><a href="index.php?act=thongtincn&idtk=<?= $ds['idsv'] ?>"><?= $ds['hoten'] ?></a></td>
                 <td>
                     <div class="input-group w-fitcontent">
@@ -90,9 +93,9 @@
         <div id="selectAll" class="btn btn btn-outline-primary mr-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#384E85" width="1em"><path class="uim-primary" d="M10.2002,16.3999a.99676.99676,0,0,1-.707-.293L6.293,12.90723A.99989.99989,0,0,1,7.707,11.49316l2.49317,2.49268L16.293,7.89307A.99989.99989,0,0,1,17.707,9.30713l-6.7998,6.7998A.99676.99676,0,0,1,10.2002,16.3999Z"></path><path class="uim-tertiary" d="M21,2H3A1,1,0,0,0,2,3V21a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V3A1,1,0,0,0,21,2ZM17.707,9.30713l-6.7998,6.7998a.99964.99964,0,0,1-1.41407,0L6.293,12.90723A.99989.99989,0,0,1,7.707,11.49316l2.49317,2.49268L16.293,7.89307A.99989.99989,0,0,1,17.707,9.30713Z"></path></svg>  Chọn tất cả</div>
         <div id="unselectAll" class="btn btn btn-outline-primary mr-3"><svg fill="#384E85" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em"><path class="uim-primary" d="M21,22H3a.99974.99974,0,0,1-1-1V3A.99974.99974,0,0,1,3,2H21a.99974.99974,0,0,1,1,1V21A.99974.99974,0,0,1,21,22ZM4,20H20V4H4Z"></path></svg>  Bỏ chọn tất cả</div>
        <a href="index.php?act=chambai&id=<?= $idbt ?>&excel=true"><div class="btn btn btn-outline-primary"> <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" fill="#384E85" viewBox="0 0 24 24" width="1em"><path class="uim-primary" d="M19,9H14a2,2,0,0,1-2-2V2Z"></path><path class="uim-tertiary" d="M14,9a2,2,0,0,1-2-2V2H6A3,3,0,0,0,3,5V19a3,3,0,0,0,3,3H16a3,3,0,0,0,3-3V9Z"></path><path class="uim-primary" d="M20.707,15.29346l-3-3A.99989.99989,0,1,0,16.293,13.70752l1.293,1.293H12a1,1,0,0,0,0,2h5.58594l-1.293,1.293A.99989.99989,0,1,0,17.707,19.70752l3-3A.99962.99962,0,0,0,20.707,15.29346Z"></path></svg> Xuất excel</div></a>
-
+       <button class="btn btn btn-outline-primary mr-3" type="submit" name="tai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#384E85" width="1em"><path class="uim-primary" d="M10.2002,16.3999a.99676.99676,0,0,1-.707-.293L6.293,12.90723A.99989.99989,0,0,1,7.707,11.49316l2.49317,2.49268L16.293,7.89307A.99989.99989,0,0,1,17.707,9.30713l-6.7998,6.7998A.99676.99676,0,0,1,10.2002,16.3999Z"></path><path class="uim-tertiary" d="M21,2H3A1,1,0,0,0,2,3V21a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V3A1,1,0,0,0,21,2ZM17.707,9.30713l-6.7998,6.7998a.99964.99964,0,0,1-1.41407,0L6.293,12.90723A.99989.99989,0,0,1,7.707,11.49316l2.49317,2.49268L16.293,7.89307A.99989.99989,0,0,1,17.707,9.30713Z"></path></svg>  Tải xuống</button>
     </div>
-
+    </form>
 </div>
 <?php } else header("location: index.php?act=baitap&sx=all")
     ?>
