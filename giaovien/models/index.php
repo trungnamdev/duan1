@@ -101,7 +101,10 @@ function thongtinsvtomtat($id)
 }
 function khoahocdadk($idsv){
     return laydulieu("SELECT * FROM khoahoc WHERE id in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv =$idsv))");
-} 
+}
+function hslophoc($idlop){
+    return laydulieu("SELECT * FROM sv_lop INNER JOIN taikhoan ON taikhoan.id=sv_lop.idsv WHERE idlop =$idlop");
+}
 function layBaiTapByKH($idkh,$idsv){
     return laydulieu("SELECT * FROM baitap WHERE idlop IN (SELECT idlop FROM sv_lop WHERE idsv = $idsv) AND idlop IN (SELECT id FROM lop WHERE idkhoa = $idkh)");
 } 
