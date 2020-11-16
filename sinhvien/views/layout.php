@@ -6,21 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-    </script>
     <!-- file dung chung cho 3 modun -->
     <link rel="stylesheet" href="../system/css/stylelayout.css">
-    <!-- file riêng moi modun -->
+    <!-- file riêng moi modun -->S
     <link rel="stylesheet" href="views/css/style.css">
     <script src="../system/js/jquery.js"></script>
     <script src="../system/js/jquery-ui.js"></script>
     <script src="../system/js/jsvali.js"></script>
     <script src="../system/js/icons.js"></script>
     <script src="views/js/dk1.js"></script>
+<!-- bootstrap -->
+    <script src="../system/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../system/css/bootstrap.min.css">
+    <script src="../system/js/bootstrap.bundle.min.js"></script>
     <!-- font awersome w3school -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
