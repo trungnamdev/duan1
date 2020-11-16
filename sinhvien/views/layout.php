@@ -39,6 +39,10 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- end swiper -->
+     <!-- link toat noti -->
+     <link href="../system/toastr-noty-50092cc/build/toastr.css" rel="stylesheet"/>
+    <script src="../system/toastr-noty-50092cc/build/toastr.js"></script>
+    <!-- end toat noti -->
     <title>Sinh Viên</title>
 </head>
 
@@ -123,5 +127,10 @@ $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
 });
 </script>
+
+<!-- link toat noti -->
+<link href="../system/toastr-noty-50092cc/build/toastr.css" rel="stylesheet"/>
+    <script src="../system/toastr-noty-50092cc/build/toastr.min.js"></script>
+    <!-- end toat noti -->
 
 </html>
