@@ -8,7 +8,7 @@
 
     <!-- file dung chung cho 3 modun -->
     <link rel="stylesheet" href="../system/css/stylelayout.css">
-    <!-- file riêng moi modun -->S
+    <!-- file riêng moi modun -->
     <link rel="stylesheet" href="views/css/style.css">
     <script src="../system/js/jquery.js"></script>
     <script src="../system/js/jquery-ui.js"></script>
