@@ -23,7 +23,7 @@
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" name="mota"></textarea>
   </div>
   <button type="submit" class="btn btn-primary mt-4 col-2" name="dang">Đăng lên</button>
-
+  
 </div>
 <div class="giaobt-right">
 <div class="d-align">
@@ -39,12 +39,17 @@
 </select> 
  </div>
   <div class="form-group giaobt-right-2 d-mt2">
+    
   <div class="nonone">
     <label for="exampleFormControlFile1" id="btshow">Tệp tin</label>
 
     <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imgbt" accept="image/*">
     </div>
     </div>
+    
+    </div>
+    <div class="d-bt-showimg">
+      <img src="../system/dfimage.jpg" alt="">
     </div>
 </div>
 </form>

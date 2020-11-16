@@ -24,37 +24,59 @@ switch ($act) {
       require_once "../giaovien/views/layout.php";
    break;
 
-      case 'baitap':
-         $acbt = "active";
-         $idlop = gv_getidlop();
-         $lopdangday = GV_getlopdangday();
-         $view = "../giaovien/views/baitap.php";
-         require_once "../giaovien/views/layout.php";
-         break;
-      case 'giaobt':
-         $idlop = gv_getidlop();
-         $lopdangday = GV_getlopdangday();
-         $view = "../giaovien/views/giaobt.php";
-         require_once "../giaovien/views/layout.php";
-         break;
-      case 'giaobtd':
-         $tenbt = xoatag($_POST['tenbt']);
-         $ngaygiao = $_POST['ngaygiao'];
-         $hanchot = $_POST['hanchot'];
-         $mota = $_POST['mota'];
-         $lophoc = $_POST['lophoc'];
-         $imgbt = $_FILES['imgbt'];
-         $tenhinh = $imgbt['name'];
-         upfile($imgbt);
-         thembt($tenbt, $tenhinh, $mota, $lophoc, $ngaygiao, $hanchot);
-         header('Location: index.php');
-         break;
-      case 'xoabt':
-         if ($_GET['id']) {
-            $id = $_GET['id'];
-            xoabt($id);
-         } else {
-            echo ' <script>
+   case 'baitap':
+      $acbt="active";
+      $idlop = gv_getidlop();
+      $lopdangday = GV_getlopdangday(); 
+      $view = "../giaovien/views/baitap.php";
+      require_once "../giaovien/views/layout.php";
+      break;
+   case 'giaobt':
+      $idlop = gv_getidlop();
+      $lopdangday = GV_getlopdangday(); 
+      $view = "../giaovien/views/giaobt.php";
+      require_once "../giaovien/views/layout.php";
+      break;
+   case 'giaobtd':
+     $tenbt=xoatag($_POST['tenbt']);
+     $ngaygiao=$_POST['ngaygiao'];
+     $hanchot=$_POST['hanchot'];
+     $mota=$_POST['mota'];
+     $lophoc=$_POST['lophoc'];
+     $imgbt=$_FILES['imgbt'];
+     $tenhinh=$imgbt['name'];
+     upfile($imgbt);
+     thembt($tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot); 
+    
+      
+     $idgv=$_SESSION['iddn'];
+     $ttgv=thongtinsvtomtat($idgv);
+      $hslop=hslophoc($lophoc);
+      foreach ($hslop as $hs) {
+      $email=$hs['email'];
+      $hoten=$hs['hoten'];
+      $today=date("d-m-Y");
+      $tieude="Thông báo bài tập mới";
+      $body='    <div style="width: 100%;float: left;background-color: aqua; height: 500px;display: flex;align-items: center;">
+      <div style="background-color: azure;width: 30%;padding: 30px; margin: auto; box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2); border-radius: 25px; height: 200px;display: flex;align-items: center;">
+          <div style="width: 100%;float: left;text-align: center;">
+              <h2 style="color: red;">Thông báo bài tập mới</h2>
+              <p style="font-size: 19px;font-weight: 500;font-family: sans-serif;margin-top: 50px;">Bạn vừa có bài tập mới đến từ lớp cô '.$ttgv['hoten'].' vào ngày '.$today.' đó.Mong bạn kiểm tra và làm bài đầy đủ</p>
+          </div>
+      </div>
+  </div>';
+      // $body='Lớp học bạn đăng kí vừa có bài tập mới vào '.$today.'.Xin bạn kiểm tra và làm bài đầy đủ';
+      guimail($email,$hoten,$tieude,$body);
+      }
+     header('Location: index.php');
+   break;
+   case 'xoabt':
+   if ($_GET['id']) {
+     $id=$_GET['id'];
+     xoabt($id);
+     
+   }else{
+      echo ' <script>
       alert("địa chỉ đã bị sai") ;
    </script>';
          }
