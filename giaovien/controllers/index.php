@@ -115,13 +115,16 @@ switch ($act) {
                unlink($filename);
                return;
             }
-            if(isset($_POST['tai']) && $_POST['chonbt']){
+            if(isset($_POST['tai']) && isset($_POST['chonbt'])){
                $listbt = $_POST['chonbt'];
                $myzip = new ZipArchive;
                $tenfile =$baitap_info['tenlop'] . "_" . $baitap_info['tenbaitap'].".zip";
                if ($myzip->open($tenfile, ZipArchive::CREATE) === TRUE){
                   foreach($listbt as $bt){
+                     $bt = showfile($bt);
+                     if(is_file($bt)){
                      $myzip->addFile($bt);
+                     }
                   }
                   $myzip->close();
                }
@@ -132,6 +135,8 @@ switch ($act) {
                header("Pragma: no-cache"); 
                header("Expires: 0"); 
                readfile($tenfile);
+               unlink($tenfile);
+               return;
             }
          }
          $acbt = "active";
