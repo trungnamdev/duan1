@@ -38,7 +38,7 @@ switch ($act) {
          require_once "../giaovien/views/layout.php";
          break;
       case 'giaobtd':
-         $tenbt = $_POST['tenbt'];
+         $tenbt = xoatag($_POST['tenbt']);
          $ngaygiao = $_POST['ngaygiao'];
          $hanchot = $_POST['hanchot'];
          $mota = $_POST['mota'];
