@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    tinymce.init({ selector: 'textarea' });
     //chọn tất cả
     $('#selectAll').click(function(event) {
         $(':checkbox').each(function() {

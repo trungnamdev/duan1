@@ -137,6 +137,29 @@ switch ($act) {
                unlink($filename);
                return;
             }
+            if(isset($_POST['tai']) && isset($_POST['chonbt'])){
+               $listbt = $_POST['chonbt'];
+               $myzip = new ZipArchive;
+               $tenfile =$baitap_info['tenlop'] . "_" . $baitap_info['tenbaitap'].".zip";
+               if ($myzip->open($tenfile, ZipArchive::CREATE) === TRUE){
+                  foreach($listbt as $bt){
+                     $bt = showfile($bt);
+                     if(is_file($bt)){
+                     $myzip->addFile($bt);
+                     }
+                  }
+                  $myzip->close();
+               }
+               ob_end_clean();
+               header("Content-type: application/zip"); 
+               header("Content-Disposition: attachment; filename=$tenfile");
+               header("Content-length: " . filesize($tenfile));
+               header("Pragma: no-cache"); 
+               header("Expires: 0"); 
+               readfile($tenfile);
+               unlink($tenfile);
+               return;
+            }
          }
          $acbt = "active";
          $view = "../giaovien/views/chambai.php";
@@ -265,7 +288,6 @@ switch ($act) {
                   header('Pragma: no-cache');
                   readfile($filename);
                   unlink($filename);
-                  return;
                }
             } 
          }
