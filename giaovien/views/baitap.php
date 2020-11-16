@@ -63,7 +63,7 @@
                             <a>Hạn chót: <br> <?=$bt['ngayhethan']?> </a>
                         </div>
                         <div class="d-info2 d-nb w-75 d-mr-3">
-                            <a href="index.php?act=xoabt&id=<?=$bt['idbaitap']?>" class="btn btn-outline-success">Xóa</a>
+                            <a href="index.php?act=xoabt&id=<?=$bt['idbaitap']?>" class="btn btn-outline-danger">Xóa</a>
 
                         </div>
                         <div class="d-info2 d-nb w-75">

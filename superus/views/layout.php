@@ -12,9 +12,9 @@
     <script src="../system/js/icons.js"></script>
     <script src="views/js/dk1.js"></script>
     <!-- bootstrap -->
-    <script src="./system/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./system/css/bootstrap.min.css">
-    <script src="./system/js/bootstrap.bundle.min.js"></script>
+    <script src="../system/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../system/css/bootstrap.min.css">
+    <script src="../system/js/bootstrap.bundle.min.js"></script>
     <!-- font awersome w3school -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
