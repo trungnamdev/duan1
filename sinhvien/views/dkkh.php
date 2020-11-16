@@ -7,7 +7,7 @@
      </div>
  </div>
  <div class="khoahoc ">
-     <table>
+     <table id="chuakh">
          <?php
             foreach ($khoahoc as $kh) {
                 $idkhoa =$kh['id'];
@@ -59,3 +59,6 @@
          <?php }?>
      </table>
  </div>
+ <script>
+ let ht = <?= json_encode($ht)?>;
+ </script>
