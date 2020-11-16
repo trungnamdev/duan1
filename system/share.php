@@ -30,7 +30,7 @@ function guimail($e,$u,$tieude,$body){
    $mail->Password = 'dogaga123';   // SMTP password
    $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL 
    $mail->Port = 465;  // port to connect to                
-   $mail->setFrom('namn71202@gmail.com', 'Trung Nam');
+   $mail->setFrom('daihoc8888@gmail.com', 'Trường Học 8888');
    $mail->addAddress($e, $u); //mail và tên người nhận       
    $mail->isHTML(true);  // Set email format to HTML
    $mail->Subject = $tieude;                

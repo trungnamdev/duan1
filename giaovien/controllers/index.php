@@ -6,6 +6,7 @@ require_once "../system/share.php";
 require_once "../system/conn.php";
 require_once "../system/PHPMailer-master/src/PHPMailer.php";
 require_once "../system/PHPMailer-master/src/SMTP.php";
+require_once "../system/PHPMailer-master/src/Exception.php";
 require_once "../system/Classes/PHPExcel.php";
 if(isset($_SESSION['iddn']) && $_SESSION['role'] == 1){
 if(isset($_GET['act'])){
