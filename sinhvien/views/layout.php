@@ -92,7 +92,7 @@
                         </li>
                     </a>
                     <a href="index.php?act=chat">
-                        <li class="<?= $chat ?>">Nhắn tin<img src="../system/img/thongbao.svg" alt=""></li>
+                        <li class="<?= $chat ?>">Nhắn tin<img src="../system/img/chat.svg" alt=""></li>
                     </a>
                 </ul>
             </div>

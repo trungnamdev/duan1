@@ -10,8 +10,7 @@ $(document).ready(function() {
             url: "index.php?act=dkkh1", // gọi đến file server show_data.php để xử lý
             data: { id: a }, //lấy toàn thông tin các fields trong form bằng hàm serialize của jquery
             success: function(data) { //kết quả trả về từ server nếu gửi thành công
-                toastr.success('ĐĂNG KÝ THÀNH CÔNG');
-                // alert("ĐĂNG KÝ THÀNH CÔNG");
+                alert("ĐĂNG KÝ THÀNH CÔNG");
                 location.reload();
             }
         });
