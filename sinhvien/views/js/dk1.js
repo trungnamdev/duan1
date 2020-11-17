@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("#inputdiem").change(function() {
+    $("#baitap").change(function() {
         $('#btshow').html($(this).val().split('\\').pop());
     });
     $("#chuakh").on("click", ".dkkh", function() {

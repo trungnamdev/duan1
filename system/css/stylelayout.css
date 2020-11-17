@@ -761,7 +761,7 @@ ul a:hover {
 
 .d-row100 {
     margin-top: 15px;
-    width: 100%;
+    width: 100% !important;
     float: left;
     display: flex;
     align-items: center;
