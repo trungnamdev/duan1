@@ -53,6 +53,7 @@ a:hover {
 .sidebar .account {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     cursor: pointer;
 }
 
@@ -145,7 +146,7 @@ ul a:hover {
 /* Tổng  Quan */
 
 .slide .card {
-    width: 380px !important;
+    width: 380px;
     height: 120px;
     border-radius: 15px;
     overflow: hidden;
@@ -189,8 +190,8 @@ ul a:hover {
     border-radius: 20px;
     min-height: 200px;
     width: 49%;
-    height: 300px;
-    overflow-y: scroll;
+    /* height: 300px;
+    overflow-y: scroll; */
     float: left;
 }
 
@@ -251,6 +252,40 @@ ul a:hover {
 
 .thongbao-shadow {
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.09);
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.thongbao-box1 {
+    margin-right: 2%;
+}
+
+/* width */
+
+.thongbao-shadow::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+/* Track */
+
+.thongbao-shadow::-webkit-scrollbar-track {
+    background: transparent;
+    overflow: hidden;
+}
+
+
+/* Handle */
+
+.thongbao-shadow::-webkit-scrollbar-thumb {
+    background: #efefef;
+}
+
+
+/* Handle on hover */
+
+.thongbao-shadow::-webkit-scrollbar-thumb:hover {
+    background: #999;
 }
 
 
