@@ -1,0 +1,24 @@
+.svfilelb {
+    border: #3f00ff 2px solid;
+    border-radius: 5px;
+    padding: 6px 0px;
+    color: #007bff;
+    float: left;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.chuaanhshow {
+    height: 230px;
+}
+
+#showanh {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.error {
+    color: red !important;
+}
