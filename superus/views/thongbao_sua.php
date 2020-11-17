@@ -1,6 +1,4 @@
-<div class="header-box">
-    <div class="tieude h1">Sửa thông báo</div>
-</div>
+
 <div class="thongbao">
     <form action="index.php?act=suatb_" method="post">
         <div class="form-group">

@@ -40,4 +40,38 @@
     {
         return laymot("SELECT COUNT(*) as tong FROM taikhoan where chucvu = $id");
     }
+    //lay  khoa hoc
+    function getAllKH(){
+        return laydulieu("SELECT * FROM khoahoc ORDER BY id DESC");
+    } 
+    //lay 1 khos hoc 
+    function getKhoaHoc($id){
+        return laymot("SELECT * FROM khoahoc WHERE id = $id");
+    }
+    // lay chu 1 de
+    function getChuDe($id){
+        return laymot("SELECT * FROM chude WHERE id = $id");
+    }
+    // lay all chu de
+    function getAllChuDe(){
+        return laydulieu("SELECT * FROM chude ");
+    }
+    // them khoa hoc
+    function insertKhoaHoc($tenkh,$mota,$chude,$tenhinh){
+        return postdulieu("INSERT INTO khoahoc(tenkhoa,mota,chude,hinh) VALUES('$tenkh', '$mota', '$chude', '$tenhinh')");
+    }
+    // xoa khoa hoc 
+    function deleteKhoaHoc($idkh){
+        postdulieu("DELETE FROM `khoahoc` WHERE `id` = $idkh");
+    }
+    // sua khoa hoc 
+    function udateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh){
+        if($tenhinh != ''){
+        return postdulieu(" UPDATE khoahoc
+                            SET tenkhoa = '$tenkh', mota = '$mota', chude = '$chude', hinh = '$tenhinh'
+                            WHERE id = '$idkh';");
+        }else  return postdulieu("  UPDATE khoahoc
+                                    SET tenkhoa = '$tenkh', mota = '$mota', chude = '$chude'
+                                    WHERE id = '$idkh';");
+    }
 ?>
