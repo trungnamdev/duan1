@@ -86,7 +86,6 @@
                 </ul>
             </div>
         </div>
-    </div>
     </a>
 
     <div class="box-right">
