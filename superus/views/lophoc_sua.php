@@ -21,7 +21,24 @@
   }
   ?>
 </select>
+<select class="form-control mt-3" name="gv">
+ 
+ <?php
+   $gvlop=gvlop($lh['id']);
+ foreach ($allgv as $gv) {
+
+     if ($gvlop['id']==$gv['id']) {
+       echo ' <option value="'.$gv['id'].'" selected>'.$gv['hoten'].'</option>';
+     } else {
+       echo ' <option value="'.$gv['id'].'">'.$gv['hoten'].'</option>';
+     }
+     
+   
+ }
+ ?>
+</select>
+<input type="hidden" name="idgvc" value="<?php if (is_array($gvlop)) {echo $gvlop['id'];} else {echo 0;}?>">
 <input type="hidden" name="idlh" value="<?= $lh['id'] ?>">
-<button type="submit" class="btn btn-primary mt-3">Sửa lớp học</button>
+<button type="submit" class="btn btn-primary mt-4">Sửa lớp học</button>
     </form>
 </div>

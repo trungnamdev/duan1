@@ -25,20 +25,11 @@ switch ($act) {
    break;
    case 'themlh':
       $dskhoa=allkhoahoc();
+      $allgv=allgv();
       $view = "../superus/views/lophoc_them.php";
       require_once "../superus/views/layout.php";
    break;
-   case "themlh_":
-      if(isset($_POST['tenlop'])&&isset($_POST['tenkhoa'])){
-         $tenlop = xoatag($_POST['tenlop']);
-         $tenkhoa = $_POST['tenkhoa'];
-     
-         themlophoc($tenlop,$tenkhoa);
-         header('location: index.php?act=lop');
-      }else{
-         header('location: index.php?act=lop');
-      }
-   break;
+
    case 'khoahoc':
       $view = "../superus/views/khoahoc.php";
       require_once "../superus/views/layout.php";
@@ -59,7 +50,16 @@ switch ($act) {
       case 'xoalh':
          if (isset($_GET['id'])&&$_GET['id']>0) {
             xoalophoc($_GET['id']);
+            $idgv=gvlop($_GET['id']);
+            $idlop=idlop($idgv['id']);
+            $mangidlop=gv_getidlop($idlop['idlop']);
+            foreach (array_keys($mangidlop, $_GET['id']) as $key) {      
+               array_splice($mangidlop,$key,1);
+        }
+        $lopmoi=implode(',',$mangidlop);
+        sualopgv($idgv['id'],$lopmoi);
             header('location: index.php?act=lop');
+            
          }
          break;
    case 'suatb_':
@@ -76,15 +76,69 @@ switch ($act) {
       if (isset($_GET['id'])&&$_GET['id']>0) {
          $lh = getMotlophoc($_GET['id']);
          $dskhoa=allkhoahoc();
+         $allgv=allgv();
          $view = "../superus/views/lophoc_sua.php";
          require_once "../superus/views/layout.php";
       }
       break;
+      case "themlh_":
+         if(isset($_POST['tenlop'])&&isset($_POST['tenkhoa']) &&isset($_POST['gv'])){
+            $tenlop = xoatag($_POST['tenlop']);
+            $tenkhoa = $_POST['tenkhoa'];
+            $idgv=$_POST['gv'];
+            $a=themlophoc($tenlop,$tenkhoa);
+            $idlop=idlop($idgv);
+            $mangidlop=gv_getidlop($idlop['idlop']);
+            array_push($mangidlop,$a);
+            $lopmoi=implode(',',$mangidlop);
+            sualopgv($idgv,$lopmoi);
+            header('location: index.php?act=lop');
+         }else{
+            header('location: index.php?act=lop');
+         }
+      break;
    case 'sualh_' :
-      if(isset($_POST['tenlop'])&&isset($_POST['tenkhoa'])){
+      if(isset($_POST['tenlop'])&&isset($_POST['tenkhoa'])&&isset($_POST['gv'])){
          $tenlop = xoatag($_POST['tenlop']);
          $tenkhoa = $_POST['tenkhoa'];
          $idlop = $_POST['idlh'];
+         $idgvm=$_POST['gv'];
+         $idgvc=$_POST['idgvc'];
+         if ($idgvc==0) {
+            $idlopm=idlop($idgvm);
+         $mangidlopm=gv_getidlop($idlopm['idlop']);
+         array_push($mangidlopm,$idlop);
+         $lopmoi=implode(',',$mangidlopm);
+         sualopgv($idgvm,$lopmoi);
+         } else {
+            if ($idgvc!=$idgvm) {
+               $idlopc=idlop($idgvc);
+               $mangidlopc=gv_getidlop($idlopc['idlop']);
+               foreach (array_keys($mangidlopc, $idlop) as $key) {
+                  var_dump($key);
+                  echo "mang chua xoa";
+                  var_dump($mangidlopc);
+                  array_splice($mangidlopc,$key,1);
+                  echo "mang xoa";
+                  var_dump($mangidlopc);
+           }
+               // array_diff($mangidlopc,['1','12']);
+               $idlopm=idlop($idgvm);
+               $mangidlopm=gv_getidlop($idlopm['idlop']);
+               echo "mang chua moi";
+               var_dump($mangidlopm);
+               array_push($mangidlopm,$idlop);
+               echo "mang moi";
+               var_dump($mangidlopm);
+               $lopmoi=implode(',',$mangidlopm);
+               $lopmoi1=implode(',',$mangidlopc);
+               sualopgv($idgvm,$lopmoi);
+               sualopgv($idgvc,$lopmoi1);
+            }
+         }
+         
+        
+    
          sualh($tenlop, $tenkhoa, $idlop);
       }
          header('location: index.php?act=lop');

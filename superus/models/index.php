@@ -20,7 +20,7 @@
         return laymot("SELECT * FROM thongbao where idtb = $idtb ORDER BY idtb");
     }
     function themlophoc($tenlop,$tenkhoa){
-        return postdulieu("INSERT INTO `lop` (`id`, `tenlop`, `idkhoa`) VALUES (NULL, '$tenlop', '$tenkhoa');");
+        return postdulieulayid("INSERT INTO `lop` (`id`, `tenlop`, `idkhoa`) VALUES (NULL, '$tenlop', '$tenkhoa');");
     }
     function themthongbao($tieude, $noidung, $idnguoidang)
     {
@@ -34,7 +34,7 @@
         WHERE idtb = '$idthongbao';");    
     }
     function alllophoc(){
-        return laydulieu("SELECT *,lop.id as idlop FROM lop INNER JOIN khoahoc ON khoahoc.id=lop.idkhoa");
+        return laydulieu("SELECT *,lop.id as idlop FROM lop INNER JOIN khoahoc ON khoahoc.id=lop.idkhoa ORDER BY  lop.id");
     }
     function allkhoahoc(){
         return laydulieu("SELECT * FROM  khoahoc ");
@@ -60,5 +60,22 @@
     function demnguoi($id) 
     {
         return laymot("SELECT COUNT(*) as tong FROM taikhoan where chucvu = $id");
+    }
+    function gvlop($id){
+        return laymot("SELECT * FROM taikhoan INNER JOIN gvlop ON gvlop.idgv=taikhoan.id WHERE gvlop.idlop LIKE '%$id%'");
+    }
+    function allgv(){
+        return laydulieu("SELECT * FROM taikhoan WHERE chucvu=1");
+    }
+    function idlop($idgv){
+        return laymot("SELECT * FROM `gvlop` WHERE idgv=$idgv");
+    }
+    function sualopgv($idgv,$idlop){
+        return postdulieu("UPDATE gvlop
+        SET idlop = '$idlop' WHERE idgv = '$idgv';");
+    }
+    function gv_getidlop($idlop){
+        $mangidlop = explode(",", $idlop);
+        return $mangidlop;
     }
 ?>

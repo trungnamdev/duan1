@@ -31,4 +31,10 @@ function postdulieu($sql) {
         return $result;
     }
     
+    function postdulieulayid($sql) {
+        $conn = ketnoidb();
+        $result = $conn ->exec($sql);
+        $lastid=$conn->lastInsertId();
+        return $lastid;
+    }
 ?>

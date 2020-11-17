@@ -15,6 +15,14 @@
   }
   ?>
 </select>
-<button type="submit" class="btn btn-primary mt-3">Thêm lớp học</button>
+<select class="form-control mt-3" name="gv">
+ 
+ <?php
+ foreach ($allgv as $gv) {
+    echo ' <option value="'.$gv['id'].'">'.$gv['hoten'].'</option>';
+ }
+ ?>
+</select>
+<button type="submit" class="btn btn-primary mt-4">Thêm lớp học</button>
     </form>
 </div>
