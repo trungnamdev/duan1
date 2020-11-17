@@ -53,11 +53,11 @@
         });
     </script>
 
-    <div class="border thongbao-box mt-4 thongbao-box1 p-4 thongbao-shadow">
-        <p class="title h2 mb-3 mb-5">Thông báo</p>
-        <div class="thongbao">
-
-            <?php
+<div class=" thongbao-box thongbao-box1 mt-5">
+        <p class="h4 mb-3">Thông báo</p>
+        <div class="thongbao border thongbao-shadow rounded p-4">
+           
+        <?php
             foreach ($tb as $thongbao) {
                 $nd = date("d-m-Y", strtotime($thongbao['ngaydang']));
             ?>
@@ -76,67 +76,31 @@
                 </div>
             <?php }
             ?>
-
         </div>
     </div>
 
-    <div class="border thongbao-box mt-4 p-4 thongbao-shadow">
-        <p class="title h2 mb-3 mb-5">Thông báo</p>
-        <div class="thongbao">
-            <div class="item mb-3">
-                <a href="#" class="h5">Về việc hoàn thành học phí kì Fall 2020</a>
-                <div class="info mt-2 text-secondary">
-                    <div class="mr-3">
-                        <i class="uim uim-user-nurse "></i>
-                        <span class="ml-1">Hoàng Khải</span>
-                    </div>
-                    <div>
-                        <i class="uim uim-clock"></i>
-                        <span class="ml-1">06/11/2020</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item mb-3">
-                <a href="#" class="h5">Về việc hoàn thành học phí kì Fall 2020</a>
-                <div class="info mt-2 text-secondary">
-                    <div class="mr-3">
-                        <i class="uim uim-user-nurse "></i>
-                        <span class="ml-1">Hoàng Khải</span>
-                    </div>
-                    <div>
-                        <i class="uim uim-clock"></i>
-                        <span class="ml-1">06/11/2020</span>
+    <div class=" thongbao-box mt-5">
+        <p class="h4 mb-3">Thông báo</p>
+        <div class="thongbao border thongbao-shadow rounded p-4">
+           
+        <?php
+            foreach ($tb as $thongbao) {
+                $nd = date("d-m-Y", strtotime($thongbao['ngaydang']));
+            ?>
+                <div class="item mb-3">
+                    <a href="index.php?act=thongbao&idtb=<?= $thongbao['idtb'] ?>" class="h5"><?= $thongbao['tdtb'] ?></a>
+                    <div class="info mt-2 text-secondary">
+                        <div class="mr-3">
+                            <i class="uim uim-user-nurse "></i>
+                            <span class="ml-1"><?= $thongbao['hoten'] ?></span>
+                        </div>
+                        <div>
+                            <i class="uim uim-clock"></i>
+                            <span class="ml-1"><?= $nd ?></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="item mb-3">
-                <a href="#" class="h5">Về việc hoàn thành học phí kì Fall 2020</a>
-                <div class="info mt-2 text-secondary">
-                    <div class="mr-3">
-                        <i class="uim uim-user-nurse "></i>
-                        <span class="ml-1">Hoàng Khải</span>
-                    </div>
-                    <div>
-                        <i class="uim uim-clock"></i>
-                        <span class="ml-1">06/11/2020</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item mb-3">
-                <a href="#" class="h5">Về việc hoàn thành học phí kì Fall 2020</a>
-                <div class="info mt-2 text-secondary">
-                    <div class="mr-3">
-                        <i class="uim uim-user-nurse "></i>
-                        <span class="ml-1">Hoàng Khải</span>
-                    </div>
-                    <div>
-                        <i class="uim uim-clock"></i>
-                        <span class="ml-1">06/11/2020</span>
-                    </div>
-                </div>
-            </div>
+            <?php }
+            ?>
         </div>
     </div>

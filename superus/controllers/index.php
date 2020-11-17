@@ -13,7 +13,8 @@ if(isset($_GET['act'])){
 $achome="";$acbt="";$aclop="";$actb="";$chat="";
 switch ($act) {
    case 'home':
-      $view = "../superus/views/khoahoc.php";
+      $tb = thongbao();
+      $view = "../superus/views/tongquan.php";
       require_once "../superus/views/layout.php";
    break;
    case 'lop':

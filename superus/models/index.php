@@ -1,4 +1,10 @@
 <?php 
+    function thongbao(){
+        return laydulieu("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang ORDER BY ngaydang"); 
+    }
+    function thongbaoct($id){
+        return laymot("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang WHERE idtb=$id");
+    }
     function getThongBao()
     {
         return laydulieu("SELECT * FROM thongbao inner JOIN taikhoan on thongbao.idngdang=taikhoan.id ORDER BY idtb");
@@ -23,10 +29,6 @@
 
     function suathongbao($tieude, $noidung, $idnguoidang, $idthongbao)
     {
-        // echo("UPDATE thongbao
-        // SET tdtb = '$tieude', noidung = '$noidung', idngdang = '$idnguoidang', ngaydang = now()
-        // WHERE idtb = '$idthongbao';");
-        // exit();
         return postdulieu("UPDATE thongbao
         SET tdtb = '$tieude', noidung = '$noidung', idngdang = '$idnguoidang', ngaydang = now()
         WHERE idtb = '$idthongbao';");    
@@ -50,5 +52,13 @@
     function xoalophoc($id)
     {
         return postdulieu("DELETE FROM `lop` WHERE `id` = $id");
+    }
+    function demsoluong($tenbang) {
+        return laymot("SELECT COUNT(*) as tong FROM $tenbang");
+    }
+
+    function demnguoi($id) 
+    {
+        return laymot("SELECT COUNT(*) as tong FROM taikhoan where chucvu = $id");
     }
 ?>
