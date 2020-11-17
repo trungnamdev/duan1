@@ -155,41 +155,9 @@ ul a:hover {
 }
 
 .thongbao-box {
-    border-radius: 20px;
     min-height: 200px;
     width: 49%;
-    height: 300px;
-    overflow-y: scroll;
     float: left;
-}
-
-
-/* width */
-
-.thongbao-box::-webkit-scrollbar {
-    width: 5px;
-}
-
-
-/* Track */
-
-.thongbao-box::-webkit-scrollbar-track {
-    background: transparent;
-    overflow: hidden;
-}
-
-
-/* Handle */
-
-.thongbao-box::-webkit-scrollbar-thumb {
-    background: #efefef;
-}
-
-
-/* Handle on hover */
-
-.thongbao-box::-webkit-scrollbar-thumb:hover {
-    background: #999;
 }
 
 .thongbao-box1 {

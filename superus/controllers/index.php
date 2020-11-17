@@ -14,12 +14,39 @@ if(isset($_GET['act'])){
 }else{
    $act = "home";
 }
-
+$achome="";$acbt="";$aclop="";$actb="";$chat="";
 switch ($act) {
    case 'home':
-      $view = "../superus/views/khoahoc.php";
+      $tb = thongbao();
+      $view = "../superus/views/tongquan.php";
       require_once "../superus/views/layout.php";
    break;
+   case 'lop':
+   $aclop="active";
+   $alllh=alllophoc();
+   $view = "../superus/views/lophoc.php";
+   require_once "../superus/views/layout.php";
+   break;
+   case 'themlh':
+      $dskhoa=allkhoahoc();
+      $view = "../superus/views/lophoc_them.php";
+      require_once "../superus/views/layout.php";
+   break;
+   case "themlh_":
+      if(isset($_POST['tenlop'])&&isset($_POST['tenkhoa'])){
+         $tenlop = xoatag($_POST['tenlop']);
+         $tenkhoa = $_POST['tenkhoa'];
+     
+         themlophoc($tenlop,$tenkhoa);
+         header('location: index.php?act=lop');
+      }else{
+         header('location: index.php?act=lop');
+      }
+   break;
+   case 'khoahoc':
+      $view = "../superus/views/khoahoc.php";
+      require_once "../superus/views/layout.php";
+      break;
 
    case 'thongbao':
       $thongbao_list = getThongBao();
@@ -33,7 +60,12 @@ switch ($act) {
          header('location: index.php?act=thongbao');
       }
       break;
-
+      case 'xoalh':
+         if (isset($_GET['id'])&&$_GET['id']>0) {
+            xoalophoc($_GET['id']);
+            header('location: index.php?act=lop');
+         }
+         break;
    case 'suatb_':
       if(isset($_POST['tieude'])&&isset($_POST['noidung'])&&isset($_POST['idngdang'])){
          $tieude = xoatag($_POST['tieude']);
@@ -44,7 +76,24 @@ switch ($act) {
       }
          header('location: index.php?act=thongbao');
       break;
-
+   case 'sualh':
+      if (isset($_GET['id'])&&$_GET['id']>0) {
+         $lh = getMotlophoc($_GET['id']);
+         $dskhoa=allkhoahoc();
+         $view = "../superus/views/lophoc_sua.php";
+         require_once "../superus/views/layout.php";
+      }
+      break;
+   case 'sualh_' :
+      if(isset($_POST['tenlop'])&&isset($_POST['tenkhoa'])){
+         $tenlop = xoatag($_POST['tenlop']);
+         $tenkhoa = $_POST['tenkhoa'];
+         $idlop = $_POST['idlh'];
+         sualh($tenlop, $tenkhoa, $idlop);
+      }
+         header('location: index.php?act=lop');
+      break;
+   
    case 'suatb':
       if (isset($_GET['id'])&&$_GET['id']>0) {
          $thongbao = getMotTb($_GET['id']);

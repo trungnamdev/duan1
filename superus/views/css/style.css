@@ -22,3 +22,36 @@
 .error {
     color: red !important;
 }
+
+.suser .card {
+    width: 250px !important;
+}
+
+.suser .card .no-gutters {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.suser .card .col-2 {
+    font-size: 30px;
+}
+
+.box-chart {
+    width: 49%;
+    height: 700px;
+    margin-right: 2%;
+}
+
+.thongke-box {
+    overflow: unset;
+    height: 500px !important;
+    margin-right: 2%;
+}
+
+.thongbao-box {
+    border-radius: 0;
+}
+
+.chart-div {}
