@@ -53,3 +53,18 @@
 .thongbao-box {
     border-radius: 0;
 }
+
+
+/* khoa hoc */
+
+.khoahoc {
+    width: 100%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.form-khoahoc label {
+    margin-top: 8px;
+    margin-bottom: -5px;
+}
