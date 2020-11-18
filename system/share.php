@@ -78,12 +78,13 @@ function texttoslug($str) {
     $str = preg_replace("/(ỳ|ý|ỵ|ỷ|ỹ)/", "y", $str);
     $str = preg_replace("/(đ)/", "d", $str);
     $str = preg_replace("/(À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ)/", "a", $str);
-    $str = preg_replace("/(È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ)/", "E", $str);
+    $str = preg_replace("/(È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ)/", "e", $str);
     $str = preg_replace("/(Ì|Í|Ị|Ỉ|Ĩ)/", "i", $str);
     $str = preg_replace("/(Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ)/", "o", $str);
     $str = preg_replace("/(Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ)/", "u", $str);
     $str = preg_replace("/(Ỳ|Ý|Ỵ|Ỷ|Ỹ)/", "i", $str);
     $str = preg_replace("/(Đ)/", "d", $str);
+    $str = preg_replace("/(:)/", "", $str);
     $str = str_replace(" ", "", str_replace("&*#39;","",$str));
     return $str;
 }

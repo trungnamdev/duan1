@@ -73,7 +73,8 @@ switch ($act) {
 </div>';
       // $body='Lớp học bạn đăng kí vừa có bài tập mới vào '.$today.'.Xin bạn kiểm tra và làm bài đầy đủ';
       // dung mo de danh demo
-      // send_twilio_sms($sdt, "Bạn có bài tập mới từ giáo viên:".$ttgv['hoten']); 
+      $bodysms = "Bài tập mới từ :".$ttgv['hoten'];
+      send_twilio_sms($sdt, $bodysms); 
       // 
       guimail($email,$hoten,$tieude,$body);
       }
@@ -100,7 +101,7 @@ switch ($act) {
             if (isset($_GET['excel'])) {
                $objExcel = new PHPExcel;
                $objExcel->setActiveSheetIndex(0);
-               $sheet = $objExcel->getActiveSheet()->setTitle($baitap_info['tenlop'] . "_" . $baitap_info['tenbaitap']);
+               $sheet = $objExcel->getActiveSheet()->setTitle(texttoslug($baitap_info['tenlop']) . "_" . texttoslug($baitap_info['tenbaitap']));
                $objExcel->getActiveSheet()->getColumnDimension('A')->setWidth(25);
                $objExcel->getActiveSheet()->getColumnDimension('B')->setWidth(35);
                $objExcel->getActiveSheet()->getRowDimension('1')->setRowHeight(40);
@@ -133,7 +134,7 @@ switch ($act) {
                );
                $sheet->getStyle('A1:' . 'C' . ($rowCount))->applyFromArray($stylearr);
                $objWriter = new PHPExcel_Writer_Excel2007($objExcel);
-               $filename = $baitap_info['tenlop'] . "_" . $baitap_info['tenbaitap'] . ".xlsx";
+               $filename = texttoslug($baitap_info['tenlop']) . "_" . texttoslug($baitap_info['tenbaitap']).".xlsx";
                $objWriter->save($filename);
                ob_end_clean();
                header('Content-Disposition: attachment; filename="' . $filename . '"');
@@ -149,7 +150,7 @@ switch ($act) {
             if(isset($_POST['tai']) && isset($_POST['chonbt'])){
                $listbt = $_POST['chonbt'];
                $myzip = new ZipArchive;
-               $tenfile =$baitap_info['tenlop'] . "_" . $baitap_info['tenbaitap'].".zip";
+               $tenfile =texttoslug($baitap_info['tenlop']) . "_" . texttoslug($baitap_info['tenbaitap']).".zip";
                if ($myzip->open($tenfile, ZipArchive::CREATE) === TRUE){
                   foreach($listbt as $bt){
                      $bt = showfile($bt);
@@ -247,7 +248,7 @@ switch ($act) {
                if(isset($_GET['excel'])){
                   $objExcel = new PHPExcel;
                   $objExcel->setActiveSheetIndex(0);
-                  $sheet = $objExcel->getActiveSheet()->setTitle($tenlop['tenlop']);
+                  $sheet = $objExcel->getActiveSheet()->setTitle(texttoslug($tenlop['tenlop']));
                   $objExcel->getActiveSheet()->getColumnDimension('A')->setWidth(25);
                   $objExcel->getActiveSheet()->getColumnDimension('B')->setWidth(40);
                   $objExcel->getActiveSheet()->getColumnDimension('C')->setWidth(30);
@@ -286,7 +287,7 @@ switch ($act) {
                   );
                   $sheet->getStyle('A1:' . 'E' . ($rowCount))->applyFromArray($stylearr);
                   $objWriter = new PHPExcel_Writer_Excel2007($objExcel);
-                  $filename = $tenlop['tenlop'] . "_" .  $khoahoc['tenkhoa'] . ".xlsx";
+                  $filename = texttoslug($tenlop['tenlop']) . "_" .  texttoslug($khoahoc['tenkhoa']) . ".xlsx";
                   $objWriter->save($filename);
                   ob_end_clean();
                   header('Content-Disposition: attachment; filename="' . $filename . '"');
