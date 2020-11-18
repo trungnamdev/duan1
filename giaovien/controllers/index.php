@@ -53,6 +53,8 @@ switch ($act) {
      $idgv=$_SESSION['iddn'];
      $ttgv=thongtinsvtomtat($idgv);
       $hslop=hslophoc($lophoc);
+      $tenlop=tenlop($lophoc);
+      $tenkhoa=getTTKhoaByIDLop($tenlop['id']);
       foreach ($hslop as $hs) {
       $sdt = $hs['sdt'];
       $email=$hs['email'];
@@ -63,7 +65,7 @@ switch ($act) {
       <div style="background-color: azure;width: 30%;padding: 30px; margin: auto; box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2); border-radius: 25px; height: 200px;display: flex;align-items: center;">
           <div style="width: 100%;float: left;text-align: center;">
               <h2 style="color: red;">Thông báo bài tập mới</h2>
-              <p style="font-size: 19px;font-weight: 500;font-family: sans-serif;margin-top: 50px;">Bạn vừa có bài tập mới đến từ lớp cô '.$ttgv['hoten'].' vào ngày '.$today.' đó.Mong bạn kiểm tra và làm bài đầy đủ</p>
+              <p style="font-size: 19px;font-weight: 500;font-family: sans-serif;margin-top: 50px;">Bạn vừa có bài tập mới đến từ lớp cô '.$ttgv['hoten'].', thuộc lớp '.$tenlop['tenlop'].',khóa học '.$tenkhoa['tenkhoa'].' vào ngày '.$today.' đó.Mong bạn kiểm tra và làm bài đầy đủ</p>
           </div>
       </div>
   </div>';
@@ -73,7 +75,7 @@ switch ($act) {
       // 
       guimail($email,$hoten,$tieude,$body);
       }
-   //   header('Location: index.php');
+     header('Location: index.php?act=baitap');
    break;
    case 'xoabt':
    if ($_GET['id']) {

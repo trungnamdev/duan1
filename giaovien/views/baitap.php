@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="d-info">
-                    <div class="d-row100 box-bot">
+                    <div class="d-row100 box-bot w-100">
                         <div class="d-info1 d-hc">
                             <a>Hạn chót: <br> <?=$bt['ngayhethan']?> </a>
                         </div>

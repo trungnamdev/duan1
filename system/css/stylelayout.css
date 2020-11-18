@@ -260,6 +260,7 @@ ul a:hover {
     margin-right: 2%;
 }
 
+
 /* width */
 
 .thongbao-shadow::-webkit-scrollbar {
@@ -760,7 +761,7 @@ ul a:hover {
 
 .d-row100 {
     margin-top: 15px;
-    width: 100%;
+    width: 100% !important;
     float: left;
     display: flex;
     align-items: center;

@@ -597,6 +597,8 @@ ul a:hover {
     top: 0;
     left: 0;
     position: absolute;
+    height: 93%;
+    overflow: scroll;
 }
 
 .boxthongbao-chitiet i {
@@ -642,6 +644,7 @@ ul a:hover {
     border-radius: 16px;
     height: 400px;
     position: relative;
+    overflow: hidden;
 }
 
 .d-div3:nth-child(3n) {
@@ -1042,7 +1045,7 @@ input[type=file] {
     }
 }
 
-/* Sua Layout 100%*/
-.box-bot {
 
-}
+/* Sua Layout 100%*/
+
+.box-bot {}
