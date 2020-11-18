@@ -1,5 +1,5 @@
 <div class="header-box">
-    <div class="tieude h1"><?= $td ?> Sinh Viên</div>
+    <div class="tieude h1"><?= $td ?> SINH VIÊN</div>
 </div>
 <div class="thongbao">
     <form action="index.php?act=addsinhvien&cn=<?= $cnn ?>" method="post" enctype="multipart/form-data" id="formsv">
@@ -60,10 +60,12 @@
             </div>   
             <div class="form-group row">
     <div class="col">
-    <button type="submit" class="btn btn-primary" name="them"><?= $btnv ?> SINH VIÊN</button>
+        <input type="hidden" value="<?= $idsv ?>" name="idsv">
+    <button type="submit" class="btn btn-primary" name="<?= $cnn ?>"><?= $btnv ?> SINH VIÊN</button>
     <?php if($cn == "sua"){?>
     <a class="btn btn-warning">KHÔI PHỤC MẬT KHẨU</a>
     <?php }?>
+    <a href="index.php?act=sinhvien" class="btn btn-outline-info">DANH SÁCH</a>
     </div>
     </div> 
     <?= $mess ?>

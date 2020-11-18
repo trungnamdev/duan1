@@ -110,4 +110,11 @@
                                     SET tenkhoa = '$tenkh', mota = '$mota', chude = '$chude'
                                     WHERE id = '$idkh';");
     }
+    function suathongtintk($id,$hoten,$hinh,$ngaysinh,$email,$sdt,$diachi,$sex){
+        if($hinh != ""){
+        return postdulieu("UPDATE `taikhoan` SET `hoten` = '$hoten', `hinh` = '$hinh', `ngaysinh` = '$ngaysinh', `email` = '$email', `sdt` = '$sdt', `diachi` = '$diachi', `sex` = '$sex' WHERE `taikhoan`.`id` = $id");
+    }else{
+        return postdulieu("UPDATE `taikhoan` SET `hoten` = '$hoten', `ngaysinh` = '$ngaysinh', `email` = '$email', `sdt` = '$sdt', `diachi` = '$diachi', `sex` = '$sex' WHERE `taikhoan`.`id` = $id");
+    }
+}
 ?>

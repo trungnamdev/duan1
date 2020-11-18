@@ -180,21 +180,41 @@ switch ($act) {
       if(isset($_GET['cn'])){
          $cn = $_GET['cn'];
       }else $cn = 'them';
-      $td = "Thêm";$cnn = "them";$btnv="THÊM";
-      $ht = "";$ngaysinh="";$email="";$sdt="";$diachi="";$img = "";$sex1="checked";$sex0="";
+      $cnn = "them";$btnv=$td="THÊM";
+      $ht = "";$ngaysinh="";$email="";$sdt="";$diachi="";$img = "";$sex1="checked";$sex0="";$idsv="";
       switch ($cn) {
          case 'sua':
+            if(isset($_POST['sua'])){
+               $idsv = $_POST['idsv'];
+               $ht = xoatag($_POST['ht']);
+               $img = $_FILES['imgsv'];
+               if($img != ""){
+               upfile($img);
+               }
+               $img = $_FILES['imgsv']['name'];
+               $ngaysinh = $_POST['ngaysinh'];
+               $sdt = "+84".$_POST['sdt'];
+               $email = xoatag($_POST['email']);
+               $diachi = xoatag($_POST['diachi']);
+               $sex = $_POST['sex'];
+               $check = suathongtintk($idsv,$ht,$img,$ngaysinh,$email,$sdt,$diachi,$sex);
+               $cn = 'them';
+               $td = $sex;
+               $mess = showthongbao($check,"SỬA");
+            }
             if(isset($_GET['id'])){
-               $id = $_GET['id'];
-               $sv = getsvid($id);
+               $idsv = $_GET['id'];
+               $sv = getsvid($idsv);
                $img = $sv['hinh'];
                $ht = $sv['hoten'];
                $ngaysinh = $sv['ngaysinh'];
                $email=$sv['email'];
-               $sdt=$sv['sdt'];
+               $sdt=trim($sv['sdt'],"+84");
                $diachi =$sv['diachi'];
                $sex1 = chuyendoi01($sv['sex'],"1","checked","");
                $sex0 = chuyendoi01($sv['sex'],"0","checked","");
+               $btnv = $td = "SỬA";
+               $cnn = 'sua';
             }else{
                $cn="them";
             }
@@ -209,14 +229,18 @@ switch ($act) {
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
                $diachi = xoatag($_POST['diachi']);
-               $sex = setnum($_POST['sex']);
+               $sex = $_POST['sex'];
                $tensv = explode(" ",$ht);
-               $pass = rand(100000, 999999);
+               $pass = $passno = rand(100000, 999999);
                $pass = hashpass($pass);
                $lastid = addtk($ht,$img,$ngaysinh,$email,$sdt,"0",$pass,$diachi,$sex);
                $tendn = texttoslug($tensv[(count($tensv)-1)]).$lastid;
                $check = addtk2($tendn,$lastid);
+               $tdmail = "mật khẩu mới";
+               $body = "Tên đăng nhập : ".$tendn."<br>MẬT KHẨU : ". $passno;
+               guimail($email,$ht,$tdmail,$body);
                $mess = showthongbao($check,"THÊM");
+
             }
          break;
       }
