@@ -70,7 +70,7 @@ switch ($act) {
       // $body='Lớp học bạn đăng kí vừa có bài tập mới vào '.$today.'.Xin bạn kiểm tra và làm bài đầy đủ';
       // dung mo de danh demo
       $bodysms = "Bài tập mới từ :".$ttgv['hoten'];
-      send_twilio_sms($sdt, $bodysms); 
+      // send_twilio_sms($sdt, $bodysms); 
       // 
       guimail($email,$hoten,$tieude,$body);
       }
