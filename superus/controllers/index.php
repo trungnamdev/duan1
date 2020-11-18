@@ -14,11 +14,8 @@ if(isset($_GET['act'])){
 }else{
    $act = "home";
 }
-<<<<<<< HEAD
+
 $achome="";$acbt="";$aclop="";$actb="";$chat="";$ackh="";
-=======
-$achome="";$acbt="";$aclop="";$actb="";$chat="";$acgv="";
->>>>>>> 32f2df6fdcc191df9ca980a94780eb364d50105a
 switch ($act) {
    case 'home':
       $tb = thongbao();
@@ -37,9 +34,6 @@ switch ($act) {
       $view = "../superus/views/lophoc_them.php";
       require_once "../superus/views/layout.php";
    break;
-<<<<<<< HEAD
-
-=======
    case "themlh_":
       if(isset($_POST['tenlop'])&&isset($_POST['tenkhoa'])){
          $tenlop = xoatag($_POST['tenlop']);
@@ -58,7 +52,6 @@ switch ($act) {
       $view = "../superus/views/chude.php";
       require_once "../superus/views/layout.php";
       break;
-
    case'xoacd':
       if(isset($_GET['idcd']) && $_GET['idcd'] > 0){
          deleteChuDe($_GET['idcd'] );
@@ -86,7 +79,7 @@ switch ($act) {
          header('location: index.php?act=chude');
       }else echo "Không Sửa được!";
    break;   
->>>>>>> 32f2df6fdcc191df9ca980a94780eb364d50105a
+
    case 'khoahoc':
       $ackh="active";
       $khoahoc = getAllKH();

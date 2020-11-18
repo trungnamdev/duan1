@@ -53,24 +53,12 @@ switch ($act) {
      $idgv=$_SESSION['iddn'];
      $ttgv=thongtinsvtomtat($idgv);
       $hslop=hslophoc($lophoc);
-      $tenlop=tenlop($lophoc);
-      $tenkhoa=getTTKhoaByIDLop($tenlop['id']);
       foreach ($hslop as $hs) {
       $sdt = $hs['sdt'];
       $email=$hs['email'];
       $hoten=$hs['hoten'];
       $today=date("d-m-Y");
       $tieude="Thông báo bài tập mới";
-<<<<<<< HEAD
-      $body='    <div style="width: 100%;float: left;background-color: aqua; height: 500px;display: flex;align-items: center;">
-      <div style="background-color: azure;width: 30%;padding: 30px; margin: auto; box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2); border-radius: 25px; height: 200px;display: flex;align-items: center;">
-          <div style="width: 100%;float: left;text-align: center;">
-              <h2 style="color: red;">Thông báo bài tập mới</h2>
-              <p style="font-size: 19px;font-weight: 500;font-family: sans-serif;margin-top: 50px;">Bạn vừa có bài tập mới đến từ lớp cô '.$ttgv['hoten'].', thuộc lớp '.$tenlop['tenlop'].',khóa học '.$tenkhoa['tenkhoa'].' vào ngày '.$today.' đó.Mong bạn kiểm tra và làm bài đầy đủ</p>
-          </div>
-      </div>
-  </div>';
-=======
       $body='    
 <div class="container" style="font-size: 16pt;color: black; width:100%;background-color:#efefef;padding:0;height:500px;padding-top:80px">
     <div class="box" style="width:50%;background-color:#fff;margin:0 auto;border-radius:5px">
@@ -83,7 +71,6 @@ switch ($act) {
         </div>
     </div>
 </div>';
->>>>>>> 32f2df6fdcc191df9ca980a94780eb364d50105a
       // $body='Lớp học bạn đăng kí vừa có bài tập mới vào '.$today.'.Xin bạn kiểm tra và làm bài đầy đủ';
       // dung mo de danh demo
       $bodysms = "Bài tập mới từ :".$ttgv['hoten'];
