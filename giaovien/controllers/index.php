@@ -59,14 +59,18 @@ switch ($act) {
       $hoten=$hs['hoten'];
       $today=date("d-m-Y");
       $tieude="Thông báo bài tập mới";
-      $body='    <div style="width: 100%;float: left;background-color: aqua; height: 500px;display: flex;align-items: center;">
-      <div style="background-color: azure;width: 30%;padding: 30px; margin: auto; box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2); border-radius: 25px; height: 200px;display: flex;align-items: center;">
-          <div style="width: 100%;float: left;text-align: center;">
-              <h2 style="color: red;">Thông báo bài tập mới</h2>
-              <p style="font-size: 19px;font-weight: 500;font-family: sans-serif;margin-top: 50px;">Bạn vừa có bài tập mới đến từ lớp cô '.$ttgv['hoten'].' vào ngày '.$today.' đó.Mong bạn kiểm tra và làm bài đầy đủ</p>
-          </div>
-      </div>
-  </div>';
+      $body='    
+<div class="container" style="font-size: 16pt;color: black; width:100%;background-color:#efefef;padding:0;height:500px;padding-top:80px">
+    <div class="box" style="width:50%;background-color:#fff;margin:0 auto;border-radius:5px">
+        <div class="logo" style="padding:5px;border-bottom:solid #efefef 1px;display:flex;justify-content:center;align-items:center">
+            <img src="https://i.ibb.co/84ByFQ0/logo.png" alt="logo" border="0" style="width:80px">
+        </div>
+        <div class="noidung" style="padding:20px">
+            <h2 style="text-align: center;font-weight:400">THÔNG BÁO</h2>
+            <p style="text-align: justify;">Chào, '.$hoten.'! <br> Bạn vừa có bài tập mới đến từ lớp <strong>'.$ttgv['hoten'].'</strong> vào ngày <br> <i>'.$today.'</i>. <br> Mong bạn kiểm tra và làm bài đầy đủ!</p>
+        </div>
+    </div>
+</div>';
       // $body='Lớp học bạn đăng kí vừa có bài tập mới vào '.$today.'.Xin bạn kiểm tra và làm bài đầy đủ';
       // dung mo de danh demo
       $bodysms = "Bài tập mới từ :".$ttgv['hoten'];
