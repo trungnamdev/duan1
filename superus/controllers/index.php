@@ -43,25 +43,68 @@ switch ($act) {
          header('location: index.php?act=lop');
       }
    break;
+   
+   case 'chude':
+      $accd="active";
+      $chude = getAllChuDe(); 
+      $view = "../superus/views/chude.php";
+      require_once "../superus/views/layout.php";
+      break;
+
+   case'xoacd':
+      if(isset($_GET['idcd']) && $_GET['idcd'] > 0){
+         deleteChuDe($_GET['idcd'] );
+         header('location: index.php?act=chude');
+      }else echo "Không xóa được!";
+   break; 
+   case 'formcd':
+      $accd="active";
+      $view = "../superus/views/chude_them_sua.php";
+      require_once "../superus/views/layout.php";
+      break;
+    
+   case 'themcd': 
+      if(isset($_POST['themcd'])){ 
+         $chude = $_POST['tencd']; 
+         insertChuDe($chude);
+         header('location: index.php?act=chude');
+      }else echo "Không thêm được!";
+      break;
+   case 'suacd': 
+      if(isset($_POST['suacd'])){ 
+         $chude = $_POST['tencd']; 
+         $idcd = $_POST['idcd'];  
+         updateChuDe($chude,$idcd);
+         header('location: index.php?act=chude');
+      }else echo "Không Sửa được!";
+   break;   
    case 'khoahoc':
+      $ackh="active";
+      $khoahoc = getAllKH();
       $view = "../superus/views/khoahoc.php";
       require_once "../superus/views/layout.php";
       break;
+   case'xoakh':
+         if(isset($_GET['idkh']) && $_GET['idkh'] > 0){
+            deleteKhoaHoc($_GET['idkh'] );
+            header('location: index.php?act=khoahoc');
+         }else echo "Không xóa được!";
+      break;  
    case 'formkh':
-      
+      $ackh="active";
       $chude = getAllChuDe();
       $view = "../superus/views/khoahoc_them_sua.php";
       require_once "../superus/views/layout.php";
       break;
     
    case 'themkh':
-     
+      
       if(isset($_POST['themkh'])){
           
          $mota = xoatag($_POST['mota']); 
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
-         $imgkh=$_FILES['hinh'];
+         $imgkh=$_FILES['anhkh'];
          $tenhinh=$imgkh['name'];
          upfile($imgkh);
          insertKhoaHoc($tenkh,$mota,$chude,$tenhinh);
@@ -75,19 +118,14 @@ switch ($act) {
          $idkh = $_POST['idkh'];         
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
-         $imgkh=$_FILES['hinh'];
+         $imgkh=$_FILES['anhkh'];
          $tenhinh=$imgkh['name'];
          upfile($imgkh);
-         udateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh,$idkh);
+         updateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh,$idkh);
          header('location: index.php?act=khoahoc');
       }else echo "Không Sửa được!";
    break;   
-   case'xoakh':
-         if(isset($_GET['idkh']) && $_GET['idkh'] > 0){
-            deleteKhoaHoc($_GET['idkh'] );
-            header('location: index.php?act=khoahoc');
-         }else echo "Không xóa được!";
-      break;
+   
    case 'thongbao':
       $thongbao_list = getThongBao();
       $view = "../superus/views/thongbao.php";
@@ -166,6 +204,7 @@ switch ($act) {
       header('location: index.php');
       break;
    case 'sinhvien':
+      $acsv = "active";
       if(isset($_GET['xoa'])){
          $id = xoatag($_GET['xoa']);
          xoasv($id);

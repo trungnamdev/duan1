@@ -74,4 +74,44 @@ $(document).ready(function() {
         yearRange: '-50:-16',
         dateFormat: 'yy-mm-dd'
     });
+
+    $("#formkh").validate({
+        rules: {
+            "tenkh": {
+                required: true,
+            },
+            "mota": {
+                required: true
+            },
+            "anhkh": {
+                required: true
+            }
+        },
+        messages: {
+            "tenkh": {
+                required: "Xin vui lòng nhập tên khóa học"
+            },
+            "mota": {
+                required: "Xin vui lòng nhập mô tả"
+
+            },
+            "anhkh": {
+                required: "Vui lòng chọn ảnh khóa học"
+            }
+        }
+    });
+    $("#formcd").validate({
+        rules: {
+            "tencd": {
+                required: true
+            }
+        },
+        messages: {
+            "tencd": {
+                required: "Xin vui lòng nhập tên chủ đề"
+            }
+        }
+    });
+
+
 });
