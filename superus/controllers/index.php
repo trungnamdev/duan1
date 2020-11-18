@@ -14,7 +14,11 @@ if(isset($_GET['act'])){
 }else{
    $act = "home";
 }
+<<<<<<< HEAD
 $achome="";$acbt="";$aclop="";$actb="";$chat="";$ackh="";
+=======
+$achome="";$acbt="";$aclop="";$actb="";$chat="";$acgv="";
+>>>>>>> 32f2df6fdcc191df9ca980a94780eb364d50105a
 switch ($act) {
    case 'home':
       $tb = thongbao();
@@ -33,26 +37,83 @@ switch ($act) {
       $view = "../superus/views/lophoc_them.php";
       require_once "../superus/views/layout.php";
    break;
+<<<<<<< HEAD
 
+=======
+   case "themlh_":
+      if(isset($_POST['tenlop'])&&isset($_POST['tenkhoa'])){
+         $tenlop = xoatag($_POST['tenlop']);
+         $tenkhoa = $_POST['tenkhoa'];
+     
+         themlophoc($tenlop,$tenkhoa);
+         header('location: index.php?act=lop');
+      }else{
+         header('location: index.php?act=lop');
+      }
+   break;
+   
+   case 'chude':
+      $accd="active";
+      $chude = getAllChuDe(); 
+      $view = "../superus/views/chude.php";
+      require_once "../superus/views/layout.php";
+      break;
+
+   case'xoacd':
+      if(isset($_GET['idcd']) && $_GET['idcd'] > 0){
+         deleteChuDe($_GET['idcd'] );
+         header('location: index.php?act=chude');
+      }else echo "Không xóa được!";
+   break; 
+   case 'formcd':
+      $accd="active";
+      $view = "../superus/views/chude_them_sua.php";
+      require_once "../superus/views/layout.php";
+      break;
+    
+   case 'themcd': 
+      if(isset($_POST['themcd'])){ 
+         $chude = $_POST['tencd']; 
+         insertChuDe($chude);
+         header('location: index.php?act=chude');
+      }else echo "Không thêm được!";
+      break;
+   case 'suacd': 
+      if(isset($_POST['suacd'])){ 
+         $chude = $_POST['tencd']; 
+         $idcd = $_POST['idcd'];  
+         updateChuDe($chude,$idcd);
+         header('location: index.php?act=chude');
+      }else echo "Không Sửa được!";
+   break;   
+>>>>>>> 32f2df6fdcc191df9ca980a94780eb364d50105a
    case 'khoahoc':
+      $ackh="active";
+      $khoahoc = getAllKH();
       $view = "../superus/views/khoahoc.php";
       require_once "../superus/views/layout.php";
       break;
+   case'xoakh':
+         if(isset($_GET['idkh']) && $_GET['idkh'] > 0){
+            deleteKhoaHoc($_GET['idkh'] );
+            header('location: index.php?act=khoahoc');
+         }else echo "Không xóa được!";
+      break;  
    case 'formkh':
-      
+      $ackh="active";
       $chude = getAllChuDe();
       $view = "../superus/views/khoahoc_them_sua.php";
       require_once "../superus/views/layout.php";
       break;
     
    case 'themkh':
-     
+      
       if(isset($_POST['themkh'])){
           
          $mota = xoatag($_POST['mota']); 
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
-         $imgkh=$_FILES['hinh'];
+         $imgkh=$_FILES['anhkh'];
          $tenhinh=$imgkh['name'];
          upfile($imgkh);
          insertKhoaHoc($tenkh,$mota,$chude,$tenhinh);
@@ -66,19 +127,14 @@ switch ($act) {
          $idkh = $_POST['idkh'];         
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
-         $imgkh=$_FILES['hinh'];
+         $imgkh=$_FILES['anhkh'];
          $tenhinh=$imgkh['name'];
          upfile($imgkh);
-         udateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh,$idkh);
+         updateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh,$idkh);
          header('location: index.php?act=khoahoc');
       }else echo "Không Sửa được!";
    break;   
-   case'xoakh':
-         if(isset($_GET['idkh']) && $_GET['idkh'] > 0){
-            deleteKhoaHoc($_GET['idkh'] );
-            header('location: index.php?act=khoahoc');
-         }else echo "Không xóa được!";
-      break;
+   
    case 'thongbao':
       $thongbao_list = getThongBao();
       $view = "../superus/views/thongbao.php";
@@ -220,12 +276,13 @@ switch ($act) {
       header('location: index.php');
       break;
    case 'sinhvien':
+      $acsv = "active";
       if(isset($_GET['xoa'])){
          $id = xoatag($_GET['xoa']);
          xoasv($id);
          header('Location: index.php?act=sinhvien');
       }
-      $sv = getallsv();
+      $sv = getallsv("0");
       $view = "../superus/views/sinhvien.php";
       require_once "../superus/views/layout.php";
    break;
@@ -234,21 +291,41 @@ switch ($act) {
       if(isset($_GET['cn'])){
          $cn = $_GET['cn'];
       }else $cn = 'them';
-      $td = "Thêm";$cnn = "them";$btnv="THÊM";
-      $ht = "";$ngaysinh="";$email="";$sdt="";$diachi="";$img = "";$sex1="checked";$sex0="";
+      $cnn = "them";$btnv=$td="THÊM";
+      $ht = "";$ngaysinh="";$email="";$sdt="";$diachi="";$img = "";$sex1="checked";$sex0="";$idsv="";
       switch ($cn) {
          case 'sua':
+            if(isset($_POST['sua'])){
+               $idsv = $_POST['idsv'];
+               $ht = xoatag($_POST['ht']);
+               $img = $_FILES['imgsv'];
+               if($img != ""){
+               upfile($img);
+               }
+               $img = $_FILES['imgsv']['name'];
+               $ngaysinh = $_POST['ngaysinh'];
+               $sdt = "+84".$_POST['sdt'];
+               $email = xoatag($_POST['email']);
+               $diachi = xoatag($_POST['diachi']);
+               $sex = $_POST['sex'];
+               $check = suathongtintk($idsv,$ht,$img,$ngaysinh,$email,$sdt,$diachi,$sex);
+               $cn = 'them';
+               $td = $sex;
+               $mess = showthongbao($check,"SỬA");
+            }
             if(isset($_GET['id'])){
-               $id = $_GET['id'];
-               $sv = getsvid($id);
+               $idsv = $_GET['id'];
+               $sv = getsvid($idsv);
                $img = $sv['hinh'];
                $ht = $sv['hoten'];
                $ngaysinh = $sv['ngaysinh'];
                $email=$sv['email'];
-               $sdt=$sv['sdt'];
+               $sdt=trim($sv['sdt'],"+84");
                $diachi =$sv['diachi'];
                $sex1 = chuyendoi01($sv['sex'],"1","checked","");
                $sex0 = chuyendoi01($sv['sex'],"0","checked","");
+               $btnv = $td = "SỬA";
+               $cnn = 'sua';
             }else{
                $cn="them";
             }
@@ -263,18 +340,130 @@ switch ($act) {
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
                $diachi = xoatag($_POST['diachi']);
-               $sex = setnum($_POST['sex']);
+               $sex = $_POST['sex'];
                $tensv = explode(" ",$ht);
-               $pass = rand(100000, 999999);
+               $pass = $passno = rand(100000, 999999);
                $pass = hashpass($pass);
                $lastid = addtk($ht,$img,$ngaysinh,$email,$sdt,"0",$pass,$diachi,$sex);
                $tendn = texttoslug($tensv[(count($tensv)-1)]).$lastid;
                $check = addtk2($tendn,$lastid);
+               $tdmail = "mật khẩu mới";
+               $body = "Tên đăng nhập : ".$tendn."<br>MẬT KHẨU : ". $passno;
+               guimail($email,$ht,$tdmail,$body);
                $mess = showthongbao($check,"THÊM");
             }
          break;
+         case 'doipass':
+            if(isset($_GET['id'])){
+               $id = $_GET['id'];
+               $sv = getsvid($id);
+               $pass = $passno = rand(100000, 999999);
+               $pass = hashpass($pass);
+              $check = doipasstk($id,$pass);
+               $tdmail = "KHÔI PHỤC MẬT KHẨU";
+               $body = "Tên đăng nhập : ".$sv['tendn']."<br>MẬT KHẨU : ". $passno;
+               guimail($sv['email'],$sv['hoten'],$tdmail,$body);
+            }
+         break;
       }
+      $acsv = "active";
       $view = "../superus/views/formsv.php";
+      require_once "../superus/views/layout.php";
+   break;
+   case 'giaovien':
+      if(isset($_GET['xoa'])){
+         $id = xoatag($_GET['xoa']);
+         xoasv($id);
+         header('Location: index.php?act=giaovien');
+      }
+      $sv = getallsv("1");
+      $acgv = "active";
+      $view = "../superus/views/giaovien.php";
+      require_once "../superus/views/layout.php";
+   break;
+   case 'addgiaovien':
+      $mess = "";
+      if(isset($_GET['cn'])){
+         $cn = $_GET['cn'];
+      }else $cn = 'them';
+      $cnn = "them";$btnv=$td="THÊM";
+      $ht = "";$ngaysinh="";$email="";$sdt="";$diachi="";$img = "";$sex1="checked";$sex0="";$idsv="";
+      switch ($cn) {
+         case 'sua':
+            if(isset($_POST['sua'])){
+               $idsv = $_POST['idsv'];
+               $ht = xoatag($_POST['ht']);
+               $img = $_FILES['imgsv'];
+               if($img != ""){
+               upfile($img);
+               }
+               $img = $_FILES['imgsv']['name'];
+               $ngaysinh = $_POST['ngaysinh'];
+               $sdt = "+84".$_POST['sdt'];
+               $email = xoatag($_POST['email']);
+               $diachi = xoatag($_POST['diachi']);
+               $sex = $_POST['sex'];
+               $check = suathongtintk($idsv,$ht,$img,$ngaysinh,$email,$sdt,$diachi,$sex);
+               $cn = 'them';
+               $td = $sex;
+               $mess = showthongbao($check,"SỬA");
+            }
+            if(isset($_GET['id'])){
+               $idsv = $_GET['id'];
+               $sv = getsvid($idsv);
+               $img = $sv['hinh'];
+               $ht = $sv['hoten'];
+               $ngaysinh = $sv['ngaysinh'];
+               $email=$sv['email'];
+               $sdt=trim($sv['sdt'],"+84");
+               $diachi =$sv['diachi'];
+               $sex1 = chuyendoi01($sv['sex'],"1","checked","");
+               $sex0 = chuyendoi01($sv['sex'],"0","checked","");
+               $btnv = $td = "SỬA";
+               $cnn = 'sua';
+            }else{
+               $cn="them";
+            }
+            break;
+         case 'them':
+            if(isset($_POST['them'])){
+               $ht = xoatag($_POST['ht']);
+               $img = $_FILES['imgsv'];
+               upfile($img);
+               $img = $_FILES['imgsv']['name'];
+               $ngaysinh = $_POST['ngaysinh'];
+               $sdt = "+84".$_POST['sdt'];
+               $email = xoatag($_POST['email']);
+               $diachi = xoatag($_POST['diachi']);
+               $sex = $_POST['sex'];
+               $tensv = explode(" ",$ht);
+               $pass = $passno = rand(100000, 999999);
+               $pass = hashpass($pass);
+               $lastid = addtk($ht,$img,$ngaysinh,$email,$sdt,"1",$pass,$diachi,$sex);
+               $tendn = texttoslug($tensv[(count($tensv)-1)]).$lastid;
+               $check = addtk2($tendn,$lastid);
+               $tdmail = "mật khẩu mới";
+               $body = "Tên đăng nhập : ".$tendn."<br>MẬT KHẨU : ". $passno;
+               guimail($email,$ht,$tdmail,$body);
+               $mess = showthongbao($check,"THÊM");
+            }
+         break;
+         case 'doipass':
+            if(isset($_GET['id'])){
+               $id = $_GET['id'];
+               $sv = getsvid($id);
+               $pass = $passno = rand(100000, 999999);
+               $pass = hashpass($pass);
+              $check = doipasstk($id,$pass);
+               $tdmail = "KHÔI PHỤC MẬT KHẨU";
+               $body = "Tên đăng nhập : ".$sv['tendn']."<br>MẬT KHẨU : ". $passno;
+               guimail($sv['email'],$sv['hoten'],$tdmail,$body);
+               $mess = showthongbao($check,"KHÔI PHỤC MẬT KHẨU");
+            }
+         break;
+      }
+      $acgv = "active";
+      $view = "../superus/views/formgv.php";
       require_once "../superus/views/layout.php";
    break;
 }

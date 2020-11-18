@@ -33,11 +33,11 @@
         SET tdtb = '$tieude', noidung = '$noidung', idngdang = '$idnguoidang', ngaydang = now()
         WHERE idtb = '$idthongbao';");    
     }
-    function getallsv(){
-        return laydulieu("SELECT * FROM `taikhoan` WHERE chucvu = 0");
+    function getallsv($chucvu){
+        return laydulieu("SELECT * FROM `taikhoan` WHERE chucvu = $chucvu");
     }
     function xoasv($id){
-        postdulieu("DELETE FROM taikhoan WHERE id = '$id' AND chucvu = 0");
+        postdulieu("DELETE FROM taikhoan WHERE id = '$id'");
     }
     function addtk($hoten,$hinh,$ngaysinh,$email,$sdt,$chucvu,$pass,$diachi,$sex){
         return getlastid("INSERT INTO `taikhoan` (`id`, `hoten`, `hinh`, `ngaysinh`, `email`, `sdt`, `chucvu`, `tendn`, `pass`, `diachi`, `sex`) VALUES (NULL, '$hoten', '$hinh', '$ngaysinh', '$email', '$sdt', '$chucvu', '', '$pass', '$diachi', '$sex');");
@@ -108,6 +108,14 @@
     function getAllChuDe(){
         return laydulieu("SELECT * FROM chude ");
     }
+    // xoa chu de 
+    function deleteChuDe($idcd){
+        postdulieu("DELETE FROM `chude` WHERE `id` = $idcd");
+    }
+    // them chu de
+    function insertChuDe($chude){
+        return postdulieu("INSERT INTO chude(tenchude) VALUES('$chude')");
+    }
     // them khoa hoc
     function insertKhoaHoc($tenkh,$mota,$chude,$tenhinh){
         return postdulieu("INSERT INTO khoahoc(tenkhoa,mota,chude,hinh) VALUES('$tenkh', '$mota', '$chude', '$tenhinh')");
@@ -116,8 +124,16 @@
     function deleteKhoaHoc($idkh){
         postdulieu("DELETE FROM `khoahoc` WHERE `id` = $idkh");
     }
+    //sua khoa hoc
+    function updateChuDe($chude,$idcd){
+        
+        return postdulieu(" UPDATE chude
+                            SET tenchude = '$chude' 
+                            WHERE id = '$idcd';");
+                          
+                        }
     // sua khoa hoc 
-    function udateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh){
+    function updateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh){
         if($tenhinh != ''){
         return postdulieu(" UPDATE khoahoc
                             SET tenkhoa = '$tenkh', mota = '$mota', chude = '$chude', hinh = '$tenhinh'
@@ -125,5 +141,15 @@
         }else  return postdulieu("  UPDATE khoahoc
                                     SET tenkhoa = '$tenkh', mota = '$mota', chude = '$chude'
                                     WHERE id = '$idkh';");
+    }
+    function suathongtintk($id,$hoten,$hinh,$ngaysinh,$email,$sdt,$diachi,$sex){
+        if($hinh != ""){
+        return postdulieu("UPDATE `taikhoan` SET `hoten` = '$hoten', `hinh` = '$hinh', `ngaysinh` = '$ngaysinh', `email` = '$email', `sdt` = '$sdt', `diachi` = '$diachi', `sex` = '$sex' WHERE `taikhoan`.`id` = $id");
+    }else{
+        return postdulieu("UPDATE `taikhoan` SET `hoten` = '$hoten', `ngaysinh` = '$ngaysinh', `email` = '$email', `sdt` = '$sdt', `diachi` = '$diachi', `sex` = '$sex' WHERE `taikhoan`.`id` = $id");
+    }
+}
+    function doipasstk($id,$pass){
+       return postdulieu("UPDATE `taikhoan` SET `pass` = '$pass' WHERE `taikhoan`.`id` = $id");
     }
 ?>
