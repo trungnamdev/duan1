@@ -11,6 +11,7 @@
     <script src="../system/js/jsvali.js"></script>
     <script src="../system/js/icons.js"></script>
     <script src="views/js/dk1.js"></script>
+    <link rel="stylesheet" href="../system/css/jquery-ui.css">
     <!-- bootstrap -->
     <script src="../system/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../system/css/bootstrap.min.css">
@@ -73,8 +74,9 @@
             <div class="menu m-3">
                 <ul>
                 <a href="index.php?act=home"><li class="<?= $achome ?>">Tổng quan<img src="../system/img/tongquan.svg" alt=""></i></li></a>
-                    <a href="index.php?act=baitap&sx=all"><li class="<?= $acbt ?>">Bài Tập<img src="../system/img/baitap.svg" alt=""></li></a>
+                    <a href="index.php?act=sinhvien"><li class="<?= $acbt ?>">Sinh Viên<img src="../system/img/baitap.svg" alt=""></li></a>
                     <a href="index.php?act=lop"><li class="<?= $aclop ?>">Lớp học<img src="../system/img/monhoc.svg" alt=""></li></a>
+                    <a href="index.php?act=khoahoc"><li class="<?= $ackh ?>">Khóa học<img src="../system/img/monhoc.svg" alt=""></li></a>
                     <a href="index.php?act=thongbao"><li class="<?= $actb ?>">Thông báo<img src="../system/img/thongbao.svg" alt=""></li></a>
                     <a href="index.php?act=chat"><li class="<?= $chat ?>">Nhắn tin<img src="../system/img/chat.svg" alt=""></li></a>
                 </ul>

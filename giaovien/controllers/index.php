@@ -78,7 +78,7 @@ switch ($act) {
       // 
       guimail($email,$hoten,$tieude,$body);
       }
-   //   header('Location: index.php');
+     header('Location: index.php?act=baitap');
    break;
    case 'xoabt':
    if ($_GET['id']) {

@@ -32,7 +32,7 @@
             foreach ($dssvtheolop as $ds) { 
             ?>
                 <tr>
-                    <td><?=$ds['hoten']?></td>
+                    <td><a href="index.php?act=thongtincn&idtk=<?= $ds['id'] ?>"><?=$ds['hoten']?></a></td>
                     <td>
                         <div class="input-group w-fitcontent avtimage"> 
                              

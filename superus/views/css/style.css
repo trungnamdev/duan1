@@ -1,3 +1,28 @@
+.svfilelb {
+    border: #3f00ff 2px solid;
+    border-radius: 5px;
+    padding: 6px 0px;
+    color: #007bff;
+    float: left;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.chuaanhshow {
+    height: 230px;
+}
+
+#showanh {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.error {
+    color: red !important;
+}
+
 .suser .card {
     width: 250px !important;
 }
@@ -17,7 +42,6 @@
     width: 49%;
     height: 700px;
     margin-right: 2%;
-
 }
 
 .thongke-box {
@@ -30,6 +54,17 @@
     border-radius: 0;
 }
 
-.chart-div {
 
+/* khoa hoc */
+
+.khoahoc {
+    width: 100%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.form-khoahoc label {
+    margin-top: 8px;
+    margin-bottom: -5px;
 }
