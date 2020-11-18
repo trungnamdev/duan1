@@ -15,7 +15,7 @@ if(isset($_GET['act'])){
    $act = "home";
 }
 
-$achome="";$acbt="";$aclop="";$actb="";$chat="";$ackh="";
+$achome="";$acsv="";$acgv="";$aclop="";$ackh="";$accd="";$actb="";
 switch ($act) {
    case 'home':
       $tb = thongbao();
@@ -52,6 +52,7 @@ switch ($act) {
       $view = "../superus/views/chude.php";
       require_once "../superus/views/layout.php";
       break;
+
    case'xoacd':
       if(isset($_GET['idcd']) && $_GET['idcd'] > 0){
          deleteChuDe($_GET['idcd'] );
