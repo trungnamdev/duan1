@@ -25,7 +25,7 @@ if (isset($_GET['kh']) && $_GET['kh'] == 'them') {
                     ?>
                     
                 </select>
-                <label for="hinh" class="form-control"><i class='fas fa-plus-circle mr-2'></i>Chọn Ảnh </label>
+                <label for="anhkh" class="form-control"><i class='fas fa-plus-circle mr-2'></i>Chọn Ảnh </label>
                 <input type="file" class="form-control" id="anhkh" name="anhkh">
 
                 <div class="nutthem text-center mt-4 ">
