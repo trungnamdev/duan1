@@ -60,14 +60,13 @@ switch ($act) {
       $today=date("d-m-Y");
       $tieude="Thông báo bài tập mới";
       $body='    
-  <style>body{margin:0}.container{width:100%;background-color:#efefef;padding:0;height:500px;padding-top:80px}.box{width:30%;background-color:#fff;margin:0 auto;height:300px;border-radius:5px}.logo{padding:5px;border-bottom:solid #efefef 1px;display:flex;justify-content:center;align-items:center}.logo img{width:80px}.noidung{padding:20px}h2{font-weight:400}</style>
-<div class="container">
-    <div class="box">
-        <div class="logo">
-            <img src="https://i.ibb.co/84ByFQ0/logo.png" alt="logo" border="0">
+<div class="container" style="font-size: 16pt;color: black; width:100%;background-color:#efefef;padding:0;height:500px;padding-top:80px">
+    <div class="box" style="width:50%;background-color:#fff;margin:0 auto;border-radius:5px">
+        <div class="logo" style="padding:5px;border-bottom:solid #efefef 1px;display:flex;justify-content:center;align-items:center">
+            <img src="https://i.ibb.co/84ByFQ0/logo.png" alt="logo" border="0" style="width:80px">
         </div>
-        <div class="noidung">
-            <h2 style="text-align: center;">THÔNG BÁO</h2>
+        <div class="noidung" style="padding:20px">
+            <h2 style="text-align: center;font-weight:400">THÔNG BÁO</h2>
             <p style="text-align: justify;">Chào, '.$hoten.'! <br> Bạn vừa có bài tập mới đến từ lớp <strong>'.$ttgv['hoten'].'</strong> vào ngày <br> <i>'.$today.'</i>. <br> Mong bạn kiểm tra và làm bài đầy đủ!</p>
         </div>
     </div>
