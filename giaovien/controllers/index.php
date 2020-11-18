@@ -59,14 +59,19 @@ switch ($act) {
       $hoten=$hs['hoten'];
       $today=date("d-m-Y");
       $tieude="Thông báo bài tập mới";
-      $body='    <div style="width: 100%;float: left;background-color: aqua; height: 500px;display: flex;align-items: center;">
-      <div style="background-color: azure;width: 30%;padding: 30px; margin: auto; box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2); border-radius: 25px; height: 200px;display: flex;align-items: center;">
-          <div style="width: 100%;float: left;text-align: center;">
-              <h2 style="color: red;">Thông báo bài tập mới</h2>
-              <p style="font-size: 19px;font-weight: 500;font-family: sans-serif;margin-top: 50px;">Bạn vừa có bài tập mới đến từ lớp cô '.$ttgv['hoten'].' vào ngày '.$today.' đó.Mong bạn kiểm tra và làm bài đầy đủ</p>
-          </div>
-      </div>
-  </div>';
+      $body='    
+  <style>body{margin:0}.container{width:100%;background-color:#efefef;padding:0;height:500px;padding-top:80px}.box{width:30%;background-color:#fff;margin:0 auto;height:300px;border-radius:5px}.logo{padding:5px;border-bottom:solid #efefef 1px;display:flex;justify-content:center;align-items:center}.logo img{width:80px}.noidung{padding:20px}h2{font-weight:400}</style>
+<div class="container">
+    <div class="box">
+        <div class="logo">
+            <img src="https://i.ibb.co/84ByFQ0/logo.png" alt="logo" border="0">
+        </div>
+        <div class="noidung">
+            <h2 style="text-align: center;">THÔNG BÁO</h2>
+            <p style="text-align: justify;">Chào, '.$hoten.'! <br> Bạn vừa có bài tập mới đến từ lớp <strong>'.$ttgv['hoten'].'</strong> vào ngày <br> <i>'.$today.'</i>. <br> Mong bạn kiểm tra và làm bài đầy đủ!</p>
+        </div>
+    </div>
+</div>';
       // $body='Lớp học bạn đăng kí vừa có bài tập mới vào '.$today.'.Xin bạn kiểm tra và làm bài đầy đủ';
       // dung mo de danh demo
       // send_twilio_sms($sdt, "Bạn có bài tập mới từ giáo viên:".$ttgv['hoten']); 
