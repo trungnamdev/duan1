@@ -24,7 +24,7 @@
                 </div>
                 <div class="d-tt-text-100">
                     <span class="d-tt-text-theme">Số điện thoại</span>
-                    <span class="d-tt-text-title">0373782285'</span>
+                    <span class="d-tt-text-title"><?= $thongtin['sdt'] ?></span>
                 </div>
                 <!-- <div class="d-tt-text-100">
                     <span class="d-tt-text-theme">Trạng thái học</span>
