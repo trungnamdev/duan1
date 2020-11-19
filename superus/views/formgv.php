@@ -1,8 +1,8 @@
 <div class="header-box">
-    <div class="tieude h1"><?= $td ?> SINH VIÊN</div>
+    <div class="tieude h1"><?= $td ?> GIÁO VIÊN</div>
 </div>
 <div class="thongbao">
-    <form action="index.php?act=addsinhvien&cn=<?= $cnn ?>" method="post" enctype="multipart/form-data" id="formsv">
+    <form action="index.php?act=addgiaovien&cn=<?= $cnn ?>" method="post" enctype="multipart/form-data" id="formsv">
         <div class="row">
         <div class="col-4 d-mt2">
         <div class="row chuaanhshow">
@@ -61,11 +61,11 @@
             <div class="form-group row">
     <div class="col">
         <input type="hidden" value="<?= $idsv ?>" name="idsv">
-    <button type="submit" class="btn btn-primary" name="<?= $cnn ?>"><?= $btnv ?> SINH VIÊN</button>
+    <button type="submit" class="btn btn-primary" name="<?= $cnn ?>"><?= $btnv ?> GIÁO VIÊN</button>
     <?php if($cn == "sua"){?>
-    <a href="index.php?act=addsinhvien&cn=doipass&id=<?= $idsv ?>" class="btn btn-warning">KHÔI PHỤC MẬT KHẨU</a>
+        <a href="index.php?act=addgiaovien&cn=doipass&id=<?= $idsv ?>" class="btn btn-warning">KHÔI PHỤC MẬT KHẨU</a>
     <?php }?>
-    <a href="index.php?act=sinhvien" class="btn btn-outline-info">DANH SÁCH</a>
+    <a href="index.php?act=giaovien" class="btn btn-outline-info">DANH SÁCH</a>
     </div>
     </div> 
     <?= $mess ?>
