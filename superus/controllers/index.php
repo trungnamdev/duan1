@@ -376,12 +376,9 @@ switch ($act) {
                    <div class="noidung" style="padding:20px">
                        <h2 style="text-align: center;font-weight:400">KHÔI PHỤC MẬT KHẨU</h2>
                        <p style="text-align: justify;">Chào bạn! <br> Dưới đây là thông tin khôi phục tài khoản của bạn!</p>
-                       Tên đăng nhập : '.$sv['tendn'].'<br>Mật khẩu : '. $passno;
-                       guimail($sv['email'],$sv['hoten'],$tdmail,$body).'
-                    </div>
-               </div>
-           </div>';
-
+                       Tên đăng nhập : '.$sv['tendn'].'<br>Mật khẩu : '. $passno.'</div</div></div>';
+           guimail($sv['email'],$sv['hoten'],$tdmail,$body);
+           $mess = showthongbao($check,"KHÔI PHỤC MẬT KHẨU");
             }
          break;
       }
@@ -503,11 +500,7 @@ switch ($act) {
                    <div class="noidung" style="padding:20px">
                        <h2 style="text-align: center;font-weight:400">KHÔI PHỤC MẬT KHẨU</h2>
                        <p style="text-align: justify;">Chào bạn! <br> Dưới đây là thông tin khôi phục tài khoản của bạn!</p>
-                       Tên đăng nhập : '.$sv['tendn'].'<br>Mật khẩu : '. $passno;
-                       guimail($sv['email'],$sv['hoten'],$tdmail,$body).'
-                    </div>
-               </div>
-           </div>';
+                       Tên đăng nhập : '.$sv['tendn'].'<br>Mật khẩu : '. $passno.'</div></div></div>';
                guimail($sv['email'],$sv['hoten'],$tdmail,$body);
                $mess = showthongbao($check,"KHÔI PHỤC MẬT KHẨU");
             }
