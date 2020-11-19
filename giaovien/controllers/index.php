@@ -19,7 +19,9 @@ switch ($act) {
    case 'home':
       $achome="active";
       $idlop = gv_getidlop();
-      $lopdangday = GV_getlopdangday(); 
+      //Nếu chưa dạy ai thì show thông báo thôi
+      if(isset($idlop))
+         $lopdangday = GV_getlopdangday(); 
       $tb=thongbao();
       $view = "../giaovien/views/home.php";
       require_once "../giaovien/views/layout.php";
@@ -28,10 +30,12 @@ switch ($act) {
    case 'baitap':
       $acbt="active";
       $idlop = gv_getidlop();
-      $lopdangday = GV_getlopdangday(); 
+      if (isset($idlop)) 
+         $lopdangday = GV_getlopdangday(); 
       $view = "../giaovien/views/baitap.php";
       require_once "../giaovien/views/layout.php";
       break;
+
    case 'giaobt':
       $idlop = gv_getidlop();
       $lopdangday = GV_getlopdangday(); 
@@ -59,18 +63,22 @@ switch ($act) {
       $hoten=$hs['hoten'];
       $today=date("d-m-Y");
       $tieude="Thông báo bài tập mới";
-      $body='    <div style="width: 100%;float: left;background-color: aqua; height: 500px;display: flex;align-items: center;">
-      <div style="background-color: azure;width: 30%;padding: 30px; margin: auto; box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2); border-radius: 25px; height: 200px;display: flex;align-items: center;">
-          <div style="width: 100%;float: left;text-align: center;">
-              <h2 style="color: red;">Thông báo bài tập mới</h2>
-              <p style="font-size: 19px;font-weight: 500;font-family: sans-serif;margin-top: 50px;">Bạn vừa có bài tập mới đến từ lớp cô '.$ttgv['hoten'].' vào ngày '.$today.' đó.Mong bạn kiểm tra và làm bài đầy đủ</p>
-          </div>
-      </div>
-  </div>';
+      $body='    
+<div class="container" style="font-size: 16pt;color: black; width:100%;background-color:#efefef;padding:0;height:500px;padding-top:80px">
+    <div class="box" style="width:50%;background-color:#fff;margin:0 auto;border-radius:5px">
+        <div class="logo" style="padding:5px;border-bottom:solid #efefef 1px;text-align:center">
+            <img src="https://i.ibb.co/84ByFQ0/logo.png" alt="logo" border="0" style="width:80px">
+        </div>
+        <div class="noidung" style="padding:20px">
+            <h2 style="text-align: center;font-weight:400">THÔNG BÁO</h2>
+            <p style="text-align: justify;">Chào, '.$hoten.'! <br> Bạn vừa có bài tập mới đến từ lớp <strong>'.$ttgv['hoten'].'</strong> vào ngày <br> <i>'.$today.'</i>. <br> Mong bạn kiểm tra và làm bài đầy đủ!</p>
+        </div>
+    </div>
+</div>';
       // $body='Lớp học bạn đăng kí vừa có bài tập mới vào '.$today.'.Xin bạn kiểm tra và làm bài đầy đủ';
       // dung mo de danh demo
       $bodysms = "Bài tập mới từ :".$ttgv['hoten'];
-      send_twilio_sms($sdt, $bodysms); 
+      // send_twilio_sms($sdt, $bodysms); 
       // 
       guimail($email,$hoten,$tieude,$body);
       }
@@ -145,26 +153,27 @@ switch ($act) {
             }
             if(isset($_POST['tai']) && isset($_POST['chonbt'])){
                $listbt = $_POST['chonbt'];
-               $myzip = new ZipArchive;
-               $tenfile =texttoslug($baitap_info['tenlop']) . "_" . texttoslug($baitap_info['tenbaitap']).".zip";
-               if ($myzip->open($tenfile, ZipArchive::CREATE) === TRUE){
-                  foreach($listbt as $bt){
-                     $bt = showfile($bt);
-                     if(is_file($bt)){
-                     $myzip->addFile($bt);
-                     }
-                  }
-                  $myzip->close();
-               }
-               ob_end_clean();
-               header("Content-type: application/zip"); 
-               header("Content-Disposition: attachment; filename=$tenfile");
-               header("Content-length: " . filesize($tenfile));
-               header("Pragma: no-cache"); 
-               header("Expires: 0"); 
-               readfile($tenfile);
-               unlink($tenfile);
-               return;
+               print_r($listbt);
+               // $myzip = new ZipArchive;
+               // $tenfile =texttoslug($baitap_info['tenlop']) . "_" . texttoslug($baitap_info['tenbaitap']).".zip";
+               // if ($myzip->open($tenfile, ZipArchive::CREATE) === TRUE){
+               //    foreach($listbt as $bt){
+               //       echo $bt;
+               //       // if(is_file($bt)){
+               //       $myzip->addFile($bt);
+               //       // }
+               //    }
+               //    $myzip->close();
+               // }
+               // ob_end_clean();
+               // header("Content-type: application/zip"); 
+               // header("Content-Disposition: attachment; filename=$tenfile");
+               // header("Content-length: " . filesize($tenfile));
+               // header("Pragma: no-cache"); 
+               // header("Expires: 0"); 
+               // readfile($tenfile);
+               // unlink($tenfile);
+               // return;
             }
          }
          $acbt = "active";
@@ -201,6 +210,46 @@ switch ($act) {
          require_once "../giaovien/views/layout.php";
          break;
 
+      case 'changepass':
+         $mess = "";
+         $view = "../giaovien/views/changepass.php";
+         require_once "../giaovien/views/layout.php";
+         break;
+
+         
+      case 'changepass_':
+         $mess ="";
+         if(isset($_POST['pass'])) {
+            $id = $_SESSION['iddn'];
+            $pass = xoatag(trim($_POST['pass'],"'"));
+            $check = getpass();
+            if(is_array($check))
+                $verify=password_verify($pass,$check['pass']);
+               //Check pass
+               if($verify){
+                  $newpass = $_POST['newpass'];
+                  $repass = $_POST['repass'];  
+                  //Check mk mới có khớp k            
+                  if($newpass==$repass) {
+                     changepass($id, $repass);
+                     // header('location: index.php?act=thongtincn');
+                     // echo("Đổi thành công");
+                     $mess = "Đổi Thành Công";
+                  }else {
+                     // header('location: index.php?act=thongtincn');
+                     // echo("Mật khẩu không khớp");
+                     $mess = "Mật khẩu không khớp";
+                  }
+               }else{
+                  // echo "Thất bại sai mật khẩu";
+                  $mess = "Thất bại sai mật khẩu";
+               } 
+            
+               
+         }
+         $view = "../giaovien/views/changepass.php";
+         require_once "../giaovien/views/layout.php";
+      break;
       case 'dangxuat':
          unset($_SESSION['role']);
          unset($_SESSION['iddn']);

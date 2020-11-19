@@ -43,9 +43,12 @@ function getAllBaiTapSv($idbt)
 
 // lấy từng id lớp của gv
 function gv_getidlop(){
+    if(is_array(getIDGV())){
     $idlop = getIDGV()['idlop'];
     $mangidlop = explode(",", $idlop);
     return $mangidlop;
+    }
+    else return null;
 }
 
 // lấy bài tập từ id lớp
@@ -69,10 +72,13 @@ function countLopGV($idlop){
 function GV_getlopdangday()
 {
     $mangidlop = gv_getidlop();
-    $dieukien = implode(" or lop.id = ", $mangidlop);
-    // var_dump("SELECT * FROM lop INNER JOIN khoahoc kh ON kh.id=lop.idkhoa WHERE lop.id = ".$dieukien." ORDER BY id DESC");
-    // exit();
-    return laydulieu("SELECT *,lop.id as idlopd FROM lop INNER JOIN khoahoc kh ON kh.id=lop.idkhoa WHERE lop.id = ".$dieukien." ORDER BY lop.id DESC");
+    if(isset($mangidlop)) {
+        $dieukien = implode(" or lop.id = ", $mangidlop);
+        // var_dump("SELECT * FROM lop INNER JOIN khoahoc kh ON kh.id=lop.idkhoa WHERE lop.id = ".$dieukien." ORDER BY id DESC");
+        // exit();
+        return laydulieu("SELECT *,lop.id as idlopd FROM lop INNER JOIN khoahoc kh ON kh.id=lop.idkhoa WHERE lop.id = ".$dieukien." ORDER BY lop.id DESC");
+    }else
+        return null;
 }
 function thongbao(){
     return laydulieu("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang ORDER BY ngaydang"); 

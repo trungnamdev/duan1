@@ -91,4 +91,16 @@ function texttoslug($str) {
 function showthongbao($check , $text){
     return chuyendoi01($check,"1","<p class=text-success>$text THÀNH CÔNG</p>","<p class=text-danger>$text THẤT BẠI</p>");
 }
+
+function getpass()
+{
+    $id = $_SESSION['iddn'];
+    return laymot("SELECT pass FROM taikhoan WHERE id=$id");
+}
+
+function changepass($id, $repass)
+{
+    $pass = hashpass($repass);
+    return postdulieu("UPDATE `taikhoan` SET `pass` = '$pass' WHERE `id` = '$id'");
+}
 ?>

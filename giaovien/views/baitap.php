@@ -24,6 +24,7 @@
         </div>
         <div class="d-row">
             <?php
+            if(isset($idlop)){
             foreach ($idlop as $id) {
                 $baitap = GV_getBaiTapByID($id);
                 $tenlop = tenlop($id);
@@ -74,6 +75,11 @@
                 </div>
 
             </div>
-            <?php } }?>
+            <?php } } }else?>
+            <div class="emty-box">
+                <img src="../system/img/nodata.svg" alt="">
+                <p class="text-muted mt-4">Chưa có bài tập nào được giao</p>
+            </div>
+            
         </div>
     </div>
