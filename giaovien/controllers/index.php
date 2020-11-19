@@ -19,7 +19,9 @@ switch ($act) {
    case 'home':
       $achome="active";
       $idlop = gv_getidlop();
-      $lopdangday = GV_getlopdangday(); 
+      //Nếu chưa dạy ai thì show thông báo thôi
+      if(isset($idlop))
+         $lopdangday = GV_getlopdangday(); 
       $tb=thongbao();
       $view = "../giaovien/views/home.php";
       require_once "../giaovien/views/layout.php";
@@ -28,10 +30,12 @@ switch ($act) {
    case 'baitap':
       $acbt="active";
       $idlop = gv_getidlop();
-      $lopdangday = GV_getlopdangday(); 
+      if (isset($idlop)) 
+         $lopdangday = GV_getlopdangday(); 
       $view = "../giaovien/views/baitap.php";
       require_once "../giaovien/views/layout.php";
       break;
+
    case 'giaobt':
       $idlop = gv_getidlop();
       $lopdangday = GV_getlopdangday(); 

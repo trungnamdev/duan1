@@ -8,6 +8,7 @@
         <div class="swiper-wrapper">
             <!-- Start box -->
             <?php
+            if(isset($idlop)) {
                 foreach ($idlop as $id) {
                     $baitap = GV_getBaiTapByID($id);
                     $tenlop=tenlop($id);
@@ -34,7 +35,7 @@
             </div>
             <?php                         
                     }
-                }?>
+                }} ?>
         </div>
     </div>
 
@@ -52,12 +53,14 @@
     </script>
 
     <div class="lop-box mt-4">
-        <p class="h4 mb-3">Các lớp đang dạy <span class="badge badge-pill badge-light"><?= count($lopdangday) ?></span></p>
+        <p class="h4 mb-3">Các lớp đang dạy <span class="badge badge-pill badge-light"><?= $dem = (isset($lopdangday)) ? count($lopdangday) : 0 ; ?></span></p>
         <div class="box-content">
             <?php 
-                foreach ($lopdangday as $lop) {
-                    $id=$lop['idlopd'];
-                    $countlop=countlop($id);
+                if(isset($lopdangday)) {
+                    foreach ($lopdangday as $lop) {
+                        $id=$lop['idlopd'];
+                        $countlop=countlop($id);
+                }
             ?>
             <div class="d-div3">
                 <div class="d-div3-img">
