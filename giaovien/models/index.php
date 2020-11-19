@@ -3,6 +3,9 @@
 function getIDGV(){
     return laymot("SELECT * FROM gvlop WHERE idgv = ".$_SESSION['iddn']);
 }
+function ttbt($idbt){
+    return laymot("SELECT * FROM `baitap` WHERE idbaitap=$idbt");
+}
 function xoabt($id){
     return postdulieu("DELETE FROM `baitap` WHERE `baitap`.`idbaitap` = $id");
 }
@@ -115,6 +118,9 @@ function checknopbai($idbt,$idsv){
 // cham diem 
 function chamdiem($diem,$file){
     postdulieu("UPDATE `upfile` SET `diem` = '$diem' WHERE `upfile`.`idfile` = '$file'");
+}
+function upbt($idbt,$tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot){
+    postdulieu("UPDATE `baitap` SET `tenbaitap` = '$tenbt', `hinh` = '$tenhinh', `motabt` = '$mota', `idlop` = '$lophoc', `ngaygiao` = '$ngaygiao', `ngayhethan` = '$hanchot' WHERE `baitap`.`idbaitap` = $idbt;");
 }
 // lay tt sinh vien theo lop
 function getSVByLop($idlop){

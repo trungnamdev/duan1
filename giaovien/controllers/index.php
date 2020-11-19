@@ -24,7 +24,21 @@ switch ($act) {
       $view = "../giaovien/views/home.php";
       require_once "../giaovien/views/layout.php";
    break;
-
+   case 'suabt':
+      if ($_GET['id']) {
+         $idlop = gv_getidlop();
+      $idbt=$_GET['id'];
+      $bt=ttbt($idbt);
+      $lopdangday = GV_getlopdangday(); 
+      $view = "../giaovien/views/suabt.php";
+      require_once "../giaovien/views/layout.php";  
+       }else{
+          echo ' <script>
+          alert("địa chỉ đã bị sai") ;
+       </script>';
+       header('Location: index.php?act=baitap');
+             }
+   break;
    case 'baitap':
       $acbt="active";
       $idlop = gv_getidlop();
@@ -79,6 +93,23 @@ switch ($act) {
       guimail($email,$hoten,$tieude,$body);
       }
      header('Location: index.php?act=baitap');
+   break;
+   case 'suabtd':
+      $tenbt=xoatag($_POST['tenbt']);
+      $ngaygiao=$_POST['ngaygiao'];
+      $hanchot=$_POST['hanchot'];
+      $mota=$_POST['mota'];
+      $lophoc=$_POST['lophoc'];
+      $imgbt=$_FILES['imgbt'];
+      $tenhinh=$imgbt['name'];
+      $idbt=$_POST['idbt'];
+      upfile($imgbt);
+      upbt($idbt,$tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot);
+      $idgv=$_SESSION['iddn'];
+      $ttgv=thongtinsvtomtat($idgv);
+       $hslop=hslophoc($lophoc);
+      header('Location: index.php?act=baitap');
+    break;
    break;
    case 'xoabt':
    if ($_GET['id']) {

@@ -47,6 +47,10 @@
                         <div class="d-info1 text-span">
                         <?=$kh['tenkhoa']?>
                         </div>
+                        <div class="d-info2 d-nb w-75 ">
+                            <a href="index.php?act=suabt&id=<?=$bt['idbaitap']?>" class="btn btn-outline-danger d-pd">Sửa</a>
+
+                        </div>
                     </div>
                 </div>
                 <div class="d-info">

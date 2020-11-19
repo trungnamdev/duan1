@@ -4,6 +4,10 @@
     margin-right: 2%;
 }
 
+.d-pd {
+    padding: 5px 15px !important;
+}
+
 .d-bt-showimg {
     width: 100%;
     float: left;
