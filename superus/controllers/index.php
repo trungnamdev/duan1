@@ -342,7 +342,19 @@ switch ($act) {
                $tendn = texttoslug($tensv[(count($tensv)-1)]).$lastid;
                $check = addtk2($tendn,$lastid);
                $tdmail = "mật khẩu mới";
-               $body = "Tên đăng nhập : ".$tendn."<br>MẬT KHẨU : ". $passno;
+               $body = 
+               '<div class="container" style="font-size: 16pt;color: black; width:100%;background-color:#efefef;padding:0;height:500px;padding-top:80px">
+               <div class="box" style="width:50%;background-color:#fff;margin:0 auto;border-radius:5px">
+                   <div class="logo" style="padding:5px;border-bottom:solid #efefef 1px;text-align:center">
+                       <img src="https://i.ibb.co/84ByFQ0/logo.png" alt="logo" border="0" style="width:80px">
+                   </div>
+                   <div class="noidung" style="padding:20px">
+                       <h2 style="text-align: center;font-weight:400">MẬT KHẨU MỚI</h2>
+                       <p style="text-align: justify;">Chào, '.$ht.'! <br> Bạn đã được nhập học tại <strong> 8888 College </strong><br> Dưới đây là thông tin đăng nhập vào website của trường. <br> Chúc bạn có một học kì nhiều năng lượng và thành công!</p>
+                       Tên đăng nhập : '.$tendn.'<br>Mật khẩu : '. $passno.'
+                    </div>
+               </div>
+           </div>';
                guimail($email,$ht,$tdmail,$body);
                $mess = showthongbao($check,"THÊM");
             }
@@ -355,8 +367,21 @@ switch ($act) {
                $pass = hashpass($pass);
               $check = doipasstk($id,$pass);
                $tdmail = "KHÔI PHỤC MẬT KHẨU";
-               $body = "Tên đăng nhập : ".$sv['tendn']."<br>MẬT KHẨU : ". $passno;
-               guimail($sv['email'],$sv['hoten'],$tdmail,$body);
+               $body = 
+               '<div class="container" style="font-size: 16pt;color: black; width:100%;background-color:#efefef;padding:0;height:500px;padding-top:80px">
+               <div class="box" style="width:50%;background-color:#fff;margin:0 auto;border-radius:5px">
+                   <div class="logo" style="padding:5px;border-bottom:solid #efefef 1px;text-align:center">
+                       <img src="https://i.ibb.co/84ByFQ0/logo.png" alt="logo" border="0" style="width:80px">
+                   </div>
+                   <div class="noidung" style="padding:20px">
+                       <h2 style="text-align: center;font-weight:400">KHÔI PHỤC MẬT KHẨU</h2>
+                       <p style="text-align: justify;">Chào bạn! <br> Dưới đây là thông tin khôi phục tài khoản của bạn!</p>
+                       Tên đăng nhập : '.$sv['tendn'].'<br>Mật khẩu : '. $passno;
+                       guimail($sv['email'],$sv['hoten'],$tdmail,$body).'
+                    </div>
+               </div>
+           </div>';
+
             }
          break;
       }
@@ -364,6 +389,13 @@ switch ($act) {
       $view = "../superus/views/formsv.php";
       require_once "../superus/views/layout.php";
    break;
+   case 'thongtincn': 
+      if (isset($_GET['idtk']) && $_GET['idtk'] >= 0) {
+         $thongtin = thongtinsvtomtat($_GET['idtk']);
+      }else $thongtin = thongtinsvtomtat($_SESSION['iddn']);
+      $view = "../superus/views/ttcn.php";
+      require_once "../superus/views/layout.php";
+      break;
    case 'giaovien':
       if(isset($_GET['xoa'])){
          $id = xoatag($_GET['xoa']);
@@ -437,7 +469,19 @@ switch ($act) {
                $tendn = texttoslug($tensv[(count($tensv)-1)]).$lastid;
                $check = addtk2($tendn,$lastid);
                $tdmail = "mật khẩu mới";
-               $body = "Tên đăng nhập : ".$tendn."<br>MẬT KHẨU : ". $passno;
+               $body = 
+               '<div class="container" style="font-size: 16pt;color: black; width:100%;background-color:#efefef;padding:0;height:500px;padding-top:80px">
+               <div class="box" style="width:50%;background-color:#fff;margin:0 auto;border-radius:5px">
+                   <div class="logo" style="padding:5px;border-bottom:solid #efefef 1px;text-align:center">
+                       <img src="https://i.ibb.co/84ByFQ0/logo.png" alt="logo" border="0" style="width:80px">
+                   </div>
+                   <div class="noidung" style="padding:20px">
+                       <h2 style="text-align: center;font-weight:400">MẬT KHẨU MỚI</h2>
+                       <p style="text-align: justify;">Chào, Thầy/Cô '.$ht.'! <br> Chào mừng thầy cô đến với <strong> 8888 College </strong><br> Dưới đây là thông tin đăng nhập vào website của trường. <br> Chúc thầy/cô dồi dào sức khỏe, gặt hái được nhiều thành công!</p>
+                       Tên đăng nhập : '.$tendn.'<br>Mật khẩu : '. $passno.'
+                    </div>
+               </div>
+           </div>';
                guimail($email,$ht,$tdmail,$body);
                $mess = showthongbao($check,"THÊM");
             }
@@ -450,7 +494,20 @@ switch ($act) {
                $pass = hashpass($pass);
               $check = doipasstk($id,$pass);
                $tdmail = "KHÔI PHỤC MẬT KHẨU";
-               $body = "Tên đăng nhập : ".$sv['tendn']."<br>MẬT KHẨU : ". $passno;
+               $body = 
+               '<div class="container" style="font-size: 16pt;color: black; width:100%;background-color:#efefef;padding:0;height:500px;padding-top:80px">
+               <div class="box" style="width:50%;background-color:#fff;margin:0 auto;border-radius:5px">
+                   <div class="logo" style="padding:5px;border-bottom:solid #efefef 1px;text-align:center">
+                       <img src="https://i.ibb.co/84ByFQ0/logo.png" alt="logo" border="0" style="width:80px">
+                   </div>
+                   <div class="noidung" style="padding:20px">
+                       <h2 style="text-align: center;font-weight:400">KHÔI PHỤC MẬT KHẨU</h2>
+                       <p style="text-align: justify;">Chào bạn! <br> Dưới đây là thông tin khôi phục tài khoản của bạn!</p>
+                       Tên đăng nhập : '.$sv['tendn'].'<br>Mật khẩu : '. $passno;
+                       guimail($sv['email'],$sv['hoten'],$tdmail,$body).'
+                    </div>
+               </div>
+           </div>';
                guimail($sv['email'],$sv['hoten'],$tdmail,$body);
                $mess = showthongbao($check,"KHÔI PHỤC MẬT KHẨU");
             }

@@ -1144,3 +1144,15 @@ img {
 .menu ul a li img {
     width: 30px;
 }
+
+.emty-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 10%;
+    flex-direction: column;
+}
+
+.emty-box img {
+    width: 200px;
+}
