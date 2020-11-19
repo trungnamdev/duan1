@@ -14,6 +14,7 @@
             <tr class="thead-light text-center">
                 <th scope="col">ID</th>
                 <th scope="col">Tên lớp</th>
+                <th scope="col">Tên giáo viên</th>
                 <th scope="col">Tên khóa học</th>
                 <th scope="col" class="text-center">Sửa</th>
                 <th scope="col" class="text-center">Xóa</th>
@@ -24,13 +25,24 @@
 
         <?php 
             foreach ($alllh as $lh) {
-            
+            $gvlop=gvlop($lh['idlop']);
         ?>
 
             <tr>
                 <th scope="row"  class="text-center"><?= $lh['idlop'] ?></th>
                 <td class="text-center">
                 <?=$lh['tenlop']?></td>
+                <td class="text-center">
+                <?php
+                if (is_array($gvlop)) {
+                    echo $gvlop['hoten'];
+                } else {
+                    echo "Không có";
+                }
+                
+                ?>
+                
+                </td>
                 <td class="text-center">
             
                 <?=$lh['tenkhoa']?>
