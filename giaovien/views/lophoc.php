@@ -33,10 +33,11 @@
                     </div>
                 </div>
             </div>
-            <?php }} else?>
+            <?php } } else {?>
             <div class="emty-box">
                 <img src="../system/img/no_class.svg" alt="">
                 <p class="text-muted mt-4">Chưa có lớp nào được giao</p>
             </div>
         </div>
     </div>
+    <?php } ?>

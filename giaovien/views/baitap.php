@@ -79,7 +79,7 @@
                 </div>
 
             </div>
-            <?php } } }else?>
+            <?php } }}else{?>
             <div class="emty-box">
                 <img src="../system/img/nodata.svg" alt="">
                 <p class="text-muted mt-4">Chưa có bài tập nào được giao</p>
@@ -87,3 +87,4 @@
             
         </div>
     </div>
+            <?php } ?>
