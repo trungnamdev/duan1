@@ -19,7 +19,9 @@ switch ($act) {
    case 'home':
       $achome="active";
       $idlop = gv_getidlop();
-      $lopdangday = GV_getlopdangday(); 
+      //Nếu chưa dạy ai thì show thông báo thôi
+      if(isset($idlop))
+         $lopdangday = GV_getlopdangday(); 
       $tb=thongbao();
       $view = "../giaovien/views/home.php";
       require_once "../giaovien/views/layout.php";
@@ -42,10 +44,12 @@ switch ($act) {
    case 'baitap':
       $acbt="active";
       $idlop = gv_getidlop();
-      $lopdangday = GV_getlopdangday(); 
+      if (isset($idlop)) 
+         $lopdangday = GV_getlopdangday(); 
       $view = "../giaovien/views/baitap.php";
       require_once "../giaovien/views/layout.php";
       break;
+
    case 'giaobt':
       $idlop = gv_getidlop();
       $lopdangday = GV_getlopdangday(); 
@@ -180,26 +184,27 @@ switch ($act) {
             }
             if(isset($_POST['tai']) && isset($_POST['chonbt'])){
                $listbt = $_POST['chonbt'];
-               $myzip = new ZipArchive;
-               $tenfile =texttoslug($baitap_info['tenlop']) . "_" . texttoslug($baitap_info['tenbaitap']).".zip";
-               if ($myzip->open($tenfile, ZipArchive::CREATE) === TRUE){
-                  foreach($listbt as $bt){
-                     $bt = showfile($bt);
-                     if(is_file($bt)){
-                     $myzip->addFile($bt);
-                     }
-                  }
-                  $myzip->close();
-               }
-               ob_end_clean();
-               header("Content-type: application/zip"); 
-               header("Content-Disposition: attachment; filename=$tenfile");
-               header("Content-length: " . filesize($tenfile));
-               header("Pragma: no-cache"); 
-               header("Expires: 0"); 
-               readfile($tenfile);
-               unlink($tenfile);
-               return;
+               print_r($listbt);
+               // $myzip = new ZipArchive;
+               // $tenfile =texttoslug($baitap_info['tenlop']) . "_" . texttoslug($baitap_info['tenbaitap']).".zip";
+               // if ($myzip->open($tenfile, ZipArchive::CREATE) === TRUE){
+               //    foreach($listbt as $bt){
+               //       echo $bt;
+               //       // if(is_file($bt)){
+               //       $myzip->addFile($bt);
+               //       // }
+               //    }
+               //    $myzip->close();
+               // }
+               // ob_end_clean();
+               // header("Content-type: application/zip"); 
+               // header("Content-Disposition: attachment; filename=$tenfile");
+               // header("Content-length: " . filesize($tenfile));
+               // header("Pragma: no-cache"); 
+               // header("Expires: 0"); 
+               // readfile($tenfile);
+               // unlink($tenfile);
+               // return;
             }
          }
          $acbt = "active";
@@ -237,12 +242,14 @@ switch ($act) {
          break;
 
       case 'changepass':
+         $mess = "";
          $view = "../giaovien/views/changepass.php";
          require_once "../giaovien/views/layout.php";
          break;
 
          
       case 'changepass_':
+         $mess ="";
          if(isset($_POST['pass'])) {
             $id = $_SESSION['iddn'];
             $pass = xoatag(trim($_POST['pass'],"'"));
@@ -256,18 +263,19 @@ switch ($act) {
                   //Check mk mới có khớp k            
                   if($newpass==$repass) {
                      changepass($id, $repass);
-                     header('location: index.php?act=thongtincn');
-                     echo("Đổi thành công");
+                     $mess = "Đổi Thành Công";
                   }else {
-                     header('location: index.php?act=thongtincn');
-                     echo("Mật khẩu không khớp");
+                     $mess = "Mật khẩu không khớp";
                   }
                }else{
-                  echo "Thất bại sai mật khẩu";
+                  $mess = "Thất bại sai mật khẩu";
                } 
+            
+               
          }
-         break;
-
+         $view = "../giaovien/views/changepass.php";
+         require_once "../giaovien/views/layout.php";
+      break;
       case 'dangxuat':
          unset($_SESSION['role']);
          unset($_SESSION['iddn']);

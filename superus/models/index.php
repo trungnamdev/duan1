@@ -148,6 +148,12 @@
     }else{
         return postdulieu("UPDATE `taikhoan` SET `hoten` = '$hoten', `ngaysinh` = '$ngaysinh', `email` = '$email', `sdt` = '$sdt', `diachi` = '$diachi', `sex` = '$sex' WHERE `taikhoan`.`id` = $id");
     }
+    // thong tin chi tiet giao vien
+
+}
+function thongtinsvtomtat($id)
+{
+    return laymot("SELECT * FROM taikhoan WHERE taikhoan.id= $id ");
 }
     function doipasstk($id,$pass){
        return postdulieu("UPDATE `taikhoan` SET `pass` = '$pass' WHERE `taikhoan`.`id` = $id");
