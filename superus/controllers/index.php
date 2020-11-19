@@ -286,6 +286,13 @@ switch ($act) {
       $view = "../superus/views/formsv.php";
       require_once "../superus/views/layout.php";
    break;
+   case 'thongtincn': 
+      if (isset($_GET['idtk']) && $_GET['idtk'] >= 0) {
+         $thongtin = thongtinsvtomtat($_GET['idtk']);
+      }else $thongtin = thongtinsvtomtat($_SESSION['iddn']);
+      $view = "../superus/views/ttcn.php";
+      require_once "../superus/views/layout.php";
+      break;
 }
 }else{
       header('Location: ../index.php');
