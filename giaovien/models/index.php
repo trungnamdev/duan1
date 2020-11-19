@@ -126,7 +126,12 @@ function chamdiem($diem,$file){
     postdulieu("UPDATE `upfile` SET `diem` = '$diem' WHERE `upfile`.`idfile` = '$file'");
 }
 function upbt($idbt,$tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot){
+   if ($tenhinh=='') {
+    postdulieu("UPDATE `baitap` SET `tenbaitap` = '$tenbt',`motabt` = '$mota', `idlop` = '$lophoc', `ngaygiao` = '$ngaygiao', `ngayhethan` = '$hanchot' WHERE `baitap`.`idbaitap` = $idbt;");
+   } else {
     postdulieu("UPDATE `baitap` SET `tenbaitap` = '$tenbt', `hinh` = '$tenhinh', `motabt` = '$mota', `idlop` = '$lophoc', `ngaygiao` = '$ngaygiao', `ngayhethan` = '$hanchot' WHERE `baitap`.`idbaitap` = $idbt;");
+   }
+   
 }
 // lay tt sinh vien theo lop
 function getSVByLop($idlop){
