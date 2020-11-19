@@ -109,9 +109,7 @@ switch ($act) {
       $idbt=$_POST['idbt'];
       upfile($imgbt);
       upbt($idbt,$tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot);
-      $idgv=$_SESSION['iddn'];
-      $ttgv=thongtinsvtomtat($idgv);
-       $hslop=hslophoc($lophoc);
+
       header('Location: index.php?act=baitap');
     break;
    break;
