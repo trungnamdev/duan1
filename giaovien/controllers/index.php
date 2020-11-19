@@ -62,7 +62,7 @@ switch ($act) {
       $body='    
 <div class="container" style="font-size: 16pt;color: black; width:100%;background-color:#efefef;padding:0;height:500px;padding-top:80px">
     <div class="box" style="width:50%;background-color:#fff;margin:0 auto;border-radius:5px">
-        <div class="logo" style="padding:5px;border-bottom:solid #efefef 1px;display:flex;justify-content:center;align-items:center">
+        <div class="logo" style="padding:5px;border-bottom:solid #efefef 1px;text-align:center">
             <img src="https://i.ibb.co/84ByFQ0/logo.png" alt="logo" border="0" style="width:80px">
         </div>
         <div class="noidung" style="padding:20px">
@@ -203,6 +203,38 @@ switch ($act) {
          $lopdangday = GV_getlopdangday();
          $view = "../giaovien/views/lophoc.php";
          require_once "../giaovien/views/layout.php";
+         break;
+
+      case 'changepass':
+         $view = "../giaovien/views/changepass.php";
+         require_once "../giaovien/views/layout.php";
+         break;
+
+         
+      case 'changepass_':
+         if(isset($_POST['pass'])) {
+            $id = $_SESSION['iddn'];
+            $pass = xoatag(trim($_POST['pass'],"'"));
+            $check = getpass();
+            if(is_array($check))
+                $verify=password_verify($pass,$check['pass']);
+               //Check pass
+               if($verify){
+                  $newpass = $_POST['newpass'];
+                  $repass = $_POST['repass'];  
+                  //Check mk mới có khớp k            
+                  if($newpass==$repass) {
+                     changepass($id, $repass);
+                     header('location: index.php?act=thongtincn');
+                     echo("Đổi thành công");
+                  }else {
+                     header('location: index.php?act=thongtincn');
+                     echo("Mật khẩu không khớp");
+                  }
+               }else{
+                  echo "Thất bại sai mật khẩu";
+               } 
+         }
          break;
 
       case 'dangxuat':

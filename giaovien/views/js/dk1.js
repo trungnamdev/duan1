@@ -14,11 +14,7 @@ $(document).ready(function() {
         });
     });
 
-    //Ajax chấm bài
-    // $("#baitap").change(function() {
-    //     $('#btshow').html($(this).val().split('\\').pop());
-    // });
-    //  k hieu cho này dung vào gì
+
     $(".dkkh").click(function() {
         var a = $(this).parent().children()[1].childNodes[1].value;
         console.log(a);
@@ -108,4 +104,33 @@ $(document).ready(function() {
         }
         reader.readAsDataURL(this.files[0]);
     });
+});
+
+
+//Check form đổi mật khẩu
+$("#formdoimk").validate({
+    rules: {
+        "pass": {
+            required: true,
+        },
+        "newpass": {
+            required: true,
+        },
+        "repass": {
+            required: true,
+        }
+    },
+    messages: {
+        "pass": {
+            required: "Vui lòng nhập pass"
+        },
+        "newpass": {
+            required: "Vui lòng nhập mật khẩu mới",
+
+        },
+        "repass": {
+            required: "Vui lòng kiểm tra lại mật khẩu",
+
+        }
+    }
 });
