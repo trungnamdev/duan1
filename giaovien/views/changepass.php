@@ -20,4 +20,5 @@
             <button type="submit" id="submit" class="col-3  btn btn-primary">Đổi mật khẩu</button>
         </form>
     </div>
+    <?= $mess ?>
 </div>

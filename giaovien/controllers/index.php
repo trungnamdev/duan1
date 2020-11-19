@@ -207,12 +207,14 @@ switch ($act) {
          break;
 
       case 'changepass':
+         $mess = "";
          $view = "../giaovien/views/changepass.php";
          require_once "../giaovien/views/layout.php";
          break;
 
          
       case 'changepass_':
+         $mess ="";
          if(isset($_POST['pass'])) {
             $id = $_SESSION['iddn'];
             $pass = xoatag(trim($_POST['pass'],"'"));
@@ -226,18 +228,24 @@ switch ($act) {
                   //Check mk mới có khớp k            
                   if($newpass==$repass) {
                      changepass($id, $repass);
-                     header('location: index.php?act=thongtincn');
-                     echo("Đổi thành công");
+                     // header('location: index.php?act=thongtincn');
+                     // echo("Đổi thành công");
+                     $mess = "Đổi Thành Công";
                   }else {
-                     header('location: index.php?act=thongtincn');
-                     echo("Mật khẩu không khớp");
+                     // header('location: index.php?act=thongtincn');
+                     // echo("Mật khẩu không khớp");
+                     $mess = "Mật khẩu không khớp";
                   }
                }else{
-                  echo "Thất bại sai mật khẩu";
+                  // echo "Thất bại sai mật khẩu";
+                  $mess = "Thất bại sai mật khẩu";
                } 
+            
+               
          }
-         break;
-
+         $view = "../giaovien/views/changepass.php";
+         require_once "../giaovien/views/layout.php";
+      break;
       case 'dangxuat':
          unset($_SESSION['role']);
          unset($_SESSION['iddn']);

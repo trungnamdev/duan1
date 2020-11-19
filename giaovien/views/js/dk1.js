@@ -108,7 +108,7 @@ $(document).ready(function() {
 
 
 //Check form đổi mật khẩu
-$("#formdoimk").validate({
+$("#formdoimk")[0].validate({
     rules: {
         "pass": {
             required: true,
