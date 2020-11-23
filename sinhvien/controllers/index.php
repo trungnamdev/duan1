@@ -4,6 +4,8 @@ ob_start();
 require_once "../sinhvien/models/index.php";
 require_once "../system/share.php";
 require_once "../system/conn.php";
+require_once "../system/luudammay/vendor/autoload.php";
+require_once "../system/luudammay/config-cloud.php";
 if (isset($_SESSION['iddn'])) {
    if (isset($_SESSION['iddn']) && $_SESSION['role'] == 0) {
       if (isset($_GET['act'])) {
@@ -381,7 +383,6 @@ if (isset($_SESSION['iddn'])) {
             }
            $mess= showthongbao($check,"NẠP");
             header('Location: index.php?act=naptien');
-       
             break;
             case 'changepass':
                $mess = "";

@@ -55,12 +55,7 @@
     
     </div>
     <div class="d-bt-showimg">
-      <img src="<?php 
-      if (isset($bt['hinh'])) {
-          echo '../uploads/'.$bt['hinh'];
-      }
-      
-      ?>" id="showanh" onerror="erroimg(this)">
+      <img src="<?= showfile($bt['hinh']) ?>" id="showanh" onerror="erroimg(this)">
     </div>
 </div>
 </form>

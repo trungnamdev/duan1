@@ -127,7 +127,7 @@ $(document).on('keypress',function(e) {
                     sl = value[3];
                     $("#tenchat").html(tenchat);
                     $("#stv").html(sl + " thành viên");
-                    $('#anhchat').attr('src', "../uploads/"+value[4]);
+                    $('#anhchat').attr('src',value[4]);
                     check = true;
                     
                 }

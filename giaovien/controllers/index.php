@@ -65,7 +65,10 @@ switch ($act) {
      $mota=$_POST['mota'];
      $lophoc=$_POST['lophoc'];
      $imgbt=$_FILES['imgbt'];
+     $tenhinh = $imgbt['name'];
+      if($tenhinh != ""){
      $tenhinh=upfile($imgbt);
+      }
      thembt($tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot); 
     
       
@@ -107,7 +110,10 @@ switch ($act) {
       $lophoc=$_POST['lophoc'];
       $imgbt=$_FILES['imgbt'];
       $idbt=$_POST['idbt'];
+      $tenhinh = $imgbt['name'];
+      if($tenhinh != ''){
       $tenhinh=upfile($imgbt);
+      }
       upbt($idbt,$tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot);
 
       header('Location: index.php?act=baitap');

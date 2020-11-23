@@ -40,7 +40,7 @@
             
             <div class="d-div3">
                 <div class="d-div3-img">
-                    <img src="../uploads/<?=$bt['hinh']?>" alt="" onerror="erroimg(this)">
+                    <img src="<?= showfile($bt['hinh']) ?>" alt="" onerror="erroimg(this)">
                 </div>
                 <br>
                 <div class="d-info">
