@@ -250,6 +250,42 @@ switch ($act) {
       unset($_SESSION['hinhdn']);
       header('location: index.php');
       break;
+
+      case 'changepass':
+         $mess = "";
+         $view = "../sinhvien/views/changepass.php";
+         require_once "../sinhvien/views/layout.php";
+         break;
+
+         
+      case 'changepass_':
+         $mess ="";
+         if(isset($_POST['pass'])) {
+            $id = $_SESSION['iddn'];
+            $pass = xoatag(trim($_POST['pass'],"'"));
+            $check = getpass();
+            if(is_array($check))
+                $verify=password_verify($pass,$check['pass']);
+               //Check pass
+               if($verify){
+                  $newpass = $_POST['newpass'];
+                  $repass = $_POST['repass'];  
+                  //Check mk mới có khớp k            
+                  if($newpass==$repass) {
+                     changepass($id, $repass);
+                     $mess = "Đổi Thành Công";
+                  }else {
+                     $mess = "Mật khẩu không khớp";
+                  }
+               }else{
+                  $mess = "Thất bại sai mật khẩu";
+               } 
+            
+               
+         }
+         $view = "../sinhvien/views/changepass.php";
+         require_once "../sinhvien/views/layout.php";
+      break;
 }
 }}else{
       header('Location: ../index.php');
