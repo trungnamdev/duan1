@@ -8,6 +8,8 @@ require_once "../system/PHPMailer-master/src/PHPMailer.php";
 require_once "../system/PHPMailer-master/src/SMTP.php";
 require_once "../system/PHPMailer-master/src/Exception.php";
 require_once "../system/Classes/PHPExcel.php";
+require_once "../system/luudammay/vendor/autoload.php";
+require_once "../system/luudammay/config-cloud.php";
 if(isset($_SESSION['iddn']) && $_SESSION['role'] == 2){
 if(isset($_GET['act'])){
    $act = $_GET['act'];
@@ -108,8 +110,7 @@ switch ($act) {
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
          $imgkh=$_FILES['anhkh'];
-         $tenhinh=$imgkh['name'];
-         upfile($imgkh);
+         $tenhinh=upfile($imgkh);
          insertKhoaHoc($tenkh,$mota,$chude,$tenhinh);
          header('location: index.php?act=khoahoc');
       }else echo "Không thêm được!";
@@ -122,8 +123,7 @@ switch ($act) {
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
          $imgkh=$_FILES['anhkh'];
-         $tenhinh=$imgkh['name'];
-         upfile($imgkh);
+         $tenhinh=upfile($imgkh);
          updateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh,$idkh);
          header('location: index.php?act=khoahoc');
       }else echo "Không Sửa được!";
@@ -294,9 +294,8 @@ switch ($act) {
                $ht = xoatag($_POST['ht']);
                $img = $_FILES['imgsv'];
                if($img != ""){
-               upfile($img);
+               $img =upfile($img);
                }
-               $img = $_FILES['imgsv']['name'];
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
@@ -328,8 +327,7 @@ switch ($act) {
             if(isset($_POST['them'])){
                $ht = xoatag($_POST['ht']);
                $img = $_FILES['imgsv'];
-               upfile($img);
-               $img = $_FILES['imgsv']['name'];
+               $img = upfile($img);
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
@@ -418,9 +416,8 @@ switch ($act) {
                $ht = xoatag($_POST['ht']);
                $img = $_FILES['imgsv'];
                if($img != ""){
-               upfile($img);
+               $img = upfile($img);
                }
-               $img = $_FILES['imgsv']['name'];
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
@@ -452,8 +449,7 @@ switch ($act) {
             if(isset($_POST['them'])){
                $ht = xoatag($_POST['ht']);
                $img = $_FILES['imgsv'];
-               upfile($img);
-               $img = $_FILES['imgsv']['name'];
+               $img =upfile($img);
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);

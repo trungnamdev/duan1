@@ -241,8 +241,8 @@ if (isset($_SESSION['iddn'])) {
             if (isset($_GET['idbt']) && isset($_POST['nop'])) {
                $file = $_FILES['baitap'];
                $idbt = $_GET['idbt'];
-               upfile($file);
-               noplaibt($file['name'], $idbt);
+               $file =upfile($file);
+               noplaibt($file, $idbt);
                header("Location: index.php?act=nopbaitap&idbt=$idbt");
             } else {
                header('Location: index.php');
@@ -254,8 +254,8 @@ if (isset($_SESSION['iddn'])) {
                $idbt = $_GET['idbt'];
 
                if ($file['name'] != '') {
-                  upfile($file);
-                  nopbai($file['name'], $idbt);
+                  $file =upfile($file);
+                  nopbai($file, $idbt);
                } else echo "NO";
                header("Location: index.php?act=nopbaitap&idbt=$idbt");
             } else {

@@ -70,6 +70,7 @@
 
                     </div>
                 </a>
+                
             </div>
             <div class="menu m-3">
                 <ul class="menuul">
@@ -91,6 +92,9 @@
                     </a>
                     <a href="index.php?act=chat">
                         <li class="<?= $chat ?>">Nhắn tin<img src="../system/img/chat.svg" alt=""></li>
+                    </a>
+                    <a href="index.php?act=naptien">
+                        <li class="<?= $naptien ?>">Nạp tiền<img src="../system/img/chat.svg" alt=""></li>
                     </a>
                 </ul>
             </div>
@@ -130,5 +134,4 @@ $(document).ready(function() {
 <link href="../system/toastr-noty-50092cc/build/toastr.css" rel="stylesheet"/>
     <script src="../system/toastr-noty-50092cc/build/toastr.min.js"></script>
     <!-- end toat noti -->
-
 </html>

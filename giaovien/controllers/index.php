@@ -8,6 +8,8 @@ require_once "../system/PHPMailer-master/src/PHPMailer.php";
 require_once "../system/PHPMailer-master/src/SMTP.php";
 require_once "../system/PHPMailer-master/src/Exception.php";
 require_once "../system/Classes/PHPExcel.php";
+require_once "../system/luudammay/vendor/autoload.php";
+require_once "../system/luudammay/config-cloud.php";
 if(isset($_SESSION['iddn']) && $_SESSION['role'] == 1){
 if(isset($_GET['act'])){
    $act = $_GET['act'];
@@ -63,8 +65,7 @@ switch ($act) {
      $mota=$_POST['mota'];
      $lophoc=$_POST['lophoc'];
      $imgbt=$_FILES['imgbt'];
-     $tenhinh=$imgbt['name'];
-     upfile($imgbt);
+     $tenhinh=upfile($imgbt);
      thembt($tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot); 
     
       
@@ -105,9 +106,8 @@ switch ($act) {
       $mota=$_POST['mota'];
       $lophoc=$_POST['lophoc'];
       $imgbt=$_FILES['imgbt'];
-      $tenhinh=$imgbt['name'];
       $idbt=$_POST['idbt'];
-      upfile($imgbt);
+      $tenhinh=upfile($imgbt);
       upbt($idbt,$tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot);
 
       header('Location: index.php?act=baitap');

@@ -10,14 +10,21 @@ function hashpass($pass){
     return password_hash($pass,PASSWORD_DEFAULT);
 }
 function upfile($file){
-    if(!is_file($GLOBALS['duongdan'] . $file['name'])){
-        $noiup = $GLOBALS['duongdan'] . basename($file['name']);
-        move_uploaded_file($file["tmp_name"],$noiup);
-    }
+    $nam = \Cloudinary\Uploader::upload($file['tmp_name']);
+    return $nam['url'];
 }
 function showfile($text){
-    return $GLOBALS['duongdan'].$text;
+    return cloudinary_url($text);
 }  
+// function upfile($file){
+//     if(!is_file($GLOBALS['duongdan'] . $file['name'])){
+//         $noiup = $GLOBALS['duongdan'] . basename($file['name']);
+//         move_uploaded_file($file["tmp_name"],$noiup);
+//     }
+// }
+// function showfile($text){
+//     return $GLOBALS['duongdan'].$text;
+// }  
 function guimail($e,$u,$tieude,$body){
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
     try {
@@ -102,5 +109,8 @@ function changepass($id, $repass)
 {
     $pass = hashpass($repass);
     return postdulieu("UPDATE `taikhoan` SET `pass` = '$pass' WHERE `id` = '$id'");
+}
+function chuyenso($num){
+    return number_format($num, 0, ',', '.');
 }
 ?>
