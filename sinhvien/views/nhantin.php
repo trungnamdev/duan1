@@ -32,7 +32,9 @@
     <div class="tieude h1">Tin nhắn</div>
 </div>
 <div class="thongbao tinnhan mt-5">
-    <?php $arrchat = []; foreach($alllop as $lop){ 
+    <?php $arrchat = [];
+     if(is_array($alllop)){
+    foreach($alllop as $lop){ 
         $sl = demsvlop($lop['id'])['sl'];
         $img = gethinhlopchat($lop['id']);
         $arrtam = [$lop['id'],$lop['tenkhoa']."--".$lop['tenlop'],$lop['tenkhoa'],$sl,$img];   
@@ -49,7 +51,7 @@
             </div>
         </div>
     </div>
-    <?php }?>
+    <?php }}?>
 </div>
 </div>
 </div>
