@@ -307,10 +307,6 @@ switch ($act) {
 
          require_once "../giaovien/views/layout.php";
          break;
-      case 'lophoc':
-
-         break;
-
       case 'lopct':
          $aclop = "active"; 
          if(isset($_GET['idlop']) && $_GET['idlop'] > 0  ){   

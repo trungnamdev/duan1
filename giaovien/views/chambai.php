@@ -21,6 +21,7 @@
             <th scope="col">Tên sinh viên</th>
             <th scope="col">Điểm</th>
             <th scope="col">Trạng thái</th>
+            <th scope="col">Lời phê</th>
             <th scope="col">Tải xuống</th>
         </tr>
       
@@ -68,7 +69,9 @@
                 <td>
                 <?= $trangthai ?>
                 </td>
-                
+                <td>
+                <input type="text" class="form-control"" placeholder="nhập lời phê">
+                </td>
                 <td>
                     <?php 
                         if($link!="") {
