@@ -114,6 +114,7 @@ ul a:hover {
 .tieude {
     font-weight: bold !important;
     margin-bottom: 25px !important;
+    text-transform: uppercase;
 }
 
 .box-right .option-box {

@@ -4,7 +4,7 @@
 
     <div class="option-box1">
         <ul>
-            <a class="text-primary"> <img class="avatagv mr-2" src="<?= showfile($baitap_info['hinh']) ?>" alt=""><?= $baitap_info['tenkhoa'] ?></a>
+            <a class="text-primary"> <img class="avatagv mr-2" src="<?= showfile($baitap_info['hinh']) ?>" alt="" onerror="erroimg(this)"><?= $baitap_info['tenkhoa'] ?></a>
             <a class=""> <i class='fas fa-book-open mr-2'></i> <?= $baitap_info['tenlop'] ?></a>
             <a class=""><i class="far fa-clock mr-2"></i> Hạn chót: <?= $baitap_info['ngayhethan'] ?></a>
         </ul>

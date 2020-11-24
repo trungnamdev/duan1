@@ -104,4 +104,16 @@ function gethinhlopchat($idlop){
 function gettenchude($cd){
     return laymot("SELECT * FROM chude WHERE id = $cd");
 }
+function addnaptien($idtt,$idtk,$tien,$noidung,$time){
+   return postdulieu("INSERT INTO `thanhtoan` (`id`, `mathanhtoan`, `idtk`, `sotien`, `noidung`, `time`) VALUES (NULL, '$idtt', '$idtk', '$tien', '$noidung', '$time')");
+}
+function capnhattien($tien,$id){
+    postdulieu("UPDATE `taikhoan` SET `tien` = `tien` + '$tien' WHERE `taikhoan`.`id` = $id");
+}
+function capnhattrutien($tien,$id){
+    return  postdulieu("UPDATE `taikhoan` SET `tien` = `tien` - '$tien' WHERE `taikhoan`.`id` = $id");
+}
+function getkhoahocbylopid($id){
+    return laymot("SELECT * FROM khoahoc WHERE id = (SELECT idkhoa FROM lop WHERE id = $id)");
+}
 ?>

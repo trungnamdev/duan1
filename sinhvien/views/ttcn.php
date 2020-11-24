@@ -26,6 +26,12 @@
                     <span class="d-tt-text-theme">Số điện thoại</span>
                     <span class="d-tt-text-title"><?= $thongtin['sdt'] ?></span>
                 </div>
+                <div class="d-tt-text-100">
+                    <span class="d-tt-text-theme">Tiền trong tài khoản</span>
+                    <span class="d-tt-text-title"><strong><?= chuyenso($thongtin['tien']) ?> VNĐ</strong></span>
+                </div>
+                    <a href="index.php?act=changepass">Đổi mật khẩu</a>
+                </div>
                 <!-- <div class="d-tt-text-100">
                     <span class="d-tt-text-theme">Trạng thái học</span>
                     <span class="d-tt-text-title">HDI(Học đi)</span>

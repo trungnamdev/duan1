@@ -28,6 +28,7 @@ switch ($act) {
                  $_SESSION['hinhdn'] = $check['hinh'];
                  switch ($_SESSION['role']) {
                     case '0':
+                        $_SESSION['tien'] = $check['tien'];
                         header('Location: ./sinhvien/index.php');
                         break;
                     case '1':

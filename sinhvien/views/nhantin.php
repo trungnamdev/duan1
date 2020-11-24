@@ -32,7 +32,9 @@
     <div class="tieude h1">Tin nhắn</div>
 </div>
 <div class="thongbao tinnhan mt-5">
-    <?php $arrchat = []; foreach($alllop as $lop){ 
+    <?php $arrchat = [];
+     if(is_array($alllop)){
+    foreach($alllop as $lop){ 
         $sl = demsvlop($lop['id'])['sl'];
         $img = gethinhlopchat($lop['id']);
         $arrtam = [$lop['id'],$lop['tenkhoa']."--".$lop['tenlop'],$lop['tenkhoa'],$sl,$img];   
@@ -49,7 +51,7 @@
             </div>
         </div>
     </div>
-    <?php }?>
+    <?php }}?>
 </div>
 </div>
 </div>
@@ -127,7 +129,7 @@ $(document).on('keypress',function(e) {
                     sl = value[3];
                     $("#tenchat").html(tenchat);
                     $("#stv").html(sl + " thành viên");
-                    $('#anhchat').attr('src', "../uploads/"+value[4]);
+                    $('#anhchat').attr('src',value[4]);
                     check = true;
                     
                 }
@@ -168,13 +170,13 @@ $(document).on('keypress',function(e) {
                         if(value['id'] == iddn){
                             tinnhan+= '<div class="nguoinhan doanchat doanchat2"><p>'+value['noidung'];
                         }else{
-                            tinnhan+= '<div class="nguoigui doanchat"><img src="../uploads/'+value['img']+'"><p><span class="hotenchat">'+value['ten']+'</span><br>'+value['noidung'];
+                            tinnhan+= '<div class="nguoigui doanchat"><img src="'+value['img']+'"><p><span class="hotenchat">'+value['ten']+'</span><br>'+value['noidung'];
                         }
                         }else{
                         if(value['id'] == iddn){
                             tinnhan+= '<span class="info"><span>'+timecu+'</span></p></div><div class="nguoinhan doanchat doanchat2"><p>'+value['noidung'];
                         }else{
-                            tinnhan+= '<span class="info"><span>'+timecu+'</span></p></div><div class="nguoigui doanchat"><img src="../uploads/'+value['img']+'"><p><span class="hotenchat">'+value['ten']+'</span><br>'+value['noidung'];
+                            tinnhan+= '<span class="info"><span>'+timecu+'</span></p></div><div class="nguoigui doanchat"><img src="'+value['img']+'"><p><span class="hotenchat">'+value['ten']+'</span><br>'+value['noidung'];
                         }
                         }
                     }

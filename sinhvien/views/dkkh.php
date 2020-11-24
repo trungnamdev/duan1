@@ -4,6 +4,7 @@
          <a href="index.php?act=dkkh" class="<?= $all ?>">Tất cả</a>
          <a href="index.php?act=dkkh&ht=dadk" class="<?= $dadk ?>">Đã đăng ký</a>
          <a href="index.php?act=dkkh&ht=nodk" class="<?= $nodk ?>">Chưa đăng ký</a>
+         <a class="active float-right" id="tienconlai">Số tiền hiện có : <?= chuyenso($_SESSION['tien']) ?> VNĐ</a>
      </div>
  </div>
  <div class="khoahoc ">
@@ -31,7 +32,7 @@
                          </p>
                      </td>
                      <td class="gia">
-                        <p class="my-2 px-1"> <i class='far fa-file-alt' style='font-size:20px; color:gray'></i> <?= $demlh['tong'] ?> Lớp học</p>
+                        <p class="my-2 px-1"> <i class='far fa-file-alt' style='font-size:20px; color:gray'></i> <?= $demlh['tong'] ?> Lớp học <span class="float-right mr-5 font-weight-bold"><?= chuyenso($kh['giatien']) ?> VND</span></p>
                          <p>
                          <?php
                          if (is_array($checksv)) { 

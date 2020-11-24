@@ -9,8 +9,13 @@ $(document).ready(function() {
             url: "index.php?act=dkkh1", // gọi đến file server show_data.php để xử lý
             data: { id: a, ht: ht }, //lấy toàn thông tin các fields trong form bằng hàm serialize của jquery
             success: function(data) { //kết quả trả về từ server nếu gửi thành công
-                toastr.success('ĐĂNG KÝ THÀNH CÔNG');
                 $("#chuakh").html(data);
+                $("#tienconlai").html("Số tiền hiện có : " + tienconlai + " VNĐ");
+                if (tbdkkh == '0') {
+                    toastr.warning('ĐĂNG KÝ KHÔNG THÀNH CÔNG - SỐ DƯ KHÔNG ĐỦ');
+                } else {
+                    toastr.success('ĐĂNG KÝ THÀNH CÔNG');
+                }
             }
         });
     });

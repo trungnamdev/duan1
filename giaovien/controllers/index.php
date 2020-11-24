@@ -8,6 +8,8 @@ require_once "../system/PHPMailer-master/src/PHPMailer.php";
 require_once "../system/PHPMailer-master/src/SMTP.php";
 require_once "../system/PHPMailer-master/src/Exception.php";
 require_once "../system/Classes/PHPExcel.php";
+require_once "../system/luudammay/vendor/autoload.php";
+require_once "../system/luudammay/config-cloud.php";
 if(isset($_SESSION['iddn']) && $_SESSION['role'] == 1){
 if(isset($_GET['act'])){
    $act = $_GET['act'];
@@ -63,8 +65,10 @@ switch ($act) {
      $mota=$_POST['mota'];
      $lophoc=$_POST['lophoc'];
      $imgbt=$_FILES['imgbt'];
-     $tenhinh=$imgbt['name'];
-     upfile($imgbt);
+     $tenhinh = $imgbt['name'];
+      if($tenhinh != ""){
+     $tenhinh=upfile($imgbt);
+      }
      thembt($tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot); 
     
       
@@ -105,9 +109,11 @@ switch ($act) {
       $mota=$_POST['mota'];
       $lophoc=$_POST['lophoc'];
       $imgbt=$_FILES['imgbt'];
-      $tenhinh=$imgbt['name'];
       $idbt=$_POST['idbt'];
-      upfile($imgbt);
+      $tenhinh = $imgbt['name'];
+      if($tenhinh != ''){
+      $tenhinh=upfile($imgbt);
+      }
       upbt($idbt,$tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot);
 
       header('Location: index.php?act=baitap');
@@ -238,41 +244,41 @@ switch ($act) {
          require_once "../giaovien/views/layout.php";
          break;
 
-      case 'changepass':
-         $mess = "";
-         $view = "../giaovien/views/changepass.php";
-         require_once "../giaovien/views/layout.php";
-         break;
-
-         
-      case 'changepass_':
-         $mess ="";
-         if(isset($_POST['pass'])) {
-            $id = $_SESSION['iddn'];
-            $pass = xoatag(trim($_POST['pass'],"'"));
-            $check = getpass();
-            if(is_array($check))
-                $verify=password_verify($pass,$check['pass']);
-               //Check pass
-               if($verify){
-                  $newpass = $_POST['newpass'];
-                  $repass = $_POST['repass'];  
-                  //Check mk mới có khớp k            
-                  if($newpass==$repass) {
-                     changepass($id, $repass);
-                     $mess = "Đổi Thành Công";
-                  }else {
-                     $mess = "Mật khẩu không khớp";
-                  }
-               }else{
-                  $mess = "Thất bại sai mật khẩu";
-               } 
+         case 'changepass':
+            $mess = "";
+            $view = "../sinhvien/views/changepass.php";
+            require_once "../sinhvien/views/layout.php";
+            break;
+   
             
+         case 'changepass_':
+            $mess ="";
+            if(isset($_POST['pass'])) {
+               $id = $_SESSION['iddn'];
+               $pass = xoatag(trim($_POST['pass'],"'"));
+               $check = getpass();
+               if(is_array($check))
+                   $verify=password_verify($pass,$check['pass']);
+                  //Check pass
+                  if($verify){
+                     $newpass = $_POST['newpass'];
+                     $repass = $_POST['repass'];  
+                     //Check mk mới có khớp k            
+                     if($newpass==$repass) {
+                        changepass($id, $repass);
+                        $mess = "Đổi Thành Công";
+                     }else {
+                        $mess = "Mật khẩu không khớp";
+                     }
+                  }else{
+                     $mess = "Thất bại sai mật khẩu";
+                  } 
                
-         }
-         $view = "../giaovien/views/changepass.php";
-         require_once "../giaovien/views/layout.php";
-      break;
+                  
+            }
+            $view = "../sinhvien/views/changepass.php";
+            require_once "../sinhvien/views/layout.php";
+         break;
       case 'dangxuat':
          unset($_SESSION['role']);
          unset($_SESSION['iddn']);
