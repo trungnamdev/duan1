@@ -8,8 +8,6 @@ require_once "../system/PHPMailer-master/src/PHPMailer.php";
 require_once "../system/PHPMailer-master/src/SMTP.php";
 require_once "../system/PHPMailer-master/src/Exception.php";
 require_once "../system/Classes/PHPExcel.php";
-require_once "../system/luudammay/vendor/autoload.php";
-require_once "../system/luudammay/config-cloud.php";
 if(isset($_SESSION['iddn']) && $_SESSION['role'] == 2){
 if(isset($_GET['act'])){
    $act = $_GET['act'];
@@ -36,7 +34,6 @@ switch ($act) {
       $view = "../superus/views/lophoc_them.php";
       require_once "../superus/views/layout.php";
    break;
-   
    case 'chude':
       $accd="active";
       $chude = getAllChuDe(); 
@@ -94,25 +91,27 @@ switch ($act) {
    case 'themkh':
       
       if(isset($_POST['themkh'])){
+          
          $mota = xoatag($_POST['mota']); 
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
          $imgkh=$_FILES['anhkh'];
-         if($imgkh['name'] != ''){
-         $tenhinh=upfile($imgkh);}else $tenhinh="";
+         $tenhinh=$imgkh['name'];
+         upfile($imgkh);
          insertKhoaHoc($tenkh,$mota,$chude,$tenhinh);
          header('location: index.php?act=khoahoc');
       }else echo "Không thêm được!";
       break;
    case 'suakh':
+      
       if(isset($_POST['suakh'])){ 
          $mota = xoatag($_POST['mota']); 
          $idkh = $_POST['idkh'];         
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
          $imgkh=$_FILES['anhkh'];
-         if($imgkh['name'] != ''){
-         $tenhinh=upfile($imgkh);}else{ $tenhinh ="";}
+         $tenhinh=$imgkh['name'];
+         upfile($imgkh);
          updateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh,$idkh);
          header('location: index.php?act=khoahoc');
       }else echo "Không Sửa được!";
@@ -175,9 +174,7 @@ switch ($act) {
             array_push($mangidlop,$a);
             $lopmoi=implode(',',$mangidlop);
             sualopgv($idgv,$lopmoi);
-            var_dump($idgv);
             header('location: index.php?act=lop');
-         
          }else{
             header('location: index.php?act=lop');
          }
@@ -284,9 +281,10 @@ switch ($act) {
                $idsv = $_POST['idsv'];
                $ht = xoatag($_POST['ht']);
                $img = $_FILES['imgsv'];
-               if($img['name'] != ""){
-               $img =upfile($img);
-               }else $img = $img['name'];
+               if($img != ""){
+               upfile($img);
+               }
+               $img = $_FILES['imgsv']['name'];
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
@@ -294,6 +292,7 @@ switch ($act) {
                $sex = $_POST['sex'];
                $check = suathongtintk($idsv,$ht,$img,$ngaysinh,$email,$sdt,$diachi,$sex);
                $cn = 'them';
+               $td = $sex;
                $mess = showthongbao($check,"SỬA");
             }
             if(isset($_GET['id'])){
@@ -317,9 +316,8 @@ switch ($act) {
             if(isset($_POST['them'])){
                $ht = xoatag($_POST['ht']);
                $img = $_FILES['imgsv'];
-               if($img['name'] != ""){
-               $img =upfile($img);
-               }else $img = $img['name'];
+               upfile($img);
+               $img = $_FILES['imgsv']['name'];
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
@@ -394,41 +392,6 @@ switch ($act) {
       $view = "../superus/views/giaovien.php";
       require_once "../superus/views/layout.php";
    break;
-   case 'changepass':
-      $mess = "";
-      $view = "../sinhvien/views/changepass.php";
-      require_once "../sinhvien/views/layout.php";
-      break;
-
-      
-   case 'changepass_':
-      $mess ="";
-      if(isset($_POST['pass'])) {
-         $id = $_SESSION['iddn'];
-         $pass = xoatag(trim($_POST['pass'],"'"));
-         $check = getpass();
-         if(is_array($check))
-             $verify=password_verify($pass,$check['pass']);
-            //Check pass
-            if($verify){
-               $newpass = $_POST['newpass'];
-               $repass = $_POST['repass'];  
-               //Check mk mới có khớp k            
-               if($newpass==$repass) {
-                  changepass($id, $repass);
-                  $mess = "Đổi Thành Công";
-               }else {
-                  $mess = "Mật khẩu không khớp";
-               }
-            }else{
-               $mess = "Thất bại sai mật khẩu";
-            } 
-         
-            
-      }
-      $view = "../sinhvien/views/changepass.php";
-      require_once "../sinhvien/views/layout.php";
-   break;
    case 'addgiaovien':
       $mess = "";
       if(isset($_GET['cn'])){
@@ -442,9 +405,10 @@ switch ($act) {
                $idsv = $_POST['idsv'];
                $ht = xoatag($_POST['ht']);
                $img = $_FILES['imgsv'];
-               if($img['name'] != ""){
-               $img = upfile($img);
-               }else $img = $img['name'];
+               if($img != ""){
+               upfile($img);
+               }
+               $img = $_FILES['imgsv']['name'];
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
@@ -452,6 +416,7 @@ switch ($act) {
                $sex = $_POST['sex'];
                $check = suathongtintk($idsv,$ht,$img,$ngaysinh,$email,$sdt,$diachi,$sex);
                $cn = 'them';
+               $td = $sex;
                $mess = showthongbao($check,"SỬA");
             }
             if(isset($_GET['id'])){
@@ -475,9 +440,8 @@ switch ($act) {
             if(isset($_POST['them'])){
                $ht = xoatag($_POST['ht']);
                $img = $_FILES['imgsv'];
-               if($img['name'] != ""){
-               $img = upfile($img);
-               }else $img = $img['name'];
+               upfile($img);
+               $img = $_FILES['imgsv']['name'];
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
