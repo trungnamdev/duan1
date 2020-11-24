@@ -134,13 +134,13 @@
                         }
     // sua khoa hoc 
     function updateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh){
-        if($tenhinh != ''){
-        return postdulieu(" UPDATE khoahoc
+        if($tenhinh != ""){
+         postdulieu(" UPDATE khoahoc
                             SET tenkhoa = '$tenkh', mota = '$mota', chude = '$chude', hinh = '$tenhinh'
-                            WHERE id = '$idkh';");
-        }else  return postdulieu("  UPDATE khoahoc
+                            WHERE id = '$idkh'");
+        }else{ postdulieu("  UPDATE khoahoc
                                     SET tenkhoa = '$tenkh', mota = '$mota', chude = '$chude'
-                                    WHERE id = '$idkh';");
+                                    WHERE id = '$idkh';");}
     }
     function suathongtintk($id,$hoten,$hinh,$ngaysinh,$email,$sdt,$diachi,$sex){
         if($hinh != ""){

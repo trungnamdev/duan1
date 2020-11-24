@@ -105,25 +105,25 @@ switch ($act) {
    case 'themkh':
       
       if(isset($_POST['themkh'])){
-          
          $mota = xoatag($_POST['mota']); 
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
          $imgkh=$_FILES['anhkh'];
-         $tenhinh=upfile($imgkh);
+         if($imgkh['name'] != ''){
+         $tenhinh=upfile($imgkh);}else $tenhinh="";
          insertKhoaHoc($tenkh,$mota,$chude,$tenhinh);
          header('location: index.php?act=khoahoc');
       }else echo "Không thêm được!";
       break;
    case 'suakh':
-      
       if(isset($_POST['suakh'])){ 
          $mota = xoatag($_POST['mota']); 
          $idkh = $_POST['idkh'];         
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
          $imgkh=$_FILES['anhkh'];
-         $tenhinh=upfile($imgkh);
+         if($imgkh['name'] != ''){
+         $tenhinh=upfile($imgkh);}else{ $tenhinh ="";}
          updateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh,$idkh);
          header('location: index.php?act=khoahoc');
       }else echo "Không Sửa được!";
@@ -293,9 +293,9 @@ switch ($act) {
                $idsv = $_POST['idsv'];
                $ht = xoatag($_POST['ht']);
                $img = $_FILES['imgsv'];
-               if($img != ""){
+               if($img['name'] != ""){
                $img =upfile($img);
-               }
+               }else $img = $img['name'];
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
@@ -303,7 +303,6 @@ switch ($act) {
                $sex = $_POST['sex'];
                $check = suathongtintk($idsv,$ht,$img,$ngaysinh,$email,$sdt,$diachi,$sex);
                $cn = 'them';
-               $td = $sex;
                $mess = showthongbao($check,"SỬA");
             }
             if(isset($_GET['id'])){
@@ -327,7 +326,9 @@ switch ($act) {
             if(isset($_POST['them'])){
                $ht = xoatag($_POST['ht']);
                $img = $_FILES['imgsv'];
-               $img = upfile($img);
+               if($img['name'] != ""){
+               $img =upfile($img);
+               }else $img = $img['name'];
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
@@ -450,9 +451,9 @@ switch ($act) {
                $idsv = $_POST['idsv'];
                $ht = xoatag($_POST['ht']);
                $img = $_FILES['imgsv'];
-               if($img != ""){
+               if($img['name'] != ""){
                $img = upfile($img);
-               }
+               }else $img = $img['name'];
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
@@ -460,7 +461,6 @@ switch ($act) {
                $sex = $_POST['sex'];
                $check = suathongtintk($idsv,$ht,$img,$ngaysinh,$email,$sdt,$diachi,$sex);
                $cn = 'them';
-               $td = $sex;
                $mess = showthongbao($check,"SỬA");
             }
             if(isset($_GET['id'])){
@@ -484,7 +484,9 @@ switch ($act) {
             if(isset($_POST['them'])){
                $ht = xoatag($_POST['ht']);
                $img = $_FILES['imgsv'];
-               $img =upfile($img);
+               if($img['name'] != ""){
+               $img = upfile($img);
+               }else $img = $img['name'];
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
