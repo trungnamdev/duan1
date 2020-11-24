@@ -34,17 +34,6 @@ switch ($act) {
       $view = "../superus/views/lophoc_them.php";
       require_once "../superus/views/layout.php";
    break;
-   case "themlh_":
-      if(isset($_POST['tenlop'])&&isset($_POST['tenkhoa'])){
-         $tenlop = xoatag($_POST['tenlop']);
-         $tenkhoa = $_POST['tenkhoa'];
-     
-         themlophoc($tenlop,$tenkhoa);
-         header('location: index.php?act=lop');
-      }else{
-         header('location: index.php?act=lop');
-      }
-   break;
    
    case 'chude':
       $accd="active";
@@ -186,7 +175,9 @@ switch ($act) {
             array_push($mangidlop,$a);
             $lopmoi=implode(',',$mangidlop);
             sualopgv($idgv,$lopmoi);
+            var_dump($idgv);
             header('location: index.php?act=lop');
+         
          }else{
             header('location: index.php?act=lop');
          }

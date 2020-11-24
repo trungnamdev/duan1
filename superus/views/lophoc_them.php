@@ -1,5 +1,5 @@
 <div class="header-box">
-    <div class="tieude h1">Thêm thông báo</div>
+    <div class="tieude h1">Thêm lớp học</div>
 </div>
 <div class="thongbao">
     <form action="index.php?act=themlh_" method="post">

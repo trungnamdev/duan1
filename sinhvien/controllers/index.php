@@ -192,7 +192,7 @@ switch ($act) {
       }
       if (isset($_GET['idtb'])) {
          $idtb=$_GET['idtb'];
-         $tbct=thongbaoct($idtb);
+         
       }
       $view = "../sinhvien/views/thongbao.php";
       require_once "../sinhvien/views/layout.php";
