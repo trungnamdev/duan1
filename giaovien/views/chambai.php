@@ -70,7 +70,7 @@
                 <?= $trangthai ?>
                 </td>
                 <td>
-                <input type="text" class="form-control"" placeholder="nhập lời phê">
+                <input type="text" class="form-control loiphe" placeholder="nhập lời phê" typeid=<?= $arrtrangthai['idfile'] ?>>
                 </td>
                 <td>
                     <?php 

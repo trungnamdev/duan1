@@ -172,11 +172,18 @@ switch ($act) {
             $tenkhoa = $_POST['tenkhoa'];
             $idgv=$_POST['gv'];
             $a=themlophoc($tenlop,$tenkhoa);
-            $idlop=idlop($idgv);
+            $checkgv=checkgv($idgv);
+            if (is_array($checkgv)) {
+             $idlop=idlop($idgv);
             $mangidlop=gv_getidlop($idlop['idlop']);
             array_push($mangidlop,$a);
             $lopmoi=implode(',',$mangidlop);
             sualopgv($idgv,$lopmoi);
+            } else {
+             namvv($idgv,$a);
+            }
+            
+           
             header('location: index.php?act=lop');
          }else{
             header('location: index.php?act=lop');

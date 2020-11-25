@@ -384,6 +384,14 @@ switch ($act) {
             }
          }
          break;
+      case 'loipheajax':
+         if (isset($_POST['loiphe']) && isset($_POST['typeid'])) {
+            $loiphe = xoatag($_POST['loiphe']);
+            $file = $_POST['typeid'];
+              loiphe($loiphe, $file);
+      
+         }
+      break;
    }
 } else {
    header('Location: ../index.php');
