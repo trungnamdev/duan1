@@ -54,9 +54,15 @@
     function allkhoahoc(){
         return laydulieu("SELECT * FROM  khoahoc ");
     }
+    function checkgv($id){
+        return laymot("SELECT * FROM `gvlop` WHERE idgv=$id GROUP BY idgv");
+    }
     function getMotlophoc($id)
     {
         return laymot("SELECT * FROM lop where id = $id");
+    }
+    function namvv($idgv,$idlop){
+        return postdulieu("INSERT INTO `gvlop` (`idgv`, `idlop`) VALUES ('$idgv', '$idlop')");
     }
     function sualh($tenlop, $tenkhoa, $idlop)
     {

@@ -32,11 +32,20 @@
                 $arrtrangthai = checknopbai($_GET['id'],$ds['idsv']);
                 $link = "";
                 $file = "";
+                $dbbtn="";
+                $loiphe="";
+
                 if(is_array($arrtrangthai)) {
+                    if($arrtrangthai['loiphe']!=""){
+                        $loiphe = $arrtrangthai['loiphe'];
+                        $dbbtn="disabled";
+                    }
                     $link = $arrtrangthai['file'];
                     $trangthai = '<p class="text-success">Đã nộp</p>';
                 }
-                else $trangthai = '<p class="text-danger">Chưa nộp</p>';
+                else{ $trangthai = '<p class="text-danger">Chưa nộp</p>';
+                    $dbbtn="disabled";
+                }
                 
                 
         
@@ -70,7 +79,7 @@
                 <?= $trangthai ?>
                 </td>
                 <td>
-                <input type="text" class="form-control"" placeholder="nhập lời phê">
+                <input type="text" class="form-control loiphe" placeholder="nhập lời phê" typeid="<?= $arrtrangthai['idfile'] ?>" <?=$dbbtn?> value="<?=$loiphe?>">
                 </td>
                 <td>
                     <?php 
