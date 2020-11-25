@@ -438,49 +438,14 @@ switch ($act) {
             }else{
                $cn="them";
             }
-            break;
-            case 'changepass':	
-               $mess = "";	
-               $view = "../sinhvien/views/changepass.php";	
-               require_once "../sinhvien/views/layout.php";	
-               break;	
-         
-         
-            case 'changepass_':	
-               $mess ="";	
-               if(isset($_POST['pass'])) {	
-                  $id = $_SESSION['iddn'];	
-                  $pass = xoatag(trim($_POST['pass'],"'"));	
-                  $check = getpass();	
-                  if(is_array($check))	
-                      $verify=password_verify($pass,$check['pass']);	
-                     //Check pass	
-                     if($verify){	
-                        $newpass = $_POST['newpass'];	
-                        $repass = $_POST['repass'];  	
-                        //Check mk mới có khớp k            	
-                        if($newpass==$repass) {	
-                           changepass($id, $repass);	
-                           $mess = "Đổi Thành Công";	
-                        }else {	
-                           $mess = "Mật khẩu không khớp";	
-                        }	
-                     }else{	
-                        $mess = "Thất bại sai mật khẩu";	
-                     } 	
-         
-         
-               }	
-               $view = "../sinhvien/views/changepass.php";	
-               require_once "../sinhvien/views/layout.php";	
-            break;
+         break;
          case 'them':
             if(isset($_POST['them'])){
                $ht = xoatag($_POST['ht']);
+               $img = $_FILES['imgsv'];
                if($img['name'] != ""){	             
                   $img = upfile($img);	              
                   }else $img = $img['name'];
-               $img = $_FILES['imgsv']['name'];
                $ngaysinh = $_POST['ngaysinh'];
                $sdt = "+84".$_POST['sdt'];
                $email = xoatag($_POST['email']);
@@ -536,6 +501,41 @@ switch ($act) {
       $acgv = "active";
       $view = "../superus/views/formgv.php";
       require_once "../superus/views/layout.php";
+   break;
+   case 'changepass':	
+      $mess = "";	
+      $view = "../sinhvien/views/changepass.php";	
+      require_once "../sinhvien/views/layout.php";	
+      break;	
+
+
+   case 'changepass_':	
+      $mess ="";	
+      if(isset($_POST['pass'])) {	
+         $id = $_SESSION['iddn'];	
+         $pass = xoatag(trim($_POST['pass'],"'"));	
+         $check = getpass();	
+         if(is_array($check))	
+             $verify=password_verify($pass,$check['pass']);	
+            //Check pass	
+            if($verify){	
+               $newpass = $_POST['newpass'];	
+               $repass = $_POST['repass'];  	
+               //Check mk mới có khớp k            	
+               if($newpass==$repass) {	
+                  changepass($id, $repass);	
+                  $mess = "Đổi Thành Công";	
+               }else {	
+                  $mess = "Mật khẩu không khớp";	
+               }	
+            }else{	
+               $mess = "Thất bại sai mật khẩu";	
+            } 	
+
+
+      }	
+      $view = "../sinhvien/views/changepass.php";	
+      require_once "../sinhvien/views/layout.php";	
    break;
 }
 }else{
