@@ -85,6 +85,10 @@ $(document).ready(function() {
             },
             "anhkh": {
                 required: true
+            },
+            "giatien": {
+                required: true,
+                number: true
             }
         },
         messages: {
@@ -97,6 +101,10 @@ $(document).ready(function() {
             },
             "anhkh": {
                 required: "Vui lòng chọn ảnh khóa học"
+            },
+            "giatien": {
+                required: "Vui lòng nhập số tiền khóa học",
+                number: "tiền phải là giá trị số"
             }
         }
     });

@@ -15,6 +15,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Ảnh</th>
                 <th scope="col">Tên khóa học</th>
+                <th scope="col">Giá Tiền</th>
                 <th scope="col" width="40%">Mô tả</th>
                 <th scope="col" class="text-center">Sửa</th>
                 <th scope="col" class="text-center">Xóa</th>
@@ -36,9 +37,16 @@
                 <th scope="row"><?=$kh['id']?></th>
                 <td class="text-center"><img src="<?=showfile($kh['hinh'])?>" alt="" onerror="erroimg(this)"  class="img-thumbnail" width ="80px"></td>
                 <td>
+                    <center>
                     <?=$kh['tenkhoa']?>
                     <br>
                     Chủ đề: <?=$chude['tenchude']?>
+                    </center>
+                </td>
+                <td>
+                <center>
+                    <strong><?= chuyenso($kh['giatien']) ?> VNĐ</strong>
+                </center>
                 </td>
                 <td>
                     <?=$kh['mota']?>
