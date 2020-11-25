@@ -44,20 +44,20 @@
                 </div>
                 <br>
                 <div class="d-info">
-                    <div class="d-row100">
+                    <div class="d-row100 sb">
                         <div class="d-info1 text-span">
                         <?=$kh['tenkhoa']?>
                         </div>
-                        <div class="d-info2 d-nb w-75 ">
-                            <a href="index.php?act=suabt&id=<?=$bt['idbaitap']?>" class="btn btn-outline-info d-pd">Sửa</a>
-
+                        <div class="d-nb ">
+                            <a href="index.php?act=suabt&id=<?=$bt['idbaitap']?>" class="btn btn-outline-info mr-1"><i class="fas fa-pen"></i></a>
+                            <a href="index.php?act=xoabt&id=<?=$bt['idbaitap']?>" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="d-info">
-                    <div class="d-row1 text-truncate">
+                    <div class="d-row1 noidung">
                         <p><?= $bt['tenbaitap'] ?></p>
-                        <span><?= $bt['motabt'] ?></span>
+                        <span class="limit2"><?= xoatag($bt['motabt']) ?></span>
 
                     </div>
                 </div>
@@ -65,12 +65,9 @@
                 <div class="d-info">
                     <div class="d-row100 box-bot w-100">
                         <div class="d-info1 d-hc">
-                            <a>Hạn chót: <br> <?=$bt['ngayhethan']?> </a>
+                            <span>Hạn chót: <br> <?=$bt['ngayhethan']?> </span>
                         </div>
-                        <div class="d-info2 d-nb w-75 d-mr-3">
-                            <a href="index.php?act=xoabt&id=<?=$bt['idbaitap']?>" class="btn btn-outline-danger">Xóa</a>
-
-                        </div>
+                        
                         <div class="d-info2 d-nb w-75">
                             <a href="index.php?act=chambai&id=<?=$bt['idbaitap']?>" class="btn btn-outline-success">Đã nộp: <?=$btdn?>/<?=$slbt['tong'] ?></a>
 
