@@ -98,8 +98,8 @@ switch ($act) {
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
          $imgkh=$_FILES['anhkh'];
-         $tenhinh=$imgkh['name'];
-         upfile($imgkh);
+         if($imgkh['name'] != ''){	      
+            $tenhinh=upfile($imgkh);}else{ $tenhinh ="";}
          insertKhoaHoc($tenkh,$mota,$chude,$tenhinh);
          header('location: index.php?act=khoahoc');
       }else echo "Không thêm được!";

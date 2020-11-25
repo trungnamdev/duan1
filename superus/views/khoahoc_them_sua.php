@@ -5,8 +5,11 @@ if (isset($_GET['kh']) && $_GET['kh'] == 'them') {
     <div class="header-box">
         <div class="tieude h1">Thêm khóa học</div>
     </div>
-    <div class="khoahoc p-3">
-
+    <div class="row">
+    <div class="col-4">
+    ok
+    </div>
+    <div class="khoahoc p-3 col-8"> 
         <form action="index.php?act=themkh" method="post" id="formkh" enctype="multipart/form-data">
             <div class="form-group form-khoahoc ">
                 <label for="tenkh">Tên Khóa Học</label>
@@ -28,12 +31,13 @@ if (isset($_GET['kh']) && $_GET['kh'] == 'them') {
                 <label for="anhkh" class="form-control"><i class='fas fa-plus-circle mr-2'></i>Chọn Ảnh </label>
                 <input type="file" class="form-control" id="anhkh" name="anhkh">
 
-                <div class="nutthem text-center mt-4 ">
+                <div class="nutthem mt-4 ">
                     <button class="btn btn-primary px-4" type="submit" name="themkh">Thêm Khóa Học</button>
                 </div>
             </div>
         </form>
     </div>
+                    </div>
     <?php }if(isset($_GET['kh']) && $_GET['kh'] == 'sua'){
             $suakh = getKhoaHoc($_GET['idkh']); 
         ?>
@@ -41,7 +45,11 @@ if (isset($_GET['kh']) && $_GET['kh'] == 'them') {
     <div class="header-box">
         <div class="tieude h1">Sửa khóa học</div>
     </div>
-    <div class="khoahoc p-3"> 
+    <div class="row">
+    <div class="col-4">
+    ok
+    </div>
+    <div class="khoahoc p-3 col-8"> 
         <form action="index.php?act=suakh" method="post" id="formkh" enctype="multipart/form-data">
             <div class="form-group form-khoahoc ">
                 <input type="hidden" name="idkh" value="<?=$_GET['idkh']?>">
@@ -63,10 +71,11 @@ if (isset($_GET['kh']) && $_GET['kh'] == 'them') {
                 <label for="anhkh" class="form-control"><i class='fas fa-plus-circle mr-2'></i>Chọn Ảnh </label>
                 <input type="file" class="form-control" id="anhkh" name="anhkh">
 
-                <div class="nutthem text-center mt-4 ">
+                <div class="nutthem mt-4 ">
                     <button class="btn btn-primary px-4" type="submit" name="suakh">Cập Nhật</button>
                 </div>
             </div>
         </form>
+    </div>
     </div>
 <?php } ?>
