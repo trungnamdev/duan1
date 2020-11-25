@@ -2,7 +2,7 @@
     <div class="tieude h1">Thêm lớp học</div>
 </div>
 <div class="thongbao">
-    <form action="index.php?act=themlh_" method="post">
+    <form action="index.php?act=themlh_" method="post" id="lophoc">
         <div class="form-group">
             <label for="tieude">Tên lớp</label>
             <input type="text" class="form-control" id="tenlop" value="" placeholder="Tên lớp học" name="tenlop">

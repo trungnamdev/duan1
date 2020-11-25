@@ -68,6 +68,53 @@ $(document).ready(function() {
             }
         }
     });
+    $("#thongbao").validate({
+        rules: {
+            "tieude": {
+                required: true,
+            },
+            "noidung": {
+                required: true
+            }
+        },
+        messages: {
+            "tieude": {
+                required: "Xin vui lòng nhập tiêu đề"
+            },
+            "noidung": {
+                required: "Xin vui lòng nhập nội dung"
+
+            }
+        }
+    });
+    $("#lophoc").validate({
+        rules: {
+            "tenlop": {
+                required: true,
+            },
+            "tenkhoa": {
+                required: true,
+
+            },
+            "gv": {
+                required: true,
+
+            }
+        },
+        messages: {
+            "tenlop": {
+                required: "Xin vui lòng nhập tên lớp"
+            },
+            "tenkhoa": {
+                required: "Xin vui lòng chọn khóa học",
+
+            },
+            "gv": {
+                required: "Xin vui lòng chọn giáo viên",
+
+            }
+        }
+    });
     $('#ngaysinh').datepicker({
         changeYear: true,
         changeMonth: true,

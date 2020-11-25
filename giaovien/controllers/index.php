@@ -394,8 +394,6 @@ switch ($act) {
             // } else {
             //    echo 'sai';
             // }
-            
-            echo $loiphe.$file;
       
          }
       break;
