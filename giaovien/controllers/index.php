@@ -389,6 +389,13 @@ switch ($act) {
             $loiphe = xoatag($_POST['loiphe']);
             $file = $_POST['typeid'];
               loiphe($loiphe, $file);
+            // if ($loiphe!="disble") {
+            //   echo 'chua co';
+            // } else {
+            //    echo 'sai';
+            // }
+            
+            echo $loiphe.$file;
       
          }
       break;
