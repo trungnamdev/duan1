@@ -125,6 +125,10 @@ function checknopbai($idbt,$idsv){
 function chamdiem($diem,$file){
     postdulieu("UPDATE `upfile` SET `diem` = '$diem' WHERE `upfile`.`idfile` = '$file'");
 }
+// loi phe
+function loiphe($loiphe,$file){
+    postdulieu("UPDATE `upfile` SET `loiphe` = '$loiphe' WHERE `upfile`.`idfile` = '$file'");
+}
 function upbt($idbt,$tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot){
    if ($tenhinh=='') {
     postdulieu("UPDATE `baitap` SET `tenbaitap` = '$tenbt',`motabt` = '$mota', `idlop` = '$lophoc', `ngaygiao` = '$ngaygiao', `ngayhethan` = '$hanchot' WHERE `baitap`.`idbaitap` = $idbt;");

@@ -4,7 +4,7 @@
 
     <div class="option-box1">
         <ul>
-            <a class="text-primary"> <img class="avatagv mr-2" src="<?= showfile($baitap_info['hinh']) ?>" alt=""><?= $baitap_info['tenkhoa'] ?></a>
+            <a class="text-primary"> <img class="avatagv mr-2" src="<?= showfile($baitap_info['hinh']) ?>" alt="" onerror="erroimg(this)"><?= $baitap_info['tenkhoa'] ?></a>
             <a class=""> <i class='fas fa-book-open mr-2'></i> <?= $baitap_info['tenlop'] ?></a>
             <a class=""><i class="far fa-clock mr-2"></i> Hạn chót: <?= $baitap_info['ngayhethan'] ?></a>
         </ul>
@@ -21,6 +21,7 @@
             <th scope="col">Tên sinh viên</th>
             <th scope="col">Điểm</th>
             <th scope="col">Trạng thái</th>
+            <th scope="col">Lời phê</th>
             <th scope="col">Tải xuống</th>
         </tr>
       
@@ -31,11 +32,20 @@
                 $arrtrangthai = checknopbai($_GET['id'],$ds['idsv']);
                 $link = "";
                 $file = "";
+                $dbbtn="";
+                $loiphe="";
+
                 if(is_array($arrtrangthai)) {
+                    if($arrtrangthai['loiphe']!=""){
+                        $loiphe = $arrtrangthai['loiphe'];
+                        $dbbtn="disabled";
+                    }
                     $link = $arrtrangthai['file'];
                     $trangthai = '<p class="text-success">Đã nộp</p>';
                 }
-                else $trangthai = '<p class="text-danger">Chưa nộp</p>';
+                else{ $trangthai = '<p class="text-danger">Chưa nộp</p>';
+                    $dbbtn="disabled";
+                }
                 
                 
         
@@ -68,7 +78,9 @@
                 <td>
                 <?= $trangthai ?>
                 </td>
-                
+                <td>
+                <input type="text" class="form-control loiphe" placeholder="nhập lời phê" typeid="<?= $arrtrangthai['idfile'] ?>" <?=$dbbtn?> value="<?=$loiphe?>">
+                </td>
                 <td>
                     <?php 
                         if($link!="") {

@@ -307,10 +307,6 @@ switch ($act) {
 
          require_once "../giaovien/views/layout.php";
          break;
-      case 'lophoc':
-
-         break;
-
       case 'lopct':
          $aclop = "active"; 
          if(isset($_GET['idlop']) && $_GET['idlop'] > 0  ){   
@@ -388,6 +384,21 @@ switch ($act) {
             }
          }
          break;
+      case 'loipheajax':
+         if (isset($_POST['loiphe']) && isset($_POST['typeid'])) {
+            $loiphe = xoatag($_POST['loiphe']);
+            $file = $_POST['typeid'];
+              loiphe($loiphe, $file);
+            // if ($loiphe!="disble") {
+            //   echo 'chua co';
+            // } else {
+            //    echo 'sai';
+            // }
+            
+            echo $loiphe.$file;
+      
+         }
+      break;
    }
 } else {
    header('Location: ../index.php');

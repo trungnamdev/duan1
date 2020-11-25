@@ -33,9 +33,7 @@
         // Lấy thông tin giáo viên từ tb taikhoan
         $hinhgv = thongtinsvtomtat($idgv)['hinh'];
         $tengv = thongtinsvtomtat($idgv)['hoten'];
-        $hinhgv = "../uploads/" . $hinhgv;
-        if (!is_file($hinhgv)) $hinhgv = "./views/img/noimage.png";
-
+        $hinhgv = $hinhgv;
     ?>
 
 

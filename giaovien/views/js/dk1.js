@@ -104,6 +104,21 @@ $(document).ready(function() {
         }
         reader.readAsDataURL(this.files[0]);
     });
+    // loi phe
+    $(".loiphe").blur(function() {
+        var loiphe = $(this).val();
+        console.log(loiphe);
+        typeid = $(this).attr('typeid');
+        console.log(typeid);
+        $.ajax({
+            type: "post",
+            url: "index.php?act=loipheajax",
+            data: { loiphe: loiphe, typeid: typeid },
+            success: function(data) { //kết quả trả về từ server nếu gửi thành côn
+                console.log(data);
+            }
+        });
+    });
 });
 
 
@@ -134,3 +149,4 @@ $("#formdoimk")[0].validate({
         }
     }
 });
+// loi phe
