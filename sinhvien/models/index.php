@@ -99,7 +99,7 @@ function demsvlop($idlop){
     return laymot("SELECT COUNT(*) as 'sl' FROM sv_lop WHERE idlop = $idlop");
 }
 function gethinhlopchat($idlop){
-    return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%')")['hinh'];
+    return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%' limit 1)")['hinh'];
 }
 function gettenchude($cd){
     return laymot("SELECT * FROM chude WHERE id = $cd");
