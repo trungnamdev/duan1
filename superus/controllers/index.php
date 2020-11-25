@@ -141,7 +141,6 @@ switch ($act) {
         }
         $lopmoi=implode(',',$mangidlop);
         sualopgv($idgv['id'],$lopmoi);
-        var_dump($idgv);
             header('location: index.php?act=lop');
             
          }
@@ -173,16 +172,16 @@ switch ($act) {
             $a=themlophoc($tenlop,$tenkhoa);
             $checkgv=checkgv($idgv);
             if (is_array($checkgv)) {
-             $idlop=idlop($idgv);
+            $idlop=idlop($idgv);
+            if($idlop['idlop']!=''){
             $mangidlop=gv_getidlop($idlop['idlop']);
             array_push($mangidlop,$a);
             $lopmoi=implode(',',$mangidlop);
+            }else{ $lopmoi = $mangidlop = $a;}
             sualopgv($idgv,$lopmoi);
             } else {
              namvv($idgv,$a);
-            }
-            
-           
+            }           
             header('location: index.php?act=lop');
          }else{
             header('location: index.php?act=lop');
