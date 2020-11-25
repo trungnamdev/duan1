@@ -12,6 +12,10 @@ function upfile($file){
     $nam = \Cloudinary\Uploader::upload($file['tmp_name']);
     return $nam['url'];
 }
+function upfilezip($file){
+    $nam = \Cloudinary\Uploader::upload($file['tmp_name'] ,array("resource_type" => "auto"));
+    return $nam['url'];
+}
 function showfile($text){
     return cloudinary_url($text);
 }  
@@ -111,5 +115,9 @@ function changepass($id, $repass)
 }
 function chuyenso($num){
     return number_format($num, 0, ',', '.');
+}
+function tachfilenop($file,$cn){
+    $file = explode(",",$file);
+    return $file[$cn];
 }
 ?>
