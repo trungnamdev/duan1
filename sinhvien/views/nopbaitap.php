@@ -1,3 +1,23 @@
+<style>
+.d-hinh img{
+    width: 30px;
+    object-fit: cover;
+    height: 30px;
+    border-radius: 50%;
+}    
+.d-centent{
+   margin-right: 10px;
+    margin-bottom: 20px;
+    border:1px #bfc4c8 solid;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+.d-centent .col-10{
+    display: flex;
+    align-items: center;
+}
+</style>
 <div class="header-box">
     <div class="tieude h1"><?= $arrbt['tenbaitap'] ?></div>
 
@@ -55,3 +75,28 @@
         } ?>
         </form>
     </div>
+    <?php
+    if (is_array($nopbai)&&$nopbai['loiphe']!="") {?>
+        <div class="nopbaitap px-4 py-2 " style="min-height:0px;margin-top:30px">
+        <p class="h4 font-weight-bold m-0 mb-4">
+           Lời phê
+        </p>
+     
+        <div class="row d-centent" style="margin-left: 0px;">
+            
+                
+            
+            <div class="col-2 d-hinh">
+                 <img src="../system/dfimage.jpg" alt="">
+            </div>
+            <div class="col-10" style="padding-left: 0px;">
+                <?=$nopbai['loiphe']?>
+            </div>
+  
+  </div>
+                        
+    </div>
+     <?php   
+    }
+    
+    ?>

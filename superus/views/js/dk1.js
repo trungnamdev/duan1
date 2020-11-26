@@ -87,6 +87,7 @@ $(document).ready(function() {
             }
         }
     });
+
     $("#lophoc").validate({
         rules: {
             "tenlop": {
@@ -170,3 +171,13 @@ $(document).ready(function() {
 
 
 });
+
+function batloind() {
+    if ($("#noidung").val() == '') {
+        $("#nderror").html("Xin vui lòng nhập nội dung");
+        $(".mce-content-body").focus();
+        return false;
+    } else
+        return true;
+
+}
