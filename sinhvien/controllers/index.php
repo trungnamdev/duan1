@@ -243,26 +243,31 @@ if (isset($_SESSION['iddn'])) {
             if (isset($_GET['idbt']) && isset($_POST['nop'])) {
                $file = $_FILES['baitap'];
                $idbt = $_GET['idbt'];
-               $file =upfile($file);
+               if ($file['name'] != '') {
+                  $linkfile =upfilezip($file);
+                  $tenfile = $file['name'];
+                  $file = $tenfile.",".$linkfile;
                noplaibt($file, $idbt);
                header("Location: index.php?act=nopbaitap&idbt=$idbt");
             } else {
                header('Location: index.php');
             }
+         }
             break;
          case 'nopbai':
             if (isset($_GET['idbt']) && isset($_POST['nop'])) {
                $file = $_FILES['baitap'];
                $idbt = $_GET['idbt'];
-
                if ($file['name'] != '') {
-                  $file =upfile($file);
+                  $linkfile =upfilezip($file);
+                  $tenfile = $file['name'];
+                  $file = $tenfile.",".$linkfile;
                   nopbai($file, $idbt);
-               } else echo "NO";
-               header("Location: index.php?act=nopbaitap&idbt=$idbt");
-            } else {
-               header('Location: index.php');
             }
+            header("Location: index.php?act=nopbaitap&idbt=$idbt"); 
+         }else {
+            header('Location: index.php');
+         }
             break;
          case 'chat':
             $chat = "active";

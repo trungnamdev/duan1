@@ -48,13 +48,13 @@
         </p>
         <?php
         if (is_array($nopbai)) { ?>
-            <label class="fileup btn btn-outline-primary"><?= $nopbai['file'] ?></label>
+            <label class="fileup btn btn-outline-primary"><?= tachfilenop($nopbai['file'],0) ?></label>
             <?php if ($nopbai['diem'] != "") { ?>
                 <button type="button" class="diemnb mb-2 btn btn-success">Đã chấm: <?= $nopbai['diem'] ?>/10</button>
                 <?php } else {
                 if ($han) { ?>
                     <form action="index.php?act=noplaibt&idbt=<?= $idbt ?>" enctype="multipart/form-data" method="post">
-                        <input type="file" name="baitap" id="baitap">
+                        <input type="file" name="baitap" id="baitap" accept=".zip,.rar,.7zip">
                         <label for="baitap" id="btshow"><i class='fas fa-plus-circle mr-2'></i>Tải bài tập thay thế</label>
                         <button type="submit" class="btn btn-dark my-1 w-100" name="nop">Nộp bài</button>
                     </form>
@@ -65,7 +65,7 @@
         } else {
             if ($han) { ?>
                 <form action="index.php?act=nopbai&idbt=<?= $idbt ?>" enctype="multipart/form-data" method="post">
-                    <input type="file" name="baitap" id="baitap">
+                    <input type="file" name="baitap" id="baitap" accept=".zip,.rar,.7zip">
                     <label for="baitap" id="btshow"><i class='fas fa-plus-circle mr-2'></i> Tải bài tập lên</label>
                     <button type="submit" class="btn btn-dark my-1 w-100" name="nop">Nộp bài</button>
                 </form>
