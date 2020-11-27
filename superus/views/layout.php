@@ -35,10 +35,11 @@
     <link href="./system/toastr-noty-50092cc/build/toastr.css" rel="stylesheet"/>
     <script src="./system/toastr-noty-50092cc/build/toastr.js"></script>
     <!-- end toat noti -->
-     <!-- file dung chung cho 3 modun -->
-     <link rel="stylesheet" href="../system/css/stylelayout.css">
+    
     <!-- file riêng moi modun -->
     <link rel="stylesheet" href="views/css/style.css">
+     <!-- file dung chung cho 3 modun -->
+     <link rel="stylesheet" href="../system/css/stylelayout.css">
     <title>BAN GIÁM HIỆU</title>
     
 </head>
