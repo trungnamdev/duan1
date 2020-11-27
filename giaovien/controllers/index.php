@@ -269,8 +269,7 @@ switch ($act) {
                   }else{
                      $mess = "Thất bại sai mật khẩu";
                   } 
-               
-                  
+                
             }
             $view = "../sinhvien/views/changepass.php";
             require_once "../sinhvien/views/layout.php";
