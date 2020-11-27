@@ -91,30 +91,29 @@ switch ($act) {
       break;
     
    case 'themkh':
-      
       if(isset($_POST['themkh'])){
-          
          $mota = xoatag($_POST['mota']); 
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
          $imgkh=$_FILES['anhkh'];
+         $tien = $_POST['giatien'];
          if($imgkh['name'] != ''){	      
             $tenhinh=upfile($imgkh);}else{ $tenhinh ="";}
-         insertKhoaHoc($tenkh,$mota,$chude,$tenhinh);
+         $check= insertKhoaHoc($tenkh,$mota,$chude,$tenhinh,$tien);
          header('location: index.php?act=khoahoc');
       }else echo "Không thêm được!";
       break;
    case 'suakh':
-      
       if(isset($_POST['suakh'])){ 
          $mota = xoatag($_POST['mota']); 
          $idkh = $_POST['idkh'];         
          $chude = $_POST['chude'];
          $tenkh = xoatag($_POST['tenkh']);
+         $tien = $_POST['giatien'];
          $imgkh=$_FILES['anhkh'];
          if($imgkh['name'] != ''){	      
             $tenhinh=upfile($imgkh);}else{ $tenhinh ="";}
-         updateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh,$idkh);
+           $check = updateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$tien,$idkh);
          header('location: index.php?act=khoahoc');
       }else echo "Không Sửa được!";
    break;   
@@ -142,7 +141,6 @@ switch ($act) {
         }
         $lopmoi=implode(',',$mangidlop);
         sualopgv($idgv['id'],$lopmoi);
-        var_dump($idgv);
             header('location: index.php?act=lop');
             
          }
@@ -174,16 +172,16 @@ switch ($act) {
             $a=themlophoc($tenlop,$tenkhoa);
             $checkgv=checkgv($idgv);
             if (is_array($checkgv)) {
-             $idlop=idlop($idgv);
+            $idlop=idlop($idgv);
+            if($idlop['idlop']!=''){
             $mangidlop=gv_getidlop($idlop['idlop']);
             array_push($mangidlop,$a);
             $lopmoi=implode(',',$mangidlop);
+            }else{ $lopmoi = $mangidlop = $a;}
             sualopgv($idgv,$lopmoi);
             } else {
              namvv($idgv,$a);
-            }
-            
-           
+            }           
             header('location: index.php?act=lop');
          }else{
             header('location: index.php?act=lop');

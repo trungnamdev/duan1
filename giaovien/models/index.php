@@ -96,7 +96,7 @@ function demsvlop($idlop){
     return laymot("SELECT COUNT(*) as 'sl' FROM sv_lop WHERE idlop = $idlop");
 }
 function gethinhlopchat($idlop){
-    return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%')");
+    return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%' limit 1)");
 }
 // tên khóa học
 function getKHByIDLop($idlop){
