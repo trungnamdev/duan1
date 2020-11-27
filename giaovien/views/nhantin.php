@@ -113,7 +113,6 @@ $(document).on('keypress',function(e) {
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-
         //   code lay du lieu firebase
         let ref = "";
         let iddn = <?php echo json_encode($_SESSION['iddn']) ?>;
