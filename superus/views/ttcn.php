@@ -32,9 +32,13 @@
                     <span class="d-tt-text-theme">Số điện thoại</span>
                     <span class="d-tt-text-title"><?= $thongtin['sdt'] ?></span>
                 </div>
+                <?php 
+                    if($thongtin['id']==$_SESSION['iddn']) {
+                ?>
                 <div class="d-tt-text-100">
                     <a href="index.php?act=changepass">Đổi mật khẩu</a>
                 </div>
+                    <?php }?>
                 <!-- <div class="d-tt-text-100">
                     <span class="d-tt-text-theme">Trạng thái học</span>
                     <span class="d-tt-text-title">HDI(Học đi)</span>
