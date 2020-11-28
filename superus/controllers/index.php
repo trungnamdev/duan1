@@ -150,8 +150,9 @@ switch ($act) {
          $tieude = xoatag($_POST['tieude']);
          $noidung = $_POST['noidung'];
          $idnguoidang = $_POST['idngdang'];
+         $nguoinhan = $_POST['nguoinhan'];
          $idthongbao = $_POST['idtb'];
-         suathongbao($tieude, $noidung, $idnguoidang, $idthongbao);
+         suathongbao($tieude, $noidung, $idnguoidang, $idthongbao, $nguoinhan);
       }
          header('location: index.php?act=thongbao');
       break;
@@ -251,8 +252,9 @@ switch ($act) {
       if(isset($_POST['tieude'])&&isset($_POST['noidung'])&&isset($_POST['idnguoidang'])){
          $tieude = xoatag($_POST['tieude']);
          $noidung = $_POST['noidung'];
+         $nguoinhan = $_POST['nguoinhan'];
          $idnguoidang = $_POST['idnguoidang'];
-         themthongbao($tieude, $noidung, $idnguoidang);
+         themthongbao($tieude, $noidung, $idnguoidang, $nguoinhan);
          header('location: index.php?act=thongbao');
       }else
          header('location: index.php?act=thongbao');
