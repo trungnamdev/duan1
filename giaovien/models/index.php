@@ -83,9 +83,8 @@ function GV_getlopdangday()
     }else
         return null;
 }
-function thongbao(){
-    return laydulieu("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang ORDER BY ngaydang"); 
- }
+function thongbao($nguoinhan){
+    return laydulieu("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang where nguoinhan = $nguoinhan or nguoinhan = 2 ORDER BY ngaydang"); }
  function thongbaoct($id){
      return laymot("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang WHERE idtb=$id");
  }

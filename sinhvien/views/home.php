@@ -79,8 +79,44 @@
         </div>
     </div>
 
-    <div class=" thongbao-box mt-5">
-        <div class="thongbao thongbao-shadow rounded p-4 mt-5" style="background-image: url(../system/img/homeundraw.svg);object-fit: cover;background-repeat: no-repeat;background-size: 100% 100%;box-shadow:none ">
-       <!-- <img src="../system/img/homeundraw.svg" class="w-100 h-100" style="object-fit: cover;"> -->
+    <div class=" thongbao-box thongke-box mt-5">
+        <p class="h4 mb-3">Thống kê</p>
+        <div class="thongbao border pt-5 pb-5 rounded">
+            <canvas id="myChart"></canvas>
+            <p class="text-muted text-center mt-3">Tỉ lệ hoàn thành bài tập</p>
         </div>
     </div>
+
+    <!-- chart-js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+    var btdn = <?php echo $btdanop ?>;
+    var btcn = <?php echo $btchuanop ?>;
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'pie',
+
+        // The data for our dataset
+        data: {
+            labels: ['Đã Nộp', 'Chưa nộp'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: ['rgb(44, 99, 132)','rgb(255, 99, 132)'],
+                borderColor: ['rgb(44, 99, 132)','rgb(255, 99, 132)'],
+                data: [btdn, btcn]
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+            color: [
+                'red', // color for data at index 0
+                'blue', // color for data at index 1
+                'green', // color for data at index 2
+                'black', // color for data at index 3
+                //...
+            ]
+        }
+    });
+    </script>

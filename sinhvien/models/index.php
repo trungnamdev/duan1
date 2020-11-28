@@ -47,8 +47,8 @@ function layBaiTapByKH($idkh){
 }
 //end BÀI TẬP
 
-function thongbao(){
-   return laydulieu("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang ORDER BY ngaydang"); 
+function thongbao($nguoinhan){
+   return laydulieu("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang where nguoinhan = $nguoinhan or nguoinhan = 2 ORDER BY ngaydang"); 
 }
 function thongbaoct($id){
     return laymot("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang WHERE idtb=$id");
@@ -115,5 +115,15 @@ function capnhattrutien($tien,$id){
 }
 function getkhoahocbylopid($id){
     return laymot("SELECT * FROM khoahoc WHERE id = (SELECT idkhoa FROM lop WHERE id = $id)");
+}
+function demdanop($idlop)
+{
+
+}
+
+function demallbt(){
+    $idlop = getIDSV()['idlop'];
+    $tong = laymot("SELECT count(*) as 'tong' FROM baitap WHERE idlop = $idlop");
+    return $tong['tong'];
 }
 ?>

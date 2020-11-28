@@ -24,7 +24,7 @@ switch ($act) {
       //Nếu chưa dạy ai thì show thông báo thôi
       if(isset($idlop))
          $lopdangday = GV_getlopdangday(); 
-      $tb=thongbao();
+      $tb=thongbao(1);
       $view = "../giaovien/views/home.php";
       require_once "../giaovien/views/layout.php";
    break;
@@ -213,7 +213,7 @@ switch ($act) {
 
       case 'thongbao':
          $actb = "active";
-         $tb = thongbao();
+         $tb = thongbao(1);
          $arrtbjs = [];
          foreach ($tb as $tb1) {
             $arrtam = [$tb1['tdtb'], $tb1['noidung'], $tb1['hoten'], $tb1['ngaydang']];
