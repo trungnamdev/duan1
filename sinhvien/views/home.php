@@ -80,7 +80,7 @@
     </div>
 
     <div class=" thongbao-box mt-5">
-        <div class="thongbao border thongbao-shadow rounded p-4 mt-5">
-       <img src="../system/img/homeundraw.svg" class="w-100 h-100" style="object-fit: cover;">
+        <div class="thongbao thongbao-shadow rounded p-4 mt-5" style="background-image: url(../system/img/homeundraw.svg);object-fit: cover;background-repeat: no-repeat;background-size: 100% 100%;box-shadow:none ">
+       <!-- <img src="../system/img/homeundraw.svg" class="w-100 h-100" style="object-fit: cover;"> -->
         </div>
     </div>

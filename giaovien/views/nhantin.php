@@ -71,14 +71,6 @@
     </div>
 
     <div class="chat_buttons">
-        <input type="file" name="file" id="file">
-        <label for="file" class="mb-0"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2.5em">
-                <path class="uim-tertiary" d="M12,22A10,10,0,1,1,22,12,10.01146,10.01146,0,0,1,12,22Z"></path>
-                <path class="uim-primary" d="M16,13H8a1,1,0,0,1,0-2h8a1,1,0,0,1,0,2Z"></path>
-                <path class="uim-primary" d="M12,17a.99974.99974,0,0,1-1-1V8a1,1,0,0,1,2,0v8A.99974.99974,0,0,1,12,17Z">
-                </path>
-            </svg>
-        </label>
         <input type="text" id="ndchat" placeholder="Aa">
 
         <button id="guichat"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2.5em">
@@ -113,7 +105,6 @@ $(document).on('keypress',function(e) {
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-
         //   code lay du lieu firebase
         let ref = "";
         let iddn = <?php echo json_encode($_SESSION['iddn']) ?>;

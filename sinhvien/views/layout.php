@@ -87,12 +87,12 @@
                         <li class="<?= $acdkkh ?>">Khóa học<img src="../system/img/monhoc.svg" alt=""></li>
                     </a>
                     <a class="iconchat" href="index.php?act=thongbao">
-                        <li class="<?= $actb ?> ">Thông báo<img class="imgchat" src="../system/img/thongbao.svg" alt="">
+                        <li class="<?= $actb ?>">Thông báo<img class="imgchat" src="../system/img/thongbao.svg" alt="">
                         </li>
                     </a>
-                    <!-- <a href="index.php?act=naptien">
-                        <li class="<?= $naptien ?>">Nạp tiền<img src="../system/img/chat.svg" alt=""></li>
-                    </a> -->
+                    <a href="index.php?act=naptien">
+                        <li class="<?= $naptien ?>">Nạp tiền<img src="../system/img/naptien.svg" alt=""></li>
+                    </a>
                     <a href="index.php?act=chat">
                         <li class="<?= $chat ?>">Nhắn tin<img src="../system/img/chat.svg" alt=""></li>
                     </a>
