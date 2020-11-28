@@ -77,8 +77,8 @@
     </div>
     <?php
     if (is_array($nopbai)&&$nopbai['loiphe']!="") {?>
-        <div class="nopbaitap px-4 py-2 " style="min-height:0px;margin-top:30px">
-        <p class="h4 font-weight-bold m-0 mb-4">
+        <div class="nopbaitap px-4 py-2 " style="min-height:0px">
+        <p class="h4 font-weight-bold m-0 mb-4 mt-4">
            Lời phê
         </p>
      

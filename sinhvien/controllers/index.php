@@ -24,7 +24,16 @@ if (isset($_SESSION['iddn'])) {
          case 'home':
             $idsv = $_SESSION['iddn'];
             $ttsv = thongtinsv($idsv);
-            $tb = thongbao();
+            $tb = thongbao(0);
+            //Đếm bài tập cho thống kê
+            $btdanop = 0;
+            $btchuanop = 0;
+            foreach ($ttsv as $allbt) {
+               // Đếm bài tập đã nộp
+               $checkbt = checknopbai($allbt['idbaitap']);
+               if (is_array($checkbt) > 0) $btdanop += 1;
+               if (is_array($checkbt) == 0)   $btchuanop += 1;
+            }
             $achome = "active";
             $view = "../sinhvien/views/home.php";
             require_once "../sinhvien/views/layout.php";
@@ -211,7 +220,7 @@ if (isset($_SESSION['iddn'])) {
             break;
          case 'thongbao':
             $actb = "active";
-            $tb = thongbao();
+            $tb = thongbao(0);
             $arrtbjs = [];
             foreach ($tb as $tb1) {
                $arrtam = [$tb1['tdtb'], $tb1['noidung'], $tb1['hoten'], $tb1['ngaydang']];
@@ -394,29 +403,33 @@ if (isset($_SESSION['iddn'])) {
                $view = "../sinhvien/views/changepass.php";
                require_once "../sinhvien/views/layout.php";
                break;
-         case 'changepass_':
-               $mess ="";
-               if(isset($_POST['pass'])) {
-                  $id = $_SESSION['iddn'];
-                  $pass = xoatag(trim($_POST['pass'],"'"));
-                  $check = getpass();
-                  if(is_array($check))
-                      $verify=password_verify($pass,$check['pass']);
-                     //Check pass
-                     if($verify){
-                        $newpass = $_POST['newpass'];
-                        $repass = $_POST['repass'];  
-                        //Check mk mới có khớp k            
-                        if($newpass==$repass) {
-                           changepass($id, $repass);
-                           $mess = "Đổi Thành Công";
-                        }else {
-                           $mess = "Mật khẩu không khớp";
-                        }
-                     }else{
-                        $mess = "Thất bại sai mật khẩu";
-                     }    
-               }
+               case 'changepass_':
+                  $mess ="";
+                  if(isset($_POST['pass'])) {
+                     $id = $_SESSION['iddn'];
+                     $pass = xoatag(trim($_POST['pass'],"'"));
+                     $check = getpass();
+                     if(is_array($check))
+                         $verify=password_verify($pass,$check['pass']);
+                        //Check pass
+                        if($verify){
+                           $newpass = $_POST['newpass'];
+                           $repass = $_POST['repass'];  
+                           //Check mk mới có khớp k            
+                           if($newpass==$repass) {
+                              changepass($id, $repass);
+                              $mess = "Đổi Thành Công";
+                           }else {
+                              $mess = "Mật khẩu không khớp";
+                           }
+                        }else{
+                           $mess = "Thất bại sai mật khẩu";
+                        } 
+                      
+                  }
+                  $view = "../sinhvien/views/changepass.php";
+                  require_once "../sinhvien/views/layout.php";
+               break;
       }
    }
 } else {
