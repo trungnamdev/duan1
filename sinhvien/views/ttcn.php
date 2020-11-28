@@ -38,7 +38,7 @@
                 </div> -->
             </div>
         </div>
-    </div>
+    
     <div class="d-tt-right">
         
         <div class="d-tt-95">
@@ -80,5 +80,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>
