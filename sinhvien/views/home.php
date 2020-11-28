@@ -23,7 +23,7 @@
                                 <div class="card-body p-0">
                                     <div class="info">
                                         <div class="aut">
-                                            <img src="<?= showfile($ttgv['hinh']) ?>" alt="">
+                                            <img src="<?= showfile($ttgv['hinh']) ?>" onerror="erroimg(this)">
                                             <a href="#"><?= $ttgv['hoten'] ?></a>
                                         </div>
                                         <div class="mon mr-2 text-secondary"><?= $sv['tenkhoa'] ?></div>

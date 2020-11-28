@@ -42,7 +42,7 @@
     ?>
         <div class="item mb-2 float-left">
         <div class="float-left p-0 hinhchat">
-            <img class="rounded-circle" src="<?= showfile($img) ?>" alt="">
+            <img class="rounded-circle" src="<?= showfile($img) ?>" onerror="erroimg(this)">
         </div>
         <div class="col-10 float-left pr-0">
             <a class="tieude-tb room" phong=<?= $lop['idlopd'] ?>><?= $lop['tenlop'] ?></a>

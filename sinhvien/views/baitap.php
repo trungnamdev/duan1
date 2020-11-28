@@ -47,7 +47,7 @@
 
 
                     <div class="d-info1">
-                        <img src="<?= $hinhgv ?>" alt="">
+                        <img src="<?= $hinhgv ?>" onerror="erroimg(this)">
                         <a href=""><?= $tengv ?></a>
                     </div>
                     <div class="d-info2">
