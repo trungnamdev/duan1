@@ -43,6 +43,14 @@ switch ($act) {
        header('Location: index.php?act=baitap');
              }
    break;
+   case 'baitaplop':
+      $acbt="active";
+      if(isset($_GET['idlop'])){
+         $id = $_GET['idlop'];
+      }
+      $view = "../giaovien/views/baitaplop.php";
+      require_once "../giaovien/views/layout.php";
+   break;
    case 'baitap':
       $acbt="active";
       $idlop = gv_getidlop();
