@@ -22,15 +22,15 @@
     function themlophoc($tenlop,$tenkhoa){
         return postdulieulayid("INSERT INTO `lop` (`id`, `tenlop`, `idkhoa`) VALUES (NULL, '$tenlop', '$tenkhoa');");
     }
-    function themthongbao($tieude, $noidung, $idnguoidang)
+    function themthongbao($tieude, $noidung, $idnguoidang, $nguoinhan)
     {
-        return postdulieu("INSERT INTO thongbao(tdtb,noidung,idngdang,ngaydang) VALUES('$tieude', '$noidung', '$idnguoidang', now())");    
+        return postdulieu("INSERT INTO thongbao(tdtb,noidung,idngdang,ngaydang,nguoinhan) VALUES('$tieude', '$noidung', '$idnguoidang', now(),'$nguoinhan')");    
     }
 
-    function suathongbao($tieude, $noidung, $idnguoidang, $idthongbao)
+    function suathongbao($tieude, $noidung, $idnguoidang, $idthongbao, $nguoinhan)
     {
         return postdulieu("UPDATE thongbao
-        SET tdtb = '$tieude', noidung = '$noidung', idngdang = '$idnguoidang', ngaydang = now()
+        SET tdtb = '$tieude', noidung = '$noidung', nguoinhan = '$nguoinhan', idngdang = '$idnguoidang', ngaydang = now()
         WHERE idtb = '$idthongbao';");    
     }
     function getallsv($chucvu){

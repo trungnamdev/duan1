@@ -31,7 +31,13 @@
                 <th scope="row"><?= $tb['idtb'] ?></th>
                 <td class="text-center">
                 <?php 
-                    echo $tb['tdtb']."<br><strong>Người đăng</strong>: ".$tb['hoten'] ;
+                    if($tb['nguoinhan']==0)
+                        $nguoinhan = "Sinh viên";
+                    else if($tb['nguoinhan']==1)
+                        $nguoinhan = "Giáo viên";
+                    else 
+                        $nguoinhan = "Tất cả";
+                    echo $tb['tdtb']."<br><strong>Người đăng</strong>: ".$tb['hoten']."<br><strong>Người nhận</strong>: ".$nguoinhan;
                 ?></td>
                 <td>
             

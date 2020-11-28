@@ -23,7 +23,7 @@
 
     <div class="option-box1">
         <ul>
-            <a class="text-primary"> <img class="avatagv mr-2" src="<?= showfile($gv['hinh']) ?>" alt=""><?= $gv['hoten'] ?></a>
+            <a class="text-primary"> <img class="avatagv mr-2" src="<?= showfile($gv['hinh']) ?>"onerror="erroimg(this)" alt=""><?= $gv['hoten'] ?></a>
             <a class=""> <i class='fas fa-book-open mr-2'></i><?= $arrbt['tenkhoa'] ?></a>
             <a class=""><i class="far fa-clock mr-2"></i> Hạn chót: <?= $arrbt['ngayhethan'] ?></a>
         </ul>
@@ -87,7 +87,7 @@
                 
             
             <div class="col-2 d-hinh">
-                 <img src="../system/dfimage.jpg" alt="">
+                 <img src="<?= showfile($gv['hinh']) ?>" onerror="erroimg(this)" alt="">
             </div>
             <div class="col-10" style="padding-left: 0px;">
                 <?=$nopbai['loiphe']?>

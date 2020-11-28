@@ -9,6 +9,14 @@
                 placeholder="Tiêu đề của thông báo" name="tieude">
         </div>
         <div class="form-group">
+            <label for="nguoinhan">Người nhận</label>
+            <select name="nguoinhan" id="nguoinhan">
+                <option value="2" selected>Tất cả</option>
+                <option value="0">Sinh viên</option>
+                <option value="1">Giáo viên</option>
+            </select>
+        </div>
+        <div class="form-group">
             <label for="noidung">Nội dung</label>
             <textarea  id="noidung" cols="120" rows="10" name="noidung"></textarea>
             <label id="nderror" style="color: red;" for="noidung"></label>
