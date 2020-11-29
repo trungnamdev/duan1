@@ -57,7 +57,7 @@
 </div>
 <div class="boxthongbao-right boxtinnhan_right p-0">
     <div class="chat-title">
-        <img id="anhchat">
+        <img id="anhchat" onerror="erroimg(this)">
         <div class="box-info ml-3">
             <h1 class="h3 text-truncate d-inline-block" style="max-width: 550px;" id="tenchat"></h1>
             <p class="mb-0" id="stv"></p>
