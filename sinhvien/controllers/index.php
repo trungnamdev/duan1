@@ -54,7 +54,6 @@ if (isset($_SESSION['iddn'])) {
                case 'all':
                   $all = "active";
                   $allbaitap = thongtinsv($_SESSION['iddn']);
-
                   break;
                case 'done':
                   $danop = "active";
