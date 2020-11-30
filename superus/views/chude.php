@@ -12,7 +12,6 @@
  
         <tbody>
             <tr class="thead-light text-center">
-                <th scope="col">ID</th> 
                 <th scope="col">Tên Chủ Đề</th> 
                 <th scope="col" class="text-center">Sửa</th>
                 <th scope="col" class="text-center">Xóa</th>
@@ -28,7 +27,6 @@
 
 
             <tr>
-                <th scope="row" class="text-center"><?=$cd['id']?></th>
                
                 <td class="text-center">  <?=$cd['tenchude']?>
                 </td>
