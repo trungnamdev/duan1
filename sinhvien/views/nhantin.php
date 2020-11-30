@@ -42,7 +42,7 @@
     ?>
         <div class="item mb-2 float-left">
         <div class="float-left p-0 hinhchat">
-            <img class="rounded-circle" src="<?= showfile($img) ?>" alt="">
+            <img class="rounded-circle" src="<?= showfile($img) ?>" onerror="erroimg(this)">
         </div>
         <div class="col-10 float-left pr-0">
             <a class="tieude-tb room" phong=<?= $lop['id'] ?>><?= $lop['tenlop'] ?></a>
@@ -57,7 +57,7 @@
 </div>
 <div class="boxthongbao-right boxtinnhan_right p-0">
     <div class="chat-title">
-        <img id="anhchat">
+        <img id="anhchat" onerror="erroimg(this)">
         <div class="box-info ml-3">
             <h1 class="h3 text-truncate d-inline-block" style="max-width: 550px;" id="tenchat"></h1>
             <p class="mb-0" id="stv"></p>
