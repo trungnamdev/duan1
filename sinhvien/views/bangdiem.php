@@ -5,6 +5,7 @@
 <?php 
     $allkh = khoahocdadk(); 
     foreach ($allkh as $kh) {
+        var_dump($allkh);
         $tenkh = $kh['tenkhoa'];
         $baitapkh = layBaiTapByKH($kh['id']); 
         $slbt = 0;

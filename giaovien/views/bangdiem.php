@@ -8,7 +8,6 @@
 if(isset($_GET['idsv']) && $_GET['idsv'] > 0){
     $allkh = khoahocdadk($_GET['idsv']); 
     foreach ($allkh as $kh) {
-        
         $tenkh = $kh['tenkhoa'];
         $baitapkh = layBaiTapByKH($kh['id'],$_GET['idsv']);  
         $slbt = 0;

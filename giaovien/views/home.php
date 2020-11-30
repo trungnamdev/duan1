@@ -55,35 +55,42 @@
     <div class="lop-box mt-4">
         <p class="h4 mb-3">Các lớp đang dạy <span class="badge badge-pill badge-light"><?= $dem = (isset($lopdangday)) ? count($lopdangday) : 0 ; ?></span></p>
         <div class="box-content">
-            <?php 
-                if(isset($lopdangday)) {
-                    foreach ($lopdangday as $lop) {
-                        $id=$lop['idlopd'];
-                        $countlop=countlop($id);
-                }
+        <?php 
+            if(isset($lopdangday)){
+                foreach ($lopdangday as $lop) {
+                    $id=$lop['idlopd'];
+                    $countlop=countlop($id);
+                    
             ?>
-            <div class="d-div3">
+         <div class="d-div3">
                 <div class="d-div3-img">
                     <img src="<?= showfile($lop['hinh']) ?>" alt="" onerror="erroimg(this)">
                 </div>
                 <br>
                 <div class="d-info">
                     <div class="d-row1">
-                        <p><?= $lop['tenlop'] ?> <br> <?= $lop['tenkhoa'] ?></p>
+                        <p class="mt-3"><?= $lop['tenlop'] ?> <br> <?= $lop['tenkhoa'] ?></p>
                     </div>
                 </div>
                 <div class="d-info">
                     <div class="d-row100 box-bot">
-                        <div class="d-info1 d-hc">
+                        <div class="d-info1">
                             <a><?=$countlop['tong']?> thành viên </a>
                         </div>
-                        <div class="d-info2 d-nb w-75">
+                        <div class="d-info2">
                             <a href="index.php?act=lopct&idlop=<?= $lop['idlopd'] ?>" class="btn btn-primary">Xem </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <?php }?>
+            <?php } } else {?>
+            <div class="emty-box">
+                <img src="../system/img/no_class.svg" alt="">
+                <p class="text-muted mt-4">Chưa có lớp nào được giao</p>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
 
         </div>
     </div>
