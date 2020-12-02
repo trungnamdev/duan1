@@ -82,6 +82,17 @@
     <div class=" thongbao-box thongke-box mt-5">
         <p class="h4 mb-3">Thống kê</p>
         <div class="thongbao border pt-5 pb-5 rounded">
+            <?php if($btdanop==0 && $btchuanop==0) {?>
+                <style>
+                    thongbao-box {
+                        padding: 0;
+                    }
+                </style>
+                <div class="emty-box">
+                    <img src="../system/img/homeundraw.svg" alt="">
+                    <p class="text-muted mt-4">Chưa có dữ liệu để phân tích</p>
+                </div>
+            <?php } else {?>
             <canvas id="myChart"></canvas>
             <p class="text-muted text-center mt-3">Tỉ lệ hoàn thành bài tập</p>
         </div>
@@ -120,3 +131,4 @@
         }
     });
     </script>
+    <?php }?>
