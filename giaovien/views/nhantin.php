@@ -113,7 +113,7 @@ $(document).on('keypress',function(e) {
         $(".room").click(function() {
             check =false;
             ref = $(this).attr("phong");
-           arrchat = <?php echo json_encode($arrchat); ?>; 
+           arrchat = <?php echo json_encode($arrchat) ?>; 
            $.each(arrchat, function(index, value) {
                 if(value[0] == ref){
                     tenchat = value[1];
