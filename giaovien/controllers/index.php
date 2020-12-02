@@ -118,7 +118,7 @@ switch ($act) {
 
       header('Location: index.php?act=baitap');
     break;
-   break;
+   
    case 'xoabt':
    if ($_GET['id']) {
      $id=$_GET['id'];
@@ -129,7 +129,7 @@ switch ($act) {
       alert("địa chỉ đã bị sai") ;
    </script>';
          }
-         header('Location: index.php?act=baitap');
+         header('Location: giaovien.php?act=baitap');
          break;
       case 'chambai':
          if (isset($_GET['id'])) {

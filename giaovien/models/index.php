@@ -142,4 +142,5 @@ function getSVByLop($idlop){
 function getTTKhoaByIDLop($idlop){
     return laymot("SELECT * FROM khoahoc WHERE id IN (SELECT idkhoa FROM lop WHERE id = $idlop)   ");
 }
+
 ?>
