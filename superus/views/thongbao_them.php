@@ -2,7 +2,7 @@
     <div class="tieude h1">Thêm thông báo</div>
 </div>
 <div class="thongbao">
-    <form action="index.php?act=themtb_" method="post" id="thongbao" onsubmit="return batloind()">
+    <form action="index.php?act=themtb_" method="post" id="thongbao">
         <div class="form-group">
             <label for="tieude">Tiêu đề</label>
             <input type="text" class="form-control" id="tieude" 
