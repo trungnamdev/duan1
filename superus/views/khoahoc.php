@@ -48,7 +48,7 @@
                     <strong><?= chuyenso($kh['giatien']) ?> VNĐ</strong>
                 </center>
                 </td>
-                <td>
+                <td class="gioihanchu">
                     <?=$kh['mota']?>
 
                 </td>

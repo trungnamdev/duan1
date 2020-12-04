@@ -16,7 +16,7 @@
                 ?></span>
             </div>
         </div>
-        <div class="d-tt-80">
+        <div class="d-tt-80"> 
             <div class="d-tt-100 mt-30">
                 <div class="d-tt-text-100">
                     <span class="d-tt-text-theme">Email</span>
