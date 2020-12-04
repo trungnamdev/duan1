@@ -29,7 +29,7 @@
                     <strong>Địa chỉ : </strong><?= $sv['diachi'] ?><br>
                     <strong>Giới tính : </strong><?= chuyendoi01($sv['sex'],"0","Nữ","Nam") ?>
                 </td>
-                <td class="text-center"><img src="<?= showfile($sv['hinh']) ?>" alt="" class="img-thumbnail" width ="80px"></td>
+                <td class="text-center"><img src="<?= showfile($sv['hinh']) ?>" alt="" class="img-thumbnail" width ="80px" onerror="erroimg(this)"></td>
                 <td>
                     <?= $sv['email'] ?>
                     <br>

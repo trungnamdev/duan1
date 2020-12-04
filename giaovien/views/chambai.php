@@ -22,7 +22,7 @@
             <th scope="col">Điểm</th>
             <th scope="col">Trạng thái</th>
             <th scope="col">Lời phê</th>
-            <th scope="col">Tải xuống</th>
+            <!-- <th scope="col">Tải xuống</th> -->
         </tr>
       
         <tbody>
@@ -81,7 +81,7 @@
                 <td>
                 <input type="text" class="form-control loiphe" placeholder="nhập lời phê" typeid="<?= $arrtrangthai['idfile'] ?>" <?=$dbbtn?> value="<?=$loiphe?>">
                 </td>
-                <td>
+                <!-- <td>
                     <?php 
                         if($link!="") {
                     ?>
@@ -95,7 +95,7 @@
                             </path>
                         </svg></a>
                         <?php } ?>
-                </td>
+                </td> -->
             </tr>
             <?php }?>
 

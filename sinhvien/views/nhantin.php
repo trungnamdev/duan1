@@ -33,7 +33,7 @@
 </div>
 <div class="thongbao tinnhan mt-5">
     <?php $arrchat = [];
-     if(is_array($alllop)){
+    if(is_array($alllop)){
     foreach($alllop as $lop){ 
         $sl = demsvlop($lop['id'])['sl'];
         $img = gethinhlopchat($lop['id']);
@@ -42,7 +42,7 @@
     ?>
         <div class="item mb-2 float-left">
         <div class="float-left p-0 hinhchat">
-            <img class="rounded-circle" src="<?= showfile($img) ?>" alt="">
+            <img class="rounded-circle" src="<?= showfile($img) ?>" onerror="erroimg(this)">
         </div>
         <div class="col-10 float-left pr-0">
             <a class="tieude-tb room" phong=<?= $lop['id'] ?>><?= $lop['tenlop'] ?></a>
@@ -57,17 +57,25 @@
 </div>
 <div class="boxthongbao-right boxtinnhan_right p-0">
     <div class="chat-title">
-        <img id="anhchat">
+        <img id="anhchat" onerror="erroimg(this)">
         <div class="box-info ml-3">
             <h1 class="h3 text-truncate d-inline-block" style="max-width: 550px;" id="tenchat"></h1>
             <p class="mb-0" id="stv"></p>
         </div>
     </div>
     <div class="doan_chat khungchat pt-1" id="chuachat">
+    
     <div class="boxthongbao-chitiet">
-   <i class="fas fa-stream"></i>
-   <p class="text-secondary">Chọn một tin nhắn để xem</p>
-</div>
+        <?php if(count($alllop)==0) {?>
+            <div class="emty-box">
+                <img src="../system/img/nochat.svg" alt="">
+                <p class="text-muted mt-4">Chưa có tin nhắn nào</p>
+            </div>
+        <?php } else {?>
+        <i class="fas fa-stream"></i>
+        <p class="text-secondary">Chọn một tin nhắn để xem</p>
+        <?php }?>
+    </div>
     </div>
 
     <div class="chat_buttons">

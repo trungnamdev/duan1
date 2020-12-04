@@ -12,7 +12,6 @@
 
         <tbody>
             <tr class="thead-light text-center">
-                <th scope="col">ID</th>
                 <th scope="col">Tên lớp</th>
                 <th scope="col">Tên giáo viên</th>
                 <th scope="col">Tên khóa học</th>
@@ -29,7 +28,6 @@
         ?>
 
             <tr>
-                <th scope="row"  class="text-center"><?= $lh['idlop'] ?></th>
                 <td class="text-center">
                 <?=$lh['tenlop']?></td>
                 <td class="text-center">

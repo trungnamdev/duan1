@@ -382,7 +382,7 @@ ul a:hover {
     padding: 5px 20px;
     border-radius: 10px;
     margin-bottom: 0;
-    line-height: 40px;
+    line-height: 35px;
     margin-left: 5px;
 }
 
@@ -763,7 +763,8 @@ ul a:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
     -webkit-box-orient: vertical;
 }
 
@@ -1022,12 +1023,15 @@ ul a:hover {
     position: relative;
     height: 385px;
 }
+
 .d-row {
     justify-content: unset;
 }
+
 .d-div3:nth-child(3n) {
     margin-right: calc(8%/3) !important;
 }
+
 .d-div3:nth-child(4n) {
     margin-right: 0;
 }
@@ -1123,8 +1127,7 @@ input[type=file] {
     }
     .d-div3-img {
         height: 200px;
-    }   
-    
+    }
     .boxthongbao-right {
         width: calc(70% - 300px);
     }
@@ -1135,7 +1138,6 @@ input[type=file] {
     .thongbao-box {
         height: 500px;
     }
-
     .lop .d-div3 {
         height: 350px;
     }
@@ -1184,4 +1186,5 @@ img {
 
 .emty-box img {
     width: 200px;
+    height: auto;
 }

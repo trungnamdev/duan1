@@ -1,10 +1,14 @@
  <div class="header-box">
      <div class="tieude h1">ĐĂNG KÝ KHÓA HỌC</div>
-     <div class="option-box">
-         <a href="index.php?act=dkkh" class="<?= $all ?>">Tất cả</a>
-         <a href="index.php?act=dkkh&ht=dadk" class="<?= $dadk ?>">Đã đăng ký</a>
-         <a href="index.php?act=dkkh&ht=nodk" class="<?= $nodk ?>">Chưa đăng ký</a>
-         <a class="active float-right" id="tienconlai">Số tiền hiện có : <?= chuyenso($_SESSION['tien']) ?> VNĐ</a>
+     <div class="option-box" style="justify-content: space-between;">
+         <div>
+             <a href="index.php?act=dkkh" class="<?= $all ?>">Tất cả</a>
+             <a href="index.php?act=dkkh&ht=dadk" class="<?= $dadk ?>">Đã đăng ký</a>
+             <a href="index.php?act=dkkh&ht=nodk" class="<?= $nodk ?>">Chưa đăng ký</a>
+         </div>
+         <div>
+             <a class="active" id="tienconlai">Số tiền hiện có : <?= chuyenso($_SESSION['tien']) ?> VNĐ</a>
+         </div>
      </div>
  </div>
  <div class="khoahoc ">
@@ -71,5 +75,5 @@
      </table>
  </div>
  <script>
- let ht = <?= json_encode($ht)?>;
+let ht = <?= json_encode($ht)?>;
  </script>

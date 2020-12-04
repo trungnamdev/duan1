@@ -13,7 +13,7 @@
 </div>
 <div class="d-row">
     <?php
-
+    if($allbaitap) {
     foreach ($allbaitap as $allbt) {
 
         $tenbt = $allbt['tenbaitap'];
@@ -47,7 +47,7 @@
 
 
                     <div class="d-info1">
-                        <img src="<?= $hinhgv ?>" alt="">
+                        <img src="<?= $hinhgv ?>" onerror="erroimg(this)">
                         <a href=""><?= $tengv ?></a>
                     </div>
                     <div class="d-info2">
@@ -93,6 +93,10 @@
         </div>
 
     <?php
-    } ?>
-
+    } }else { ?>
+    <div class="emty-box">
+        <img src="../system/img/nodata.svg" alt="">
+        <p class="text-muted mt-4">Chưa có bài tập nào được giao</p>
+    </div>
+    <?php }?>
 </div>

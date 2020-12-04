@@ -71,7 +71,7 @@
                     <a href="index.php?act=home">
                         <li class="<?= $achome ?>">Tổng quan<img src="../system/img/tongquan.svg" alt=""></i></li>
                     </a>
-                    <a href="index.php?act=baitap&sx=all">
+                    <a href="index.php?act=baitap">
                         <li class="<?= $acbt ?>">Bài Tập<img src="../system/img/baitap.svg" alt=""></li>
                     </a>
                     <a href="index.php?act=lop">
@@ -81,7 +81,7 @@
                         <li class="<?= $actb ?>">Thông báo<img src="../system/img/thongbao.svg" alt=""></li>
                     </a>
                     <a href="index.php?act=chat">
-                        <li class="<?= $chat ?>">Nhắn tin<img src="../system/img/chat.svg" alt=""></li>
+                        <li class="<?= $chat ?>">Nhắn tin<img src="../system/img/nhantin.svg" alt=""></li>
                     </a>
                 </ul>
             </div>

@@ -12,7 +12,6 @@
  
         <tbody>
             <tr class="thead-light text-center">
-                <th scope="col">ID</th>
                 <th scope="col">Ảnh</th>
                 <th scope="col">Tên khóa học</th>
                 <th scope="col">Giá Tiền</th>
@@ -31,10 +30,7 @@
                     $chude = getChuDe($kh['chude']);
                 
             ?>
-
-
             <tr>
-                <th scope="row"><?=$kh['id']?></th>
                 <td class="text-center"><img src="<?=showfile($kh['hinh'])?>" alt="" onerror="erroimg(this)"  class="img-thumbnail" width ="80px"></td>
                 <td>
                     <center>
