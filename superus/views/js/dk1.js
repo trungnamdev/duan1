@@ -169,11 +169,12 @@ $(document).ready(function() {
         }
     });
 
-    $("#tox").blur(function() {
-        // console.log($("#noidung").val());
-        alert("aaaaaaaaa");
+    $("#dangtb").click(function() {
+        var d = $("#noidung");
+        console.log(d);
         return false;
     });
+
 });
 
 // function batloind() {
