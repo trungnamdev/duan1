@@ -23,7 +23,7 @@ if (isset($_SESSION['iddn'])) {
       switch ($act) {
          case 'home':
             $idsv = $_SESSION['iddn'];
-            $ttsv = thongtinsv($idsv);
+            $ttsv = thongtinsv1($idsv);
             $tb = thongbao(0);
             //Đếm bài tập cho thống kê
             $btdanop = 0;
@@ -38,6 +38,14 @@ if (isset($_SESSION['iddn'])) {
             $view = "../sinhvien/views/home.php";
             require_once "../sinhvien/views/layout.php";
             break;
+
+            case 'lopbaitap':
+               $acbt="active"; 
+               $lopdanghoc = getlopsvdanghoc(); 
+               $view = "../sinhvien/views/baitap.php";
+               require_once "../sinhvien/views/layout.php";
+               break;
+
          case 'baitap':
             $all = "";
             $danop = "";
@@ -47,21 +55,21 @@ if (isset($_SESSION['iddn'])) {
             } else {
                $sx = "all";
             }
-
-            $checkbaitap = thongtinsv($_SESSION['iddn']);
-
+            if(isset($_GET['idlop'])) $idlop = $_GET['idlop'];
+            $checkbaitap = thongtinsv($_SESSION['iddn'],$idlop);
+            $tenlop = tenlop($idlop);
             switch ($sx) {
                case 'all':
                   $all = "active";
-                  $allbaitap = thongtinsv($_SESSION['iddn']);
+                  $allbaitap = thongtinsv($_SESSION['iddn'],$idlop);
                   break;
                case 'done':
                   $danop = "active";
-                  $allbaitap = btdanop();
+                  $allbaitap = btdanop($idlop);
                   break;
                case 'not':
                   $nonop = "active";
-                  $allbaitap = btchuanop();
+                  $allbaitap = btchuanop($idlop);
                   break;
             }
             // Lấy all bài tập theo ID lớp 
@@ -77,7 +85,7 @@ if (isset($_SESSION['iddn'])) {
             }
             // Đếm bài tập chưa nộp
             $acbt = "active";
-            $view = "../sinhvien/views/baitap.php";
+            $view = "../sinhvien/views/baitapl.php";
             require_once "../sinhvien/views/layout.php";
             break;
          case 'nopbaitap':

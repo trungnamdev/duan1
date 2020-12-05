@@ -77,7 +77,7 @@
                     <a href="index.php?act=home">
                         <li class="<?= $achome ?>">Tổng quan<img src="../system/img/tongquan.svg" alt=""></i></li>
                     </a>
-                    <a href="index.php?act=baitap&sx=all">
+                    <a href="index.php?act=lopbaitap">
                         <li class="<?= $acbt ?>">Bài Tập<img src="../system/img/baitap.svg" alt=""></li>
                     </a>
                     <a href="index.php?act=bangdiem">
