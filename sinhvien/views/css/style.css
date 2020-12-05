@@ -894,6 +894,19 @@ ul a:hover {
     font-weight: 600;
 }
 
+.gioihanchu:hover {
+    -webkit-box-orient: none;
+}
+
+.gioihanchu {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipse;
+    overflow: hidden;
+    padding-bottom: 0px !important;
+}
+
 .d-tb-ml20 {
     margin-left: 20px;
 }

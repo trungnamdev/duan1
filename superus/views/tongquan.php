@@ -6,11 +6,11 @@
     <div class="slide swiper-container">
         <div class="swiper-wrapper">
             <!-- Start box -->
-
+            <a href="index.php?act=sinhvien" style="margin-right: 20px;color:black"> 
             <div id="card2" class="card pl-4 pr-4 swiper-slide thongbao-shadow" style="background-color: #dcf1ff">
                 <div class="row no-gutters">
                     <div class="col-10">
-                        <p class="h4">Sinh viên</p>
+                    <p class="h4">Sinh viên</p> 
                         <span class="h1" style="color: #012e4c"><?= demnguoi(0)['tong'] ?></span>
                     </div>
                     <div class="col-2">
@@ -18,23 +18,26 @@
                     </div>
                 </div>
             </div>
-
+            </a>
+            <a href="index.php?act=giaovien" style="margin-right: 20px;color:black">
             <div id="card2" class="card pl-4 pr-4 swiper-slide thongbao-shadow" style="background-color: #d7d4ff">
+      
                 <div class="row no-gutters">
                     <div class="col-10">
-                        <p class="h4">Giảng viên</p>
+                  <p class="h4">Giảng viên</p>
                         <span class="h1"><?= demnguoi(1)['tong'] ?></span>
                     </div>
                     <div class="col-2">
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </div>
                 </div>
-            </div>
-
+            </div> 
+            </a>
+            <a href="index.php?act=khoahoc" style="margin-right: 20px;color:black">
             <div id="card2" class="card pl-4 pr-4 swiper-slide thongbao-shadow" style="background-color: #ffe2e2">
                 <div class="row no-gutters">
                     <div class="col-10">
-                        <p class="h4">Khóa học</p>
+                     <p class="h4">Khóa học</p>
                         <span class="h1"><?= demsoluong('khoahoc')['tong'] ?></span>
                     </div>
                     <div class="col-2">
@@ -42,17 +45,19 @@
                     </div>
                 </div>
             </div>
+            </a>
+            <a href="index.php?act=chude" style="margin-right: 20px;color:black"> 
             <div id="card2" class="card pl-4 pr-4 swiper-slide thongbao-shadow" style="background-color: #fffdbe">
                 <div class="row no-gutters">
                     <div class="col-10">
-                        <p class="h4">Chủ đề</p>
+                  <p class="h4">Chủ đề</p> 
                         <span class="h1"><?= demsoluong('chude')['tong'] ?></span>
                     </div>
                     <div class="col-2">
                         <i class="fa fa-bookmark" aria-hidden="true"></i>
                     </div>
                 </div>
-            </div>
+            </div></a>
         </div>
     </div>
 
