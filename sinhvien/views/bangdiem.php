@@ -28,7 +28,7 @@
 
 <div class="bangdiem">
     <div class="tdbangdiem">
-        <?=$tenkh?> <span>Điểm trung bình : <strong><?=$tb?><strong></span>
+        <?=$tenkh?> <span>Điểm trung bình : <strong><?=number_format($tb,2,'.','.')?><strong></span>
     </div>
     <table class="table tbbangdiem">
         <tr class="bgtimnhat">

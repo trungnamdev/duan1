@@ -8,7 +8,7 @@ if (isset($_GET['kh']) && $_GET['kh'] == 'them') {
     <div class="row">
     <div class="col-4 form-group pr-5 d-mt2">
     <div class="row chuaanhshow ">
-        <img src="<?= showfile($suakh['hinh']) ?>" id="showanh" onerror="erroimg(this)">
+        <img src="" id="showanh" onerror="erroimg(this)">
         </div>
     </div>
     <div class="khoahoc p-3 col-8"> 
@@ -20,7 +20,7 @@ if (isset($_GET['kh']) && $_GET['kh'] == 'them') {
                 <label for="mota">Mô Tả Khóa Học</label>
                 <input type="text" class="form-control" id="mota" name="mota">
                 <label for="mota">Giá Tiền</label>
-                <input type="number" class="form-control" id="giatien" name="giatien" value="<?=$suakh['giatien']?>">
+                <input type="number" class="form-control" id="giatien" name="giatien" value="">
 
                 <label for="chude">Chọn Chủ Đề</label>
                 <select name="chude" class="form-control  chude" id="chude">

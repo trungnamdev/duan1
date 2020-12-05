@@ -249,15 +249,20 @@ switch ($act) {
       break;   
 
    case 'themtb_':
-      if(isset($_POST['tieude'])&&isset($_POST['noidung'])&&isset($_POST['idnguoidang'])){
-         $tieude = xoatag($_POST['tieude']);
+      if(isset($_POST['tieude'])&&isset($_POST['idnguoidang'])){
+         if ($_POST['noidung']!='') {
+            $tieude = xoatag($_POST['tieude']);
          $noidung = $_POST['noidung'];
          $nguoinhan = $_POST['nguoinhan'];
          $idnguoidang = $_POST['idnguoidang'];
          themthongbao($tieude, $noidung, $idnguoidang, $nguoinhan);
-         header('location: index.php?act=thongbao');
-      }else
-         header('location: index.php?act=thongbao');
+         header('location: index.php?act=thongbao'); 
+         } else {
+          $_SESSION['lndtb']="Xin vui lòng nhập nội dung";
+          header('location: index.php?act=themtb'); 
+         }
+      }else{
+         header('location: index.php?act=themtb');}
       break;
 
    case 'dangxuat':

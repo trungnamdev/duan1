@@ -169,15 +169,23 @@ $(document).ready(function() {
         }
     });
 
+    // $("#dangtb").click(function() {
+    //     var d = $("#noidung");
+    //     console.log(d);
+    //     return false;
+    // });
+
 
 });
-
-function batloind() {
-    if ($("#noidung").val() == '') {
-        $("#nderror").html("Xin vui lòng nhập nội dung");
-        $(".mce-content-body").focus();
-        return false;
-    } else
-        return true;
-
-}
+// function batloind() {
+// if ($("#noidung").val() == '') {
+//     $("#nderror").html("Xin vui lòng nhập nội dung");
+//     $(".mce-content-body").focus();
+//     return false;
+// } else {
+//     $("#nderror").html("");
+//     return true;
+// }
+//     console.log($("#noidung").val());
+//     return false;
+// }
