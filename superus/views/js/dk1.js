@@ -68,6 +68,54 @@ $(document).ready(function() {
             }
         }
     });
+    $("#thongbao").validate({
+        rules: {
+            "tieude": {
+                required: true,
+            },
+            "noidung": {
+                required: true
+            }
+        },
+        messages: {
+            "tieude": {
+                required: "Xin vui lòng nhập tiêu đề"
+            },
+            "noidung": {
+                required: "Xin vui lòng nhập nội dung"
+
+            }
+        }
+    });
+
+    $("#lophoc").validate({
+        rules: {
+            "tenlop": {
+                required: true,
+            },
+            "tenkhoa": {
+                required: true,
+
+            },
+            "gv": {
+                required: true,
+
+            }
+        },
+        messages: {
+            "tenlop": {
+                required: "Xin vui lòng nhập tên lớp"
+            },
+            "tenkhoa": {
+                required: "Xin vui lòng chọn khóa học",
+
+            },
+            "gv": {
+                required: "Xin vui lòng chọn giáo viên",
+
+            }
+        }
+    });
     $('#ngaysinh').datepicker({
         changeYear: true,
         changeMonth: true,
@@ -85,6 +133,10 @@ $(document).ready(function() {
             },
             "anhkh": {
                 required: true
+            },
+            "giatien": {
+                required: true,
+                number: true
             }
         },
         messages: {
@@ -97,6 +149,10 @@ $(document).ready(function() {
             },
             "anhkh": {
                 required: "Vui lòng chọn ảnh khóa học"
+            },
+            "giatien": {
+                required: "Vui lòng nhập số tiền khóa học",
+                number: "tiền phải là giá trị số"
             }
         }
     });
@@ -115,3 +171,13 @@ $(document).ready(function() {
 
 
 });
+
+function batloind() {
+    if ($("#noidung").val() == '') {
+        $("#nderror").html("Xin vui lòng nhập nội dung");
+        $(".mce-content-body").focus();
+        return false;
+    } else
+        return true;
+
+}

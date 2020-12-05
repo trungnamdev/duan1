@@ -4,7 +4,7 @@
 
     <div class="option-box1">
         <ul>
-            <a class="text-primary"> <img class="avatagv mr-2" src="<?= showfile($baitap_info['hinh']) ?>" alt=""><?= $baitap_info['tenkhoa'] ?></a>
+            <a class="text-primary"> <img class="avatagv mr-2" src="<?= showfile($baitap_info['hinh']) ?>" alt="" onerror="erroimg(this)"><?= $baitap_info['tenkhoa'] ?></a>
             <a class=""> <i class='fas fa-book-open mr-2'></i> <?= $baitap_info['tenlop'] ?></a>
             <a class=""><i class="far fa-clock mr-2"></i> Hạn chót: <?= $baitap_info['ngayhethan'] ?></a>
         </ul>
@@ -21,7 +21,8 @@
             <th scope="col">Tên sinh viên</th>
             <th scope="col">Điểm</th>
             <th scope="col">Trạng thái</th>
-            <th scope="col">Tải xuống</th>
+            <th scope="col">Lời phê</th>
+            <!-- <th scope="col">Tải xuống</th> -->
         </tr>
       
         <tbody>
@@ -31,11 +32,20 @@
                 $arrtrangthai = checknopbai($_GET['id'],$ds['idsv']);
                 $link = "";
                 $file = "";
+                $dbbtn="";
+                $loiphe="";
+
                 if(is_array($arrtrangthai)) {
+                    if($arrtrangthai['loiphe']!=""){
+                        $loiphe = $arrtrangthai['loiphe'];
+                        $dbbtn="disabled";
+                    }
                     $link = $arrtrangthai['file'];
                     $trangthai = '<p class="text-success">Đã nộp</p>';
                 }
-                else $trangthai = '<p class="text-danger">Chưa nộp</p>';
+                else{ $trangthai = '<p class="text-danger">Chưa nộp</p>';
+                    $dbbtn="disabled";
+                }
                 
                 
         
@@ -68,12 +78,14 @@
                 <td>
                 <?= $trangthai ?>
                 </td>
-                
                 <td>
+                <input type="text" class="form-control loiphe" placeholder="nhập lời phê" typeid="<?= $arrtrangthai['idfile'] ?>" <?=$dbbtn?> value="<?=$loiphe?>">
+                </td>
+                <!-- <td>
                     <?php 
                         if($link!="") {
                     ?>
-                    <a href="<?=$link?>">
+                    <a href="<?= tachfilenop($link,1)?>">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="#384E85" viewBox="0 0 24 24" width="2em">
                             <path class="uim-primary"
                                 d="M7.293,12.707l3.99969,3.9997a1.00354,1.00354,0,0,0,1.41468,0L16.707,12.707A.99989.99989,0,0,0,15.293,11.293L13,13.58594V8a1,1,0,0,0-2,0v5.58594L8.707,11.293A.99989.99989,0,0,0,7.293,12.707Z">
@@ -83,7 +95,7 @@
                             </path>
                         </svg></a>
                         <?php } ?>
-                </td>
+                </td> -->
             </tr>
             <?php }?>
 

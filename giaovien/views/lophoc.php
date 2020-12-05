@@ -1,4 +1,4 @@
- <div class="noidung">
+ <div class="noidung lop">
 
         <div class="header-box">
             <div class="tieude h1">LỚP HỌC</div>
@@ -19,15 +19,15 @@
                 <br>
                 <div class="d-info">
                     <div class="d-row1">
-                        <p><?= $lop['tenlop'] ?> <br> <?= $lop['tenkhoa'] ?></p>
+                        <p class="mt-3"><?= $lop['tenlop'] ?> <br> <?= $lop['tenkhoa'] ?></p>
                     </div>
                 </div>
                 <div class="d-info">
                     <div class="d-row100 box-bot">
-                        <div class="d-info1 d-hc">
+                        <div class="d-info1">
                             <a><?=$countlop['tong']?> thành viên </a>
                         </div>
-                        <div class="d-info2 d-nb w-75">
+                        <div class="d-info2">
                             <a href="index.php?act=lopct&idlop=<?= $lop['idlopd'] ?>" class="btn btn-primary">Xem </a>
                         </div>
                     </div>

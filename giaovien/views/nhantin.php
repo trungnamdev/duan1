@@ -32,7 +32,9 @@
     <div class="tieude h1">Tin nhắn</div>
 </div>
 <div class="thongbao tinnhan mt-5">
-    <?php $arrchat = []; foreach($alllop as $lop){ 
+    <?php $arrchat = []; 
+    if(is_array($alllop)){
+    foreach($alllop as $lop){ 
         $sl = demsvlop($lop['idlopd'])['sl'];
         $img = gethinhlopchat($lop['idlopd'])['hinh'];
         $arrtam = [$lop['idlopd'],$lop['tenkhoa']."--".$lop['tenlop'],$lop['tenkhoa'],$sl,$img];   
@@ -40,7 +42,7 @@
     ?>
         <div class="item mb-2 float-left">
         <div class="float-left p-0 hinhchat">
-            <img class="rounded-circle" src="<?= showfile($img) ?>" alt="">
+            <img class="rounded-circle" src="<?= showfile($img) ?>" onerror="erroimg(this)">
         </div>
         <div class="col-10 float-left pr-0">
             <a class="tieude-tb room" phong=<?= $lop['idlopd'] ?>><?= $lop['tenlop'] ?></a>
@@ -49,13 +51,13 @@
             </div>
         </div>
     </div>
-    <?php }?>
+    <?php }}?>
 </div>
 </div>
 </div>
 <div class="boxthongbao-right boxtinnhan_right p-0">
     <div class="chat-title">
-        <img id="anhchat">
+        <img id="anhchat" onerror="erroimg(this)">
         <div class="box-info ml-3">
             <h1 class="h3 text-truncate d-inline-block" style="max-width: 550px;" id="tenchat"></h1>
             <p class="mb-0" id="stv"></p>
@@ -69,14 +71,6 @@
     </div>
 
     <div class="chat_buttons">
-        <input type="file" name="file" id="file">
-        <label for="file" class="mb-0"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2.5em">
-                <path class="uim-tertiary" d="M12,22A10,10,0,1,1,22,12,10.01146,10.01146,0,0,1,12,22Z"></path>
-                <path class="uim-primary" d="M16,13H8a1,1,0,0,1,0-2h8a1,1,0,0,1,0,2Z"></path>
-                <path class="uim-primary" d="M12,17a.99974.99974,0,0,1-1-1V8a1,1,0,0,1,2,0v8A.99974.99974,0,0,1,12,17Z">
-                </path>
-            </svg>
-        </label>
         <input type="text" id="ndchat" placeholder="Aa">
 
         <button id="guichat"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2.5em">
@@ -111,7 +105,6 @@ $(document).on('keypress',function(e) {
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-
         //   code lay du lieu firebase
         let ref = "";
         let iddn = <?php echo json_encode($_SESSION['iddn']) ?>;
@@ -168,13 +161,13 @@ $(document).on('keypress',function(e) {
                         if(value['id'] == iddn){
                             tinnhan+= '<div class="nguoinhan doanchat doanchat2"><p>'+value['noidung'];
                         }else{
-                            tinnhan+= '<div class="nguoigui doanchat"><img src="../uploads/'+value['img']+'"><p><span class="hotenchat">'+value['ten']+'</span><br>'+value['noidung'];
+                            tinnhan+= '<div class="nguoigui doanchat"><img src="'+value['img']+'"><p><span class="hotenchat">'+value['ten']+'</span><br>'+value['noidung'];
                         }
                         }else{
                         if(value['id'] == iddn){
                             tinnhan+= '<span class="info"><span>'+timecu+'</span></p></div><div class="nguoinhan doanchat doanchat2"><p>'+value['noidung'];
                         }else{
-                            tinnhan+= '<span class="info"><span>'+timecu+'</span></p></div><div class="nguoigui doanchat"><img src="../uploads/'+value['img']+'"><p><span class="hotenchat">'+value['ten']+'</span><br>'+value['noidung'];
+                            tinnhan+= '<span class="info"><span>'+timecu+'</span></p></div><div class="nguoigui doanchat"><img src="'+value['img']+'"><p><span class="hotenchat">'+value['ten']+'</span><br>'+value['noidung'];
                         }
                         }
                     }

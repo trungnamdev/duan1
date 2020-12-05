@@ -23,7 +23,7 @@
                                 <div class="card-body p-0">
                                     <div class="info">
                                         <div class="aut">
-                                            <img src="<?= showfile($ttgv['hinh']) ?>" alt="">
+                                            <img src="<?= showfile($ttgv['hinh']) ?>" onerror="erroimg(this)">
                                             <a href="#"><?= $ttgv['hoten'] ?></a>
                                         </div>
                                         <div class="mon mr-2 text-secondary"><?= $sv['tenkhoa'] ?></div>
@@ -79,28 +79,44 @@
         </div>
     </div>
 
-    <div class=" thongbao-box mt-5">
-        <p class="h4 mb-3">Thông báo</p>
-        <div class="thongbao border thongbao-shadow rounded p-4">
-           
-        <?php
-            foreach ($tb as $thongbao) {
-                $nd = date("d-m-Y", strtotime($thongbao['ngaydang']));
-            ?>
-                <div class="item mb-3">
-                    <a href="index.php?act=thongbao&idtb=<?= $thongbao['idtb'] ?>" class="h5"><?= $thongbao['tdtb'] ?></a>
-                    <div class="info mt-2 text-secondary">
-                        <div class="mr-3">
-                            <i class="uim uim-user-nurse "></i>
-                            <span class="ml-1"><?= $thongbao['hoten'] ?></span>
-                        </div>
-                        <div>
-                            <i class="uim uim-clock"></i>
-                            <span class="ml-1"><?= $nd ?></span>
-                        </div>
-                    </div>
-                </div>
-            <?php }
-            ?>
+    <div class=" thongbao-box thongke-box mt-5">
+        <p class="h4 mb-3">Thống kê</p>
+        <div class="thongbao border pt-5 pb-5 rounded">
+            <canvas id="myChart"></canvas>
+            <p class="text-muted text-center mt-3">Tỉ lệ hoàn thành bài tập</p>
         </div>
     </div>
+
+    <!-- chart-js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+    var btdn = <?php echo $btdanop ?>;
+    var btcn = <?php echo $btchuanop ?>;
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'pie',
+
+        // The data for our dataset
+        data: {
+            labels: ['Đã Nộp', 'Chưa nộp'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: ['rgb(44, 99, 132)','rgb(255, 99, 132)'],
+                borderColor: ['rgb(44, 99, 132)','rgb(255, 99, 132)'],
+                data: [btdn, btcn]
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+            color: [
+                'red', // color for data at index 0
+                'blue', // color for data at index 1
+                'green', // color for data at index 2
+                'black', // color for data at index 3
+                //...
+            ]
+        }
+    });
+    </script>

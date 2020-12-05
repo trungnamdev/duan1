@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!-- file dung chung cho 3 modun -->
-   <script src="./system/jquery.js"></script>
+    <script src="./system/jquery.js"></script>
     <script src="./system/jquery-ui.js"></script>
     <script src="./system/jsvali.js"></script>
     <script src="./system/icons.js"></script>

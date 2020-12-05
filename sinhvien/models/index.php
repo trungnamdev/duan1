@@ -47,14 +47,14 @@ function layBaiTapByKH($idkh){
 }
 //end BÀI TẬP
 
-function thongbao(){
-   return laydulieu("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang ORDER BY ngaydang"); 
+function thongbao($nguoinhan){
+   return laydulieu("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang where nguoinhan = $nguoinhan or nguoinhan = 2 ORDER BY ngaydang"); 
 }
 function thongbaoct($id){
     return laymot("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang WHERE idtb=$id");
 }
 function thongtinsv($id){
-    return laydulieu("SELECT *,baitap.hinh AS 'hinhbt' FROM taikhoan INNER JOIN sv_lop ON sv_lop.idsv=taikhoan.id INNER JOIN lop ON lop.id=sv_lop.idlop INNER JOIN khoahoc ON khoahoc.id=lop.idkhoa INNER JOIN chude ON chude.id=khoahoc.chude INNER JOIN baitap ON lop.id=baitap.idlop  WHERE taikhoan.id= $id   ORDER BY ngayhethan ");
+    return laydulieu("SELECT *,baitap.hinh AS 'hinhbt' FROM taikhoan INNER JOIN sv_lop ON sv_lop.idsv=taikhoan.id INNER JOIN lop ON lop.id=sv_lop.idlop INNER JOIN khoahoc ON khoahoc.id=lop.idkhoa INNER JOIN chude ON chude.id=khoahoc.chude INNER JOIN baitap ON lop.id=baitap.idlop  WHERE taikhoan.id= $id  ORDER BY ngayhethan ");
 }   
 function thongtinsvtomtat($id)
 {
@@ -99,7 +99,7 @@ function demsvlop($idlop){
     return laymot("SELECT COUNT(*) as 'sl' FROM sv_lop WHERE idlop = $idlop");
 }
 function gethinhlopchat($idlop){
-    return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%')")['hinh'];
+    return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%' limit 1)")['hinh'];
 }
 function gettenchude($cd){
     return laymot("SELECT * FROM chude WHERE id = $cd");
@@ -115,5 +115,15 @@ function capnhattrutien($tien,$id){
 }
 function getkhoahocbylopid($id){
     return laymot("SELECT * FROM khoahoc WHERE id = (SELECT idkhoa FROM lop WHERE id = $id)");
+}
+function demdanop($idlop)
+{
+
+}
+
+function demallbt(){
+    $idlop = getIDSV()['idlop'];
+    $tong = laymot("SELECT count(*) as 'tong' FROM baitap WHERE idlop = $idlop");
+    return $tong['tong'];
 }
 ?>

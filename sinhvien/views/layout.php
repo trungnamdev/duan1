@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- file dung chung cho 3 modun -->
-    <link rel="stylesheet" href="../system/css/stylelayout.css">
     <!-- file riêng moi modun -->
     <link rel="stylesheet" href="views/css/style.css">
+    <!-- file dung chung cho 3 modun -->
+    <link rel="stylesheet" href="../system/css/stylelayout.css">
     <script src="../system/js/jquery.js"></script>
     <script src="../system/js/jquery-ui.js"></script>
     <script src="../system/js/jsvali.js"></script>
@@ -87,12 +87,12 @@
                         <li class="<?= $acdkkh ?>">Khóa học<img src="../system/img/monhoc.svg" alt=""></li>
                     </a>
                     <a class="iconchat" href="index.php?act=thongbao">
-                        <li class="<?= $actb ?> ">Thông báo<img class="imgchat" src="../system/img/thongbao.svg" alt="">
+                        <li class="<?= $actb ?>">Thông báo<img class="imgchat" src="../system/img/thongbao.svg" alt="">
                         </li>
                     </a>
-                    <!-- <a href="index.php?act=naptien">
-                        <li class="<?= $naptien ?>">Nạp tiền<img src="../system/img/chat.svg" alt=""></li>
-                    </a> -->
+                    <a href="index.php?act=naptien">
+                        <li class="<?= $naptien ?>">Nạp tiền<img src="../system/img/naptien.svg" alt=""></li>
+                    </a>
                     <a href="index.php?act=chat">
                         <li class="<?= $chat ?>">Nhắn tin<img src="../system/img/chat.svg" alt=""></li>
                     </a>

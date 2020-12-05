@@ -83,9 +83,8 @@ function GV_getlopdangday()
     }else
         return null;
 }
-function thongbao(){
-    return laydulieu("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang ORDER BY ngaydang"); 
- }
+function thongbao($nguoinhan){
+    return laydulieu("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang where nguoinhan = $nguoinhan or nguoinhan = 2 ORDER BY ngaydang"); }
  function thongbaoct($id){
      return laymot("SELECT * FROM thongbao INNER JOIN taikhoan ON taikhoan.id=thongbao.idngdang WHERE idtb=$id");
  }
@@ -96,7 +95,7 @@ function demsvlop($idlop){
     return laymot("SELECT COUNT(*) as 'sl' FROM sv_lop WHERE idlop = $idlop");
 }
 function gethinhlopchat($idlop){
-    return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%')");
+    return laymot("SELECT hinh FROM taikhoan WHERE id = (SELECT idgv FROM gvlop WHERE idlop like '%$idlop%' limit 1)");
 }
 // tên khóa học
 function getKHByIDLop($idlop){
@@ -125,6 +124,10 @@ function checknopbai($idbt,$idsv){
 function chamdiem($diem,$file){
     postdulieu("UPDATE `upfile` SET `diem` = '$diem' WHERE `upfile`.`idfile` = '$file'");
 }
+// loi phe
+function loiphe($loiphe,$file){
+    postdulieu("UPDATE `upfile` SET `loiphe` = '$loiphe' WHERE `upfile`.`idfile` = '$file'");
+}
 function upbt($idbt,$tenbt,$tenhinh,$mota,$lophoc,$ngaygiao,$hanchot){
    if ($tenhinh=='') {
     postdulieu("UPDATE `baitap` SET `tenbaitap` = '$tenbt',`motabt` = '$mota', `idlop` = '$lophoc', `ngaygiao` = '$ngaygiao', `ngayhethan` = '$hanchot' WHERE `baitap`.`idbaitap` = $idbt;");
@@ -143,4 +146,10 @@ function getTTKhoaByIDLop($idlop){
     return laymot("SELECT * FROM khoahoc WHERE id IN (SELECT idkhoa FROM lop WHERE id = $idlop)   ");
 }
 
+function baitaplop($id){
+    return laydulieu("SELECT * FROM `baitap` WHERE idlop = '$id'");
+}
+function dembtlop($id){
+    return laymot("SELECT COUNT(*) as 'tong' FROM baitap WHERE idlop = '$id'");
+}
 ?>

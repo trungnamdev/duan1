@@ -22,15 +22,15 @@
     function themlophoc($tenlop,$tenkhoa){
         return postdulieulayid("INSERT INTO `lop` (`id`, `tenlop`, `idkhoa`) VALUES (NULL, '$tenlop', '$tenkhoa');");
     }
-    function themthongbao($tieude, $noidung, $idnguoidang)
+    function themthongbao($tieude, $noidung, $idnguoidang, $nguoinhan)
     {
-        return postdulieu("INSERT INTO thongbao(tdtb,noidung,idngdang,ngaydang) VALUES('$tieude', '$noidung', '$idnguoidang', now())");    
+        return postdulieu("INSERT INTO thongbao(tdtb,noidung,idngdang,ngaydang,nguoinhan) VALUES('$tieude', '$noidung', '$idnguoidang', now(),'$nguoinhan')");    
     }
 
-    function suathongbao($tieude, $noidung, $idnguoidang, $idthongbao)
+    function suathongbao($tieude, $noidung, $idnguoidang, $idthongbao, $nguoinhan)
     {
         return postdulieu("UPDATE thongbao
-        SET tdtb = '$tieude', noidung = '$noidung', idngdang = '$idnguoidang', ngaydang = now()
+        SET tdtb = '$tieude', noidung = '$noidung', nguoinhan = '$nguoinhan', idngdang = '$idnguoidang', ngaydang = now()
         WHERE idtb = '$idthongbao';");    
     }
     function getallsv($chucvu){
@@ -54,9 +54,15 @@
     function allkhoahoc(){
         return laydulieu("SELECT * FROM  khoahoc ");
     }
+    function checkgv($id){
+        return laymot("SELECT * FROM `gvlop` WHERE idgv=$id GROUP BY idgv");
+    }
     function getMotlophoc($id)
     {
         return laymot("SELECT * FROM lop where id = $id");
+    }
+    function namvv($idgv,$idlop){
+        return postdulieu("INSERT INTO `gvlop` (`idgv`, `idlop`) VALUES ('$idgv', '$idlop')");
     }
     function sualh($tenlop, $tenkhoa, $idlop)
     {
@@ -117,8 +123,8 @@
         return postdulieu("INSERT INTO chude(tenchude) VALUES('$chude')");
     }
     // them khoa hoc
-    function insertKhoaHoc($tenkh,$mota,$chude,$tenhinh){
-        return postdulieu("INSERT INTO khoahoc(tenkhoa,mota,chude,hinh) VALUES('$tenkh', '$mota', '$chude', '$tenhinh')");
+    function insertKhoaHoc($tenkh,$mota,$chude,$tenhinh,$tien){
+        return postdulieu("INSERT INTO khoahoc(tenkhoa,mota,chude,hinh,giatien) VALUES('$tenkh', '$mota', '$chude', '$tenhinh','$tien')");
     }
     // xoa khoa hoc 
     function deleteKhoaHoc($idkh){
@@ -133,14 +139,14 @@
                           
                         }
     // sua khoa hoc 
-    function updateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$idkh){
-        if($tenhinh != ''){
-        return postdulieu(" UPDATE khoahoc
-                            SET tenkhoa = '$tenkh', mota = '$mota', chude = '$chude', hinh = '$tenhinh'
-                            WHERE id = '$idkh';");
-        }else  return postdulieu("  UPDATE khoahoc
-                                    SET tenkhoa = '$tenkh', mota = '$mota', chude = '$chude'
-                                    WHERE id = '$idkh';");
+    function updateKhoaHoc($tenkh,$mota,$chude,$tenhinh,$tien,$idkh){
+        if($tenhinh != ""){
+         postdulieu(" UPDATE khoahoc
+                            SET tenkhoa = '$tenkh', mota = '$mota', giatien = '$tien', chude = '$chude', hinh = '$tenhinh' 
+                            WHERE id = '$idkh'");
+        }else{ postdulieu("  UPDATE khoahoc
+                                    SET tenkhoa = '$tenkh', mota = '$mota', giatien = '$tien', chude = '$chude' 
+                                    WHERE id = '$idkh'");}
     }
     function suathongtintk($id,$hoten,$hinh,$ngaysinh,$email,$sdt,$diachi,$sex){
         if($hinh != ""){

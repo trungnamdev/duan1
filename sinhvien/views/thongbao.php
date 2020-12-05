@@ -85,8 +85,8 @@ if (isset($_GET['idtb'])) {?>
             quyết sẽ bị loại ra khỏi nhóm</p> -->
             <p style="margin-top: 50px;"><?=$tbct['noidung']?></p>
         <div class="d-tb-info">
-            <p>Người đăng: <?=$tbct['hoten']?></p>
-            <p>Ngày đăng: <?=$tbct['ngaydang']?></p>
+            <p >Người đăng: <?=$tbct['hoten']?></p>
+            <p >Ngày đăng: <?=$tbct['ngaydang']?></p>
         </div>
     </div>
     <?php

@@ -24,7 +24,16 @@ if (isset($_SESSION['iddn'])) {
          case 'home':
             $idsv = $_SESSION['iddn'];
             $ttsv = thongtinsv($idsv);
-            $tb = thongbao();
+            $tb = thongbao(0);
+            //Đếm bài tập cho thống kê
+            $btdanop = 0;
+            $btchuanop = 0;
+            foreach ($ttsv as $allbt) {
+               // Đếm bài tập đã nộp
+               $checkbt = checknopbai($allbt['idbaitap']);
+               if (is_array($checkbt) > 0) $btdanop += 1;
+               if (is_array($checkbt) == 0)   $btchuanop += 1;
+            }
             $achome = "active";
             $view = "../sinhvien/views/home.php";
             require_once "../sinhvien/views/layout.php";
@@ -45,7 +54,6 @@ if (isset($_SESSION['iddn'])) {
                case 'all':
                   $all = "active";
                   $allbaitap = thongtinsv($_SESSION['iddn']);
-
                   break;
                case 'done':
                   $danop = "active";
@@ -211,7 +219,7 @@ if (isset($_SESSION['iddn'])) {
             break;
          case 'thongbao':
             $actb = "active";
-            $tb = thongbao();
+            $tb = thongbao(0);
             $arrtbjs = [];
             foreach ($tb as $tb1) {
                $arrtam = [$tb1['tdtb'], $tb1['noidung'], $tb1['hoten'], $tb1['ngaydang']];
@@ -243,26 +251,31 @@ if (isset($_SESSION['iddn'])) {
             if (isset($_GET['idbt']) && isset($_POST['nop'])) {
                $file = $_FILES['baitap'];
                $idbt = $_GET['idbt'];
-               $file =upfile($file);
+               if ($file['name'] != '') {
+                  $linkfile =upfilezip($file);
+                  $tenfile = $file['name'];
+                  $file = $tenfile.",".$linkfile;
                noplaibt($file, $idbt);
                header("Location: index.php?act=nopbaitap&idbt=$idbt");
             } else {
                header('Location: index.php');
             }
+         }
             break;
          case 'nopbai':
             if (isset($_GET['idbt']) && isset($_POST['nop'])) {
                $file = $_FILES['baitap'];
                $idbt = $_GET['idbt'];
-
                if ($file['name'] != '') {
-                  $file =upfile($file);
+                  $linkfile =upfilezip($file);
+                  $tenfile = $file['name'];
+                  $file = $tenfile.",".$linkfile;
                   nopbai($file, $idbt);
-               } else echo "NO";
-               header("Location: index.php?act=nopbaitap&idbt=$idbt");
-            } else {
-               header('Location: index.php');
             }
+            header("Location: index.php?act=nopbaitap&idbt=$idbt"); 
+         }else {
+            header('Location: index.php');
+         }
             break;
          case 'chat':
             $chat = "active";
@@ -389,29 +402,33 @@ if (isset($_SESSION['iddn'])) {
                $view = "../sinhvien/views/changepass.php";
                require_once "../sinhvien/views/layout.php";
                break;
-         case 'changepass_':
-               $mess ="";
-               if(isset($_POST['pass'])) {
-                  $id = $_SESSION['iddn'];
-                  $pass = xoatag(trim($_POST['pass'],"'"));
-                  $check = getpass();
-                  if(is_array($check))
-                      $verify=password_verify($pass,$check['pass']);
-                     //Check pass
-                     if($verify){
-                        $newpass = $_POST['newpass'];
-                        $repass = $_POST['repass'];  
-                        //Check mk mới có khớp k            
-                        if($newpass==$repass) {
-                           changepass($id, $repass);
-                           $mess = "Đổi Thành Công";
-                        }else {
-                           $mess = "Mật khẩu không khớp";
-                        }
-                     }else{
-                        $mess = "Thất bại sai mật khẩu";
-                     }    
-               }
+               case 'changepass_':
+                  $mess ="";
+                  if(isset($_POST['pass'])) {
+                     $id = $_SESSION['iddn'];
+                     $pass = xoatag(trim($_POST['pass'],"'"));
+                     $check = getpass();
+                     if(is_array($check))
+                         $verify=password_verify($pass,$check['pass']);
+                        //Check pass
+                        if($verify){
+                           $newpass = $_POST['newpass'];
+                           $repass = $_POST['repass'];  
+                           //Check mk mới có khớp k            
+                           if($newpass==$repass) {
+                              changepass($id, $repass);
+                              $mess = "Đổi Thành Công";
+                           }else {
+                              $mess = "Mật khẩu không khớp";
+                           }
+                        }else{
+                           $mess = "Thất bại sai mật khẩu";
+                        } 
+                      
+                  }
+                  $view = "../sinhvien/views/changepass.php";
+                  require_once "../sinhvien/views/layout.php";
+               break;
       }
    }
 } else {

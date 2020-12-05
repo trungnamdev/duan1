@@ -24,7 +24,7 @@ switch ($act) {
       //Nếu chưa dạy ai thì show thông báo thôi
       if(isset($idlop))
          $lopdangday = GV_getlopdangday(); 
-      $tb=thongbao();
+      $tb=thongbao(1);
       $view = "../giaovien/views/home.php";
       require_once "../giaovien/views/layout.php";
    break;
@@ -42,6 +42,14 @@ switch ($act) {
        </script>';
        header('Location: index.php?act=baitap');
              }
+   break;
+   case 'baitaplop':
+      $acbt="active";
+      if(isset($_GET['idlop'])){
+         $id = $_GET['idlop'];
+      }
+      $view = "../giaovien/views/baitaplop.php";
+      require_once "../giaovien/views/layout.php";
    break;
    case 'baitap':
       $acbt="active";
@@ -188,26 +196,22 @@ switch ($act) {
             }
             if(isset($_POST['tai']) && isset($_POST['chonbt'])){
                $listbt = $_POST['chonbt'];
-               print_r($listbt);
                $myzip = new ZipArchive;
                $tenfile =texttoslug($baitap_info['tenlop']) . "_" . texttoslug($baitap_info['tenbaitap']).".zip";
-               if ($myzip->open($tenfile, ZipArchive::CREATE) === TRUE){
+               $tmp_file = tempnam('.', '');
+                  $myzip->open($tmp_file, ZipArchive::CREATE);
                   foreach($listbt as $bt){
-                     if(is_file($bt)){
-                     $myzip->addFile($bt);
-                     }
+                     $bt = explode(",",$bt);
+                     $btdown = file_get_contents($bt[1]);
+                     $myzip->addFromString($bt[0] , $btdown);
                   }
                   $myzip->close();
-               }
-               ob_end_clean();
-               header("Content-type: application/zip"); 
-               header("Content-Disposition: attachment; filename=$tenfile");
-               header("Content-length: " . filesize($tenfile));
-               header("Pragma: no-cache"); 
-               header("Expires: 0"); 
-               readfile($tenfile);
-               unlink($tenfile);
-               // return;
+                  ob_start();
+                  header('Content-disposition: attachment; filename="'.$tenfile.'"');
+                  header('Content-type: application/zip');
+                  readfile($tmp_file);
+                  unlink($tmp_file);
+               return;
             }
          }
          $acbt = "active";
@@ -217,7 +221,7 @@ switch ($act) {
 
       case 'thongbao':
          $actb = "active";
-         $tb = thongbao();
+         $tb = thongbao(1);
          $arrtbjs = [];
          foreach ($tb as $tb1) {
             $arrtam = [$tb1['tdtb'], $tb1['noidung'], $tb1['hoten'], $tb1['ngaydang']];
@@ -273,8 +277,7 @@ switch ($act) {
                   }else{
                      $mess = "Thất bại sai mật khẩu";
                   } 
-               
-                  
+                
             }
             $view = "../sinhvien/views/changepass.php";
             require_once "../sinhvien/views/layout.php";
@@ -307,10 +310,6 @@ switch ($act) {
 
          require_once "../giaovien/views/layout.php";
          break;
-      case 'lophoc':
-
-         break;
-
       case 'lopct':
          $aclop = "active"; 
          if(isset($_GET['idlop']) && $_GET['idlop'] > 0  ){   
@@ -388,6 +387,19 @@ switch ($act) {
             }
          }
          break;
+      case 'loipheajax':
+         if (isset($_POST['loiphe']) && isset($_POST['typeid'])) {
+            $loiphe = xoatag($_POST['loiphe']);
+            $file = $_POST['typeid'];
+              loiphe($loiphe, $file);
+            // if ($loiphe!="disble") {
+            //   echo 'chua co';
+            // } else {
+            //    echo 'sai';
+            // }
+      
+         }
+      break;
    }
 } else {
    header('Location: ../index.php');
