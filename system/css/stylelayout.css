@@ -728,9 +728,9 @@ ul a:hover {
     height: 400px;
 }
 
-.d-div3:nth-child(3n) {
+/* .d-div3:nth-child(3n) {
     margin-right: 0% !important;
-}
+} */
 
 .d-div3-img {
     width: 100%;
@@ -1028,9 +1028,10 @@ ul a:hover {
     justify-content: unset;
 }
 
-.d-div3:nth-child(3n) {
+/* .d-div3:nth-child(3n) {
     margin-right: calc(8%/3) !important;
-}
+    Cái này để làm gì ai xài mở lại nghen
+} */
 
 .d-div3:nth-child(4n) {
     margin-right: 0;
