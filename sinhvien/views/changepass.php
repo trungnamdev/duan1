@@ -7,18 +7,18 @@
         <form id="myform" class="col-12 pl-0" action="index.php?act=changepass_" method="post">
             <div class="form-group pl-0 pr-0 col-12">
                 <label for="pass">Nhập mật khẩu cũ</label>
-                <input type="text" class="form-control" id="pass" name="pass" data-require>
+                <input type="password" class="form-control" id="pass" name="pass" data-require>
                 <span class="text-danger" id="pass_err"></span>
             </div>
             <div class="form-group pl-0 pr-0  col-12">
                 <label for="newpass">Mật khẩu mới</label>
-                <input type="text" class="form-control" id="newpass" name="newpass" data-require>
+                <input type="password" class="form-control" id="newpass" name="newpass" data-require>
                 <span class="text-danger" id="newpass_err"></span>
 
             </div>
             <div class="form-group pl-0 pr-0 col-12">
                 <label for="newpass">Nhập lại mật khẩu</label>
-                <input type="text" class="form-control" id="repass" name="repass" data-require
+                <input type="password" class="form-control" id="repass" name="repass" data-require
                     data-conditional="checkpassword">
                 <span class="text-danger" id="repass_err"></span>
 
