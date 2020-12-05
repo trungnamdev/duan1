@@ -119,34 +119,53 @@ $(document).ready(function() {
             }
         });
     });
-});
+
 
 
 //Check form đổi mật khẩu
-$("#formdoimk")[0].validate({
-    rules: {
-        "pass": {
-            required: true,
-        },
-        "newpass": {
-            required: true,
-        },
-        "repass": {
-            required: true,
-        }
-    },
-    messages: {
-        "pass": {
-            required: "Vui lòng nhập pass"
-        },
-        "newpass": {
-            required: "Vui lòng nhập mật khẩu mới",
+    $('#btndmk').click(function() { 
 
-        },
-        "repass": {
-            required: "Vui lòng kiểm tra lại mật khẩu",
+        pass = $('#pass').val();
+        newpass = $('#newpass').val();
+        repass = $('#repass').val();
 
+        //Đoạn này check form nè nghe
+        check = true;
+        mess1 = '';
+        mess2 = '';
+        mess3 = '';
+        if (pass == "") {
+            mess1 = "Vui lòng nhập mật khẩu";
+            check = false;
         }
-    }
+
+        if (newpass == "") {
+            mess2 = "Vui lòng nhập mật khẩu mới";
+            check = false;
+        }
+
+        if (repass == "") {
+            mess3 = "Vui lòng nhập lại mật khẩu";
+            check = false;
+
+        } else if (newpass != repass) {
+            mess3 = "Mật khẩu không khớp";
+            check = false;
+            $('#newpass_err').html(mess3);
+        }
+
+        $('.form-control').keyup(function (e) {
+            $(this).siblings('.text-danger').html('');
+        });
+
+        if (check==true) {
+            
+        } else {
+            $('#pass_err').html(mess1);
+            $('#newpass_err').html(mess2);
+            $('#repass_err').html(mess3);
+        }
+    });
+
 });
 // loi phe

@@ -81,7 +81,7 @@
                         <li class="<?= $actb ?>">Thông báo<img src="../system/img/thongbao.svg" alt=""></li>
                     </a>
                     <a href="index.php?act=chat">
-                        <li class="<?= $chat ?>">Nhắn tin<img src="../system/img/chat.svg" alt=""></li>
+                        <li class="<?= $chat ?>">Nhắn tin<img src="../system/img/nhantin.svg" alt=""></li>
                     </a>
                 </ul>
             </div>

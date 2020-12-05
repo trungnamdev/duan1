@@ -250,8 +250,8 @@ switch ($act) {
 
          case 'changepass':
             $mess = "";
-            $view = "../sinhvien/views/changepass.php";
-            require_once "../sinhvien/views/layout.php";
+            $view = "../giaovien/views/changepass.php";
+            require_once "../giaovien/views/layout.php";
             break;
    
             
@@ -268,19 +268,24 @@ switch ($act) {
                      $newpass = $_POST['newpass'];
                      $repass = $_POST['repass'];  
                      //Check mk mới có khớp k            
-                     if($newpass==$repass) {
-                        changepass($id, $repass);
-                        $mess = "Đổi Thành Công";
-                     }else {
-                        $mess = "Mật khẩu không khớp";
-                     }
-                  }else{
-                     $mess = "Thất bại sai mật khẩu";
-                  } 
+                     if($newpass == '' || $repass == '') {
+                        $mess = "<span class= 'text-danger'>Bạn chưa nhập mật khẩu mới<span>";
+                    }else {
+                        //Check mk mới có khớp k            
+                        if($newpass==$repass) {
+                            changepass($id, $repass);
+                            $mess = "<span class= 'text-success'>Đổi Thành Công<span>";
+                        }else {
+                            $mess = "<span class= 'text-danger'>Mật khẩu không khớp<span>";
+                        }
+                    }
+                 }else{
+                    $mess = "<span class= 'text-danger'>Thất bại sai mật khẩu<span>";
+                 } 
                 
             }
-            $view = "../sinhvien/views/changepass.php";
-            require_once "../sinhvien/views/layout.php";
+            $view = "../giaovien/views/changepass.php";
+            require_once "../giaovien/views/layout.php";
          break;
       case 'dangxuat':
          unset($_SESSION['role']);

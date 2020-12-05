@@ -1186,4 +1186,5 @@ img {
 
 .emty-box img {
     width: 200px;
+    height: auto;
 }

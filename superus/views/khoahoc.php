@@ -30,8 +30,6 @@
                     $chude = getChuDe($kh['chude']);
                 
             ?>
-
-
             <tr>
                 <td class="text-center"><img src="<?=showfile($kh['hinh'])?>" alt="" onerror="erroimg(this)"  class="img-thumbnail" width ="80px"></td>
                 <td>
@@ -46,7 +44,7 @@
                     <strong><?= chuyenso($kh['giatien']) ?> VNĐ</strong>
                 </center>
                 </td>
-                <td>
+                <td class="gioihanchu">
                     <?=$kh['mota']?>
 
                 </td>
