@@ -18,10 +18,22 @@
         </div>
         <div class="form-group" id="checkloi">
             <label for="noidung">Nội dung</label>
-        <textarea required="required" id="noidung" cols="120" rows="10" name="noidung"></textarea>
-            <label id="nderror" style="color: red;" for="noidung"></label>
+        <textarea id="noidung" cols="120" rows="10" name="noidung"></textarea>
+            <label id="nderror" style="color: red;" for="noidung"><?php if (isset($_SESSION['lndtb'])) {
+               echo $_SESSION['lndtb'];
+            }?></label>
         </div>
         <input type="hidden" name="idnguoidang" value="<?= $_SESSION['iddn'] ?>">
         <button type="submit" class="btn btn-primary" id="dangtb">Đăng thông báo</button>
     </form>
 </div>
+<script>  
+        // Cấu hình lại toolbar, hiển thị một vài Button.
+        noidung.config.toolbar = [  ['Font','FontSize'], ['Bold','Italic']  ];
+     
+        // Cấu hình lại màu nền giao diện.
+        noidung.config.uiColor = '#9AB8F3';
+        noidung.config.resize_enabled = false;
+        noidung.config.width = '500px';
+        noidung.config.height = '70px';
+    </script>

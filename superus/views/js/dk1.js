@@ -169,14 +169,14 @@ $(document).ready(function() {
         }
     });
 
-    $("#dangtb").click(function() {
-        var d = $("#noidung");
-        console.log(d);
-        return false;
-    });
+    // $("#dangtb").click(function() {
+    //     var d = $("#noidung");
+    //     console.log(d);
+    //     return false;
+    // });
+
 
 });
-
 // function batloind() {
 // if ($("#noidung").val() == '') {
 //     $("#nderror").html("Xin vui lòng nhập nội dung");
