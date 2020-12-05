@@ -413,16 +413,20 @@ if (isset($_SESSION['iddn'])) {
                         //Check pass
                         if($verify){
                            $newpass = $_POST['newpass'];
-                           $repass = $_POST['repass'];  
-                           //Check mk mới có khớp k            
-                           if($newpass==$repass) {
-                              changepass($id, $repass);
-                              $mess = "Đổi Thành Công";
+                           $repass = $_POST['repass']; 
+                           if($newpass == '' || $repass == '') {
+                               $mess = "<span class= 'text-danger'>Bạn chưa nhập mật khẩu mới<span>";
                            }else {
-                              $mess = "Mật khẩu không khớp";
+                               //Check mk mới có khớp k            
+                               if($newpass==$repass) {
+                                   changepass($id, $repass);
+                                   $mess = "<span class= 'text-success'>Đổi Thành Công<span>";
+                               }else {
+                                   $mess = "<span class= 'text-danger'>Mật khẩu không khớp<span>";
+                               }
                            }
                         }else{
-                           $mess = "Thất bại sai mật khẩu";
+                           $mess = "<span class= 'text-danger'>Thất bại sai mật khẩu<span>";
                         } 
                       
                   }
