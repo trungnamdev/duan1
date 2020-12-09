@@ -75,11 +75,11 @@
             <div class="menu m-3">
                 <ul>
                 <a href="index.php?act=home"><li class="<?= $achome ?>">Tổng quan<img src="../system/img/tongquan.svg" alt=""></i></li></a>
-                    <a href="index.php?act=sinhvien"><li class="<?= $acsv?>">Sinh Viên<img src="../system/img/baitap.svg" alt=""></li></a>
-                    <a href="index.php?act=giaovien"><li class="<?= $acgv?>">Giáo Viên<img src="../system/img/baitap.svg" alt=""></li></a>
-                    <a href="index.php?act=lop"><li class="<?= $aclop ?>">Lớp học<img src="../system/img/monhoc.svg" alt=""></li></a>
+                    <a href="index.php?act=sinhvien"><li class="<?= $acsv?>">Sinh Viên<img src="../system/img/sinhvien.svg" alt=""></li></a>
+                    <a href="index.php?act=giaovien"><li class="<?= $acgv?>">Giáo Viên<img src="../system/img/giaovien.svg" alt=""></li></a>
+                    <a href="index.php?act=lop"><li class="<?= $aclop ?>">Lớp học<img src="../system/img/bangdiem.svg" alt=""></li></a>
                     <a href="index.php?act=khoahoc"><li class="<?= $ackh ?>">Khóa học<img src="../system/img/monhoc.svg" alt=""></li></a>
-                     <a href="index.php?act=chude"><li class="<?= $accd ?>">Chủ Đề<img src="../system/img/monhoc.svg" alt=""></li></a>
+                     <a href="index.php?act=chude"><li class="<?= $accd ?>">Chủ Đề<img src="../system/img/chude.svg" alt=""></li></a>
                     <a href="index.php?act=thongbao"><li class="<?= $actb ?>">Thông báo<img src="../system/img/thongbao.svg" alt=""></li></a>
                 </ul>
             </div>

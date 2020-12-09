@@ -201,22 +201,30 @@ if (isset($_SESSION['iddn'])) {
                               <option><?= $checksv['tenlop'] ?> - <?= $gv['hoten'] ?></option>
                            <?php } else { ?>
                               <select id="lophoc" class="form-control col-10">
-                              <?php foreach ($lophoc as $lophoc) {
+                              <?php    $demlop=0; foreach ($lophoc as $lophoc) {
                                  $idgv = $lophoc['id'];
                                  $gv = gvkhoahoc($idgv);
                                  echo ' <option value="' . $lophoc['id'] . '">' . $lophoc['tenlop'] . '-' . $gv['hoten'] . '</option>';
+                                 $demlop++;
                               }
                            } ?>
                               </select>
                      </p>
-                     <?php if (is_array($checksv)) { ?>
-                        <button type="button" disabled class="btn btn-success col-10">Đã Đăng Ký</button>
-                     <?php } else { ?>
-                        <button type="button" class="btn btn-success dkkh col-10">Đăng Ký</button>
-                     <?php } ?>
-
-                  </td>
-               </tr>
+                     <?php if (is_array($checksv)) {?>
+                            <button type="button" disabled class="btn btn-success col-10">Đã Đăng Ký</button>
+                        <?php } else {
+                            if ($demlop!=0) {
+                                echo ' <button type="button" class="btn btn-success dkkh col-10">Đăng Ký</button>';
+                            } else {
+                                echo ' <button type="button" disabled class="btn btn-success dkkh col-10">Không có lớp học</button>';
+                            }
+                            
+                            ?>
+                           
+                        <?php }?>
+            
+                     </td>
+                 </tr>
 
 <?php } ?>
 <script>

@@ -181,7 +181,7 @@ $(document).on('keypress',function(e) {
                         }
                     }
                   
-                    timecu = value['time'];
+                    timecu = value['time']; // time cũ
                     idcu = value['id'];
                 });
                 tinnhan+='<span class="info"><span>'+timecu+'</span></p></div>';
