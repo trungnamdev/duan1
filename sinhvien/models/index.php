@@ -80,6 +80,9 @@ function khoahocdadk(){
 function khoahocchuadk(){
     return laydulieu("SELECT * FROM khoahoc WHERE id not in (SELECT idkhoa FROM lop WHERE id IN (SELECT idlop FROM sv_lop WHERE idsv = $_SESSION[iddn]))");
 }
+function khoaHocChiTiet($idkh){
+    return laymot("SELECT * FROM khoahoc WHERE id = $idkh");
+}
 function lophoc($idkhoa){
     return laydulieu("SELECT * FROM lop WHERE idkhoa=$idkhoa");
 }

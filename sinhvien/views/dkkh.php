@@ -24,7 +24,7 @@
                          <img src="<?= showfile($kh['hinh']) ?>" onerror="erroimg(this)">
                      </td>
                      <td class="ttkhoahoc py-3 pr-5">
-                         <p class="h4 title"><?= $kh['tenkhoa'] ?></p>
+                         <a href="index.php?act=ctkh&idkh=<?=$idkhoa?>"><p class="h4 title"><?= $kh['tenkhoa'] ?></p></a>
                          <p class="my-1 h6">
                              <?= $tenchude['tenchude'] ?></p>
                          <p class="mota gioihanchu">
