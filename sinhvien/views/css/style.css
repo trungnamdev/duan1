@@ -960,7 +960,7 @@ ul a:hover {
 }
 
 .ndbaitap {
-    width: 73%;
+    width: 70%;
     min-height: 500px;
     float: left;
     padding: 25px 35px;
@@ -969,8 +969,29 @@ ul a:hover {
     margin-bottom: 30px;
 }
 
+.d-hinh img {
+    width: 30px;
+    object-fit: cover;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.d-centent {
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border: 1px #bfc4c8 solid;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
+.d-centent .col-10 {
+    display: flex;
+    align-items: center;
+}
+
 .nopbaitap {
-    width: 24%;
+    width: 27%;
     min-height: 200px;
     float: right;
     box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.2);

@@ -19,7 +19,7 @@ if (isset($_SESSION['iddn'])) {
       $actb = "";
       $acbd = "";
       $chat = "";
-      $naptien ="";
+      $naptien = "";
       switch ($act) {
          case 'home':
             $idsv = $_SESSION['iddn'];
@@ -39,12 +39,12 @@ if (isset($_SESSION['iddn'])) {
             require_once "../sinhvien/views/layout.php";
             break;
 
-            case 'lopbaitap':
-               $acbt="active"; 
-               $lopdanghoc = getlopsvdanghoc(); 
-               $view = "../sinhvien/views/baitap.php";
-               require_once "../sinhvien/views/layout.php";
-               break;
+         case 'lopbaitap':
+            $acbt = "active";
+            $lopdanghoc = getlopsvdanghoc();
+            $view = "../sinhvien/views/baitap.php";
+            require_once "../sinhvien/views/layout.php";
+            break;
 
          case 'baitap':
             $all = "";
@@ -55,13 +55,13 @@ if (isset($_SESSION['iddn'])) {
             } else {
                $sx = "all";
             }
-            if(isset($_GET['idlop'])) $idlop = $_GET['idlop'];
-            $checkbaitap = thongtinsv($_SESSION['iddn'],$idlop);
+            if (isset($_GET['idlop'])) $idlop = $_GET['idlop'];
+            $checkbaitap = thongtinsv($_SESSION['iddn'], $idlop);
             $tenlop = tenlop($idlop);
             switch ($sx) {
                case 'all':
                   $all = "active";
-                  $allbaitap = thongtinsv($_SESSION['iddn'],$idlop);
+                  $allbaitap = thongtinsv($_SESSION['iddn'], $idlop);
                   break;
                case 'done':
                   $danop = "active";
@@ -145,15 +145,15 @@ if (isset($_SESSION['iddn'])) {
             $ctkh = getkhoahocbylopid($idlop);
             $thongtin = thongtinsvtomtat($_SESSION['iddn']);
             $_SESSION['tien'] = $thongtin['tien'];
-            if($_SESSION['tien'] >= $ctkh['giatien']){
-               $check = capnhattrutien($ctkh['giatien'],$idsv);
-               $_SESSION['tien']-=$ctkh['giatien']; 
+            if ($_SESSION['tien'] >= $ctkh['giatien']) {
+               $check = capnhattrutien($ctkh['giatien'], $idsv);
+               $_SESSION['tien'] -= $ctkh['giatien'];
                $tienconlai = chuyenso($_SESSION['tien']);
-               if($check){
-               dkkh($idsv, $idlop);
+               if ($check) {
+                  dkkh($idsv, $idlop);
                }
                $thongbao = 1;
-            }else{
+            } else {
                $tienconlai = chuyenso($_SESSION['tien']);
                $thongbao = 0;
             }
@@ -184,7 +184,9 @@ if (isset($_SESSION['iddn'])) {
                      <img src="<?= showfile($kh['hinh']) ?>" onerror="erroimg(this)">
                   </td>
                   <td class="ttkhoahoc py-3 pr-5">
-                     <p class="h4 title"><?= $kh['tenkhoa'] ?></p>
+                     <a href="index.php?act=ctkh&idkh=<?= $idkhoa ?>">
+                        <p class="h4 title"><?= $kh['tenkhoa'] ?></p>
+                     </a>
                      <p class="my-1 h6">
                         <?= $tenchude['tenchude'] ?></p>
                      <p class="mota">
@@ -192,7 +194,7 @@ if (isset($_SESSION['iddn'])) {
                      </p>
                   </td>
                   <td class="gia">
-                  <p class="my-2 px-1"> <i class='far fa-file-alt' style='font-size:20px; color:gray'></i> <?= $demlh['tong'] ?> Lớp học <span class="float-right mr-5 font-weight-bold"><?= chuyenso($kh['giatien']) ?> VND</span></p>
+                     <p class="my-2 px-1"> <i class='far fa-file-alt' style='font-size:20px; color:gray'></i> <?= $demlh['tong'] ?> Lớp học <span class="float-right mr-5 font-weight-bold"><?= chuyenso($kh['giatien']) ?> VND</span></p>
                      <p>
                         <?php
                         if (is_array($checksv)) {
@@ -218,13 +220,74 @@ if (isset($_SESSION['iddn'])) {
                   </td>
                </tr>
 
-<?php } ?>
-<script>
-     tienconlai = <?= json_encode($tienconlai)?>;
-     tbdkkh = <?= json_encode($thongbao)?>;
- </script>
-<?php 
+            <?php } ?>
+            <script>
+               tienconlai = <?= json_encode($tienconlai) ?>;
+               tbdkkh = <?= json_encode($thongbao) ?>;
+            </script>
+         <?php
             break;
+
+         case 'dkkh2':
+            $idkh = $_POST['idkh'];
+            $idlop = $_POST['idlop'];
+            $idsv = $_SESSION['iddn'];
+            $ctkh = getkhoahocbylopid($idlop);
+            $thongtin = thongtinsvtomtat($_SESSION['iddn']);
+            $_SESSION['tien'] = $thongtin['tien'];
+            $checksv = xetkhoahoc($idkh, $idsv);
+            $lophoc = lophoc($idkh);
+            if ($_SESSION['tien'] >= $ctkh['giatien']) {
+               $check = capnhattrutien($ctkh['giatien'], $idsv);
+               $_SESSION['tien'] -= $ctkh['giatien'];
+               $tienconlai = chuyenso($_SESSION['tien']);
+               if ($check) {
+                  dkkh($idsv, $idlop);
+               }
+               $thongbao = 1;
+            } else {
+               $tienconlai = chuyenso($_SESSION['tien']);
+               $thongbao = 0;
+            } ?><SPan></SPan>
+            <p>
+                <?php
+                if (is_array($checksv)) {
+                    $gv = gvkhoahoc($checksv['idlop']); ?>
+                    <select id="lophoc" class="form-control w-100" disabled>
+                        <option><?= $checksv['tenlop'] ?> - <?= $gv['hoten'] ?></option>
+                    <?php } else { ?>
+                        <select id="lophoc" idkh=<?= $idkh ?> class="form-control w-100">
+                        <?php
+                        $demlop = 0;
+                        foreach ($lophoc as $lophoc) {
+                            $idgv = $lophoc['id'];
+                            $gv = gvkhoahoc($idgv);
+                            echo ' <option value="' . $lophoc['id'] . '">' . $lophoc['tenlop'] . '-' . $gv['hoten'] . '</option>';
+                            $demlop++;
+                        }
+                    } ?>
+                        </select>
+            </p>
+            <?php if (is_array($checksv)) { ?>
+                <button type="button" disabled class="btn btn-success w-100">Đã Đăng Ký</button>
+            <?php } else {
+                if ($demlop != 0) {
+                    echo ' <button type="button" class="btn btn-success dkkh w-100"  >Đăng Ký</button>';
+                } else {
+                    echo ' <button type="button" disabled class="btn btn-success dkkh w-100">Không có lớp học</button>';
+                }
+
+            ?>
+
+            <?php } ?>
+
+            <script>
+               tienconlai = <?= json_encode($tienconlai) ?>;
+               tbdkkh = <?= json_encode($thongbao) ?>;
+            </script>
+<?php
+            break;
+
          case 'thongbao':
             $actb = "active";
             $tb = thongbao(0);
@@ -260,30 +323,30 @@ if (isset($_SESSION['iddn'])) {
                $file = $_FILES['baitap'];
                $idbt = $_GET['idbt'];
                if ($file['name'] != '') {
-                  $linkfile =upfilezip($file);
+                  $linkfile = upfilezip($file);
                   $tenfile = $file['name'];
-                  $file = $tenfile.",".$linkfile;
-               noplaibt($file, $idbt);
-               header("Location: index.php?act=nopbaitap&idbt=$idbt");
-            } else {
-               header('Location: index.php');
+                  $file = $tenfile . "," . $linkfile;
+                  noplaibt($file, $idbt);
+                  header("Location: index.php?act=nopbaitap&idbt=$idbt");
+               } else {
+                  header('Location: index.php');
+               }
             }
-         }
             break;
          case 'nopbai':
             if (isset($_GET['idbt']) && isset($_POST['nop'])) {
                $file = $_FILES['baitap'];
                $idbt = $_GET['idbt'];
                if ($file['name'] != '') {
-                  $linkfile =upfilezip($file);
+                  $linkfile = upfilezip($file);
                   $tenfile = $file['name'];
-                  $file = $tenfile.",".$linkfile;
+                  $file = $tenfile . "," . $linkfile;
                   nopbai($file, $idbt);
+               }
+               header("Location: index.php?act=nopbaitap&idbt=$idbt");
+            } else {
+               header('Location: index.php');
             }
-            header("Location: index.php?act=nopbaitap&idbt=$idbt"); 
-         }else {
-            header('Location: index.php');
-         }
             break;
          case 'chat':
             $chat = "active";
@@ -303,8 +366,14 @@ if (isset($_SESSION['iddn'])) {
             $thongtin = thongtinsvtomtat($_SESSION['iddn']);
             $_SESSION['tien'] = $thongtin['tien'];
             $naptien = 'active';
-            $mess ='';
+            $mess = '';
             $view = '../sinhvien/views/naptien.php';
+            require_once "../sinhvien/views/layout.php";
+            break;
+         case 'ctkh':
+
+            $mess = '';
+            $view = '../sinhvien/views/ctkh.php';
             require_once "../sinhvien/views/layout.php";
             break;
          case 'thanhtoan':
@@ -397,50 +466,49 @@ if (isset($_SESSION['iddn'])) {
                   $code_vnpay = $_GET['vnp_TransactionNo'];
                   $time = $_GET['vnp_PayDate'];
                   $date_time = substr($time, 0, 4) . '-' . substr($time, 4, 2) . '-' . substr($time, 6, 2) . ' ' . substr($time, 8, 2) . ' ' . substr($time, 10, 2) . ' ' . substr($time, 12, 2);
-                  $check = addnaptien($code_vnpay,$_SESSION['iddn'],$money,$note,$date_time);
-                  capnhattien($money,$_SESSION['iddn']);
-                  $_SESSION['tien']+=$money;
+                  $check = addnaptien($code_vnpay, $_SESSION['iddn'], $money, $note, $date_time);
+                  capnhattien($money, $_SESSION['iddn']);
+                  $_SESSION['tien'] += $money;
                }
             }
-           $mess= showthongbao($check,"NẠP");
+            $mess = showthongbao($check, "NẠP");
             header('Location: index.php?act=naptien');
             break;
-            case 'changepass':
-               $mess = "";
-               $view = "../sinhvien/views/changepass.php";
-               require_once "../sinhvien/views/layout.php";
-               break;
-               case 'changepass_':
-                  $mess ="";
-                  if(isset($_POST['pass'])) {
-                     $id = $_SESSION['iddn'];
-                     $pass = xoatag(trim($_POST['pass'],"'"));
-                     $check = getpass();
-                     if(is_array($check))
-                         $verify=password_verify($pass,$check['pass']);
-                        //Check pass
-                        if($verify){
-                           $newpass = $_POST['newpass'];
-                           $repass = $_POST['repass']; 
-                           if($newpass == '' || $repass == '') {
-                               $mess = "<span class= 'text-danger'>Bạn chưa nhập mật khẩu mới<span>";
-                           }else {
-                               //Check mk mới có khớp k            
-                               if($newpass==$repass) {
-                                   changepass($id, $repass);
-                                   $mess = "<span class= 'text-success'>Đổi Thành Công<span>";
-                               }else {
-                                   $mess = "<span class= 'text-danger'>Mật khẩu không khớp<span>";
-                               }
-                           }
-                        }else{
-                           $mess = "<span class= 'text-danger'>Thất bại sai mật khẩu<span>";
-                        } 
-                      
+         case 'changepass':
+            $mess = "";
+            $view = "../sinhvien/views/changepass.php";
+            require_once "../sinhvien/views/layout.php";
+            break;
+         case 'changepass_':
+            $mess = "";
+            if (isset($_POST['pass'])) {
+               $id = $_SESSION['iddn'];
+               $pass = xoatag(trim($_POST['pass'], "'"));
+               $check = getpass();
+               if (is_array($check))
+                  $verify = password_verify($pass, $check['pass']);
+               //Check pass
+               if ($verify) {
+                  $newpass = $_POST['newpass'];
+                  $repass = $_POST['repass'];
+                  if ($newpass == '' || $repass == '') {
+                     $mess = "<span class= 'text-danger'>Bạn chưa nhập mật khẩu mới<span>";
+                  } else {
+                     //Check mk mới có khớp k            
+                     if ($newpass == $repass) {
+                        changepass($id, $repass);
+                        $mess = "<span class= 'text-success'>Đổi Thành Công<span>";
+                     } else {
+                        $mess = "<span class= 'text-danger'>Mật khẩu không khớp<span>";
+                     }
                   }
-                  $view = "../sinhvien/views/changepass.php";
-                  require_once "../sinhvien/views/layout.php";
-               break;
+               } else {
+                  $mess = "<span class= 'text-danger'>Thất bại sai mật khẩu<span>";
+               }
+            }
+            $view = "../sinhvien/views/changepass.php";
+            require_once "../sinhvien/views/layout.php";
+            break;
       }
    }
 } else {
