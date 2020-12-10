@@ -37,9 +37,9 @@
     <link rel="stylesheet" href="views/css/style.css">
     <title>GIÁO VIÊN</title>
 </head>
-<!-- oncontextmenu="return false" ondragstart="return false" onselectstart="return false" -->
 
-<body>
+
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div class="container-fluid h-100 p-0">
         <div class="sidebar">
             <div class="account text-light pl-4 pr-4 mb-5">

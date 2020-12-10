@@ -44,7 +44,7 @@
     <title>Sinh Viên</title>
 </head>
 
-<body>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div class="container-fluid h-100 p-0">
         <div class="sidebar">
             <div class="account text-light pl-4 pr-4 mb-5">

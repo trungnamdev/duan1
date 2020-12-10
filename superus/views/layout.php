@@ -44,7 +44,7 @@
     
 </head>
 
-<body>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div class="container-fluid h-100 p-0">
         <a href="index.php?act=thongtincn">
         <div class="sidebar">

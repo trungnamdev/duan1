@@ -15,7 +15,7 @@
     <!-- end bootstrap -->
     <title>SITE</title>
 </head>
-<body>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <!-- chua header -->
 <?php 
     require_once $view;
