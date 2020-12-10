@@ -235,7 +235,7 @@ if (isset($_SESSION['iddn'])) {
             $ctkh = getkhoahocbylopid($idlop);
             $thongtin = thongtinsvtomtat($_SESSION['iddn']);
             $_SESSION['tien'] = $thongtin['tien'];
-            $checksv = xetkhoahoc($idkh, $idsv);
+           
             $lophoc = lophoc($idkh);
             if ($_SESSION['tien'] >= $ctkh['giatien']) {
                $check = capnhattrutien($ctkh['giatien'], $idsv);
@@ -248,9 +248,12 @@ if (isset($_SESSION['iddn'])) {
             } else {
                $tienconlai = chuyenso($_SESSION['tien']);
                $thongbao = 0;
-            } ?><SPan></SPan>
+            } ?>
+            <SPan></SPan>
             <p>
+                
                 <?php
+                 $checksv = xetkhoahoc($idkh, $idsv);
                 if (is_array($checksv)) {
                     $gv = gvkhoahoc($checksv['idlop']); ?>
                     <select id="lophoc" class="form-control w-100" disabled>
