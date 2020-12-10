@@ -36,8 +36,8 @@ function guimail($e,$u,$tieude,$body){
    $mail->CharSet  = "utf-8";
    $mail->Host = 'smtp.gmail.com';  //SMTP servers
    $mail->SMTPAuth = true; // Enable authentication
-   $mail->Username = 'thanhdobaihoc@gmail.com';  // SMTP username
-   $mail->Password = 'dogaga123';   // SMTP password
+   $mail->Username = 'namn71202@gmail.com';  // SMTP username
+   $mail->Password = 'TrungNam71202';   // SMTP password
    $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL 
    $mail->Port = 465;  // port to connect to                
    $mail->setFrom('daihoc8888@gmail.com', 'Trường Học 8888');

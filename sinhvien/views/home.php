@@ -20,13 +20,13 @@
                                 <img src="<?= showfile($sv['hinhbt']) ?>" onerror="erroimg(this)" class="card-img" alt="...">
                             </div>
                             <div class="col-md-8">
-                                <div class="card-body p-0">
-                                    <div class="info">
-                                        <div class="aut">
+                                <div class="card-body p-0 text-truncate">
+                                    <div class="info text-truncate">
+                                        <div class="aut text-truncate">
                                             <img src="<?= showfile($ttgv['hinh']) ?>" onerror="erroimg(this)">
                                             <a href="#"><?= $ttgv['hoten'] ?></a>
                                         </div>
-                                        <div class="mon mr-2 text-secondary"><?= $sv['tenkhoa'] ?></div>
+                                        <div class="mon mr-2 text-secondary text-truncate"><?= $sv['tenkhoa'] ?></div>
                                     </div>
                                     <h5 class="card-title mb-1 mt-1"><a href="index.php?act=nopbaitap&idbt=<?= $sv['idbaitap'] ?>"><?= $sv['tenbaitap'] ?></a></h5>
                                     <p class="text-secondary dealine m-0">Hạn chót: <?= $nhh ?></p>

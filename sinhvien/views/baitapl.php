@@ -46,7 +46,7 @@
                 <div class="d-row100">
 
 
-                    <div class="d-info1">
+                    <div class="d-info1 text-truncate">
                         <img src="<?= $hinhgv ?>" onerror="erroimg(this)">
                         <a href=""><?= $tengv ?></a>
                     </div>
