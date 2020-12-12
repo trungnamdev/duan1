@@ -137,7 +137,7 @@ switch ($act) {
       alert("địa chỉ đã bị sai") ;
    </script>';
          }
-         header('Location: giaovien.php?act=baitap');
+         header('Location: index.php?act=baitap');
          break;
       case 'chambai':
          if (isset($_GET['id'])) {

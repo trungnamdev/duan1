@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.container-fluid {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+    background-image: url(../img/bg.jpg);
+    background-size: 110%;
+}
+
+.container {
+    width: 80%;
+}
+
+.iphone {
+    width: 310px;
+    height: 655px;
+    border-radius: 20px;
+    border: 20px solid #444;
+    position: relative;
+}
+
+.notch {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    background-color: #444;
+    height: 40px;
+    width: 60%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+}
+
+.content {
+    display: flex;
+}
+
+.content .right img {
+    width: 300px;
+}
+
+.content .left {
+    width: 50%;
+    padding-right: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: -10%;
+    flex-direction: column;
+}
+
+.content .left p {
+    width: 90%;
+}
+
+.content .right {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.button {
+    margin-top: 20px;
+    display: flex;
+}
+
+.button img {
+    height: 50px;
+    margin-right: 5px;
+}
+
+.android {
+    position: relative;
+}
+
+.qr {
+    position: absolute;
+    bottom: 60px;
+    object-fit: contain;
+    height: unset !important;
+    border: 5px solid #efefef;
+    background-color: #efefef;
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        flex-direction: column;
+    }
+    .content .left {
+        width: 100%;
+        text-align: center;
+    }
+    .button {
+        align-items: center;
+        justify-content: center;
+    }
+    .content .right {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .qr {
+        display: none !important;
+    }
+    .container-fluid {
+        background-image: url(../img/bg-mobile.jpg);
+        background-size: cover;
+    }
+    .content .left {
+        padding-right: 0;
+    }
+    .content .left p {
+        width: 100%;
+    }
+}

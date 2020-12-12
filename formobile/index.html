@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8888 Collage Download</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/logo.png" width="100" class="d-inline-block align-top" alt="" loading="lazy">
+                </a>
+            </nav>
+
+            <div class="content">
+                <div class="left">
+                    <h1>Kiểm soát việc học <br> của bạn <br> ở bất kì đâu</h1>
+                    <p>Kiểm tra bài tập được giao, tra cứu điểm số, giữ liên lạc với thầy cô, bạn bè. Tất cả gói gọn trong 8888 App!</p>
+                    <div class="button">
+                        <div class="android">
+                            <!-- <img src="./img/qr_code.png" alt="" class="qr" id="qr" width="300"> -->
+                            <a href="daihoc8888.apk" id="android"><img src="./img/google-play-vn_get.svg" alt=""></a>
+                        </div>
+                        <a href="daihoc8888.exe"><img src="./img/pc.png" alt=""></a>
+                    </div>
+
+                </div>
+                <div class="right">
+                    <img src="./img/iphone-12-pro--silver.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function() {
+        $("#qr").fadeOut();
+        $("#android").hover(function() {
+            $("#qr").fadeToggle('fast');
+        });
+    });
+</script>
