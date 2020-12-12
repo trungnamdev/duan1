@@ -6,7 +6,7 @@
 <div class="d-row">
 
 <?php 
-    if(isset($lopdanghoc)){
+    if($lopdanghoc){
         foreach ($lopdanghoc as $lop) {
             $id=$lop['id'];
             $countlop=dembtlop($id);
@@ -36,7 +36,7 @@
     <?php } } else {?>
     <div class="emty-box">
         <img src="../system/img/no_class.svg" alt="">
-        <p class="text-muted mt-4">Chưa có lớp nào được giao</p>
+        <p class="text-muted mt-4">Không có lớp để hiển thị</p>
     </div>
 </div>
 </div>
