@@ -24,7 +24,6 @@ $(document).ready(function() {
     $("#khoahocct").on("click", "#tet", function() {
         var idlop = $(this).parent().children()[1].childNodes[1].value;
         var idkh = $('#lophoc').attr('idkh');
-
         $.ajax({
             method: "POST", // phương thức dữ liệu được truyền đi
             url: "index.php?act=dkkh2", // gọi đến file server show_data.php để xử lý
